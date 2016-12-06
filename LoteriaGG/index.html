@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>LoteriaGG</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+    <header>
+
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            	<div class="container-fluid">
+        			<div class="navbar-header">
+        			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        			<span class="sr-only">Toggle navigation</span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			</button>
+        				<a class="navbar-brand" href="">LoteriaGG</a>
+        			</div>
+        			<div id="navbar" class="collapse navbar-collapse">
+        				<ul class="nav navbar-nav">
+        					<li class="active"><a href="index.html">Inicio</a></li>
+        					<li><a href="about.html">Acerca de</a></li>
+        				</ul>
+
+        				<ul class="nav navbar-nav navbar-right">
+
+
+                            <li class="dropdown">
+
+
+                                <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center"><h3><b style="color:black">Registrarse</b></h3></div>
+        								<form id="ajax-register-form" action="http://phpoll.com/register/process" method="post" role="form" autocomplete="off">
+        									<div class="form-group">
+        										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
+        									</div>
+        									<div class="form-group">
+        										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+        									</div>
+        									<div class="form-group">
+        										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+        									</div>
+        									<div class="form-group">
+        										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+        									</div>
+        									<div class="form-group">
+        										<div class="row">
+        											<div class="col-xs-6 col-xs-offset-3">
+        												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Aceptar">
+        											</div>
+        										</div>
+        									</div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+        								</form>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Iniciar sesión <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center"><h3><b style="color:black">Iniciar sesión</b></h3></div>
+                                        <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
+                                            <div class="form-group">
+
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-7">
+                                                        <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                        <label for="remember"> <b style="color:black">Recuérdame</b></label>
+                                                    </div>
+                                                    <div class="col-xs-5 pull-right">
+                                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Entrar">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="text-center">
+                                                            <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+        			</div>
+        		</div>
+        	</nav>
+
+
+
+    </header>
+
+    <div class="main container-fluid jumbotron myBackground">
+      <section class="row">
+        <article class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
+          <h1 class="text-danger">LoteriaGG </h1>
+          <p class="small text-muted" style="color:white; "><em>El único y mejor lugar para poner a prueba tu suerte y ganar RP.</em></p>
+
+        </article>
+        <aside class="col-xs-12 col-sm-6 col-md-4  col-lg-2" style="background:transparent">
+          <h3 style="color:red"><strong>Registrate o inicia sesión</strong></h3>
+          <p><em>Si no estás registrado, hazlo para poder participar.</em></p>
+        </aside>
+      </section>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <h3>Articulo</h3>
+          <p style="font-family: consolas">
+            It's a long way to the top if you wanna rock 'n' roll
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <h3>Articulo</h3>
+          <p style="font-family: times new roman">
+            It's a long way to the top if you wanna rock 'n' roll
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <h3>Articulo</h3>
+          <p style="font-family: Verdana">
+            It's a long way to the top if you wanna rock 'n' roll
+          </p>
+        </div>
+        <div class=" col-xs-12 col-sm-6 col-md-3">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <h3>Articulo</h3>
+          <p style="font-family: consolas">
+            It's a long way to the top if you wanna rock 'n' roll
+          </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <h3>Articulo</h3>
+        <p style="font-family: consolas">
+          It's a long way to the top if you wanna rock 'n' roll
+        </p>
+        <div data-href="https://www.facebook.com/Loteria.GG" data-width="16" data-show-faces="false" data-share="true" class="fb-like fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=113869198637480&amp;container_width=613&amp;href=https%3A%2F%2Fwww.facebook.com%2FLoteria.GG&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;width=20"><span style="vertical-align: bottom; width: 225px; height: 56px;"><iframe name="f14aa782ec2d5a8" width="20px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.8/plugins/like.php?app_id=113869198637480&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FfTmIQU3LxvB.js%3Fversion%3D42%23cb%3Df33c699bace10c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff2b5efb1b651bd8%26relation%3Dparent.parent&amp;container_width=613&amp;href=https%3A%2F%2Fwww.facebook.com%2FLoteria.GG&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;width=20" style="border: none; visibility: visible; width: 225px; height: 56px;" class=""></iframe></span></div>
+
+        </div>
+    </div>
+
+      <footer class="navbar navbar-fixed-bottom">
+
+        <div class="container">
+          <h4>Made by the Resyst ® Softwares™ team.</h4>
+
+            <h5>
+              © 2016 Resyst Softwares. All rights reserved.
+            </h5>
+
+
+          </div>
+
+      </footer>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
