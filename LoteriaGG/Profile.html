@@ -5,21 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>LoteriaGG</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Acerca de</title>
+    <link href="css/estiloPerfil.css" rel="stylesheet"></link>
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
   </head>
   <body>
-    <!-- Load Facebook SDK for JavaScript -->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-
     <header>
 
 
@@ -37,9 +27,9 @@
         			</div>
         			<div id="navbar" class="collapse navbar-collapse">
         				<ul class="nav navbar-nav">
-        					<li class="active"><a href="index.html">Inicio</a></li>
+        					<li><a href="index.html">Inicio</a></li>
         					<li><a href="about.html">Acerca de</a></li>
-                  <li><a href="Profile.html">Mi perfil</a></li>
+                  <li class="active"><a href="Profile.html">Mi perfil</a></li>
         				</ul>
 
         				<ul class="nav navbar-nav navbar-right">
@@ -48,11 +38,11 @@
                             <li class="dropdown">
 
 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="caret"></span></a>
+                                <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                                     <div class="col-lg-12">
                                         <div class="text-center"><h3><b style="color:black">Registrarse</b></h3></div>
-        								<form id="ajax-register-form" action="php/registro.php" method="post" role="form" autocomplete="off">
+        								<form id="ajax-register-form" action="http://phpoll.com/register/process" method="post" role="form" autocomplete="off">
         									<div class="form-group">
         										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
         									</div>
@@ -78,11 +68,11 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Iniciar sesión <span class="caret"></span></a>
+                                <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Iniciar sesión <span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
                                     <div class="col-lg-12">
                                         <div class="text-center"><h3><b style="color:black">Iniciar sesión</b></h3></div>
-                                        <form id="ajax-login-form" action="php/login.php" method="post" role="form" autocomplete="off">
+                                        <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
                                             <div class="form-group">
 
                                                 <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="" autocomplete="off">
@@ -128,6 +118,8 @@
 
     </header>
 
+
+
     <div class="main container-fluid jumbotron myBackground">
       <section class="row">
         <article class="col-xs-12 col-sm-6 col-md-8 col-lg-12">
@@ -140,36 +132,6 @@
         </article>
 
       </section>
-      <div class="row">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="col-xs-12 col-sm-6">
-
-        </div>
-        <div class="col-xs-12 col-sm-6">
-
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-
-        </div>
-
-
-    </div>
-
       <footer class="navbar navbar-fixed-bottom">
 
         <div class="container">
@@ -197,8 +159,7 @@
 
       </footer>
 
-
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+          <script src="js/jquery.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+        </body>
+      </html>
