@@ -1,0 +1,9 @@
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\bin\Debug\Negocio.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\bin\Debug\Negocio.pdb
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\bin\Debug\Datos.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\bin\Debug\EntityFramework.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\bin\Debug\Datos.pdb
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\bin\Debug\EntityFramework.xml
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\obj\Debug\Negocio.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\Negocio\obj\Debug\Negocio.pdb

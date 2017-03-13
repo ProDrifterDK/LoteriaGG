@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LOTERIA_GGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LOTERIA_GGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_USUARIO" EntityType="LOTERIA_GGModel.TBL_USUARIO" />
+    <EntitySet Name="TBL_ADMIN" EntityType="LOTERIA_GGModel.TBL_ADMIN" />
+    <EntitySet Name="TBL_SORTEO" EntityType="LOTERIA_GGModel.TBL_SORTEO" />
+    <AssociationSet Name="FK_TBL_ADMIN_TBL_USUARIO" Association="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO1" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO1">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO10" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO10">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO11" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO11">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO12" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO12">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO13" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO13">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO14" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO14">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO15" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO15">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO16" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO16">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO17" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO17">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO18" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO18">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO19" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO19">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO2" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO2">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO3" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO3">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO4" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO4">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO5" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO5">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO6" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO6">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO7" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO7">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO8" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO8">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SORTEO_TBL_USUARIO9" Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO9">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TBL_USUARIO">
+    <Key>
+      <PropertyRef Name="USU_ID" />
+    </Key>
+    <Property Name="USU_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USU_NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USU_APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USU_ACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USU_PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USU_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USU_SUMMONER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USU_CODIGO_VERIFICAION" Type="Guid" />
+    <Property Name="USU_VERIFICADO" Type="Boolean" />
+    <NavigationProperty Name="TBL_ADMIN" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
+    <NavigationProperty Name="TBL_SORTEO" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO1" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO1" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO2" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO10" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO3" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO11" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO4" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO12" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO5" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO13" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO6" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO14" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO7" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO15" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO8" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO16" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO9" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO17" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO10" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO18" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO11" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO19" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO12" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO2" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO13" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO3" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO14" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO4" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO15" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO5" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO16" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO6" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO17" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO7" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO18" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO8" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+    <NavigationProperty Name="TBL_SORTEO19" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO9" FromRole="TBL_USUARIO" ToRole="TBL_SORTEO" />
+  </EntityType>
+  <EntityType Name="TBL_ADMIN">
+    <Key>
+      <PropertyRef Name="ADM_ID" />
+    </Key>
+    <Property Name="ADM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USU_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_ADMIN" ToRole="TBL_USUARIO" />
+  </EntityType>
+  <EntityType Name="TBL_SORTEO">
+    <Key>
+      <PropertyRef Name="SOR_ID" />
+    </Key>
+    <Property Name="SOR_ID" Type="Int64" Nullable="false" />
+    <Property Name="USU_ID_1" Type="Int64" />
+    <Property Name="USU_ID_2" Type="Int64" />
+    <Property Name="USU_ID_3" Type="Int64" />
+    <Property Name="USU_ID_4" Type="Int64" />
+    <Property Name="USU_ID_5" Type="Int64" />
+    <Property Name="USU_ID_6" Type="Int64" />
+    <Property Name="USU_ID_7" Type="Int64" />
+    <Property Name="USU_ID_8" Type="Int64" />
+    <Property Name="USU_ID_9" Type="Int64" />
+    <Property Name="USU_ID_10" Type="Int64" />
+    <Property Name="USU_ID_11" Type="Int64" />
+    <Property Name="USU_ID_12" Type="Int64" />
+    <Property Name="USU_ID_13" Type="Int64" />
+    <Property Name="USU_ID_14" Type="Int64" />
+    <Property Name="USU_ID_15" Type="Int64" />
+    <Property Name="USU_ID_16" Type="Int64" />
+    <Property Name="USU_ID_17" Type="Int64" />
+    <Property Name="USU_ID_18" Type="Int64" />
+    <Property Name="USU_ID_19" Type="Int64" />
+    <Property Name="USU_ID_20" Type="Int64" />
+    <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO1" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO1" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO2" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO10" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO3" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO11" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO4" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO12" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO5" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO13" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO6" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO14" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO7" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO15" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO8" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO16" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO9" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO17" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO10" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO18" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO11" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO19" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO12" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO2" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO13" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO3" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO14" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO4" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO15" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO5" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO16" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO6" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO17" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO7" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO18" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO8" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <NavigationProperty Name="TBL_USUARIO19" Relationship="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO9" FromRole="TBL_SORTEO" ToRole="TBL_USUARIO" />
+    <Property Name="SOR_LLENO" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TBL_ADMIN_TBL_USUARIO">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="1" />
+    <End Type="LOTERIA_GGModel.TBL_ADMIN" Role="TBL_ADMIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_ADMIN">
+        <PropertyRef Name="USU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO1">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO10">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_11" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO11">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_12" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO12">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_13" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO13">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_14" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO14">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_15" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO15">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_16" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO16">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_17" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO17">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_18" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO18">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_19" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO19">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_20" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO2">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="SOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO3">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO4">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO5">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_6" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO6">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_7" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO7">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_8" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO8">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_9" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SORTEO_TBL_USUARIO9">
+    <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
+    <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_SORTEO">
+        <PropertyRef Name="USU_ID_10" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

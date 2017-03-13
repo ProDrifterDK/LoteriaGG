@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LOTERIA_GGModelStoreContainer" CdmEntityContainer="LOTERIA_GGEntities">
+    <EntitySetMapping Name="TBL_USUARIO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
+        <MappingFragment StoreEntitySet="TBL_USUARIO">
+          <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
+          <ScalarProperty Name="USU_CODIGO_VERIFICAION" ColumnName="USU_CODIGO_VERIFICAION" />
+          <ScalarProperty Name="USU_SUMMONER" ColumnName="USU_SUMMONER" />
+          <ScalarProperty Name="USU_EMAIL" ColumnName="USU_EMAIL" />
+          <ScalarProperty Name="USU_PASSWORD" ColumnName="USU_PASSWORD" />
+          <ScalarProperty Name="USU_ACCOUNT" ColumnName="USU_ACCOUNT" />
+          <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
+          <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ADMIN">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_ADMIN">
+        <MappingFragment StoreEntitySet="TBL_ADMIN">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SORTEO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
+        <MappingFragment StoreEntitySet="TBL_SORTEO">
+          <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
+          <ScalarProperty Name="USU_ID_20" ColumnName="USU_ID_20" />
+          <ScalarProperty Name="USU_ID_19" ColumnName="USU_ID_19" />
+          <ScalarProperty Name="USU_ID_18" ColumnName="USU_ID_18" />
+          <ScalarProperty Name="USU_ID_17" ColumnName="USU_ID_17" />
+          <ScalarProperty Name="USU_ID_16" ColumnName="USU_ID_16" />
+          <ScalarProperty Name="USU_ID_15" ColumnName="USU_ID_15" />
+          <ScalarProperty Name="USU_ID_14" ColumnName="USU_ID_14" />
+          <ScalarProperty Name="USU_ID_13" ColumnName="USU_ID_13" />
+          <ScalarProperty Name="USU_ID_12" ColumnName="USU_ID_12" />
+          <ScalarProperty Name="USU_ID_11" ColumnName="USU_ID_11" />
+          <ScalarProperty Name="USU_ID_10" ColumnName="USU_ID_10" />
+          <ScalarProperty Name="USU_ID_9" ColumnName="USU_ID_9" />
+          <ScalarProperty Name="USU_ID_8" ColumnName="USU_ID_8" />
+          <ScalarProperty Name="USU_ID_7" ColumnName="USU_ID_7" />
+          <ScalarProperty Name="USU_ID_6" ColumnName="USU_ID_6" />
+          <ScalarProperty Name="USU_ID_5" ColumnName="USU_ID_5" />
+          <ScalarProperty Name="USU_ID_4" ColumnName="USU_ID_4" />
+          <ScalarProperty Name="USU_ID_3" ColumnName="USU_ID_3" />
+          <ScalarProperty Name="USU_ID_2" ColumnName="USU_ID_2" />
+          <ScalarProperty Name="USU_ID_1" ColumnName="USU_ID_1" />
+          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
