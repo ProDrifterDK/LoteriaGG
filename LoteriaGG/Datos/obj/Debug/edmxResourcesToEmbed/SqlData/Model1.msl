@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LOTERIA_GGModelStoreContainer" CdmEntityContainer="LOTERIA_GGEntities">
+    <EntitySetMapping Name="TBL_ADMIN">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_ADMIN">
+        <MappingFragment StoreEntitySet="TBL_ADMIN">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NUB_SORTEO_USUARIO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.NUB_SORTEO_USUARIO">
+        <MappingFragment StoreEntitySet="NUB_SORTEO_USUARIO">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
+          <ScalarProperty Name="NUB_ID" ColumnName="NUB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SORTEO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
+        <MappingFragment StoreEntitySet="TBL_SORTEO">
+          <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
+          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USUARIO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
+        <MappingFragment StoreEntitySet="TBL_USUARIO">
+          <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
+          <ScalarProperty Name="USU_CODIGO_VERIFICAION" ColumnName="USU_CODIGO_VERIFICAION" />
+          <ScalarProperty Name="USU_SUMMONER" ColumnName="USU_SUMMONER" />
+          <ScalarProperty Name="USU_EMAIL" ColumnName="USU_EMAIL" />
+          <ScalarProperty Name="USU_PASSWORD" ColumnName="USU_PASSWORD" />
+          <ScalarProperty Name="USU_ACCOUNT" ColumnName="USU_ACCOUNT" />
+          <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
+          <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
