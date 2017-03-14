@@ -4,7 +4,7 @@ using Datos.SqlData;
 using System.Net.Mail;
 using System.Net;
 //Code by Alcelon -- Resyst --
-//CODE 2
+//CODE 3
 namespace Datos
 {
     public static class DatosPersonas
