@@ -1,0 +1,156 @@
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\ApplicationInsights.config
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\csc.exe
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\System.Collections.Immutable.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\vbc.exe
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\VBCSCompiler.exe
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\roslyn\VBCSCompiler.exe.config
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\LoteriaGG.dll.config
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\LoteriaGG.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\LoteriaGG.pdb
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Web.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.WindowsServer.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.ApplicationInsights.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.Web.Infrastructure.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Razor.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Web.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.AI.WindowsServer.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.ApplicationInsights.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Razor.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.xml
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.dll
+c:\users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.pdb
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Negocio.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Datos.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\EntityFramework.dll
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Negocio.pdb
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\Datos.pdb
+C:\Users\danie\onedrive\documentos\visual studio 2015\Projects\LoteriaGG\LoteriaGG\bin\EntityFramework.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\ApplicationInsights.config
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\csc.exe
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\vbc.exe
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\VBCSCompiler.exe
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\LoteriaGG.dll.config
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\LoteriaGG.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\LoteriaGG.pdb
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Datos.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Web.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.ApplicationInsights.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Negocio.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Razor.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\EntityFramework.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Datos.pdb
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Negocio.pdb
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Web.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.ApplicationInsights.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Razor.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\bin\EntityFramework.xml
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.dll
+C:\Users\danie\Source\Repos\loteriagg\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.pdb
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\ApplicationInsights.config
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\csc.exe
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\vbc.exe
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\VBCSCompiler.exe
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\LoteriaGG.dll.config
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\LoteriaGG.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\LoteriaGG.pdb
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Datos.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Web.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.ApplicationInsights.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Negocio.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Razor.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\EntityFramework.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Datos.pdb
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Negocio.pdb
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.Web.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.ApplicationInsights.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Razor.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\bin\EntityFramework.xml
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.dll
+C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.pdb
