@@ -14,3 +14,11 @@ C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Datos\bin\Debug\EntityFra
 C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Datos\obj\Debug\Datos.dll
 C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Datos\obj\Debug\Datos.pdb
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\Datos.dll.config
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\Datos.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\Datos.pdb
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\EntityFramework.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\EntityFramework.xml
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.pdb

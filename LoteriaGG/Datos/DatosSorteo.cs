@@ -24,17 +24,15 @@ namespace Datos
 
                     if(sorteo == null)
                     {
-                        sorteo = new TBL_SORTEO();
-                        sorteo.SOR_LLENO = false;
-                        db.TBL_SORTEO.Add(sorteo);
+                        throw new Exception("Lo sentimos, no hay sorteos disponibles");
                     }
 
                     #region Añadir Usuario
-                    var inscripciones = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usuario.USU_ID && o.SOR_ID == sorteo.SOR_ID).ToList();
-                    if(inscripciones.Count > 3)
-                    {
-                        throw new Exception("Ya esta 3 veces en este sorteo.");
-                    }
+                    //var inscripciones = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usuario.USU_ID && o.SOR_ID == sorteo.SOR_ID).ToList();
+                    //if(inscripciones.Count > 3)
+                    //{
+                    //    throw new Exception("Ya esta 3 veces en este sorteo.");
+                    //}
                     var nubSor = new NUB_SORTEO_USUARIO();
 
                     nubSor.SOR_ID = sorteo.SOR_ID;

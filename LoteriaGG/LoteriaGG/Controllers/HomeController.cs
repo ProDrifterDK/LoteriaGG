@@ -61,7 +61,7 @@ namespace LoteriaGG.Controllers
 
         public ActionResult LogOut()
         {
-            Session["LogedIn"] = "False";
+            Session.RemoveAll();
             return View("Index");
         }
 

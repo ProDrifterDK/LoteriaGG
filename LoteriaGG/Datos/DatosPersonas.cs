@@ -52,7 +52,7 @@ namespace Datos
             MailMessage mm = new MailMessage();
             mm.To.Add(new MailAddress(to));
             mm.From = new MailAddress("loteriaggnoreply@gmail.com");
-            mm.Body = "<h3>Bienvenido a LoteriaGG" + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: "+ username + "</p> <p>Tu direccion de Email: " + to + "</p>" + 
+            mm.Body = "<h3>Bienvenido a LoteriaGG, " + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: "+ username + "</p> <p>Tu direccion de Email: " + to + "</p>" + 
                 "<p>Para verificar el email debes presionar el siguiente link</p><a href=" + "\"http://localhost:54639/Home/Verification?us="+ username + "&verif=" + confirmationToken + "\""+">Preciona aquí para verificar</a>"
                 + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://localhost:54639/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
             mm.IsBodyHtml = true;

@@ -1,6 +1,6 @@
 ﻿
 body {
-  background: url("Images/Thresh.jpg") no-repeat center center fixed;
+  background: url("Images/Blitz.jpg") no-repeat center center fixed;
   background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,7 +30,7 @@ ul.dropdown-lr {
 	}
 }
 footer {
-	background:rgba(70, 226, 169, 0.51);
-	color:rgba(10, 10, 50, 1);
+	background:rgba(70, 226, 169, 0.21);
+	color:#000;
 }
 

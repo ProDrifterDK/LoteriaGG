@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatosAdmin.cs" />
     <Compile Include="DatosPersonas.cs" />
     <Compile Include="DatosSorteo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

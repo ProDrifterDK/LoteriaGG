@@ -16,3 +16,12 @@ C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Negocio\bin\Debug\EntityF
 C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Negocio\obj\Debug\Negocio.dll
 C:\Users\danie\Source\Repos\Resyst\loteriagg\LoteriaGG\Negocio\obj\Debug\Negocio.pdb
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Debug\Negocio.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Debug\Negocio.pdb
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Debug\Datos.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Debug\EntityFramework.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Debug\Datos.pdb
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Debug\EntityFramework.xml
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\obj\Debug\Negocio.dll
+C:\Users\danie\Source\Repos\Resyst\LoteriaGG\Negocio\obj\Debug\Negocio.pdb
