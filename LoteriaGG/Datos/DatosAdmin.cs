@@ -12,7 +12,7 @@ namespace Datos
 {
     public static class DatosAdmin
     {
-        public static bool IsAdmin(string usuario)
+        public static long IsAdmin(string usuario)
         {
             try
             {
@@ -27,11 +27,36 @@ namespace Datos
 
                     if(userAdmin != null)
                     {
-                        return true;
+                        return user.USU_ID;
                     }
                 }
             }
             catch (Exception)
+            {
+
+            }
+
+            return -1;
+        }
+
+        public static bool IniciarTorneo(long UsrId, DateTime inicio, DateTime fin)
+        {
+            try
+            {
+                using(var db = new LOTERIA_GGEntities())
+                {
+                    var newSort = new TBL_SORTEO { SOR_LLENO = false};
+                    
+                    newSort.SOR_CREADO_POR = UsrId;
+                    newSort.SOR_FECHA_FIN = fin;
+                    newSort.SOR_FECHA_INICIO = inicio;
+
+                    db.TBL_SORTEO.Add(newSort);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
             {
 
             }

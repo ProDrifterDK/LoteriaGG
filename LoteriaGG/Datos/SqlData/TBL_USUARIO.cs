@@ -32,6 +32,5 @@ namespace Datos.SqlData
     
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual ICollection<TBL_ADMIN> TBL_ADMIN { get; set; }
-        public virtual TBL_SORTEO TBL_SORTEO { get; set; }
     }
 }

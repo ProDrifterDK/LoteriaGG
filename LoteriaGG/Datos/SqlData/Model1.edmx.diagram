@@ -7,12 +7,11 @@
       <Diagram DiagramId="d28f7a0f250a4b33b0e1a6d716c5e9c6" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_ADMIN" Width="1.5" PointX="10.375" PointY="4.625" />
         <EntityTypeShape EntityType="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Width="1.5" PointX="8.875" PointY="7.125" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="6.875" PointY="7.25" />
+        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="6.875" PointY="8.5" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_USUARIO" Width="1.5" PointX="4.75" PointY="5.25" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" />
-        <AssociationConnector Association="LOTERIA_GGModel.FK_TBL_SORTEO_TBL_USUARIO2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

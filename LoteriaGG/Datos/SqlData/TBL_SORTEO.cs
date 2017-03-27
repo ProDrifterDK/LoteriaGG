@@ -21,8 +21,11 @@ namespace Datos.SqlData
     
         public long SOR_ID { get; set; }
         public bool SOR_LLENO { get; set; }
+        public Nullable<System.DateTime> SOR_FECHA_INICIO { get; set; }
+        public Nullable<System.DateTime> SOR_FECHA_FIN { get; set; }
+        public Nullable<long> SOR_CREADO_POR { get; set; }
+        public Nullable<long> SOR_MODIFICADO_POR { get; set; }
     
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
-        public virtual TBL_USUARIO TBL_USUARIO { get; set; }
     }
 }

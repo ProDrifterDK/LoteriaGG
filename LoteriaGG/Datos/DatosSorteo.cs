@@ -20,7 +20,7 @@ namespace Datos
                 {
                     var usuario = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
 
-                    var sorteo = db.TBL_SORTEO.FirstOrDefault(o => o.SOR_LLENO);
+                    var sorteo = db.TBL_SORTEO.FirstOrDefault(o => !o.SOR_LLENO);
 
                     if(sorteo == null)
                     {
@@ -33,10 +33,8 @@ namespace Datos
                     //{
                     //    throw new Exception("Ya esta 3 veces en este sorteo.");
                     //}
-                    var nubSor = new NUB_SORTEO_USUARIO();
+                    var nubSor = new NUB_SORTEO_USUARIO { SOR_ID = sorteo.SOR_ID, USU_ID = usuario.USU_ID};
 
-                    nubSor.SOR_ID = sorteo.SOR_ID;
-                    nubSor.USU_ID = usuario.USU_ID;
 
                     db.NUB_SORTEO_USUARIO.Add(nubSor);
                     //if (sorteo.USU_ID_1 == null)
@@ -143,11 +141,12 @@ namespace Datos
                     #endregion
 
                     db.SaveChanges();
+                    return "Inscrito!";
                 }
             }
             catch(Exception ex)
             {
-                return "Hubo un error. " + ex.Message;
+                return "Hubo un error. Contacte con un administrador";
             }
 
             return "Error";

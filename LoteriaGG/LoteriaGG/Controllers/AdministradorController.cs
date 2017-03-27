@@ -17,10 +17,26 @@ namespace LoteriaGG.Administrador.Controllers
             {
                 return RedirectToAction("Index", "Home", new { });
             }
-            if (!N_Admin.IsAdmin(user)){
+            var usuAdm = N_Admin.IsAdmin(user);
+            if (usuAdm == -1){
                 return RedirectToAction("Index", "Home", new { });
             }
+
+            Session["adm"] = usuAdm;   
+
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(string fin)
+        {
+            fin = fin.Replace(" ", "-2016 ") + ":00";
+            var d = N_Admin.IniciarToreneo(long.Parse(Session["adm"].ToString()), fin);
+            if (d)
+                ViewBag.Mensaje = "TOO BIEN XUXETUMARE :D";
+            else
+                ViewBag.Mensaje = "NO PA NA LOQUITO, PREGUNTALE AL DANIEL Q WA PAZÓ";
+            return View();
+        }   
     }
 }
