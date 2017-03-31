@@ -21,6 +21,10 @@
     <EntitySetMapping Name="TBL_SORTEO">
       <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
         <MappingFragment StoreEntitySet="TBL_SORTEO">
+          <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
+          <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
+          <ScalarProperty Name="SOR_FECHA_FIN" ColumnName="SOR_FECHA_FIN" />
+          <ScalarProperty Name="SOR_FECHA_INICIO" ColumnName="SOR_FECHA_INICIO" />
           <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
           <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
         </MappingFragment>
