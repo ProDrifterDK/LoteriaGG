@@ -1,4 +1,9 @@
-﻿<head>
+﻿@using Datos.SqlData;
+@{ 
+    List<TBL_SORTEO> lista = ViewBag.Sorteos;
+}
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +21,21 @@
             <div class="row">
                 <div class="col-lg-1">
                 </div>
-                <a href="/Sorteo/IngresarSorteo" type="button" class="btn btn-default col-lg-10" style="background-color:rgba(255, 112, 85, 0.90);border-color:#064e16;color:#064e16"><b>Inscribirse</b></a>
+                <table>
+                    <thead>Sorteos Activos</thead>
+                    <tbody>
+                        <tr><td>Sorteo</td><td>Fecha Inicio</td><td>Fecha de Termino</td></tr>
+                        @if (lista != null)
+                        {
+                            foreach (var item in lista)
+                            {
+                                <tr><td>@item.SOR_ID</td><td>@item.SOR_FECHA_INICIO</td><td>@item.SOR_FECHA_FIN</td><td></td></tr>
+                            }
+                        }
+                        
+                    </tbody>
+                </table>
+                @*<a href="/Sorteo/IngresarSorteo" type="button" class="btn btn-default col-lg-10" style="background-color:rgba(255, 112, 85, 0.90);border-color:#064e16;color:#064e16"><b>Inscribirse</b></a>*@
             </div>
             <br />
             <br />

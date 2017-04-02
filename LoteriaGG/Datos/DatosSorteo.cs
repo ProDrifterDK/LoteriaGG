@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Net;
 using System;
+using System.Collections.Generic;
 
 namespace Datos
 {
@@ -43,6 +44,21 @@ namespace Datos
             catch(Exception ex)
             {
                 return "Hubo un error. Contacte con un administrador";
+            }
+        }
+
+        public static List<TBL_SORTEO> ObtenerSorteo()
+        {
+            try
+            {
+                using(var db = new LOTERIA_GGEntities())
+                {
+                    return db.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN.Value.AddHours(-1) <= DateTime.Now && !o.SOR_LLENO).ToList();
+                }
+            }
+            catch(Exception ex)
+            {
+                return null;
             }
         }
     }

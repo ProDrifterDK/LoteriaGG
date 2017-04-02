@@ -30,7 +30,17 @@ namespace LoteriaGG.Administrador.Controllers
         [HttpPost]
         public ActionResult Index(string fin)
         {
-            fin = fin.Replace(" ", "-2016 ") + ":00";
+            var user = Session["User"]?.ToString();
+            if (user == null)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+            var usuAdm = N_Admin.IsAdmin(user);
+            if (usuAdm == -1)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+            fin = fin.Replace(" ", "-2017 ") + ":00";
             var d = N_Admin.IniciarToreneo(long.Parse(Session["adm"].ToString()), fin);
             if (d)
                 ViewBag.Mensaje = "TOO BIEN XUXETUMARE :D";

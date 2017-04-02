@@ -62,7 +62,8 @@ namespace LoteriaGG.Controllers
         public ActionResult LogOut()
         {
             Session.RemoveAll();
-            return View("Index");
+            Session["LogedIn"] = "";
+            return RedirectToAction("Index");
         }
 
         public ActionResult Verification(string us, string verif)
@@ -77,7 +78,15 @@ namespace LoteriaGG.Controllers
             if (us == "" && verif == "")
                 ViewBag.ret = null;
             else
-                ViewBag.ret = Class1.Verificar(us, verif);
+            {
+                if(us != null && verif != null)
+                {
+                    Session["LogedIn"] = "True";
+                    Session["User"] = Class1.Verificar(us, verif).USU_ACCOUNT;
+                    ViewBag.ret = true;
+                }
+                ViewBag.ret = null;
+            }
             return View();
         }
     }

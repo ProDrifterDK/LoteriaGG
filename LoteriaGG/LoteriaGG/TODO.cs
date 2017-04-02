@@ -3,7 +3,7 @@ TODO:
 
 Register-Login{
     Condiciones para crear la cuenta
-    bienvenido al loguearse
+    "bienvenido *nombre*" al loguearse
 }
 
 Perfil{
@@ -20,5 +20,15 @@ PaginaGeneral{
     Agregar página para ver sorteos anteriores
 
     transbank?
+}
+
+Incripción{
+    Cambiar página de inscripción a un sorteo
+    Sorteos gratis
+    
+}
+
+Sorteo{
+    Cancelar Sorteo.
 }
 */

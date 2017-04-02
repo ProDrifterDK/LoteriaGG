@@ -50,6 +50,10 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/Home/Index">Inicio</a></li>
                         <li><a href="/About/Index">Acerca de</a></li>
+                        @if (Session["LogedIn"].ToString() == "True")
+                        {
+                            <li><a href="/Sorteo/">Inscribirse</a></li>
+                        }
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -64,9 +68,9 @@
                                         <div class="col-lg-12" style="border-bottom:1px solid #ffff61">
                                             <h4><a href="/Profile/Index" class="pull-right"><b style="color:#90969d">Perfil </b><span style="color:#032c8a" class="glyphicon glyphicon-user"></span></a><br /></h4>
                                         </div>
-                                        <div class="col-lg-12" style="border-bottom:1px solid #ffff61">
+                                        @*<div class="col-lg-12" style="border-bottom:1px solid #ffff61">
                                             <h4><a href="/Sorteo/" class="pull-right"><b style="color:#90969d">Inscribirse </b><span style="color:white" class="glyphicon glyphicon-list-alt"></span></a><br /></h4>
-                                        </div>
+                                        </div>*@
                                         <div class="col-lg-12">
                                             <h4><a href="/Home/LogOut" class="pull-right"><b style="color:#90969d">Cerrar Sesión </b><span style="color:#ffff61" class="glyphicon glyphicon-off"></span></a><br /></h4>
                                         </div>

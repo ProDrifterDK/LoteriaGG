@@ -65,7 +65,7 @@ namespace Datos
             smcl.Send(mm);
         }
 
-        public static bool Verificar(string user, string verification)
+        public static TBL_USUARIO Verificar(string user, string verification)
         {
             try
             {
@@ -78,12 +78,12 @@ namespace Datos
                         db.SaveChanges();
                     }
 
-                    return true;
+                    return db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user && o.USU_CODIGO_VERIFICAION == dsa);
                 }
             }
             catch(Exception ex)
             {
-                return false;
+                return null;
             }
         }
         

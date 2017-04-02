@@ -20,6 +20,8 @@ namespace LoteriaGG.Controllers
             {
                 ViewBag.Mensaje = msj;
             }
+
+            ViewBag.Sorteos = N_Sorteo.Sorteos();
             return View();
         }
 

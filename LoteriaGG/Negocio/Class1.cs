@@ -24,7 +24,7 @@ namespace Negocio
             return DatosPersonas.LogIn(usu, pas);
         }
 
-        public static bool Verificar(string usu, string codigo)
+        public static TBL_USUARIO Verificar(string usu, string codigo)
         {
             return DatosPersonas.Verificar(usu, codigo);
         }
