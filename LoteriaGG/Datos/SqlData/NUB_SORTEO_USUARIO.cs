@@ -15,8 +15,8 @@ namespace Datos.SqlData
     public partial class NUB_SORTEO_USUARIO
     {
         public long NUB_ID { get; set; }
-        public Nullable<long> SOR_ID { get; set; }
-        public Nullable<long> USU_ID { get; set; }
+        public long SOR_ID { get; set; }
+        public long USU_ID { get; set; }
     
         public virtual TBL_SORTEO TBL_SORTEO { get; set; }
         public virtual TBL_USUARIO TBL_USUARIO { get; set; }

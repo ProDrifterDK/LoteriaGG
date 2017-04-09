@@ -87,7 +87,7 @@ namespace LoteriaGG.Controllers
                 }
                 ViewBag.ret = null;
             }
-            return View();
+            return RedirectToAction("SG");
         }
     }
 }

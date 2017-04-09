@@ -25,9 +25,10 @@ namespace Datos.SqlData
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<TBL_ADMIN> TBL_ADMIN { get; set; }
         public DbSet<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
+        public DbSet<TBL_ADMIN> TBL_ADMIN { get; set; }
         public DbSet<TBL_SORTEO> TBL_SORTEO { get; set; }
+        public DbSet<TBL_SORTEO_GRATIS> TBL_SORTEO_GRATIS { get; set; }
         public DbSet<TBL_USUARIO> TBL_USUARIO { get; set; }
     }
 }

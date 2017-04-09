@@ -5,15 +5,15 @@
       <PropertyRef Name="NUB_ID" />
     </Key>
     <Property Name="NUB_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SOR_ID" Type="bigint" />
-    <Property Name="USU_ID" Type="bigint" />
+    <Property Name="SOR_ID" Type="bigint" Nullable="false" />
+    <Property Name="USU_ID" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_ADMIN">
     <Key>
       <PropertyRef Name="ADM_ID" />
     </Key>
     <Property Name="ADM_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="USU_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="USU_ID" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_SORTEO">
     <Key>
@@ -25,6 +25,15 @@
     <Property Name="SOR_FECHA_FIN" Type="date" />
     <Property Name="SOR_CREADO_POR" Type="bigint" />
     <Property Name="SOR_MODIFICADO_POR" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TBL_SORTEO_GRATIS">
+    <Key>
+      <PropertyRef Name="SG_ID" />
+    </Key>
+    <Property Name="SG_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SG_CODIGO" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SG_VALIDO" Type="bit" Nullable="false" />
+    <Property Name="USU_ID" Type="bigint" />
   </EntityType>
   <EntityType Name="TBL_USUARIO">
     <Key>
@@ -39,21 +48,22 @@
     <Property Name="USU_SUMMONER" Type="varchar" MaxLength="50" />
     <Property Name="USU_CODIGO_VERIFICAION" Type="uniqueidentifier" />
     <Property Name="USU_VERIFICADO" Type="bit" />
+    <Property Name="USU_SOR_DISP" Type="int" />
   </EntityType>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
-    <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="0..1" />
+    <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />
     <End Role="NUB_SORTEO_USUARIO" Type="Self.NUB_SORTEO_USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TBL_SORTEO">
         <PropertyRef Name="SOR_ID" />
       </Principal>
       <Dependent Role="NUB_SORTEO_USUARIO">
-        <PropertyRef Name="USU_ID" />
+        <PropertyRef Name="SOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_USUARIO">
-    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="0..1" />
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
     <End Role="NUB_SORTEO_USUARIO" Type="Self.NUB_SORTEO_USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TBL_USUARIO">
@@ -80,6 +90,7 @@
     <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="Self.TBL_SORTEO_GRATIS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_USUARIO" EntityType="Self.TBL_USUARIO" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="Self.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
       <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />

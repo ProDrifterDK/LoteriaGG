@@ -239,7 +239,6 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Razo
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Deployment.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.dll
-C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\Datos.pdb
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\Datos.dll.config
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\Negocio.pdb
@@ -259,3 +258,6 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.pdb
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.SqlServer.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.SqlServer.xml

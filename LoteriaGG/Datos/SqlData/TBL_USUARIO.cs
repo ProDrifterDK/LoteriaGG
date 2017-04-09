@@ -29,6 +29,7 @@ namespace Datos.SqlData
         public string USU_SUMMONER { get; set; }
         public Nullable<System.Guid> USU_CODIGO_VERIFICAION { get; set; }
         public Nullable<bool> USU_VERIFICADO { get; set; }
+        public Nullable<int> USU_SOR_DISP { get; set; }
     
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual ICollection<TBL_ADMIN> TBL_ADMIN { get; set; }

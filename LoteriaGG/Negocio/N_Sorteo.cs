@@ -10,9 +10,9 @@ namespace Negocio
 {
     public static class N_Sorteo
     {
-        public static string Inscripcion(string us)
+        public static string Inscripcion(string us, int sorteo)
         {
-            return DatosSorteo.Inscripcion(us);
+            return DatosSorteo.Inscripcion(us, sorteo);
         }
 
         public static List<TBL_SORTEO> Sorteos()

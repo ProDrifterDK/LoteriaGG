@@ -13,7 +13,7 @@ namespace Datos
 {
     public static class DatosSorteo
     {
-        public static string Inscripcion(string user)
+        public static string Inscripcion(string user, int sorId)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace Datos
                 {
                     var usuario = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
 
-                    var sorteo = db.TBL_SORTEO.FirstOrDefault(o => !o.SOR_LLENO);
+                    var sorteo = db.TBL_SORTEO.FirstOrDefault(o => o.SOR_ID == sorId);
 
                     if(sorteo == null)
                     {

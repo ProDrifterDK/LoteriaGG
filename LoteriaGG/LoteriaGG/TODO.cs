@@ -29,6 +29,6 @@ Incripción{
 }
 
 Sorteo{
-    Cancelar Sorteo.
+    Subir mensaje de aviso
 }
 */
