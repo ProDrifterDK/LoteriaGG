@@ -1,0 +1,214 @@
+﻿@{ 
+    if (Session["LogedIn"] == null)
+    {
+        Url.Action("LogOut", "Home");
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/smartadmin-production-plugins.min.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/smartadmin-production.min.css" rel="stylesheet" type="text/css" />*@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Home/Index">LoteriaGG</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Home/Index">Inicio</a></li>
+                        <li><a href="/About/Index">Acerca de</a></li>
+                        @if (Session["LogedIn"].ToString() == "True")
+                        {
+                            <li><a href="/Sorteo/">Inscribirse</a></li>
+                        }
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        @if (Session["LogedIn"].ToString() == "True")
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["User"].ToString()<span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu" style="background-color:#222222">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-12" style="border-bottom:1px solid #ffff61">
+                                            <h4><a href="/Profile/Index" class="pull-right"><b style="color:#90969d">Perfil </b><span style="color:#032c8a" class="glyphicon glyphicon-user"></span></a><br /></h4>
+                                        </div>
+                                        @*<div class="col-lg-12" style="border-bottom:1px solid #ffff61">
+                                            <h4><a href="/Sorteo/" class="pull-right"><b style="color:#90969d">Inscribirse </b><span style="color:white" class="glyphicon glyphicon-list-alt"></span></a><br /></h4>
+                                        </div>*@
+                                        <div class="col-lg-12">
+                                            <h4><a href="/Home/LogOut" class="pull-right"><b style="color:#90969d">Cerrar Sesión </b><span style="color:#ffff61" class="glyphicon glyphicon-off"></span></a><br /></h4>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            @*<li>
+                                <a href=""
+                            </li>*@
+
+                        }
+                        else
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center"><h3><b style="color:black">Registrarse</b></h3></div>
+                                        <form id="ajax-register-form" action="/Home/Index" method="post" role="form" autocomplete="off">
+                                            <input type="hidden" name="type" value="registro" />
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="Nombre"  tabindex="2" class="form-control" placeholder="Nombre">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="Apellido"tabindex="2" class="form-control" placeholder="Apellido">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="NombreDeInvocador" tabindex="2" class="form-control" placeholder="Nombre de invocador">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="confirmPassword" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-6 col-xs-offset-3">
+                                                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Aceptar">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Iniciar sesión <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center"><h3><b style="color:black">Iniciar sesión</b></h3></div>
+                                        <form id="ajax-login-form" action="/Home/Index" method="post" role="form" autocomplete="off">
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-7">
+                                                        <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                        <label for="remember"> <b style="color:black">Recuérdame</b></label>
+                                                    </div>
+                                                    <div class="col-xs-5 pull-right">
+                                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Entrar">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="text-center">
+                                                            <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        @RenderBody()
+    </div>
+</body>
+</html>
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/bootstrap.js"></script>
+<script src="~/scripts/SmartNotification.min.js"></script>
+<script src="~/Content/js/jquery.dataTables.min.js"></script>
+<link href="~/Content/js/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+
+        if ("@ViewBag.Mensaje") {
+            Alerta();
+        }
+    });
+    function Alerta() {
+        var mensaje = "@ViewBag.Mensaje";
+        if (mensaje == "Inscrito!") {
+            $.bigBox({
+                title: "Felicidades!",
+                content: mensaje,
+                color: "#5cb85c",
+                timeout: 4000,
+                icon: "glyphicon glyphicon-exclamation-sign",
+            });
+        } else {
+            $.bigBox({
+                title: "Error",
+                content: mensaje,
+                color: "#ac2727",
+                timeout: 4000,
+                icon: "glyphicon glyphicon-exclamation-sign",
+            });
+        }
+
+
+    }
+
+</script>

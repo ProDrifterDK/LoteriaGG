@@ -73,7 +73,13 @@ namespace LoteriaGG.Controllers
                         FInicio = item.SOR_FECHA_INICIO.ToString(),
                         FFin = item.SOR_FECHA_FIN.ToString(),
                         action =
-                        "<a href=\"/Sorteo/IngresarSorteo?sorteo=" + item.SOR_ID + "\" data-toggle=\"modal\" class=\"on-default edit-row text-cetner glyphicon glyphicon-pencil\" style=\"color:#5a1646\">Inscribirse</a>"
+                        "<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">"+
+                        "< input type = \"hidden\" name = \"cmd\" value = \"_s-xclick\" >"+
+                        "< input type = \"hidden\" name = \"sorteo\" value ="+ item.SOR_ID +">"+
+                        "< input type = \"hidden\" name = \"hosted_button_id\" value = \"397G378AZVW4C\" >" +
+                        "< input type = \"image\" src = \"https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif\" border = \"0\" name = \"submit\" alt = \"PayPal - The safer, easier way to pay online!\" >"+
+                        "< img alt = \"\" border = \"0\" src = \"https://www.paypalobjects.com/es_XC/i/scr/pixel.gif\" width = \"1\" height = \"1\" >"+
+                        "</ form >"
                     });
                 }
             }

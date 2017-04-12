@@ -1,0 +1,10 @@
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\Datos.dll.config
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\Datos.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\Datos.pdb
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\EntityFramework.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\EntityFramework.xml
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Release\Datos.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Release\Datos.pdb

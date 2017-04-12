@@ -11,59 +11,11 @@ namespace Datos
     {
         public static string CrearUsuario(string usuario, string pass, string nombre, string apellido, string email, string nombreDeInvocador)
         {
-            try
-            {
-                using(var dc = new LOTERIA_GGEntities())
-                {
-                    if(dc.TBL_USUARIO.FirstOrDefault(o=>o.USU_ACCOUNT == usuario) != null)
-                    {
-                        throw new Exception("Usuario ya registrado");
-                    }
-                    else if(dc.TBL_USUARIO.FirstOrDefault(o=>o.USU_EMAIL == email) != null)
-                    {
-                        throw new Exception("Email ya registrado");
-                    }
-                    var activationCode = Guid.NewGuid();
-
-                    var usu = new TBL_USUARIO();
-                    usu.USU_ACCOUNT = usuario;
-                    usu.USU_PASSWORD = pass;
-                    usu.USU_NOMBRE = nombre;
-                    usu.USU_APELLIDO = apellido;
-                    usu.USU_EMAIL = email;
-                    usu.USU_SUMMONER = nombreDeInvocador;
-                    usu.USU_CODIGO_VERIFICAION = activationCode;
-                    usu.USU_VERIFICADO = false;
-
-                    dc.TBL_USUARIO.Add(usu);
-                    dc.SaveChanges();
-                    SendEmailConfirmation(email, usuario, activationCode.ToString(), nombre);
-                }
-            }
-            catch(Exception ex)
-            {
-                return ex.Message + ex.InnerException ?? "";
-            }
+            
             return "success";
         }
 
-        private static void SendEmailConfirmation(string to, string username, string confirmationToken, string name)
-        {
-            MailMessage mm = new MailMessage();
-            mm.To.Add(new MailAddress(to));
-            mm.From = new MailAddress("loteriaggnoreply@gmail.com");
-            mm.Body = "<h3>Bienvenido a LoteriaGG, " + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: "+ username + "</p> <p>Tu direccion de Email: " + to + "</p>" + 
-                "<p>Para verificar el email debes presionar el siguiente link</p><a href=" + "\"http://localhost:54639/Home/Verification?us="+ username + "&verif=" + confirmationToken + "\""+">Preciona aquí para verificar</a>"
-                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://localhost:54639/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
-            mm.IsBodyHtml = true;
-            mm.Subject = "Verification";
-            SmtpClient smcl = new SmtpClient();
-            smcl.Host = "smtp.gmail.com";
-            smcl.Port = 587;
-            smcl.Credentials = new NetworkCredential("loteriaggnoreply@gmail.com", "123456789ad");
-            smcl.EnableSsl = true;
-            smcl.Send(mm);
-        }
+
 
         public static TBL_USUARIO Verificar(string user, string verification)
         {

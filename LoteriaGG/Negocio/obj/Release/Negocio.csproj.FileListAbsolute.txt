@@ -1,0 +1,10 @@
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\Negocio.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\Negocio.pdb
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\Datos.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\EntityFramework.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\Datos.pdb
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\Datos.dll.config
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\bin\Release\EntityFramework.xml
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\obj\Release\Negocio.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Negocio\obj\Release\Negocio.pdb
