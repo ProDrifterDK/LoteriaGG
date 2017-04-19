@@ -40,7 +40,21 @@
             <br />
         </div>
     </div>
-
+    <div class="row">
+        <div class="main col-lg-5 col-md-5 col-sm-8 col-xs-10" style="background-color:rgba(92, 239, 192, 0.41); border-radius:10px">
+            
+            @if (ret == null)
+            {
+                <i>¿No te llego el mail? Prueba reenviarlo. Pero recuerda reviasr la carpeta de spam.</i>
+                <form action="/Home/Reenviar" method="post" role="form" autocomplete="on">
+                    <input type="text" placeholder="ej:loterigg@loteriagg.com" name="mail" />
+                    <input type="submit" value="Reenviar"/>
+                </form>
+            }
+            <br />
+            <br />
+        </div>
+    </div>
     <footer class="navbar navbar-fixed-bottom">
 
         <div class="container">
@@ -49,7 +63,7 @@
                     <h4>Hecho por el equipo de Resyst ® Softwares™.</h4>
 
                     <h5>
-                        © 2016 Resyst Softwares. Todos los derechos reservados.
+                        © 2017 Resyst Softwares. Todos los derechos reservados.
                     </h5>
                 </div>
                 <div class="col-xs-12 col-sm-4">

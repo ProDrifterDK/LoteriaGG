@@ -123,5 +123,42 @@ namespace LoteriaGG.Administrador.Controllers
 
             return View("SG");
         }
+
+        public ActionResult DarSorteo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DarSorteo(string acc)
+        {
+            try
+            {
+                using(var db = new LOTERIA_GGEntities())
+                {
+                    var usr = db.TBL_USUARIO.Where(o => o.USU_ACCOUNT == acc).FirstOrDefault();
+                    if(usr != null)
+                    {
+                        if(usr.USU_SOR_DISP == null)
+                        {
+                            usr.USU_SOR_DISP = 0;
+                        }
+                        usr.USU_SOR_DISP++;
+                        db.SaveChanges();
+                        ViewBag.Mensaje = "TOO BIEM, EL LOQUITO ESTABA Y AHORA TIENE UN SORTEO MÁS c: PD: SATAN NO ES LA CUMBIA";
+                    }
+                    else
+                    {
+                        ViewBag.Mensaje = "EL LOQUITO NO ESTABA PO :C NAH QUE HACER MAS QUE PEDIR EL USUARIO DE NUEVO :/ PD: SATAN NO ES LA CUMBIA";
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                ViewBag.Mensaje = "Por la cresta el daniel qlo se mandó otra cagaa... preguntenle por: " + ex.Message + ex.InnerException?.Message ?? "" + " PD: SATAN NO ES LA CUMBIA";
+            }
+
+            return View();
+        }
     }
 }

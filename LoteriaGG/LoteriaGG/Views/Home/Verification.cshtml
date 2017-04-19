@@ -40,7 +40,27 @@
             <br />
         </div>
     </div>
-
+    <div class="row">
+        <div class="main col-lg-5 col-md-5 col-sm-8 col-xs-10" style="background-color:rgba(92, 239, 192, 0.41); border-radius:10px">
+            
+            @if (ret == null)
+            {
+                <i>¿No te llegó el E-Mail? Reenvíalo volviendo a ingresar tu correo aquí abajo.</i>
+                <form action="/Home/Reenviar" method="post" role="form" autocomplete="on">
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" placeholder="ej:loterigg@loteriagg.com" name="mail" />
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="submit" class="btn btn-warning" @*style="background-color:#f0ad4e;color:#fff"*@ value="Reenviar" />
+                        </div>
+                    </div>
+                </form>
+            }
+            <br />
+        </div>
+    </div>
     <footer class="navbar navbar-fixed-bottom">
 
         <div class="container">

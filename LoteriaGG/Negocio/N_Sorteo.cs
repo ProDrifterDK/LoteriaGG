@@ -10,7 +10,7 @@ namespace Negocio
 {
     public static class N_Sorteo
     {
-        public static string Inscripcion(string us, int sorteo)
+        public static string Inscripcion(string us, long sorteo)
         {
             return DatosSorteo.Inscripcion(us, sorteo);
         }

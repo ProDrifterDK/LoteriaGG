@@ -102,7 +102,7 @@ namespace LoteriaGG.Controllers
         {
             MailMessage mm = new MailMessage();
             mm.To.Add(new MailAddress(to));
-            mm.From = new MailAddress("loteriagg@noreply.com");
+            mm.From = new MailAddress("noreply@loteriagg.com");
             mm.Body = "<h3>Bienvenido a LoteriaGG, " + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: " + username + "</p> <p>Tu direccion de Email: " + to + "</p>" +
                 "<p>Para verificar el email debes presionar el siguiente link</p><a href=" + "\"http://prueba.loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "\"" + ">Preciona aquí para verificar</a>"
                 + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://prueba.loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
@@ -112,6 +112,27 @@ namespace LoteriaGG.Controllers
             smtpClient.Send(mm);
         }
 
+        [HttpPost]
+        public ActionResult Reenviar(string mail)
+        {
+            try
+            {
+                using(var db = new LOTERIA_GGEntities())
+                {
+                    var usr = db.TBL_USUARIO.Where(o => o.USU_EMAIL == mail).FirstOrDefault();
+                    if(usr == null)
+                    {
+                        return RedirectToAction("Verification", new { us = usr, verif = usr, msj = "Email no concide."});
+                    }
+                    SendEmailConfirmation(mail, usr.USU_ACCOUNT, usr.USU_CODIGO_VERIFICAION.ToString(), usr.USU_NOMBRE);
+                }
+            }catch(Exception ex)
+            {
+
+            }
+            return RedirectToAction("Verification", "Home");
+        }
+
         public ActionResult LogOut()
         {
             Session.RemoveAll();
@@ -119,7 +140,7 @@ namespace LoteriaGG.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Verification(string us, string verif)
+        public ActionResult Verification(string us, string verif, string msj)
         {
             if(Session["LogedIn"] == null)
             {
@@ -140,6 +161,7 @@ namespace LoteriaGG.Controllers
                 }else
                     ViewBag.ret = null;
             }
+            ViewBag.Mensaje = msj;
             return View();
         }
     }

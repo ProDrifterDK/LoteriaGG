@@ -223,6 +223,8 @@
     <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\Administrador\SG.cshtml" />
     <Content Include="Views\Sorteo\Inscripcion.cshtml" />
+    <Content Include="Views\Administrador\DarSorteo.cshtml" />
+    <Content Include="Views\Profile\ObtenerSorteo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

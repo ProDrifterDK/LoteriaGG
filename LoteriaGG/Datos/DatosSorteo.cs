@@ -13,7 +13,7 @@ namespace Datos
 {
     public static class DatosSorteo
     {
-        public static string Inscripcion(string user, int sorId)
+        public static string Inscripcion(string user, long sorId)
         {
             try
             {
@@ -27,6 +27,10 @@ namespace Datos
                     {
                         throw new Exception("Lo sentimos, no hay sorteos disponibles");
                     }
+                    if(usuario.USU_SOR_DISP == null || usuario.USU_SOR_DISP == 0)
+                    {
+                        return "No se ha realizaado la inscripción ya que no tienes sorteos comprados.";
+                    }
 
                     //var inscripciones = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usuario.USU_ID && o.SOR_ID == sorteo.SOR_ID).ToList();
                     //if(inscripciones.Count > 3)
@@ -35,7 +39,7 @@ namespace Datos
                     //}
                     var nubSor = new NUB_SORTEO_USUARIO { SOR_ID = sorteo.SOR_ID, USU_ID = usuario.USU_ID};
 
-
+                    usuario.USU_SOR_DISP--;
                     db.NUB_SORTEO_USUARIO.Add(nubSor);
                     db.SaveChanges();
                     return "Inscrito!";
