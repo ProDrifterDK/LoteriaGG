@@ -49,6 +49,7 @@
     <Property Name="USU_CODIGO_VERIFICAION" Type="uniqueidentifier" />
     <Property Name="USU_VERIFICADO" Type="bit" />
     <Property Name="USU_SOR_DISP" Type="int" />
+    <Property Name="USU_CAMBIO_EMAIL" Type="bit" />
   </EntityType>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
     <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />

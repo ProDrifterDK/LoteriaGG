@@ -52,7 +52,8 @@
                         <li><a href="/About/Index">Acerca de</a></li>
                         @if (Session["LogedIn"].ToString() == "True")
                         {
-                            <li><a href="/Sorteo/">Inscribirse</a></li>
+                            <li><a href="/Sorteo/" style="color:#C6CE00">Inscribirse</a></li>
+                            <li><a href="/Profile/ObtenerSorteo" style="color:darkred">Obtener Sorteo</a></li>
                         }
                     </ul>
 

@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="0.75" PointY="7" />
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" Width="1.5" PointX="5.75" PointY="0.75" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_USUARIO" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_USUARIO" Width="1.5" PointX="0.75" PointY="2.75" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" />
         </Diagram>

@@ -164,5 +164,10 @@ namespace LoteriaGG.Controllers
             ViewBag.Mensaje = msj;
             return View();
         }
+
+        public ActionResult Contactanos()
+        {
+            return View();
+        }
     }
 }

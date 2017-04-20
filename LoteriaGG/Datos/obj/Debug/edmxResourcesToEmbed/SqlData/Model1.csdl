@@ -84,6 +84,7 @@
     <Property Name="USU_CODIGO_VERIFICAION" Type="Guid" />
     <Property Name="USU_VERIFICADO" Type="Boolean" />
     <Property Name="USU_SOR_DISP" Type="Int32" />
+    <Property Name="USU_CAMBIO_EMAIL" Type="Boolean" />
     <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="NUB_SORTEO_USUARIO" />
     <NavigationProperty Name="TBL_ADMIN" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
   </EntityType>

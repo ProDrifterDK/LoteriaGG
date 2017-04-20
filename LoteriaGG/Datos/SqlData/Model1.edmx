@@ -54,6 +54,7 @@
           <Property Name="USU_CODIGO_VERIFICAION" Type="uniqueidentifier" />
           <Property Name="USU_VERIFICADO" Type="bit" />
           <Property Name="USU_SOR_DISP" Type="int" />
+          <Property Name="USU_CAMBIO_EMAIL" Type="bit" />
         </EntityType>
         <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
           <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />
@@ -198,6 +199,7 @@
           <Property Name="USU_CODIGO_VERIFICAION" Type="Guid" />
           <Property Name="USU_VERIFICADO" Type="Boolean" />
           <Property Name="USU_SOR_DISP" Type="Int32" />
+          <Property Name="USU_CAMBIO_EMAIL" Type="Boolean" />
           <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="NUB_SORTEO_USUARIO" />
           <NavigationProperty Name="TBL_ADMIN" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
         </EntityType>
@@ -273,6 +275,7 @@
           <EntitySetMapping Name="TBL_USUARIO">
             <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
               <MappingFragment StoreEntitySet="TBL_USUARIO">
+                <ScalarProperty Name="USU_CAMBIO_EMAIL" ColumnName="USU_CAMBIO_EMAIL" />
                 <ScalarProperty Name="USU_SOR_DISP" ColumnName="USU_SOR_DISP" />
                 <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
                 <ScalarProperty Name="USU_CODIGO_VERIFICAION" ColumnName="USU_CODIGO_VERIFICAION" />

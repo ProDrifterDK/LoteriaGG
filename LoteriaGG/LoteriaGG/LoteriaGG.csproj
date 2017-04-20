@@ -131,6 +131,7 @@
     <Content Include="Content\estiloAdmin.css" />
     <Content Include="Content\estiloCC.css" />
     <Content Include="Content\estiloEP.css" />
+    <Content Include="Content\estiloOS.css" />
     <Content Include="Content\estiloPerfil.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="Content\estiloSorteo.css" />
@@ -138,8 +139,11 @@
     <Content Include="Content\Images\Blast-Zone-Heimerdinger.jpg" />
     <Content Include="Content\Images\Blitz.jpg" />
     <Content Include="Content\Images\facebook-icon24x24.png" />
+    <Content Include="Content\Images\Galio.jpg" />
     <Content Include="Content\Images\Kha%27ZixMecha.jpg" />
     <Content Include="Content\Images\Kindred-Classic-wallpaper.jpg" />
+    <Content Include="Content\Images\TF.jpg" />
+    <Content Include="Content\Images\tfcards.jpg" />
     <Content Include="Content\Images\Thresh.jpg" />
     <Content Include="Content\Images\ziggs_mad_scientist_splash_1920x1080_0.jpg" />
     <Content Include="Content\js\jquery.app.js" />
@@ -155,6 +159,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\smartadmin-production-plugins.min.css" />
     <Content Include="Content\smartadmin-production.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\logoGG.png" />
@@ -225,6 +230,8 @@
     <Content Include="Views\Sorteo\Inscripcion.cshtml" />
     <Content Include="Views\Administrador\DarSorteo.cshtml" />
     <Content Include="Views\Profile\ObtenerSorteo.cshtml" />
+    <Content Include="Views\Profile\EditarMail.cshtml" />
+    <Content Include="Views\Home\Contactanos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

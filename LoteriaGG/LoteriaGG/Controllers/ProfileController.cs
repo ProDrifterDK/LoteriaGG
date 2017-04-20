@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Datos.SqlData;
+    using System.Text.RegularExpressions;
 using Negocio;
+using System.Net.Mail;
 
 namespace LoteriaGG.Controllers
 {
@@ -30,6 +32,11 @@ namespace LoteriaGG.Controllers
 
         public ActionResult ObtenerSorteo(string msj = null)
         {
+            if (Session["LogedIn"] == null)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+
             if (msj != null)
             {
                 ViewBag.Mensaje = msj;
@@ -106,12 +113,112 @@ namespace LoteriaGG.Controllers
                     {
                         usrD.USU_SOR_DISP = 0;
                     }
-                    usrD.USU_SOR_DISP++;
+                    usrD.USU_SOR_DISP++;    
                     sg.SG_VALIDO = false;
                     sg.USU_ID = usrD.USU_ID;
                     db.SaveChanges();
                     return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un sorteo a tu cuenta." });
                 }
+            }
+        }
+
+        public ActionResult EditarMail(int? rp = null)
+        {
+            if (Session["LogedIn"] == null)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+
+            ViewBag.cambio = rp;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditarMail(string newMail)
+        {
+            if (Session["LogedIn"] == null)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+            if (!IsEmailValid(newMail))
+            {
+                ViewBag.Mensaje = "No es un mail válido";
+                return View();
+            }
+            var us = Session["User"].ToString();
+
+            using(var db = new LOTERIA_GGEntities())
+            {
+                var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == us);
+                if(db.TBL_USUARIO.Where(o => o.USU_EMAIL == newMail).ToList().Count > 0)
+                {
+                    ViewBag.Mensaje = "El mail ya esta en uso";
+                    return View();
+                }
+
+                user.USU_CAMBIO_EMAIL = true;
+
+                SendEmailConfirmation(user.USU_EMAIL, us, user.USU_NOMBRE, newMail);
+                db.SaveChanges();
+            }
+            ViewBag.cambio = 1;
+            return View();
+        }
+        private void SendEmailConfirmation(string to, string username, string name, string newM)
+        {
+            MailMessage mm = new MailMessage();
+            mm.To.Add(new MailAddress(to));
+            mm.From = new MailAddress("noreply@loteriagg.com");
+            mm.Body = "<h3>Hola " + name + ". </h3> <p>Si has solicitado un cambio de dirección de correo electrónico, haz clic o copia y pega el siguiente enlace. </p>" +
+                "<p><a href=" + "\"http://prueba.loteriagg.com/Profile/CambioEmail?us=" + username + "&nm=\"" + newM + "\"\"" + ">Preciona aquí para verificar</a></p>"
+                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://prueba.loteriagg.com/Profile/CambioEmail?us=" + username + "&nm=" + newM + "</p>" +
+                "<p>Si no has solicitado ningún cambio, cambia tu contraseña y avisa al soporte de LoteriaGG al E-mail soporte@LoteriaGG.com</p>. <p>Se despide, el equipo de LoteriaGG.</p>";
+            mm.IsBodyHtml = true;
+            mm.Subject = "Verification";
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Send(mm);
+        }
+
+        public ActionResult CambioEmail(string us, string nm)
+        {
+            using (var db = new LOTERIA_GGEntities())
+            {
+                var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == us && o.USU_CAMBIO_EMAIL == true);
+
+                if (user == null)
+                {
+                    return RedirectToAction("Index", "Home", new { });
+                }
+
+                user.USU_CAMBIO_EMAIL = false;
+                user.USU_EMAIL = nm;
+                db.SaveChanges();
+            }
+            return RedirectToAction("EditarMail", new { rp = 0});
+        }
+
+        public static Boolean IsEmailValid(string EmailAddr)
+        {
+
+            if (EmailAddr != null || EmailAddr != "")
+            {
+                Regex n = new Regex("(?<user>[^@]+)@(?<host>.+)");
+                Match v = n.Match(EmailAddr);
+
+                if (!v.Success || EmailAddr.Length != v.Length)
+                {
+
+                    return false;
+                }
+                else
+
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
     }
