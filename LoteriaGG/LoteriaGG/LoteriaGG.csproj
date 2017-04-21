@@ -130,6 +130,7 @@
     <Content Include="Content\estiloAbout.css" />
     <Content Include="Content\estiloAdmin.css" />
     <Content Include="Content\estiloCC.css" />
+    <Content Include="Content\estiloContactanos.css" />
     <Content Include="Content\estiloEP.css" />
     <Content Include="Content\estiloOS.css" />
     <Content Include="Content\estiloPerfil.css" />
@@ -138,6 +139,7 @@
     <Content Include="Content\estiloVerificar.css" />
     <Content Include="Content\Images\Blast-Zone-Heimerdinger.jpg" />
     <Content Include="Content\Images\Blitz.jpg" />
+    <Content Include="Content\Images\Corporate-Mundo.jpg" />
     <Content Include="Content\Images\facebook-icon24x24.png" />
     <Content Include="Content\Images\Galio.jpg" />
     <Content Include="Content\Images\Kha%27ZixMecha.jpg" />

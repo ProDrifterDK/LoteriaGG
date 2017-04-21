@@ -1,7 +1,8 @@
 ﻿@{ 
-    if (Session["LogedIn"] == null)
+    string loged = null;
+    if(Session["LogedIn"] != null)
     {
-        Url.Action("LogOut", "Home");
+        loged = Session["LogedIn"].ToString();
     }
 }
 
@@ -28,8 +29,7 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
@@ -50,7 +50,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/Home/Index">Inicio</a></li>
                         <li><a href="/About/Index">Acerca de</a></li>
-                        @if (Session["LogedIn"].ToString() == "True")
+                        <li><a href="/Home/Contactanos">Contactanos</a></li>
+                        @if (loged == "True")
                         {
                             <li><a href="/Sorteo/" style="color:#C6CE00">Inscribirse</a></li>
                             <li><a href="/Profile/ObtenerSorteo" style="color:darkred">Obtener Sorteo</a></li>
@@ -60,7 +61,7 @@
                     <ul class="nav navbar-nav navbar-right">
 
 
-                        @if (Session["LogedIn"].ToString() == "True")
+                        @if (loged == "True")
                         {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["User"].ToString()<span class="caret"></span></a>

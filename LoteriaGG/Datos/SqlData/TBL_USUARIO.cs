@@ -31,6 +31,7 @@ namespace Datos.SqlData
         public Nullable<bool> USU_VERIFICADO { get; set; }
         public Nullable<int> USU_SOR_DISP { get; set; }
         public Nullable<bool> USU_CAMBIO_EMAIL { get; set; }
+        public Nullable<bool> USU_SORTEO_ESPECIAL { get; set; }
     
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual ICollection<TBL_ADMIN> TBL_ADMIN { get; set; }

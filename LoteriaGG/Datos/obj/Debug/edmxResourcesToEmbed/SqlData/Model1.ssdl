@@ -50,6 +50,7 @@
     <Property Name="USU_VERIFICADO" Type="bit" />
     <Property Name="USU_SOR_DISP" Type="int" />
     <Property Name="USU_CAMBIO_EMAIL" Type="bit" />
+    <Property Name="USU_SORTEO_ESPECIAL" Type="bit" />
   </EntityType>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
     <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />

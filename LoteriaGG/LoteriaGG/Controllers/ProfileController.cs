@@ -89,6 +89,27 @@ namespace LoteriaGG.Controllers
         [HttpPost]
         public ActionResult SorteoGratis(string codigo)
         {
+            if (Session["LogedIn"] == null)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+
+            if (codigo == "RakanXayah")
+            {
+                using(var db = new LOTERIA_GGEntities())
+                {
+                    var usr = Session["User"].ToString();
+                    var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
+
+                    if (usrD.USU_SORTEO_ESPECIAL == false)
+                    {
+                        return RedirectToAction("ObtenerSorteo", new { msj = "Ya usaste este codigo." });
+                    }
+
+                    usrD.USU_SOR_DISP++;
+                    db.SaveChanges();
+                }
+            }
             Guid Codigo;
             try
             {
