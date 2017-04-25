@@ -1,0 +1,94 @@
+﻿@{ 
+    bool? ret = ViewBag.ret;
+}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <title>LoteriaGG</title>
+    <link rel="stylesheet" href="~/Content/estiloVerificar.css">
+    <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        h2{
+            color:#78f14e
+        }
+    </style>
+    <div class="row">
+        <div class="main col-lg-5 col-md-5 col-sm-8 col-xs-10" style="background-color:rgba(92, 239, 192, 0.41); border-radius:10px">
+            @if (ret == true)
+            {
+                <h2>Cuenta verificada correctamente</h2>
+            }
+            else if (ret == false)
+            {
+                <h2>Hubo un problema al verificar la cuenta...</h2>
+            }
+            else
+            {
+                <h2>Se ha enviado un mail al correo que usaste, esto puede tardar varios minutos. Si no aparece, revisar en la carpeta de spam.</h2>
+            }
+            <div class="col-lg-4">
+
+            </div>
+                <a href="/Home/Index" type="button" class="btn btn-primary col-lg-4">Volver</a>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="main col-lg-5 col-md-5 col-sm-8 col-xs-10" style="background-color:rgba(92, 239, 192, 0.41); border-radius:10px">
+            
+            @if (ret == null)
+            {
+                <i>¿No te llegó el E-Mail? Reenvíalo volviendo a ingresar tu correo aquí abajo.</i>
+                <form action="/Home/Reenviar" method="post" role="form" autocomplete="on">
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" placeholder="ej:loterigg@loteriagg.com" name="mail" />
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="submit" class="btn btn-warning" @*style="background-color:#f0ad4e;color:#fff"*@ value="Reenviar" />
+                        </div>
+                    </div>
+                </form>
+            }
+            <br />
+        </div>
+    </div>
+    <footer class="navbar navbar-fixed-bottom">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <h4>Hecho por el equipo de Resyst ® Softwares™.</h4>
+
+                    <h5>
+                        © 2017 Resyst Softwares. Todos los derechos reservados.
+                    </h5>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <h4>
+                        Síguenos en Facebook:
+                        <a href="https://www.facebook.com/loteria.gg">
+                            <img src="~/Content/Images/facebook-icon24x24.png" alt="facebook" />
+                        </a>
+                    </h4>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+</body>

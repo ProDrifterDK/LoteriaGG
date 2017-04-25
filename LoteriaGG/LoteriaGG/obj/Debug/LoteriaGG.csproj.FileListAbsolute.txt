@@ -261,3 +261,5 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.SqlServer.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\EntityFramework.SqlServer.xml
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\BotDetect.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\BotDetect.Web.Mvc.dll

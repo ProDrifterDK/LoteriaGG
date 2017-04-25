@@ -7,6 +7,7 @@ using Datos.SqlData;
     using System.Text.RegularExpressions;
 using Negocio;
 using System.Net.Mail;
+using System.Collections;
 
 namespace LoteriaGG.Controllers
 {
@@ -96,18 +97,23 @@ namespace LoteriaGG.Controllers
 
             if (codigo == "RakanXayah")
             {
-                using(var db = new LOTERIA_GGEntities())
+                using (var db = new LOTERIA_GGEntities())
                 {
                     var usr = Session["User"].ToString();
                     var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
 
-                    if (usrD.USU_SORTEO_ESPECIAL == false)
+                    if (usrD.USU_SORTEO_ESPECIAL == true)
                     {
                         return RedirectToAction("ObtenerSorteo", new { msj = "Ya usaste este codigo." });
                     }
-
+                    if(usrD.USU_SOR_DISP == null)
+                    {
+                        usrD.USU_SOR_DISP = 0;
+                    }
                     usrD.USU_SOR_DISP++;
+                    usrD.USU_SORTEO_ESPECIAL = true;
                     db.SaveChanges();
+                    return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un sorteo a tu cuenta." });
                 }
             }
             Guid Codigo;
@@ -191,8 +197,8 @@ namespace LoteriaGG.Controllers
             mm.To.Add(new MailAddress(to));
             mm.From = new MailAddress("noreply@loteriagg.com");
             mm.Body = "<h3>Hola " + name + ". </h3> <p>Si has solicitado un cambio de dirección de correo electrónico, haz clic o copia y pega el siguiente enlace. </p>" +
-                "<p><a href=" + "\"http://prueba.loteriagg.com/Profile/CambioEmail?us=" + username + "&nm=\"" + newM + "\"\"" + ">Preciona aquí para verificar</a></p>"
-                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://prueba.loteriagg.com/Profile/CambioEmail?us=" + username + "&nm=" + newM + "</p>" +
+                "<p><a href=" + "\"http://loteriagg.com/Profile/CambioEmail?us=" + username + "&nm=\"" + newM + "\"\"" + ">Preciona aquí para verificar</a></p>"
+                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://loteriagg.com/Profile/CambioEmail?us=" + username + "&nm=" + newM + "</p>" +
                 "<p>Si no has solicitado ningún cambio, cambia tu contraseña y avisa al soporte de LoteriaGG al E-mail soporte@LoteriaGG.com</p>. <p>Se despide, el equipo de LoteriaGG.</p>";
             mm.IsBodyHtml = true;
             mm.Subject = "Verification";
@@ -240,6 +246,38 @@ namespace LoteriaGG.Controllers
             else
             {
                 return false;
+            }
+        }
+
+        public ActionResult SorteosInscritos()
+        {
+            if (Session["LogedIn"] == null)
+            {
+                return RedirectToAction("Index", "Home", new { });
+            }
+            return View();
+        }
+
+        public JsonResult DatosSorteosInscritos()
+        {
+            var rtn = new ArrayList();
+
+            using (var db = new LOTERIA_GGEntities())
+            {
+                var sUsr = Session["User"].ToString();
+                var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == sUsr);
+                var nSU = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usr.USU_ID).ToList();
+                var sorteos = db.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN >= DateTime.Now).ToList();
+
+                foreach (var item in nSU)
+                {
+                    rtn.Add(new
+                    {
+                        Id = item.SOR_ID,
+                        FFinicio = item.TBL_SORTEO.SOR_FECHA_INICIO,
+                        FFin = item.TBL_SORTEO.SOR_FECHA_FIN,
+                    });
+                }
             }
         }
     }

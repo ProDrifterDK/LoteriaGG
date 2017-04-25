@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@using BotDetect.Web.Mvc;   
+@{ 
     string loged = null;
     if(Session["LogedIn"] != null)
     {
@@ -9,6 +10,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
@@ -29,8 +32,7 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
@@ -51,6 +53,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/Home/Index">Inicio</a></li>
                         <li><a href="/About/Index">Acerca de</a></li>
+                        <li><a href="/Home/Contactanos">Contactanos</a></li>
                         @if (loged == "True")
                         {
                             <li><a href="/Sorteo/" style="color:#C6CE00">Inscribirse</a></li>
@@ -116,6 +119,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="row">
+                                                    <BotDetect:Captcha ID="ExampleCaptcha" runat="server" />
+                                                    <asp:TextBox ID="CaptchaCodeTextBox" runat="server" />
+                                                    <div class="col-xs-6 col-xs-offset-3">
+                                                        <input type="checkbox" name="terminos" value="true" />Acepto los <a data-target="#myModal" data-toggle="modal">terminos y condiciones</a>
+                                                    </div>
                                                     <div class="col-xs-6 col-xs-offset-3">
                                                         <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Aceptar">
                                                     </div>
@@ -157,7 +165,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="text-center">
-                                                            <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                                                            <a href="http://phpoll.com/recover" tabindex="5" lass="forgot-password">¿Olvidaste tu contraseña?</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -173,6 +181,36 @@
             </div>
         </nav>
         @RenderBody()
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Acuerdo de licencia de usuario final (ALUF)</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Este acuerdo de licencia del usuario final ("ALUF") puede actualizarse ocasionalmente. Si usted continúa usando el Servicio (tal como se define a continuación) después de que se haya publicado o se le haya comunicado la existencia de la versión revisada, se entenderá que acepta sus términos.</p>
+                    <p>USTED ES USUARIO DEL SERVICIO DE ENTRETENIMIENTOS PERTENECIENTE A RESYST INC. LLAMADO LOTERIAGG SIEMPRE Y CUANDO SE ENCUENTRE REGISTRADO EN LA BASE DE DATOS DE LA PAGINA, DIRECTA O INDIRECTAMENTE CON SUS DATOS REALES, SIENDO ESTOS DATOS ENTREGADOS DE TOTAL RESPONSABILIDAD DEL USUARIO QUIEN LOS ENTREGO O A QUIEN ESTOS DATOS PERTENECEN. EL SERVICIO SE CONSIDERA TERMINADO POR ALGUNA DE LAS PARTES CON EL DEBIDO AVISO PREVIO POR ESCRITO DE LA FINALIZACION DE ESTOS SERVICIOS, SIENDO ESTOS AVISOS ENVIADOS DESDE RESYST INC. HACIA EL USUARIO FINAL REGISTRADO EN LA BASE DE DATOS, DESDE AHORA USUARIO, O SIENDO EL AVISO ENVIADO DESDE EL USUARIO HACIA RESYST INC. Y ESTE AVISO SE CONSIDERARA VALIDADO SOLO SI AMBAS PARTES ESTAN DE ACUERDO EN FINALIZAR LOS SERVICIOS CON LAS COMPENSACIONES ACORDADAS EN EL AVISO.</p>
+                    <p>RESYST INC. SE RESERVA EL DERECHO DE TERMINAR LOS SERVICIOS SIN COMPENSACION ALGUNA EN VIRTUD DE QUE EL USUARIO NO CUMPLA CON EL ACUERDO Y SUS REGLAS, LAS CUALES SERAN DETALLADAS A CONTINUACION.</p>
+                    <p>1) Usted (el usuario) asegura ser el propietario de los datos entregados en la página al momento del registro y se hace responsable de las actualizaciones de estos datos en los casos pertinentes y acepta liberar de toda responsabilidad a Resyst Inc. quienes haran uso de esta informacion para la entrega de premios y compensaciones en los casos donde estos datos sean cruciales para realizar dicha entrega.</p>
+                    <p>2) Usted (el usuario) debe mantener activa su cuenta por al menos 6 meses, entendiéndose por activada la cuenta cuando esta realiza una inscripción en un sorteo.</p>
+                    <p>3) Usted (el usuario) puede poseer únicamente una cuenta en LoteríaGG, esto en virtud de que puede realizar múltiples inscripciones en múltiples sorteos.</p>
+                    <p>4) Usted (el usuario) debe poseer autorización de sus padres para realizar cualquier transacción ya sea en su propio nombre o en el de ellos, en caso de poseer menos de 18 años de edad dentro del erritorio legal comprendido dentro de la República de Chile.</p>
+                    <p>5) Usted (el usuario) no obtendrá beneficios monetarios de parte de Resyst Inc. en virtud de canjear los premios y/o compensaciones, tampoco podrá emitir reclamos en contra de Resyst Inc. por esta prohibición ni ninguna de aquellas prohibiciones que puedan desprenderse de esta.</p>
+                    <p>6) Usted (el usuario) no emitirá correos violentos y/u ofensivos en contra de Resyst Inc. ni a ninguna de sus dependencias de comunicación, Resyst Inc. se reserva el derecho de retirar al usuario de la plataforma y todas las cuentas asociadas a esta (en virtud de la 3ra regla) sin derecho alguno a compensación de parte de Resyst Inc. además de establecer una prohibición de inscripción y sin posibilidad alguna de levantamiento de esta prohibición, sin importar el caso.</p>
+                    <p>7) Usted (el usuario) al momento de realizar la transferencia para confirmar su inscripción se desprende de todo tipo de responsabilidad y derecho sobre el dinero transferido, asegurando el valor transferido sea cual sea este y sus derechos a Resyst Inc., sus asociados y dependencias, además usted será el único responsable de que la cantidad transferida sea la correcta para obtener las compensaciones correspondientes.</p>
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
@@ -192,7 +230,7 @@
     });
     function Alerta() {
         var mensaje = "@ViewBag.Mensaje";
-        if (mensaje == "Inscrito!") {
+        if (mensaje == "Inscrito!" || mensaje == "Se ha cargado un sorteo a tu cuenta.") {
             $.bigBox({
                 title: "Felicidades!",
                 content: mensaje,

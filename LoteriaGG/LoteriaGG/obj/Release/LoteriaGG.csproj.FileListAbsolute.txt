@@ -53,3 +53,5 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Release\LoteriaGG.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Release\LoteriaGG.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Release\LoteriaGG.pdb
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\BotDetect.dll
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\BotDetect.Web.Mvc.dll

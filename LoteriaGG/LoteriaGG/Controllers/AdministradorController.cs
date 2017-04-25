@@ -12,7 +12,7 @@ namespace LoteriaGG.Administrador.Controllers
     public class AdministradorController : Controller
     {
         // GET: Administrador
-        public ActionResult Index()
+        public ActionResult IniciarSorteo()
         {
             var user = Session["User"]?.ToString();
             if(user == null)
@@ -30,7 +30,7 @@ namespace LoteriaGG.Administrador.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string fin)
+        public ActionResult IniciarSorteo(string fin)
         {
             var user = Session["User"]?.ToString();
             if (user == null)

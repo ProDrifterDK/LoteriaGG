@@ -9,6 +9,10 @@ using Negocio;
 using Datos.SqlData;
 using System.Net.Mail;
 using System.Net;
+using BotDetect;
+using BotDetect.Web.Mvc;
+using BotDetect.Web.UI;
+using System.Web.Routing;
 
 namespace LoteriaGG.Controllers
 {
@@ -17,7 +21,7 @@ namespace LoteriaGG.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if(Session["LogedIn"] == null)
+            if (Session["LogedIn"] == null)
             {
                 Session["LogedIn"] = "";
             }
@@ -25,9 +29,9 @@ namespace LoteriaGG.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string username, string password, string email = "", string confirmPassword = "", string type = "login", string Nombre = "", string Apellido ="", string NombreDeInvocador = "")
+        public ActionResult Index(string username, string password, string email = "", string confirmPassword = "", string type = "login", string Nombre = "", string Apellido = "", string NombreDeInvocador = "", bool terminos = false)
         {
-            if(type == "login")
+            if (type == "login")
             {
                 var user = Log(username, password);
                 if (user != null)
@@ -38,10 +42,10 @@ namespace LoteriaGG.Controllers
             }
             else
             {
-                var reg = Register(username, password, email, confirmPassword, Nombre, Apellido, NombreDeInvocador);
-                if(reg == "success")
+                var reg = Register(username, password, email, confirmPassword, Nombre, Apellido, NombreDeInvocador, terminos);
+                if (reg == "success")
                 {
-                    return RedirectToAction("Verification", "Home", new { us="", verif="" });
+                    return RedirectToAction("Verification", "Home", new { us = "", verif = "" });
                 }
                 else
                 {
@@ -56,9 +60,14 @@ namespace LoteriaGG.Controllers
             return Class1.LogIn(user, pass);
         }
 
-        private string Register(string usuario, string pass, string email,string confirm, string nombre, string apellido, string nombreDeInvocador)
+        private string Register(string usuario, string pass, string email, string confirm, string nombre, string apellido, string nombreDeInvocador, bool terminos)
         {
-            if(confirm != pass)
+
+            if (!terminos)
+            {
+                return "Debe aceptar los terminos de usuario";
+            }
+            if (confirm != pass)
             {
                 return "Contraseñas no coinciden";
             }
@@ -104,8 +113,8 @@ namespace LoteriaGG.Controllers
             mm.To.Add(new MailAddress(to));
             mm.From = new MailAddress("noreply@loteriagg.com");
             mm.Body = "<h3>Bienvenido a LoteriaGG, " + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: " + username + "</p> <p>Tu direccion de Email: " + to + "</p>" +
-                "<p>Para verificar el email debes presionar el siguiente link</p><a href=" + "\"http://prueba.loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "\"" + ">Preciona aquí para verificar</a>"
-                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://prueba.loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
+                "<p>Para verificar el email debes presionar el siguiente link</p><a href=" + "\"http://loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "\"" + ">Preciona aquí para verificar</a>"
+                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
             mm.IsBodyHtml = true;
             mm.Subject = "Verification";
             SmtpClient smtpClient = new SmtpClient();
@@ -117,16 +126,16 @@ namespace LoteriaGG.Controllers
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using (var db = new LOTERIA_GGEntities())
                 {
                     var usr = db.TBL_USUARIO.Where(o => o.USU_EMAIL == mail).FirstOrDefault();
-                    if(usr == null)
+                    if (usr == null)
                     {
-                        return RedirectToAction("Verification", new { us = usr, verif = usr, msj = "Email no concide."});
+                        return RedirectToAction("Verification", new { us = usr, verif = usr, msj = "Email no concide." });
                     }
                     SendEmailConfirmation(mail, usr.USU_ACCOUNT, usr.USU_CODIGO_VERIFICAION.ToString(), usr.USU_NOMBRE);
                 }
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
 
             }
@@ -142,10 +151,10 @@ namespace LoteriaGG.Controllers
 
         public ActionResult Verification(string us, string verif, string msj)
         {
-            if(Session["LogedIn"] == null)
+            if (Session["LogedIn"] == null)
             {
                 Session["LogedIn"] = "";
-            }else if(Session["LogedIn"].ToString() != "")
+            } else if (Session["LogedIn"].ToString() != "")
             {
                 return RedirectToAction("Index", "Home", new { });
             }
@@ -153,12 +162,12 @@ namespace LoteriaGG.Controllers
                 ViewBag.ret = null;
             else
             {
-                if(us != null && verif != null)
+                if (us != null && verif != null)
                 {
                     Session["LogedIn"] = "True";
                     Session["User"] = Class1.Verificar(us, verif).USU_ACCOUNT;
                     ViewBag.ret = true;
-                }else
+                } else
                     ViewBag.ret = null;
             }
             ViewBag.Mensaje = msj;
@@ -168,6 +177,15 @@ namespace LoteriaGG.Controllers
         public ActionResult Contactanos()
         {
             return View();
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            // BotDetect requests must not be routed
+            routes.IgnoreRoute("{*botdetect}",
+              new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
         }
     }
 }

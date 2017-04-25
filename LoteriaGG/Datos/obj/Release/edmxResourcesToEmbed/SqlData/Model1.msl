@@ -43,6 +43,7 @@
     <EntitySetMapping Name="TBL_USUARIO">
       <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
         <MappingFragment StoreEntitySet="TBL_USUARIO">
+          <ScalarProperty Name="USU_SORTEO_ESPECIAL" ColumnName="USU_SORTEO_ESPECIAL" />
           <ScalarProperty Name="USU_CAMBIO_EMAIL" ColumnName="USU_CAMBIO_EMAIL" />
           <ScalarProperty Name="USU_SOR_DISP" ColumnName="USU_SOR_DISP" />
           <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
