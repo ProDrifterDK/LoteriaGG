@@ -18,18 +18,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBL_SORTEO">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
-        <MappingFragment StoreEntitySet="TBL_SORTEO">
-          <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
-          <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
-          <ScalarProperty Name="SOR_FECHA_FIN" ColumnName="SOR_FECHA_FIN" />
-          <ScalarProperty Name="SOR_FECHA_INICIO" ColumnName="SOR_FECHA_INICIO" />
-          <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
-          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TBL_SORTEO_GRATIS">
       <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO_GRATIS">
         <MappingFragment StoreEntitySet="TBL_SORTEO_GRATIS">
@@ -55,6 +43,19 @@
           <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
           <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
           <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SORTEO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
+        <MappingFragment StoreEntitySet="TBL_SORTEO">
+          <ScalarProperty Name="SOR_PREMIO" ColumnName="SOR_PREMIO" />
+          <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
+          <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
+          <ScalarProperty Name="SOR_FECHA_FIN" ColumnName="SOR_FECHA_FIN" />
+          <ScalarProperty Name="SOR_FECHA_INICIO" ColumnName="SOR_FECHA_INICIO" />
+          <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
+          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

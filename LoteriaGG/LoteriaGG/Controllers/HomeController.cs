@@ -38,6 +38,14 @@ namespace LoteriaGG.Controllers
                 {
                     Session["LogedIn"] = "True";
                     Session["User"] = user.USU_ACCOUNT;
+                    if(user.USU_VERIFICADO == null || user.USU_VERIFICADO == false)
+                    {
+                        ViewBag.Mensaje = "Recuerda revisar tu mail para verificar tu cuena.";
+                    }
+                }
+                else
+                {
+                    ViewBag.Mensaje = "Ceunta o contraseña ingresados son incorrectos.";
                 }
             }
             else
@@ -45,7 +53,7 @@ namespace LoteriaGG.Controllers
                 var reg = Register(username, password, email, confirmPassword, Nombre, Apellido, NombreDeInvocador, terminos);
                 if (reg == "success")
                 {
-                    return RedirectToAction("Verification", "Home", new { us = "", verif = "" });
+                    ViewBag.Mensaje = "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte";
                 }
                 else
                 {
@@ -55,9 +63,23 @@ namespace LoteriaGG.Controllers
             return View();
         }
 
-        TBL_USUARIO Log(string user, string pass)
+
+        private TBL_USUARIO Log(string usu, string pass)
         {
-            return Class1.LogIn(user, pass);
+            TBL_USUARIO ret = null;
+            try
+            {
+                using (var dc = new LOTERIA_GGEntities())
+                {
+                    ret = dc.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu && o.USU_PASSWORD == pass);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return ret;
         }
 
         private string Register(string usuario, string pass, string email, string confirm, string nombre, string apellido, string nombreDeInvocador, bool terminos)
@@ -96,7 +118,14 @@ namespace LoteriaGG.Controllers
                     usu.USU_VERIFICADO = false;
 
                     dc.TBL_USUARIO.Add(usu);
-                    SendEmailConfirmation(email, usuario, activationCode.ToString(), nombre);
+                    try
+                    {
+                        SendEmailConfirmation(email, usuario, activationCode.ToString(), nombre);
+                    }
+                    catch (Exception ex)
+                    {
+                        return ex.Message + ex.InnerException ?? "";
+                    }
                     dc.SaveChanges();
                 }
             }

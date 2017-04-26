@@ -25,6 +25,7 @@
     <Property Name="SOR_FECHA_FIN" Type="date" />
     <Property Name="SOR_CREADO_POR" Type="bigint" />
     <Property Name="SOR_MODIFICADO_POR" Type="bigint" />
+    <Property Name="SOR_PREMIO" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="TBL_SORTEO_GRATIS">
     <Key>

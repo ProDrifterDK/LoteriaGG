@@ -29,7 +29,7 @@ namespace Datos
                     }
                     if(usuario.USU_SOR_DISP == null || usuario.USU_SOR_DISP == 0)
                     {
-                        return "No se ha realizaado la inscripción ya que no tienes sorteos comprados.";
+                        return "No se ha realizaado la inscripción ya que no tienes GGCoins.";
                     }
 
                     //var inscripciones = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usuario.USU_ID && o.SOR_ID == sorteo.SOR_ID).ToList();

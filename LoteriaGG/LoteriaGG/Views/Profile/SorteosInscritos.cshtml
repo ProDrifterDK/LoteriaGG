@@ -71,33 +71,15 @@
                         <table id="tblFormulario" @*style="background-color:#000"*@ class="table table-striped table-bordered dt-responsive nowrap" style="border-color:rgba(92, 239, 192, 50)" cellspacing="0">
                             <thead style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50)">
                                 <tr style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50)">
-                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">ID </th>
+                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Sorteo</th>
                                     <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Fecha Inicio</th>
                                     <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Fecha de Termino</th>
                                     <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Premio</th>
-                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)"></th>
                                 </tr>
                             </thead>
                         </table>
                     </div>
-                    <div class="col-lg-2 col-md-2">
-                        <table class="table table-striped table-bordered dt-responsive nowrap " style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50)" cellspacing="0">
-                            <thead style="border-color:rgba(92, 239, 192, 50)">
-                                <tr style="border-color:rgba(92, 239, 192, 50)">
-                                    <th style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">GGCoins</th>
-                                </tr>
-                                <tr style="border-color:rgba(92, 239, 192, 50)">
-                                    <th style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">@cantSorteo</th>
-                                </tr>
-                                <tr style="border-color:rgba(92, 239, 192, 50)">
-                                    <th style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)"><a href="/Profile/ObtenerSorteo" class="btn btn-success">Obtener GGCoin</a></th>
-                                </tr>
-                                <tr style="border-color:rgba(92, 239, 192, 50)">
-                                    <th style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0);color:gold">$500</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+                    <a href="/Profile/" class="btn btn-danger">Volver al perfil</a>
                 </div>
                 <br />
             </div>
@@ -144,14 +126,13 @@
 
             "columns": [
                 { "data": "Id" },
-                { "data": "FInicio" },
+                { "data": "FFinicio" },
                 { "data": "FFin" },
-                { "data": "Premio" },
-                { "data": "action" }
+                { "data": "Premio" }
             ],
             "autoWidth": true,
             "ajax": {
-                "url": "@Url.Action("JsonTabla2", "Sorteo")",
+                "url": "@Url.Action("DatosSorteosInscritos", "Profile")",
                 "type": "POST"
             },
         });

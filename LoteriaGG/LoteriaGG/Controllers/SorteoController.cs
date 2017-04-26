@@ -109,7 +109,8 @@ namespace LoteriaGG.Controllers
                         action = "<form action=\"/Sorteo/Index\" method=\"post\" role=\"form\" >" +
                         "<input type=\"hidden\" name=\"sorID\" value=\"" + item.SOR_ID + "\">" +
                         "<input type=\"submit\" class=\"btn btn-warning\" value=\"Inscribirse\" <!--style=\"border-color:rgba(92, 239, 192, 50);color:#5a1650;background-color:rgba(92, 239, 192, 50)-->\" />" +
-                        "</form>"
+                        "</form>",
+                        Premio = item.SOR_PREMIO,
                     });
                 }
             }

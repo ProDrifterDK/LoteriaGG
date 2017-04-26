@@ -18,11 +18,7 @@ namespace Negocio
             }
             return "Contraseñas no coinciden";
         }
-
-        public static TBL_USUARIO LogIn(string usu, string pas)
-        {
-            return DatosPersonas.LogIn(usu, pas);
-        }
+        
 
         public static TBL_USUARIO Verificar(string usu, string codigo)
         {

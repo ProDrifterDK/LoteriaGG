@@ -241,6 +241,7 @@
     <Content Include="Views\Profile\ObtenerSorteo.cshtml" />
     <Content Include="Views\Profile\EditarMail.cshtml" />
     <Content Include="Views\Home\Contactanos.cshtml" />
+    <Content Include="Views\Profile\SorteosInscritos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

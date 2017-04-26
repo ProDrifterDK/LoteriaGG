@@ -39,23 +39,6 @@ namespace Datos
             }
         }
         
-        public static TBL_USUARIO LogIn(string usu, string pass)
-        {
-            TBL_USUARIO ret = null;
-            try
-            {
-                using(var dc = new LOTERIA_GGEntities())
-                {
-                    ret = dc.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu && o.USU_PASSWORD == pass && o.USU_VERIFICADO == true );
-                }
-            }
-            catch(Exception ex)
-            {
-
-            }
-
-            return ret;
-        }
 
         public static TBL_USUARIO ObtenerUsuario(string usu)
         {

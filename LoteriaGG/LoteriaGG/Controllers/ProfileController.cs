@@ -95,27 +95,27 @@ namespace LoteriaGG.Controllers
                 return RedirectToAction("Index", "Home", new { });
             }
 
-            if (codigo == "RakanXayah")
-            {
-                using (var db = new LOTERIA_GGEntities())
-                {
-                    var usr = Session["User"].ToString();
-                    var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
+            //if (codigo == "RakanXayah")
+            //{
+            //    using (var db = new LOTERIA_GGEntities())
+            //    {
+            //        var usr = Session["User"].ToString();
+            //        var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
 
-                    if (usrD.USU_SORTEO_ESPECIAL == true)
-                    {
-                        return RedirectToAction("ObtenerSorteo", new { msj = "Ya usaste este codigo." });
-                    }
-                    if(usrD.USU_SOR_DISP == null)
-                    {
-                        usrD.USU_SOR_DISP = 0;
-                    }
-                    usrD.USU_SOR_DISP++;
-                    usrD.USU_SORTEO_ESPECIAL = true;
-                    db.SaveChanges();
-                    return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un sorteo a tu cuenta." });
-                }
-            }
+            //        if (usrD.USU_SORTEO_ESPECIAL == true)
+            //        {
+            //            return RedirectToAction("ObtenerSorteo", new { msj = "Ya usaste este codigo." });
+            //        }
+            //        if(usrD.USU_SOR_DISP == null)
+            //        {
+            //            usrD.USU_SOR_DISP = 0;
+            //        }
+            //        usrD.USU_SOR_DISP++;
+            //        usrD.USU_SORTEO_ESPECIAL = true;
+            //        db.SaveChanges();
+            //        return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un GGCoin a tu cuenta." });
+            //    }
+            //}
             Guid Codigo;
             try
             {
@@ -144,7 +144,7 @@ namespace LoteriaGG.Controllers
                     sg.SG_VALIDO = false;
                     sg.USU_ID = usrD.USU_ID;
                     db.SaveChanges();
-                    return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un sorteo a tu cuenta." });
+                    return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un GGCoin a tu cuenta." });
                 }
             }
         }
@@ -255,6 +255,20 @@ namespace LoteriaGG.Controllers
             {
                 return RedirectToAction("Index", "Home", new { });
             }
+
+            using(var db = new LOTERIA_GGEntities())
+            {
+                var usr = Session["User"].ToString();
+                var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
+
+                var nUS = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usrD.USU_ID);
+
+                if(nUS == null)
+                {
+                    ViewBag.tieneSorteos = true;
+                }
+            }
+
             return View();
         }
 
@@ -267,18 +281,22 @@ namespace LoteriaGG.Controllers
                 var sUsr = Session["User"].ToString();
                 var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == sUsr);
                 var nSU = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usr.USU_ID).ToList();
-                var sorteos = db.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN >= DateTime.Now).ToList();
-
+                if(nSU != null)
                 foreach (var item in nSU)
                 {
                     rtn.Add(new
                     {
                         Id = item.SOR_ID,
-                        FFinicio = item.TBL_SORTEO.SOR_FECHA_INICIO,
-                        FFin = item.TBL_SORTEO.SOR_FECHA_FIN,
+                        FFinicio = item.TBL_SORTEO.SOR_FECHA_INICIO?.ToString("dd'/'MM'/'yyyy hh:mm"),
+                        FFin = item.TBL_SORTEO.SOR_FECHA_FIN?.ToString("dd'/'MM'/'yyyy hh:mm"),
+                        Premio = item.TBL_SORTEO.SOR_PREMIO,
                     });
                 }
             }
+            return Json(new
+            {
+                data = rtn
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

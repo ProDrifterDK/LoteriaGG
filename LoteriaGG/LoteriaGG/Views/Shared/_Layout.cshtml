@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="google-site-verification" content="V151tMsnAZuk7BkKkyAo63Uj-IW_X2tleAaQYVLjRJw" />
     <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
           rel="stylesheet" type="text/css" />
     <link rel="icon" href="~/Content/Images/GG.png"/>
@@ -58,7 +59,7 @@
                         @if (loged == "True")
                         {
                             <li><a href="/Sorteo/" style="color:#C6CE00">Inscribirse</a></li>
-                            <li><a href="/Profile/ObtenerSorteo" style="color:darkred">Obtener Sorteo</a></li>
+                            <li><a href="/Profile/ObtenerSorteo" style="color:darkred">Obtener GGCoin</a></li>
                         }
                     </ul>
 
@@ -242,7 +243,7 @@
     });
     function Alerta() {
         var mensaje = "@ViewBag.Mensaje";
-        if (mensaje == "Inscrito!" || mensaje == "Se ha cargado un sorteo a tu cuenta.") {
+        if (mensaje == "Inscrito!" || mensaje == "Se ha cargado un sorteo a tu cuenta." || mensaje == "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte") {
             $.bigBox({
                 title: "Felicidades!",
                 content: mensaje,
@@ -250,7 +251,17 @@
                 timeout: 4000,
                 icon: "glyphicon glyphicon-exclamation-sign",
             });
-        } else {
+        } else if (mensaje == "Recuerda revisar tu mail para verificar tu cuena.") {
+            $.bigBox({
+                title: "Aviso",
+                content: mensaje,
+                color: "#d8601a",
+                timeout: 4000,
+                icon: "glyphicon glyphicon-exclamation-sign",
+            });
+        }else
+        {
+            console.log(mensaje);
             $.bigBox({
                 title: "Error",
                 content: mensaje,

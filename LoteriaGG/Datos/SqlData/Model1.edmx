@@ -30,6 +30,7 @@
           <Property Name="SOR_FECHA_FIN" Type="date" />
           <Property Name="SOR_CREADO_POR" Type="bigint" />
           <Property Name="SOR_MODIFICADO_POR" Type="bigint" />
+          <Property Name="SOR_PREMIO" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TBL_SORTEO_GRATIS">
           <Key>
@@ -119,12 +120,7 @@
         <EntityContainer Name="LOTERIA_GGEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="LOTERIA_GGModel.NUB_SORTEO_USUARIO" />
           <EntitySet Name="TBL_ADMIN" EntityType="LOTERIA_GGModel.TBL_ADMIN" />
-          <EntitySet Name="TBL_SORTEO" EntityType="LOTERIA_GGModel.TBL_SORTEO" />
           <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" />
-          <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
-            <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
-            <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
-          </AssociationSet>
           <EntitySet Name="TBL_USUARIO" EntityType="LOTERIA_GGModel.TBL_USUARIO" />
           <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_USUARIO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
@@ -134,6 +130,11 @@
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
           </AssociationSet>
+          <EntitySet Name="TBL_SORTEO" EntityType="LOTERIA_GGModel.TBL_SORTEO" />
+          <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
+            <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+            <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="NUB_SORTEO_USUARIO">
           <Key>
@@ -142,8 +143,8 @@
           <Property Name="NUB_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SOR_ID" Type="Int64" Nullable="false" />
           <Property Name="USU_ID" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="TBL_SORTEO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" FromRole="NUB_SORTEO_USUARIO" ToRole="TBL_SORTEO" />
           <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="NUB_SORTEO_USUARIO" ToRole="TBL_USUARIO" />
+          <NavigationProperty Name="TBL_SORTEO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" FromRole="NUB_SORTEO_USUARIO" ToRole="TBL_SORTEO" />
         </EntityType>
         <EntityType Name="TBL_ADMIN">
           <Key>
@@ -152,18 +153,6 @@
           <Property Name="ADM_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USU_ID" Type="Int64" Nullable="false" />
           <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_ADMIN" ToRole="TBL_USUARIO" />
-        </EntityType>
-        <EntityType Name="TBL_SORTEO">
-          <Key>
-            <PropertyRef Name="SOR_ID" />
-          </Key>
-          <Property Name="SOR_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SOR_LLENO" Type="Boolean" Nullable="false" />
-          <Property Name="SOR_FECHA_INICIO" Type="DateTime" Precision="0" />
-          <Property Name="SOR_FECHA_FIN" Type="DateTime" Precision="0" />
-          <Property Name="SOR_CREADO_POR" Type="Int64" />
-          <Property Name="SOR_MODIFICADO_POR" Type="Int64" />
-          <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" FromRole="TBL_SORTEO" ToRole="NUB_SORTEO_USUARIO" />
         </EntityType>
         <EntityType Name="TBL_SORTEO_GRATIS">
           <Key>
@@ -174,18 +163,6 @@
           <Property Name="SG_VALIDO" Type="Boolean" Nullable="false" />
           <Property Name="USU_ID" Type="Int64" />
         </EntityType>
-        <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
-          <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
-          <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_SORTEO">
-              <PropertyRef Name="SOR_ID" />
-            </Principal>
-            <Dependent Role="NUB_SORTEO_USUARIO">
-              <PropertyRef Name="SOR_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="TBL_USUARIO">
           <Key>
             <PropertyRef Name="USU_ID" />
@@ -229,6 +206,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TBL_SORTEO">
+          <Key>
+            <PropertyRef Name="SOR_ID" />
+          </Key>
+          <Property Name="SOR_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOR_LLENO" Type="Boolean" Nullable="false" />
+          <Property Name="SOR_FECHA_INICIO" Type="DateTime" Precision="0" />
+          <Property Name="SOR_FECHA_FIN" Type="DateTime" Precision="0" />
+          <Property Name="SOR_CREADO_POR" Type="Int64" />
+          <Property Name="SOR_MODIFICADO_POR" Type="Int64" />
+          <Property Name="SOR_PREMIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" FromRole="TBL_SORTEO" ToRole="NUB_SORTEO_USUARIO" />
+        </EntityType>
+        <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
+          <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
+          <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SORTEO">
+              <PropertyRef Name="SOR_ID" />
+            </Principal>
+            <Dependent Role="NUB_SORTEO_USUARIO">
+              <PropertyRef Name="SOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -249,18 +251,6 @@
               <MappingFragment StoreEntitySet="TBL_ADMIN">
                 <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
                 <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_SORTEO">
-            <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
-              <MappingFragment StoreEntitySet="TBL_SORTEO">
-                <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
-                <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
-                <ScalarProperty Name="SOR_FECHA_FIN" ColumnName="SOR_FECHA_FIN" />
-                <ScalarProperty Name="SOR_FECHA_INICIO" ColumnName="SOR_FECHA_INICIO" />
-                <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
-                <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -289,6 +279,19 @@
                 <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
                 <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
                 <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SORTEO">
+            <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
+              <MappingFragment StoreEntitySet="TBL_SORTEO">
+                <ScalarProperty Name="SOR_PREMIO" ColumnName="SOR_PREMIO" />
+                <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
+                <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
+                <ScalarProperty Name="SOR_FECHA_FIN" ColumnName="SOR_FECHA_FIN" />
+                <ScalarProperty Name="SOR_FECHA_INICIO" ColumnName="SOR_FECHA_INICIO" />
+                <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
+                <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
