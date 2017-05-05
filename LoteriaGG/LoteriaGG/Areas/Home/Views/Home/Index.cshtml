@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<style>
+    .div1 {
+        height: 100%;
+        width: 50%;
+        display: block;
+        background-image: url(/Content/Images/SteamInicio.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000;
+        position: absolute;
+        top: 0px;
+        border: 7px solid #555;
+        filter: grayscale(100%);
+    }
+    .div2 {
+        height: 100%;
+        width: 50%;
+        display: block;
+        background-image: url(/Content/Images/AkalivsBaron.jpg);
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000;
+        position: absolute;
+        top: 0px;
+        border: 7px solid #555;
+        filter: grayscale(100%);
+        left:50%;
+    }
+    .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .div1:hover,.div2:hover {
+        filter: grayscale(0%);
+    }
+</style>
+<html>
+<head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1964721766989179",
+            enable_page_level_ads: true
+        });
+    </script>
+    <meta name="google-site-verification" content="V151tMsnAZuk7BkKkyAo63Uj-IW_X2tleAaQYVLjRJw" />
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/Content/Images/GG.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/smartadmin-production-plugins.min.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/smartadmin-production.min.css" rel="stylesheet" type="text/css" />*@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+
+<body>
+    <div class="div1">
+        <a href="/Steam/Home/" class="btn layer" style="width:100%;height:100%"></a>
+    </div>
+
+    <div class="div2">
+        <a href="/LoL/Home/" class="btn layer" style="width:100%;height:100%"></a>
+    </div>
+</body>
+
+
+
+</html>

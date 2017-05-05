@@ -59,5 +59,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HOME">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_HOME">
+        <MappingFragment StoreEntitySet="TBL_HOME">
+          <ScalarProperty Name="HM_ID" ColumnName="HM_ID" />
+          <ScalarProperty Name="HM_TXT_GANADORES" ColumnName="HM_TXT_GANADORES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

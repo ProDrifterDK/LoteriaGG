@@ -143,14 +143,27 @@
     <Content Include="Content\estilos.css" />
     <Content Include="Content\estiloSorteo.css" />
     <Content Include="Content\estiloVerificar.css" />
+    <Content Include="Content\Images\69698566-dota-2-logo-wallpapers.jpg" />
+    <Content Include="Content\Images\70400029-dota-2-logo-wallpapers.jpg" />
+    <Content Include="Content\Images\7380b7765e42987b761a2a86a73b737a.jpg" />
+    <Content Include="Content\Images\AkalivsBaron.jpg" />
     <Content Include="Content\Images\Blast-Zone-Heimerdinger.jpg" />
     <Content Include="Content\Images\Blitz.jpg" />
     <Content Include="Content\Images\Corporate-Mundo.jpg" />
+    <Content Include="Content\Images\cs1.jpg" />
+    <Content Include="Content\Images\csgo1.jpg" />
+    <Content Include="Content\Images\csgo2.jpg" />
+    <Content Include="Content\Images\Dota2.jpg" />
     <Content Include="Content\Images\facebook-icon24x24.png" />
     <Content Include="Content\Images\Galio.jpg" />
     <Content Include="Content\Images\GG.png" />
     <Content Include="Content\Images\Kha%27ZixMecha.jpg" />
     <Content Include="Content\Images\Kindred-Classic-wallpaper.jpg" />
+    <Content Include="Content\Images\photo_2017-05-02_17-26-11.jpg" />
+    <Content Include="Content\Images\rockstar.jpg" />
+    <Content Include="Content\Images\SteamInicio.jpg" />
+    <Content Include="Content\Images\SteamProfile.jpg" />
+    <Content Include="Content\Images\SteamOtro2.jpg" />
     <Content Include="Content\Images\TF.jpg" />
     <Content Include="Content\Images\tfcards.jpg" />
     <Content Include="Content\Images\Thresh.jpg" />
@@ -168,6 +181,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\smartadmin-production-plugins.min.css" />
     <Content Include="Content\smartadmin-production.min.css" />
+    <Content Include="Content\Steam\estiloAdmin.css" />
+    <Content Include="Content\Steam\estiloCC.css" />
+    <Content Include="Content\Steam\estiloContactanos.css" />
+    <Content Include="Content\Steam\estiloEP.css" />
+    <Content Include="Content\Steam\estiloOS.css" />
+    <Content Include="Content\Steam\estiloPerfil.css" />
+    <Content Include="Content\Steam\estilos.css" />
+    <Content Include="Content\Steam\estiloSorteo.css" />
+    <Content Include="Content\Steam\estiloVerificar.css" />
+    <Content Include="Content\Steam\Site.css" />
+    <Content Include="Content\Steam\StyleSheet1.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -178,6 +202,33 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\SmartNotification.min.js" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="Areas\Home\Views\Shared\_Head.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Home\Views\web.config" />
+    <Content Include="Areas\Home\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Steam\Views\About\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Administrador\DarSorteo.cshtml" />
+    <Content Include="Areas\Steam\Views\Administrador\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Administrador\SG.cshtml" />
+    <Content Include="Areas\Steam\Views\Home\Contactanos.cshtml" />
+    <Content Include="Areas\Steam\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Home\LogOut.cshtml" />
+    <Content Include="Areas\Steam\Views\Home\Verification.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\CambiarContrasena.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\EditarMail.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\EditarPerfil.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\Error.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\ObtenerGGCoins.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\SorteosInscritos.cshtml" />
+    <Content Include="Areas\Steam\Views\Profile\Success.cshtml" />
+    <Content Include="Areas\Steam\Views\Shared\_Head.cshtml" />
+    <Content Include="Areas\Steam\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Steam\Views\Sorteo\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Sorteo\Inscripcion.cshtml" />
+    <Content Include="Areas\Steam\Views\web.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
@@ -193,12 +244,22 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
+    <Compile Include="Areas\LoL\Controllers\AdministradorController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Areas\LoL\Controllers\AboutController.cs" />
+    <Compile Include="Areas\LoL\Controllers\HomeController.cs" />
+    <Compile Include="Areas\LoL\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\LoL\Controllers\SorteoController.cs" />
+    <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Areas\LoL\LoLAreaRegistratrion.cs" />
+    <Compile Include="Areas\Steam\Controllers\AboutController.cs" />
+    <Compile Include="Areas\Steam\Controllers\AdministradorController.cs" />
+    <Compile Include="Areas\Steam\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Steam\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Steam\Controllers\SorteoController.cs" />
+    <Compile Include="Areas\Steam\SteamAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\SorteoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,36 +273,41 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Areas\LoL\Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\LoL\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\LoL\Views\Home\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\LogOut.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Home\LogOut.cshtml" />
+    <Content Include="Areas\LoL\Views\About\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Shared\_Head.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\CambiarContrasena.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\Success.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\Error.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\EditarPerfil.cshtml" />
+    <Content Include="Areas\LoL\Views\Home\Verification.cshtml" />
+    <Content Include="Areas\LoL\Views\Sorteo\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Administrador\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Administrador\SG.cshtml" />
+    <Content Include="Areas\LoL\Views\Sorteo\Inscripcion.cshtml" />
+    <Content Include="Areas\LoL\Views\Administrador\DarSorteo.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\ObtenerGGCoins.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\EditarMail.cshtml" />
+    <Content Include="Areas\LoL\Views\Home\Contactanos.cshtml" />
+    <Content Include="Areas\LoL\Views\Profile\SorteosInscritos.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Head.cshtml" />
-    <Content Include="Views\Profile\CambiarContrasena.cshtml" />
-    <Content Include="Views\Profile\Success.cshtml" />
-    <Content Include="Views\Profile\Error.cshtml" />
-    <Content Include="Views\Profile\EditarPerfil.cshtml" />
-    <Content Include="Views\Home\Verification.cshtml" />
-    <Content Include="Views\Sorteo\Index.cshtml" />
-    <Content Include="Views\Administrador\Index.cshtml" />
-    <Content Include="Views\Administrador\SG.cshtml" />
-    <Content Include="Views\Sorteo\Inscripcion.cshtml" />
-    <Content Include="Views\Administrador\DarSorteo.cshtml" />
-    <Content Include="Views\Profile\ObtenerSorteo.cshtml" />
-    <Content Include="Views\Profile\EditarMail.cshtml" />
-    <Content Include="Views\Home\Contactanos.cshtml" />
-    <Content Include="Views\Profile\SorteosInscritos.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -251,7 +317,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\LoL\Models\" />
+    <Folder Include="Areas\Steam\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

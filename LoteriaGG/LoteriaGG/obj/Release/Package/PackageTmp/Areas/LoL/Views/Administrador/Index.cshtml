@@ -1,0 +1,88 @@
+﻿<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <title>Administradores - LoteriaGG</title>
+    <link rel="stylesheet" href="~/Content/estiloAdmin.css">
+    <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+
+    <script>
+(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+	  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+    </script>
+    <section class="row">
+        <a href="/Administrador/Index" type="button" class="btn btn-danger">Agregar Sorteo</a>
+        <a href="/Administrador/SG" type="button" class="btn btn-danger">Sorteos Gratis</a>
+        <a href="/Administrador/DarSorteo" type="button" class="btn btn-danger">Dar Sorteo</a>
+    </section>
+    <div class="main container-fluid jumbotron myBackground">
+        <section class="row">
+            <article class="col-xs-12 col-sm-6 col-md-8 col-lg-12">
+                <form id="ajax-register-form" action="/Administrador/Index" method="post" role="form" autocomplete="off">
+                    <input type="text" name="fin" placeholder="MM-dd hh"/>
+                    <input  type="submit" class="btn btn-default" value="Iniciar Torneo">
+                </form>
+            </article>
+
+        </section>
+        <div class="row">
+            <br>
+            <br>
+            <div class="col-xs-12 col-sm-6">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+            </div>
+        </div>
+    </div>
+    <footer class="navbar navbar-fixed-bottom">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <h4>Hecho por el equipo de Resyst ® Softwares™.</h4>
+
+                    <h5>
+                        © 2017 Resyst Softwares. Todos los derechos reservados.
+                    </h5>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <h4>
+                        Síguenos en Facebook:
+                        <a href="https://www.facebook.com/loteria.gg">
+                            <img src="~/Content/Images/facebook-icon24x24.png" alt="facebook" />
+                        </a>
+                    </h4>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+</body>
+
+

@@ -30,5 +30,6 @@ namespace Datos.SqlData
         public DbSet<TBL_SORTEO_GRATIS> TBL_SORTEO_GRATIS { get; set; }
         public DbSet<TBL_USUARIO> TBL_USUARIO { get; set; }
         public DbSet<TBL_SORTEO> TBL_SORTEO { get; set; }
+        public DbSet<TBL_HOME> TBL_HOME { get; set; }
     }
 }

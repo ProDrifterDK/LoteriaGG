@@ -18,6 +18,7 @@
       <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
       <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
     </AssociationSet>
+    <EntitySet Name="TBL_HOME" EntityType="LOTERIA_GGModel.TBL_HOME" />
   </EntityContainer>
   <EntityType Name="NUB_SORTEO_USUARIO">
     <Key>
@@ -114,4 +115,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="TBL_HOME">
+    <Key>
+      <PropertyRef Name="HM_ID" />
+    </Key>
+    <Property Name="HM_TXT_GANADORES" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="HM_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
 </Schema>

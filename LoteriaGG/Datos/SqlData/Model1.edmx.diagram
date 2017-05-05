@@ -13,6 +13,7 @@
         <AssociationConnector Association="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" />
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="5.375" PointY="4" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
+        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_HOME" Width="1.5" PointX="0.75" PointY="7.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

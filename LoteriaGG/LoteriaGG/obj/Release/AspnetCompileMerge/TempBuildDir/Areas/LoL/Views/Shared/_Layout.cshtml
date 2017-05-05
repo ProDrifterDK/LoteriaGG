@@ -1,0 +1,285 @@
+﻿@using BotDetect.Web.Mvc;   
+@{ 
+    string loged = null;
+    if(Session["LogedIn"] != null)
+    {
+        loged = Session["LogedIn"].ToString();
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1964721766989179",
+            enable_page_level_ads: true
+        });
+    </script>
+    <meta name="google-site-verification" content="V151tMsnAZuk7BkKkyAo63Uj-IW_X2tleAaQYVLjRJw" />
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/Content/Images/GG.png"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/smartadmin-production-plugins.min.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/smartadmin-production.min.css" rel="stylesheet" type="text/css" />*@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "LoL" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Home/Home/Index">LoteriaGG</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        @if (loged == "True")
+                        {
+                            <li><a href="/LoL/Sorteo/" style="color:#C6CE00">Inscribirse</a></li>
+                            <li><a href="/LoL/Profile/ObtenerGGCoins" style="color:#cc0000">Obtener GGCoins</a></li>
+                        }
+                        <li><a href="/LoL/Home/Index">Inicio</a></li>
+                        <li><a href="/LoL/About/Index">Acerca de</a></li>
+                        <li><a href="/LoL/Home/Contactanos">Contactanos</a></li>
+                        @*<li><a href="/Steam/Home">Steam</a></li>*@
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        @if (loged == "True")
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["User"].ToString()<span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu" style="background-color:#222222">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-12" style="border-bottom:1px solid #ffff61">
+                                            <h4><a href="/LoL/Profile/Index" class="pull-right"><b style="color:#90969d">Perfil </b><span style="color:#032c8a" class="glyphicon glyphicon-user"></span></a><br /></h4>
+                                        </div>
+                                        @*<div class="col-lg-12" style="border-bottom:1px solid #ffff61">
+                                            <h4><a href="/Sorteo/" class="pull-right"><b style="color:#90969d">Inscribirse </b><span style="color:white" class="glyphicon glyphicon-list-alt"></span></a><br /></h4>
+                                        </div>*@
+                                        <div class="col-lg-12">
+                                            <h4><a href="/LoL/Home/LogOut" class="pull-right"><b style="color:#90969d">Cerrar Sesión </b><span style="color:#ffff61" class="glyphicon glyphicon-off"></span></a><br /></h4>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            @*<li>
+                                <a href=""
+                            </li>*@
+
+                        }
+                        else
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center"><h3><b style="color:black">Registrarse</b></h3></div>
+                                        <form id="ajax-register-form" action="LoL/Home/Index" method="post" role="form" autocomplete="off">
+                                            <input type="hidden" name="type" value="registro" />
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="Nombre"  tabindex="2" class="form-control" placeholder="Nombre">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="Apellido"tabindex="2" class="form-control" placeholder="Apellido">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="NombreDeInvocador" tabindex="2" class="form-control" placeholder="Nombre de invocador">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="confirmPassword" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <BotDetect:Captcha ID="ExampleCaptcha" runat="server" />
+                                                    <asp:TextBox ID="CaptchaCodeTextBox" runat="server" />
+                                                    <div class="col-xs-6 col-xs-offset-3">
+                                                        <input type="checkbox" name="terminos" value="true" />Acepto los <a data-target="#myModal" data-toggle="modal">terminos y condiciones</a>
+                                                    </div>
+                                                    <div class="col-xs-6 col-xs-offset-3">
+                                                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Aceptar">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Iniciar sesión <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                                    <div class="col-lg-12">
+                                        <div class="text-center"><h3><b style="color:black">Iniciar sesión</b></h3></div>
+                                        <form id="ajax-login-form" action="/LoL/Home/Index" method="post" role="form" autocomplete="off">
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-7">
+                                                        <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                        <label for="remember"> <b style="color:black">Recuérdame</b></label>
+                                                    </div>
+                                                    <div class="col-xs-5 pull-right">
+                                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Entrar">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="text-center">
+                                                            <a href="http://phpoll.com/recover" tabindex="5" lass="forgot-password">¿Olvidaste tu contraseña?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                                        </form>
+                                    </div>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        @RenderBody()
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Acuerdo de licencia de usuario final (ALUF)</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Este acuerdo de licencia del usuario final ("ALUF") puede actualizarse ocasionalmente. Si usted continúa usando el Servicio (tal como se define a continuación) después de que se haya publicado o se le haya comunicado la existencia de la versión revisada, se entenderá que acepta sus términos.</p>
+                    <p>USTED ES USUARIO DEL SERVICIO DE ENTRETENIMIENTOS PERTENECIENTE A RESYST INC. LLAMADO LOTERIAGG SIEMPRE Y CUANDO SE ENCUENTRE REGISTRADO EN LA BASE DE DATOS DE LA PAGINA, DIRECTA O INDIRECTAMENTE CON SUS DATOS REALES, SIENDO ESTOS DATOS ENTREGADOS DE TOTAL RESPONSABILIDAD DEL USUARIO QUIEN LOS ENTREGO O A QUIEN ESTOS DATOS PERTENECEN. EL SERVICIO SE CONSIDERA TERMINADO POR ALGUNA DE LAS PARTES CON EL DEBIDO AVISO PREVIO POR ESCRITO DE LA FINALIZACION DE ESTOS SERVICIOS, SIENDO ESTOS AVISOS ENVIADOS DESDE RESYST INC. HACIA EL USUARIO FINAL REGISTRADO EN LA BASE DE DATOS, DESDE AHORA USUARIO, O SIENDO EL AVISO ENVIADO DESDE EL USUARIO HACIA RESYST INC. Y ESTE AVISO SE CONSIDERARA VALIDADO SOLO SI AMBAS PARTES ESTAN DE ACUERDO EN FINALIZAR LOS SERVICIOS CON LAS COMPENSACIONES ACORDADAS EN EL AVISO.</p>
+                    <p>RESYST INC. SE RESERVA EL DERECHO DE TERMINAR LOS SERVICIOS SIN COMPENSACION ALGUNA EN VIRTUD DE QUE EL USUARIO NO CUMPLA CON EL ACUERDO Y SUS REGLAS, LAS CUALES SERAN DETALLADAS A CONTINUACION.</p>
+                    <p>1) Usted (el usuario) asegura ser el propietario de los datos entregados en la página al momento del registro y se hace responsable de las actualizaciones de estos datos en los casos pertinentes y acepta liberar de toda responsabilidad a Resyst Inc. quienes haran uso de esta informacion para la entrega de premios y compensaciones en los casos donde estos datos sean cruciales para realizar dicha entrega.</p>
+                    <p>2) Usted (el usuario) debe mantener activa su cuenta por al menos 6 meses, entendiéndose por activada la cuenta cuando esta realiza una inscripción en un sorteo.</p>
+                    <p>3) Usted (el usuario) puede poseer únicamente una cuenta en LoteríaGG, esto en virtud de que puede realizar múltiples inscripciones en múltiples sorteos.</p>
+                    <p>4) Usted (el usuario) debe poseer autorización de sus padres para realizar cualquier transacción ya sea en su propio nombre o en el de ellos, en caso de poseer menos de 18 años de edad dentro del erritorio legal comprendido dentro de la República de Chile.</p>
+                    <p>5) Usted (el usuario) no obtendrá beneficios monetarios de parte de Resyst Inc. en virtud de canjear los premios y/o compensaciones, tampoco podrá emitir reclamos en contra de Resyst Inc. por esta prohibición ni ninguna de aquellas prohibiciones que puedan desprenderse de esta.</p>
+                    <p>6) Usted (el usuario) no emitirá correos violentos y/u ofensivos en contra de Resyst Inc. ni a ninguna de sus dependencias de comunicación, Resyst Inc. se reserva el derecho de retirar al usuario de la plataforma y todas las cuentas asociadas a esta (en virtud de la 3ra regla) sin derecho alguno a compensación de parte de Resyst Inc. además de establecer una prohibición de inscripción y sin posibilidad alguna de levantamiento de esta prohibición, sin importar el caso.</p>
+                    <p>7) Usted (el usuario) al momento de realizar la transferencia para confirmar su inscripción se desprende de todo tipo de responsabilidad y derecho sobre el dinero transferido, asegurando el valor transferido sea cual sea este y sus derechos a Resyst Inc., sus asociados y dependencias, además usted será el único responsable de que la cantidad transferida sea la correcta para obtener las compensaciones correspondientes.</p>
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/bootstrap.js"></script>
+<script src="~/scripts/SmartNotification.min.js"></script>
+<script src="~/Content/js/jquery.dataTables.min.js"></script>
+<link href="~/Content/js/jquery.dataTables.min.css" rel="stylesheet" />
+<script>
+    (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-97856606-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script>
+    $(document).ready(function () {
+
+        if ("@ViewBag.Mensaje") {
+            Alerta();
+        }
+    });
+    function Alerta() {
+        var mensaje = "@ViewBag.Mensaje";
+        if (mensaje == "Inscrito!" || mensaje == "Se ha cargado un sorteo a tu cuenta." || mensaje == "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte") {
+            $.bigBox({
+                title: "Felicidades!",
+                content: mensaje,
+                color: "#5cb85c",
+                timeout: 4000,
+                icon: "glyphicon glyphicon-exclamation-sign",
+            });
+        } else if (mensaje == "Recuerda revisar tu mail para verificar tu cuena.") {
+            $.bigBox({
+                title: "Aviso",
+                content: mensaje,
+                color: "#d8601a",
+                timeout: 4000,
+                icon: "glyphicon glyphicon-exclamation-sign",
+            });
+        }else
+        {
+            console.log(mensaje);
+            $.bigBox({
+                title: "Error",
+                content: mensaje,
+                color: "#ac2727",
+                timeout: 4000,
+                icon: "glyphicon glyphicon-exclamation-sign",
+            });
+        }
+
+
+    }
+
+</script>

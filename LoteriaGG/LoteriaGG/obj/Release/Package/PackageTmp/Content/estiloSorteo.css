@@ -30,7 +30,12 @@ ul.dropdown-lr {
 	}
 }
 footer {
-	background:rgba(70, 226, 169, 0.21);
-	color:#259f00;
+    background: rgba(70, 226, 169, 0.21);
+    color: #d9d9d9;
 }
-
+div.dataTables_filter input {
+    background-color: rgba(92, 239, 192, 0);
+    border-color: rgba(92, 239, 192, 50);
+    margin-left: 0.5em;
+    display: inline-block;
+}

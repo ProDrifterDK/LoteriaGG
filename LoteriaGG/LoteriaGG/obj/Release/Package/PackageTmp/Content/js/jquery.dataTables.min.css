@@ -1,14 +1,10 @@
 div.dataTables_length label {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     font-weight: normal;
     text-align: left;
     white-space: nowrap;
 }
 
 div.dataTables_length select {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     width: 75px;
     display: inline-block;
 }
@@ -18,38 +14,28 @@ div.dataTables_filter {
 }
 
     div.dataTables_filter label {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         font-weight: normal;
         white-space: nowrap;
         text-align: left;
     }
 
     div.dataTables_filter input {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         margin-left: 0.5em;
         display: inline-block;
     }
 
 div.dataTables_info {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     padding-top: 8px;
     white-space: nowrap;
 }
 
 div.dataTables_paginate {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     margin: 0;
     white-space: nowrap;
     text-align: right;
 }
 
     div.dataTables_paginate ul.pagination {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         margin: 2px 0;
         white-space: nowrap;
     }
@@ -59,8 +45,6 @@ div.dataTables_paginate {
     div.dataTables_filter,
     div.dataTables_info,
     div.dataTables_paginate {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         text-align: center;
     }
 }
@@ -86,8 +70,6 @@ table.dataTable {
     table.dataTable thead .sorting_desc,
     table.dataTable thead .sorting_asc_disabled,
     table.dataTable thead .sorting_desc_disabled {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         cursor: pointer;
         position: relative;
     }
@@ -95,8 +77,6 @@ table.dataTable {
         table.dataTable thead .sorting:after,
         table.dataTable thead .sorting_asc:after,
         table.dataTable thead .sorting_desc:after {
-            background-color: rgba(92, 239, 192, 0);
-            border-color: rgba(92, 239, 192, 50);
             position: absolute;
             top: 8px;
             right: 8px;
@@ -105,51 +85,35 @@ table.dataTable {
             opacity: 0.5;
         }
         table.dataTable thead .sorting:after {
-            background-color: rgba(92, 239, 192, 0);
-            border-color: rgba(92, 239, 192, 50);
             opacity: 0.2;
             content: "\e150"; /* sort */
         }
         table.dataTable thead .sorting_asc:after {
-            background-color: rgba(92, 239, 192, 0);
-            border-color: rgba(92, 239, 192, 50);
             content: "\e155"; /* sort-by-attributes */
         }
 
         table.dataTable thead .sorting_desc:after {
-            background-color: rgba(92, 239, 192, 0);
-            border-color: rgba(92, 239, 192, 50);
             content: "\e156"; /* sort-by-attributes-alt */
         }
         table.dataTable thead .sorting_asc_disabled:after,
         table.dataTable thead .sorting_desc_disabled:after {
-            background-color: rgba(92, 239, 192, 0);
-            border-color: rgba(92, 239, 192, 50);
             color: #eee;
         }
 
     table.dataTable thead > tr > th {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         padding-left: 8px;
         padding-right: 30px;
     }
 
 .dt-toolbar {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
 }
 
 table.dataTable th:active {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     outline: none;
 }
 
 /* Scrolling */
 div.dataTables_scrollHead table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     margin-bottom: 0 !important;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -157,15 +121,11 @@ div.dataTables_scrollHead table {
 
     div.dataTables_scrollHead table thead tr:last-child th:first-child,
     div.dataTables_scrollHead table thead tr:last-child td:first-child {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         border-bottom-left-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
     }
 
 div.dataTables_scrollBody table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-top: none;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -173,14 +133,10 @@ div.dataTables_scrollBody table {
 
 div.dataTables_scrollBody tbody tr:first-child th,
 div.dataTables_scrollBody tbody tr:first-child td {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-top: none;
 }
 
 div.dataTables_scrollFoot table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     margin-top: 0 !important;
     border-top: none;
 }
@@ -190,14 +146,10 @@ div.dataTables_scrollFoot table {
    to use separate
  */
 table.table-bordered.dataTable {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-collapse: separate !important;
 }
 table.table-bordered thead th,
 table.table-bordered thead td {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-left-width: 0;
     border-top-width: 0;
 }
@@ -209,13 +161,9 @@ table.table-bordered tbody td {
 }
 table.table-bordered th:last-child,
 table.table-bordered td:last-child {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-right-width: 0;
 }
 div.dataTables_scrollHead table.table-bordered {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-bottom-width: 0;
 }
 
@@ -227,78 +175,54 @@ div.dataTables_scrollHead table.table-bordered {
  */
 .table.dataTable tbody tr.active td,
 .table.dataTable tbody tr.active th {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     color: white;
 }
 
 .table.dataTable tbody tr.active:hover td,
 .table.dataTable tbody tr.active:hover th {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     background-color: #0075b0 !important;
 }
 
 .table.dataTable tbody tr.active th > a,
 .table.dataTable tbody tr.active td > a {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     color: white;
 }
 
 .table-striped.dataTable tbody tr.active:nth-child(odd) td,
 .table-striped.dataTable tbody tr.active:nth-child(odd) th {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
 }
 
 table.DTTT_selectable tbody tr {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     cursor: pointer;
 }
 
 div.DTTT .btn:hover {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     text-decoration: none !important;
 }
 
 ul.DTTT_dropdown.dropdown-menu {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     z-index: 2003;
 }
 
     ul.DTTT_dropdown.dropdown-menu a {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         color: #333 !important; /* needed only when demo_page.css is included */
     }
 
     ul.DTTT_dropdown.dropdown-menu li {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         position: relative;
     }
 
         ul.DTTT_dropdown.dropdown-menu li:hover a {
-            background-color: rgba(92, 239, 192, 0);
-            border-color: rgba(92, 239, 192, 50);
             background-color: #0088cc;
             color: white !important;
         }
 
 div.DTTT_collection_background {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     z-index: 2002;
 }
 
 /* TableTools information display */
 div.DTTT_print_info {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -332,8 +256,6 @@ div.DTTT_print_info {
     }
 
 div.dataTables_processing {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -364,16 +286,12 @@ div.DTFC_LeftFootWrapper table,
 div.DTFC_RightHeadWrapper table,
 div.DTFC_RightFootWrapper table,
 table.DTFC_Cloned tr.even {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     background-color: white;
     margin-bottom: 0;
 }
 
 div.DTFC_RightHeadWrapper table,
 div.DTFC_LeftHeadWrapper table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-bottom: none !important;
     margin-bottom: 0 !important;
     border-top-right-radius: 0 !important;
@@ -385,16 +303,12 @@ div.DTFC_LeftHeadWrapper table {
     div.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,
     div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
     div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
-        background-color: rgba(92, 239, 192, 0);
-        border-color: rgba(92, 239, 192, 50);
         border-bottom-left-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
     }
 
 div.DTFC_RightBodyWrapper table,
 div.DTFC_LeftBodyWrapper table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-top: none;
     margin: 0 !important;
 }
@@ -403,15 +317,11 @@ div.DTFC_RightBodyWrapper tbody tr:first-child th,
 div.DTFC_RightBodyWrapper tbody tr:first-child td,
 div.DTFC_LeftBodyWrapper tbody tr:first-child th,
 div.DTFC_LeftBodyWrapper tbody tr:first-child td {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-top: none;
 }
 
 div.DTFC_RightFootWrapper table,
 div.DTFC_LeftFootWrapper table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     border-top: none;
     margin-top: 0 !important;
 }
@@ -421,7 +331,5 @@ div.DTFC_LeftFootWrapper table {
  * FixedHeader styles
  */
 div.FixedHeader_Cloned table {
-    background-color: rgba(92, 239, 192, 0);
-    border-color: rgba(92, 239, 192, 50);
     margin: 0 !important
 }
