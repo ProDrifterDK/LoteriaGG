@@ -81,7 +81,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     {
                         ViewBag.Mensaje = "Recuerda revisar tu mail para verificar tu cuena.";
                     }
-                    if(user.USU_SUMMONER == "" || user.USU_SUMMONER == null)
+                    if(user.USU_SUMMONER == "" || user.USU_SUMMONER == null)    
                     {
                         ViewBag.Summ = "NoTiene";
                     }
@@ -278,12 +278,12 @@ namespace LoteriaGG.Areas.LoL.Controllers
                 var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
                 if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
                 {
-                    ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin";
                     if (user.USU_DAILY == null)
                     {
                         user.USU_DAILY = 0;
                     }
                     user.USU_DAILY++;
+                    ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
                     if (user.USU_DAILY == 3)
                     {
                         ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";

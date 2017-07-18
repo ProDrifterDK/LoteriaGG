@@ -60,12 +60,12 @@ namespace LoteriaGG.Areas.Steam.Controllers
                         var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user.USU_ACCOUNT);
                         if (usu.USU_DAILY_REWARD == null || usu.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
                         {
-                            ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin";
                             if (usu.USU_DAILY == null)
                             {
                                 usu.USU_DAILY = 0;
                             }
                             usu.USU_DAILY++;
+                            ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
                             if (usu.USU_DAILY == 3)
                             {
                                 ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
@@ -279,12 +279,12 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
                 if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
                 {
-                    ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin";
                     if (user.USU_DAILY == null)
                     {
                         user.USU_DAILY = 0;
                     }
                     user.USU_DAILY++;
+                    ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
                     if (user.USU_DAILY == 3)
                     {
                         ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
