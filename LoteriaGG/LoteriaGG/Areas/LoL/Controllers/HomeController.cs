@@ -65,7 +65,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                                 usu.USU_DAILY = 0;
                             }
                             usu.USU_DAILY++;
-                            ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin";
+                            ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
                             if (usu.USU_DAILY == 3)
                             {
                                 ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
