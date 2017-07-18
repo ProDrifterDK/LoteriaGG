@@ -32,6 +32,9 @@ namespace Datos.SqlData
         public Nullable<int> USU_SOR_DISP { get; set; }
         public Nullable<bool> USU_CAMBIO_EMAIL { get; set; }
         public Nullable<bool> USU_SORTEO_ESPECIAL { get; set; }
+        public string USU_STEAM_NICK { get; set; }
+        public Nullable<System.DateTime> USU_DAILY_REWARD { get; set; }
+        public Nullable<int> USU_DAILY { get; set; }
     
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual ICollection<TBL_ADMIN> TBL_ADMIN { get; set; }

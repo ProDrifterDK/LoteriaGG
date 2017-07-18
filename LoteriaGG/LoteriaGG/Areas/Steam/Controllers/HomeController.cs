@@ -13,17 +13,33 @@ using BotDetect;
 using BotDetect.Web.Mvc;
 using BotDetect.Web.UI;
 using System.Web.Routing;
+using System.Data.Entity.Validation;
 
 namespace LoteriaGG.Areas.Steam.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: /LoL/Home/
-        public ActionResult Index()
+        // GET: /Steam/Home/
+        public ActionResult Index(string sum = "")
         {
             if (Session["LogedIn"] == null)
             {
                 Session["LogedIn"] = "";
+            }
+            if (sum != "")
+            {
+                ViewBag.Summ = sum;
+            }
+            using (var db = new LOTERIA_GGEntities())
+            {
+                TBL_HOME txtHome = db.TBL_HOME.FirstOrDefault();
+                if (txtHome == null)
+                {
+                    txtHome = new TBL_HOME { HM_TXT_GANADORES = "No hay ganadores todavía" };
+                    db.TBL_HOME.Add(txtHome);
+                    db.SaveChanges();
+                }
+                ViewBag.Ganadores = txtHome.HM_TXT_GANADORES;
             }
             return View();
         }
@@ -38,9 +54,36 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 {
                     Session["LogedIn"] = "True";
                     Session["User"] = user.USU_ACCOUNT;
-                    if(user.USU_VERIFICADO == null || user.USU_VERIFICADO == false)
+                    Session["UserN"] = user.USU_NOMBRE;
+                    using (var db = new LOTERIA_GGEntities())
+                    {
+                        var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user.USU_ACCOUNT);
+                        if (usu.USU_DAILY_REWARD == null || usu.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
+                        {
+                            ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin";
+                            if (usu.USU_DAILY == null)
+                            {
+                                usu.USU_DAILY = 0;
+                            }
+                            usu.USU_DAILY++;
+                            if (usu.USU_DAILY == 3)
+                            {
+                                ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
+                                usu.USU_SOR_DISP++;
+                                usu.USU_DAILY = 0;
+                            }
+
+                            db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT).USU_DAILY_REWARD = DateTime.Now;
+                            db.SaveChanges();
+                        }
+                    }
+                    if (user.USU_VERIFICADO == null || user.USU_VERIFICADO == false)
                     {
                         ViewBag.Mensaje = "Recuerda revisar tu mail para verificar tu cuena.";
+                    }
+                    if (user.USU_STEAM_NICK == "" || user.USU_STEAM_NICK == null)
+                    {
+                        ViewBag.Summ = "NoTiene";
                     }
                 }
                 else
@@ -142,8 +185,8 @@ namespace LoteriaGG.Areas.Steam.Controllers
             mm.To.Add(new MailAddress(to));
             mm.From = new MailAddress("noreply@loteriagg.com");
             mm.Body = "<h3>Bienvenido a LoteriaGG, " + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: " + username + "</p> <p>Tu direccion de Email: " + to + "</p>" +
-                "<p>Para verificar el email debes presionar el siguiente link</p><a href=" + "\"http://loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "\"" + ">Preciona aquí para verificar</a>"
-                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://loteriagg.com/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
+                "<p>Para verificar tu email debes seguir el siguiente enlace:</p><a href=" + "\"http://loteriagg.com/LoL/Home/Verification?us=" + username + "&verif=" + confirmationToken + "\"" + ">Verificar</a>"
+                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://loteriagg.com/LoL/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
             mm.IsBodyHtml = true;
             mm.Subject = "Verification";
             SmtpClient smtpClient = new SmtpClient();
@@ -164,11 +207,12 @@ namespace LoteriaGG.Areas.Steam.Controllers
                     }
                     SendEmailConfirmation(mail, usr.USU_ACCOUNT, usr.USU_CODIGO_VERIFICAION.ToString(), usr.USU_NOMBRE);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
-            return RedirectToAction("Verification", "Home");
+            return RedirectToAction("Verification", "Home", new { area = "LoL" });
         }
 
         public ActionResult LogOut()
@@ -183,9 +227,10 @@ namespace LoteriaGG.Areas.Steam.Controllers
             if (Session["LogedIn"] == null)
             {
                 Session["LogedIn"] = "";
-            } else if (Session["LogedIn"].ToString() != "")
+            }
+            else if (Session["LogedIn"].ToString() != "")
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
             if (us == "" && verif == "")
                 ViewBag.ret = null;
@@ -194,9 +239,12 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 if (us != null && verif != null)
                 {
                     Session["LogedIn"] = "True";
-                    Session["User"] = Class1.Verificar(us, verif).USU_ACCOUNT;
+                    var usu = Class1.Verificar(us, verif);
+                    Session["User"] = usu.USU_ACCOUNT;
+                    Session["UserN"] = usu.USU_NOMBRE;
                     ViewBag.ret = true;
-                } else
+                }
+                else
                     ViewBag.ret = null;
             }
             ViewBag.Mensaje = msj;
@@ -215,6 +263,126 @@ namespace LoteriaGG.Areas.Steam.Controllers
             // BotDetect requests must not be routed
             routes.IgnoreRoute("{*botdetect}",
               new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+        }
+
+        public ActionResult FBLogin(string mail, string usr)
+        {
+            var usu = FBLog(mail);
+            if (usu == null)
+            {
+                usu = FBReg(mail, usr);
+            }
+            Session["LogedIn"] = "True";
+            Session["User"] = usu.USU_ACCOUNT;
+            Session["UserN"] = usu.USU_NOMBRE;
+            using (var db = new LOTERIA_GGEntities()) {
+                var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
+                if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
+                {
+                    ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin";
+                    if (user.USU_DAILY == null)
+                    {
+                        user.USU_DAILY = 0;
+                    }
+                    user.USU_DAILY++;
+                    if (user.USU_DAILY == 3)
+                    {
+                        ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
+                        user.USU_SOR_DISP++;
+                        user.USU_DAILY = 0;
+                    }
+
+                    user.USU_DAILY_REWARD = DateTime.Now;
+                    db.SaveChanges();
+                }
+            }
+            if (usu.USU_STEAM_NICK == "" || usu.USU_STEAM_NICK == null)
+                return RedirectToAction("Index", new { sum = "NoTiene" });
+            return RedirectToAction("Index");
+
+        }
+
+        private TBL_USUARIO FBReg(string mail, string usr)
+        {
+            try
+            {
+                using (var dc = new LOTERIA_GGEntities())
+                {
+                    if (dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail) != null)
+                    {
+                        throw new Exception("Mail ya registrado");
+                    }
+                    var activationCode = Guid.NewGuid();
+
+                    var usu = new TBL_USUARIO();
+                    string[] s = usr.Split(' ');
+                    Random rand = new Random();
+                    string ss = usr + rand.Next().ToString();
+                    usu.USU_ACCOUNT = ss.Substring(0, 20);
+                    usu.USU_PASSWORD = "FBLog" + rand.Next().ToString();
+                    usu.USU_NOMBRE = s[0];
+                    if (s.Length == 3 || s.Length == 2)
+                        usu.USU_APELLIDO = s[1];
+                    else if (s.Length > 3)
+                        usu.USU_APELLIDO = s[2];
+                    usu.USU_EMAIL = mail;
+                    usu.USU_SUMMONER = "";
+                    usu.USU_CODIGO_VERIFICAION = Guid.Empty;
+                    usu.USU_VERIFICADO = true;
+
+                    dc.TBL_USUARIO.Add(usu);
+
+                    dc.SaveChanges();
+                    return dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail);
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+
+        }
+        private TBL_USUARIO FBLog(string mail)
+        {
+            TBL_USUARIO ret = null;
+            try
+            {
+                using (var dc = new LOTERIA_GGEntities())
+                {
+                    ret = dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return ret;
+        }
+
+        [HttpPost]
+        public ActionResult Summoner(string summoner)
+        {
+            using (var db = new LOTERIA_GGEntities())
+            {
+                var usu = Session["User"].ToString();
+                var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu);
+                usr.USU_STEAM_NICK = summoner;
+
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

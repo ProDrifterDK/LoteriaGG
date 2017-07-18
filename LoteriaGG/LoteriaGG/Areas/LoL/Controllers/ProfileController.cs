@@ -18,7 +18,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new {area ="LoL"});
             }
 
             TBL_USUARIO us = Class1.ObtenerCuenta(Session["User"].ToString());
@@ -35,7 +35,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { Area = "LoL"});
             }
 
             if (msj != null)
@@ -52,7 +52,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             //retornar vista diferente dependiendo de si es correcto o no *** IMPORTANTE!
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
             var respuesta = Class1.CambiarContrasena(Session["User"].ToString(), nContrasena, nContrasenaR, aContrasena);
 
@@ -65,7 +65,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
 
             TBL_USUARIO us = Class1.ObtenerCuenta(Session["User"].ToString());
@@ -78,7 +78,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area="LoL" });
             }
             TBL_USUARIO us = Class1.ObtenerCuenta(Session["User"].ToString());
 
@@ -92,30 +92,31 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
 
-            //if (codigo == "RakanXayah")
-            //{
-            //    using (var db = new LOTERIA_GGEntities())
-            //    {
-            //        var usr = Session["User"].ToString();
-            //        var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
+            if (codigo == "GIVEMERUST")
+            {
+                using (var db = new LOTERIA_GGEntities())
+                {
+                    var usr = Session["User"].ToString();
+                    var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
 
-            //        if (usrD.USU_SORTEO_ESPECIAL == true)
-            //        {
-            //            return RedirectToAction("ObtenerSorteo", new { msj = "Ya usaste este codigo." });
-            //        }
-            //        if(usrD.USU_SOR_DISP == null)
-            //        {
-            //            usrD.USU_SOR_DISP = 0;
-            //        }
-            //        usrD.USU_SOR_DISP++;
-            //        usrD.USU_SORTEO_ESPECIAL = true;
-            //        db.SaveChanges();
-            //        return RedirectToAction("ObtenerSorteo", new { msj = "Se ha cargado un GGCoin a tu cuenta." });
-            //    }
-            //}
+                    if (usrD.USU_SORTEO_ESPECIAL == true)
+                    {
+                        return RedirectToAction("ObtenerGGCoins", new { msj = "Ya usaste este codigo." });
+                    }
+                    var sorteo = db.TBL_SORTEO.FirstOrDefault(o => o.SOR_ID == 11);
+
+                    var nubSor = new NUB_SORTEO_USUARIO { SOR_ID = sorteo.SOR_ID, USU_ID = usrD.USU_ID };
+
+                    db.NUB_SORTEO_USUARIO.Add(nubSor);
+                    usrD.USU_SORTEO_ESPECIAL = true;
+                    db.SaveChanges();
+
+                    return RedirectToAction("ObtenerGGCoins", new { msj = "Ahora estas inscrito en el sorteo para ganar RUST!." });
+                }
+            }
             Guid Codigo;
             try
             {
@@ -123,14 +124,14 @@ namespace LoteriaGG.Areas.LoL.Controllers
             }
             catch
             {
-                return RedirectToAction("ObtenerGGCoins", new { msj = "El codigo ingresado es incorrecto." });
+                return RedirectToAction("ObtenerGGCoins", new { area = "LoL",  msj = "El codigo ingresado es incorrecto." });
             }
             using (var db = new LOTERIA_GGEntities())
             {
                 var sg = db.TBL_SORTEO_GRATIS.FirstOrDefault(o => o.SG_CODIGO == Codigo && o.SG_VALIDO == true); 
                 if(sg == null)
                 {
-                    return RedirectToAction("ObtenerGGCoins", new { msj = "El codigo ingresado es incorrecto." });
+                    return RedirectToAction("ObtenerGGCoins", new { area = "LoL", msj = "El codigo ingresado es incorrecto." });
                 }
                 else
                 {
@@ -144,7 +145,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     sg.SG_VALIDO = false;
                     sg.USU_ID = usrD.USU_ID;
                     db.SaveChanges();
-                    return RedirectToAction("ObtenerGGCoins", new { msj = "Se ha cargado un GGCoin a tu cuenta." });
+                    return RedirectToAction("ObtenerGGCoins", new { area = "LoL", msj = "Se ha cargado un GGCoin a tu cuenta." });
                 }
             }
         }
@@ -153,7 +154,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
 
             ViewBag.cambio = rp;
@@ -165,7 +166,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
             if (!IsEmailValid(newMail))
             {
@@ -214,14 +215,14 @@ namespace LoteriaGG.Areas.LoL.Controllers
 
                 if (user == null)
                 {
-                    return RedirectToAction("Index", "Home", new { });
+                    return RedirectToAction("Index", "Home", new { area = "LoL" });
                 }
 
                 user.USU_CAMBIO_EMAIL = false;
                 user.USU_EMAIL = nm;
                 db.SaveChanges();
             }
-            return RedirectToAction("EditarMail", new { rp = 0});
+            return RedirectToAction("EditarMail", new { area = "LoL", rp = 0});
         }
 
         public static Boolean IsEmailValid(string EmailAddr)
@@ -234,11 +235,9 @@ namespace LoteriaGG.Areas.LoL.Controllers
 
                 if (!v.Success || EmailAddr.Length != v.Length)
                 {
-
                     return false;
                 }
                 else
-
                 {
                     return true;
                 }
@@ -253,7 +252,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
 
             using(var db = new LOTERIA_GGEntities())
@@ -298,5 +297,6 @@ namespace LoteriaGG.Areas.LoL.Controllers
                 data = rtn
             }, JsonRequestBehavior.AllowGet);
         }
+
     }
 }

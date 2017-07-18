@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="~/Content/bootstrap.min.css">
     <title>LoteriaGG</title>
-    <link rel="stylesheet" href="~/Content/estiloCC.css">
+    <link rel="stylesheet" href="~/Content/Steam/estiloCC.css">
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 </head>
 <body>
@@ -39,13 +39,12 @@
                                 <h3>Contraseña Cambiada Exitosamente</h3>
                             </div>
                             <div class="row">
-                                <a href="/Profile/Index" type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:grey;background-color:rgba(57, 36, 57, 0.79)">Volver</a>
+                                <a href="/Steam/Profile/Index" type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:grey;background-color:rgba(57, 36, 57, 0.79)">Volver</a>
                             </div>
                         }
                         else
                         {
-                            using (Html.BeginForm("CambiarContrasena", "Profile", null, FormMethod.Post, new { id = "form", @class = "form-horizontal", @data_parsley_validate = "true", @novalidate = "true", @method = "get" }))
-                            {
+                            <form action="/Steam/Profile/CambiarContrasena" method="post" role="form">
                                 <div class="col-lg-6">
                                     <div class="col-lg-12">
                                         <label style="color:goldenrod">Nueva Contraseña: </label>
@@ -108,12 +107,12 @@
 
                                                 @*<input type="submit" value="Guardar" class="col-lg-5 btn btn-primary" style="background-color:goldenrod;color:grey;border-color:grey" />*@
                                                 @*<button type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:grey;background-color:rgba(65, 65, 65, 0.59)">Volver</button>*@
-                                                <a href="/Profile/Index" type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:grey;background-color:rgba(57, 36, 57, 0.79)">Volver</a>
+                                                <a href="/Steam/Profile/Index" type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:grey;background-color:rgba(57, 36, 57, 0.79)">Volver</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            }
+                            </form>
                         }
                     </div>
                 </div>
@@ -122,7 +121,7 @@
         </section>
     </div>
 
-    <footer class="navbar navbar-fixed-bottom">
+    <!--<footer class="navar navbar-fixed-bottom">
 
         <div class="container">
             <div class="row">
@@ -148,7 +147,7 @@
 
         </div>
 
-    </footer>
+    </footer>-->
 
     <script src="~/scripts/jquery.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>

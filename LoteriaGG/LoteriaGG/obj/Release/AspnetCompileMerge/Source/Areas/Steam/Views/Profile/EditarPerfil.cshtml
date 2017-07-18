@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="~/Content/bootstrap.min.css">
-    <title>LoteriaGG</title>
-    <link href="~/Content/estiloEP.css" rel="stylesheet" />
+    <title>LoteriaGG - Editar Perfil</title>
+    <link href="~/Content/Steam/estiloEP.css" rel="stylesheet" />
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 </head>
 
@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <section class="row">
             <article class="col-xs-12 col-sm-10 col-md-5 col-lg-5" style="background-color:rgba(117, 139, 163, 0.63)">
-                @using (Html.BeginForm("EditarPerfil", "Profile", new { area = "LoL" }, FormMethod.Post, new { id = "form", @class = "form-horizontal", @data_parsley_validate = "true", @novalidate = "true", @method = "get" }))
+                @using (Html.BeginForm("EditarPerfil", "Profile", null, FormMethod.Post, new { id = "form", @class = "form-horizontal", @data_parsley_validate = "true", @novalidate = "true", @method = "get" }))
                 {
                     <div class="col-lg-12">
                         @if (ret == null || ret == false)
@@ -53,8 +53,8 @@
                                         <label>Nombre de invocador: </label>
                                     </div>
                                     <div class="form-group">
-                                        <input type = "text" class="col-lg-12 escribir" name="nombreInvocador" value="@Model.USU_SUMMONER" placeholder="@Model.USU_SUMMONER" />
-                                        <label style = "color:red;font-size:12px" > El nombre de invocador debe tener más de una letras</label>
+                                        <input type = "text" class="col-lg-12 escribir" name="nombreInvocador" value="@Model.USU_STEAM_NICK" placeholder="@Model.USU_STEAM_NICK" />
+                                        <label style = "color:red;font-size:12px" > El nombre del perfil de steam debe tener más de una letras</label>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                     <input type="submit" class="btn btn-primary col-lg-12" style="border-color: rgba(97, 119, 143, 0.63); background-color:rgba(43, 102, 57, 0.77)" value="Aplicar">
                                 </div>
                                 <div class="col-lg-4">
-                                    <a href="/LoL/Profile/Index" class="btn btn-primary col-lg-12" style="background-color:rgba(222, 66, 49, 0.76);border-color:rgba(97, 119, 143, 0.63)">Volver</a>
+                                    <a href="/Steam/Profile/Index" class="btn btn-primary col-lg-12" style="background-color:rgba(222, 66, 49, 0.76);border-color:rgba(97, 119, 143, 0.63)">Volver</a>
                                 </div>
                             </div>
                             }
@@ -98,7 +98,7 @@
                                             <label>Nombre de invocador: </label>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="col-lg-12 escribir" name="nombreInvocador" value="@Model.USU_SUMMONER" placeholder="@Model.USU_SUMMONER" />
+                                            <input type="text" class="col-lg-12 escribir" name="nombreInvocador" value="@Model.USU_STEAM_NICK" placeholder="@Model.USU_STEAM_NICK" />
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                                         <input type="submit" class="btn btn-primary col-lg-12" style="border-color: rgba(97, 119, 143, 0.63); background-color:rgba(43, 102, 57, 0.77)" value="Aplicar">
                                     </div>
                                     <div class="col-lg-4">
-                                        <a href="/LoL/Profile/Index" class="btn btn-primary col-lg-12" style="background-color:rgba(222, 66, 49, 0.76);border-color:rgba(97, 119, 143, 0.63)">Volver</a>
+                                        <a href="/Steam/Profile/Index" class="btn btn-primary col-lg-12" style="background-color:rgba(222, 66, 49, 0.76);border-color:rgba(97, 119, 143, 0.63)">Volver</a>
                                     </div>
                                 </div>
                             }
@@ -122,7 +122,7 @@
                                 <h3>Perfil Editado Exitosamente</h3>
                             </div>
                             <div class="row">
-                                <a href="/LoL/Profile/Index" type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:rgba(97, 119, 143, 0.63);background-color:rgba(222, 66, 49, 0.76)">Volver</a>
+                                <a href="/Steam/Profile/Index" type="button" class="col-lg-5 btn btn-secondary" style="color:gray;border-color:rgba(97, 119, 143, 0.63);background-color:rgba(222, 66, 49, 0.76)">Volver</a>
                             </div>
                         }
                         <br />
@@ -133,7 +133,7 @@
         </section>
     </div>
 
-    <footer class="navbar navbar-fixed-bottom">
+    <!--<footer class="navar navbar-fixed-bottom">
 
         <div class="container">
             <div class="row">
@@ -159,7 +159,7 @@
 
         </div>
 
-    </footer>
+    </footer>-->
 
     <script src="~/scripts/jquery.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>

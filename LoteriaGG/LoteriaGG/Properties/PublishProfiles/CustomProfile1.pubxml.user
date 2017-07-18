@@ -14,13 +14,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/Home/Views/Home/Index.cshtml">
-      <publishTime>05/02/2017 01:43:47</publishTime>
+      <publishTime>07/13/2017 11:38:04</publishTime>
     </File>
     <File Include="Areas/Home/Views/Shared/_Head.cshtml">
       <publishTime>05/01/2017 17:58:37</publishTime>
     </File>
     <File Include="Areas/Home/Views/Shared/_Layout.cshtml">
-      <publishTime>05/02/2017 01:21:55</publishTime>
+      <publishTime>07/13/2017 11:38:04</publishTime>
     </File>
     <File Include="Areas/Home/Views/web.config">
       <publishTime>05/01/2017 23:42:49</publishTime>
@@ -29,7 +29,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:22:38</publishTime>
     </File>
     <File Include="Areas/LoL/Views/About/Index.cshtml">
-      <publishTime>04/12/2017 18:03:15</publishTime>
+      <publishTime>05/17/2017 16:33:06</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Administrador/DarSorteo.cshtml">
       <publishTime>04/17/2017 17:43:26</publishTime>
@@ -41,37 +41,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/17/2017 00:59:04</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Home/Contactanos.cshtml">
-      <publishTime>04/22/2017 20:05:28</publishTime>
+      <publishTime>07/11/2017 17:06:26</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Home/Index.cshtml">
-      <publishTime>05/04/2017 11:10:14</publishTime>
+      <publishTime>07/13/2017 11:38:48</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Home/LogOut.cshtml">
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Home/Verification.cshtml">
-      <publishTime>05/04/2017 08:54:20</publishTime>
+      <publishTime>05/16/2017 18:09:48</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/CambiarContrasena.cshtml">
-      <publishTime>05/04/2017 08:39:59</publishTime>
+      <publishTime>05/16/2017 18:09:55</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/EditarMail.cshtml">
-      <publishTime>05/04/2017 08:52:44</publishTime>
+      <publishTime>05/16/2017 18:09:56</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/EditarPerfil.cshtml">
-      <publishTime>05/04/2017 08:53:26</publishTime>
+      <publishTime>05/16/2017 18:09:48</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/Error.cshtml">
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/Index.cshtml">
-      <publishTime>05/02/2017 17:00:42</publishTime>
+      <publishTime>05/16/2017 18:09:48</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/ObtenerGGCoins.cshtml">
-      <publishTime>05/04/2017 08:54:46</publishTime>
+      <publishTime>07/11/2017 17:06:48</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/SorteosInscritos.cshtml">
-      <publishTime>05/04/2017 08:55:06</publishTime>
+      <publishTime>05/16/2017 18:09:48</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/Success.cshtml">
       <publishTime>03/31/2017 17:26:49</publishTime>
@@ -80,13 +80,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Shared/_Layout.cshtml">
-      <publishTime>05/04/2017 10:42:57</publishTime>
+      <publishTime>07/13/2017 11:38:43</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Index.cshtml">
-      <publishTime>05/04/2017 08:56:09</publishTime>
+      <publishTime>05/16/2017 18:10:09</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Inscripcion.cshtml">
-      <publishTime>04/12/2017 12:05:12</publishTime>
+      <publishTime>05/16/2017 18:09:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/web.config">
       <publishTime>03/31/2017 17:26:49</publishTime>
@@ -95,7 +95,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:22:52</publishTime>
     </File>
     <File Include="Areas/Steam/Views/About/Index.cshtml">
-      <publishTime>05/02/2017 01:23:16</publishTime>
+      <publishTime>05/18/2017 10:38:14</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Administrador/DarSorteo.cshtml">
       <publishTime>05/02/2017 01:23:16</publishTime>
@@ -107,67 +107,70 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:23:16</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/Contactanos.cshtml">
-      <publishTime>05/02/2017 17:28:17</publishTime>
+      <publishTime>07/11/2017 17:06:16</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/Index.cshtml">
-      <publishTime>05/02/2017 01:35:29</publishTime>
+      <publishTime>07/13/2017 11:38:41</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/LogOut.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/Verification.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:38:14</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/CambiarContrasena.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>06/02/2017 17:59:30</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/EditarMail.cshtml">
-      <publishTime>05/04/2017 08:39:48</publishTime>
+      <publishTime>06/02/2017 18:20:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/EditarPerfil.cshtml">
-      <publishTime>05/04/2017 08:40:58</publishTime>
+      <publishTime>07/10/2017 14:50:39</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/Error.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/Index.cshtml">
-      <publishTime>05/02/2017 16:59:47</publishTime>
+      <publishTime>07/10/2017 15:55:32</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/ObtenerGGCoins.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>07/11/2017 17:06:08</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/SorteosInscritos.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>07/10/2017 14:25:51</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/Success.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Shared/_Head.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Shared/_Layout.cshtml">
-      <publishTime>05/04/2017 08:27:22</publishTime>
+      <publishTime>07/13/2017 11:38:43</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Sorteo/Index.cshtml">
-      <publishTime>05/02/2017 18:59:49</publishTime>
+      <publishTime>07/10/2017 14:29:41</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Sorteo/Inscripcion.cshtml">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/web.config">
-      <publishTime>05/02/2017 01:23:17</publishTime>
+      <publishTime>05/18/2017 10:30:24</publishTime>
+    </File>
+    <File Include="Areas/Steam/Views/Wheel/Index.cshtml">
+      <publishTime>07/10/2017 21:14:14</publishTime>
     </File>
     <File Include="Areas/Steam/Views/_ViewStart.cshtml">
-      <publishTime>05/02/2017 01:24:07</publishTime>
+      <publishTime>05/18/2017 10:39:31</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>05/04/2017 11:23:29</publishTime>
+      <publishTime>07/13/2017 11:45:41</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>05/04/2017 11:23:29</publishTime>
+      <publishTime>07/13/2017 11:45:40</publishTime>
     </File>
     <File Include="bin/BotDetect.dll">
       <publishTime>07/10/2016 09:49:00</publishTime>
@@ -176,7 +179,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2016 09:49:00</publishTime>
     </File>
     <File Include="bin/Datos.dll">
-      <publishTime>05/04/2017 11:23:14</publishTime>
+      <publishTime>07/10/2017 17:45:50</publishTime>
     </File>
     <File Include="bin/Datos.dll.config">
       <publishTime>04/08/2017 20:21:49</publishTime>
@@ -188,7 +191,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/LoteriaGG.dll">
-      <publishTime>05/04/2017 11:23:16</publishTime>
+      <publishTime>07/13/2017 11:45:23</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>03/31/2017 17:26:53</publishTime>
@@ -218,7 +221,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:55</publishTime>
     </File>
     <File Include="bin/Negocio.dll">
-      <publishTime>05/04/2017 11:23:15</publishTime>
+      <publishTime>07/10/2017 17:45:51</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>03/31/2017 17:26:55</publishTime>
@@ -434,25 +437,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:25:36</publishTime>
     </File>
     <File Include="Content/Steam/estiloCC.css">
-      <publishTime>05/02/2017 01:25:36</publishTime>
+      <publishTime>07/10/2017 14:31:23</publishTime>
     </File>
     <File Include="Content/Steam/estiloContactanos.css">
-      <publishTime>05/02/2017 17:30:53</publishTime>
+      <publishTime>06/02/2017 17:47:45</publishTime>
     </File>
     <File Include="Content/Steam/estiloEP.css">
-      <publishTime>05/02/2017 16:33:43</publishTime>
+      <publishTime>06/02/2017 18:15:56</publishTime>
     </File>
     <File Include="Content/Steam/estiloOS.css">
-      <publishTime>05/02/2017 01:25:36</publishTime>
+      <publishTime>06/02/2017 19:09:49</publishTime>
     </File>
     <File Include="Content/Steam/estiloPerfil.css">
-      <publishTime>05/02/2017 17:01:02</publishTime>
+      <publishTime>06/02/2017 17:51:10</publishTime>
     </File>
     <File Include="Content/Steam/estilos.css">
       <publishTime>05/02/2017 17:09:10</publishTime>
     </File>
     <File Include="Content/Steam/estiloSorteo.css">
-      <publishTime>05/02/2017 18:44:21</publishTime>
+      <publishTime>06/02/2017 18:33:37</publishTime>
     </File>
     <File Include="Content/Steam/estiloVerificar.css">
       <publishTime>05/02/2017 01:25:36</publishTime>
@@ -461,7 +464,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:25:36</publishTime>
     </File>
     <File Include="Content/Steam/StyleSheet1.css">
-      <publishTime>05/02/2017 01:25:36</publishTime>
+      <publishTime>06/02/2017 18:18:51</publishTime>
     </File>
     <File Include="Content/StyleSheet1.css">
       <publishTime>04/19/2017 21:25:36</publishTime>
@@ -485,7 +488,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2017 20:42:48</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>05/04/2017 11:23:23</publishTime>
+      <publishTime>07/13/2017 11:45:31</publishTime>
     </File>
     <File Include="scripts/ai.0.15.0-build58334.js">
       <publishTime>03/31/2017 17:26:50</publishTime>
@@ -542,7 +545,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2017 20:05:28</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/26/2017 18:05:18</publishTime>
+      <publishTime>05/05/2017 00:02:46</publishTime>
     </File>
     <File Include="Views/Home/LogOut.cshtml">
       <publishTime>03/31/2017 17:26:49</publishTime>
@@ -581,7 +584,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/30/2017 00:40:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/01/2017 17:43:26</publishTime>
+      <publishTime>07/13/2017 11:38:06</publishTime>
     </File>
     <File Include="Views/Sorteo/Index.cshtml">
       <publishTime>04/26/2017 18:02:53</publishTime>
@@ -596,7 +599,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/04/2017 10:41:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/26/2017 12:05:17</publishTime>
+      <publishTime>07/10/2017 14:58:08</publishTime>
     </File>
     <File Include="WebForm1.aspx">
       <publishTime>03/31/2017 17:26:49</publishTime>

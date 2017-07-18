@@ -1,7 +1,7 @@
-﻿@using BotDetect.Web.Mvc;   
-@{ 
+﻿﻿@using BotDetect.Web.Mvc;
+@{
     string loged = null;
-    if(Session["LogedIn"] != null)
+    if (Session["LogedIn"] != null)
     {
         loged = Session["LogedIn"].ToString();
     }
@@ -13,14 +13,11 @@
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-1964721766989179",
+            google_ad_client: "ca-pub-9005426925226498",
             enable_page_level_ads: true
         });
     </script>
-    <meta name="google-site-verification" content="V151tMsnAZuk7BkKkyAo63Uj-IW_X2tleAaQYVLjRJw" />
-    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
-          rel="stylesheet" type="text/css" />
-    <link rel="icon" href="~/Content/Images/GG.png"/>
+    <link rel="icon" href="~/Content/Images/GG.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
@@ -29,7 +26,16 @@
     @*<link href="~/Content/smartadmin-production.min.css" rel="stylesheet" type="text/css" />*@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
+<body style="height:100%">
+    <div id="fb-root"></div>
+    <script>
+(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9&appId=122229375033808";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -66,9 +72,9 @@
                             <li><a href="/LoL/Sorteo/" style="color:#C6CE00">Inscribirse</a></li>
                             <li><a href="/LoL/Profile/ObtenerGGCoins" style="color:#cc0000">Obtener GGCoins</a></li>
                         }
+                        <li><a href="/Steam/Home">Steam</a></li>
                         <li><a href="/LoL/About/Index">Acerca de</a></li>
                         <li><a href="/LoL/Home/Contactanos">Contáctanos</a></li>
-                        @*<li><a href="/Steam/Home">Steam</a></li>*@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -77,15 +83,15 @@
                         @if (loged == "True")
                         {
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["User"].ToString()<span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Session["UserN"].ToString()<span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu" style="background-color:#222222">
                                     <div class="col-lg-12">
                                         <div class="col-lg-12" style="border-bottom:1px solid #ffff61">
                                             <h4><a href="/LoL/Profile/Index" class="pull-right"><b style="color:#90969d">Perfil </b><span style="color:#032c8a" class="glyphicon glyphicon-user"></span></a><br /></h4>
                                         </div>
                                         @*<div class="col-lg-12" style="border-bottom:1px solid #ffff61">
-                                            <h4><a href="/Sorteo/" class="pull-right"><b style="color:#90969d">Inscribirse </b><span style="color:white" class="glyphicon glyphicon-list-alt"></span></a><br /></h4>
-                                        </div>*@
+                                                <h4><a href="/Sorteo/" class="pull-right"><b style="color:#90969d">Inscribirse </b><span style="color:white" class="glyphicon glyphicon-list-alt"></span></a><br /></h4>
+                                            </div>*@
                                         <div class="col-lg-12">
                                             <h4><a href="/LoL/Home/LogOut" class="pull-right"><b style="color:#90969d">Cerrar Sesión </b><span style="color:#ffff61" class="glyphicon glyphicon-off"></span></a><br /></h4>
                                         </div>
@@ -93,8 +99,8 @@
                                 </ul>
                             </li>
                             @*<li>
-                                <a href=""
-                            </li>*@
+                                    <a href=""
+                                </li>*@
 
                         }
                         else
@@ -113,10 +119,10 @@
                                                 <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="Nombre"  tabindex="2" class="form-control" placeholder="Nombre">
+                                                <input type="text" name="Nombre" tabindex="2" class="form-control" placeholder="Nombre">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="Apellido"tabindex="2" class="form-control" placeholder="Apellido">
+                                                <input type="text" name="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" name="NombreDeInvocador" tabindex="2" class="form-control" placeholder="Nombre de invocador">
@@ -139,6 +145,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState()" scope="email,publish_actions" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                             <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
                                         </form>
                                     </div>
@@ -180,6 +187,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState()" scope="email,publish_actions" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                             <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
                                         </form>
                                     </div>
@@ -191,8 +199,17 @@
             </div>
         </nav>
         @RenderBody()
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Prueba -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9005426925226498"
+             data-ad-slot="5169887364"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -204,7 +221,8 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        Este acuerdo de licencia del usuario final ("ALUF") puede actualizarse ocasionalmente. Si usted continúa usando el Servicio (tal como se define a continuación) después de que se haya publicado o se le haya comunicado la existencia de la versión revisada, se entenderá que acepta sus términos.</p>
+                        Este acuerdo de licencia del usuario final ("ALUF") puede actualizarse ocasionalmente. Si usted continúa usando el Servicio (tal como se define a continuación) después de que se haya publicado o se le haya comunicado la existencia de la versión revisada, se entenderá que acepta sus términos.
+                    </p>
                     <p>USTED ES USUARIO DEL SERVICIO DE ENTRETENIMIENTOS PERTENECIENTE A RESYST INC. LLAMADO LOTERIAGG SIEMPRE Y CUANDO SE ENCUENTRE REGISTRADO EN LA BASE DE DATOS DE LA PAGINA, DIRECTA O INDIRECTAMENTE CON SUS DATOS REALES, SIENDO ESTOS DATOS ENTREGADOS DE TOTAL RESPONSABILIDAD DEL USUARIO QUIEN LOS ENTREGO O A QUIEN ESTOS DATOS PERTENECEN. EL SERVICIO SE CONSIDERA TERMINADO POR ALGUNA DE LAS PARTES CON EL DEBIDO AVISO PREVIO POR ESCRITO DE LA FINALIZACION DE ESTOS SERVICIOS, SIENDO ESTOS AVISOS ENVIADOS DESDE RESYST INC. HACIA EL USUARIO FINAL REGISTRADO EN LA BASE DE DATOS, DESDE AHORA USUARIO, O SIENDO EL AVISO ENVIADO DESDE EL USUARIO HACIA RESYST INC. Y ESTE AVISO SE CONSIDERARA VALIDADO SOLO SI AMBAS PARTES ESTAN DE ACUERDO EN FINALIZAR LOS SERVICIOS CON LAS COMPENSACIONES ACORDADAS EN EL AVISO.</p>
                     <p>RESYST INC. SE RESERVA EL DERECHO DE TERMINAR LOS SERVICIOS SIN COMPENSACION ALGUNA EN VIRTUD DE QUE EL USUARIO NO CUMPLA CON EL ACUERDO Y SUS REGLAS, LAS CUALES SERAN DETALLADAS A CONTINUACION.</p>
                     <p>1) Usted (el usuario) asegura ser el propietario de los datos entregados en la página al momento del registro y se hace responsable de las actualizaciones de estos datos en los casos pertinentes y acepta liberar de toda responsabilidad a Resyst Inc. quienes haran uso de esta informacion para la entrega de premios y compensaciones en los casos donde estos datos sean cruciales para realizar dicha entrega.</p>
@@ -222,9 +240,89 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form id="ajax-register-form" action="LoL/Home/Summoner" method="post" role="form" autocomplete="off">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Neceitamos tu nombre de invocador!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="Nombre de invocador..." class="form-control" name="summoner" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        <input type="submit" value="Enviar" class="btn btn-warning" />
+                    </div>
+                </form>
+            </div>  
+        </div>
+    </div>
+
+    <footer class="navbar navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <h4>Hecho por el equipo de Resyst ® Softwares™.</h4>
+                    <h5>
+                        © 2017 Resyst Softwares. Todos los derechos reservados.
+                    </h5>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <h4>
+                        Síguenos en Facebook:
+                        <a href="https://www.facebook.com/loteria.gg">
+                            <img src="https://lh3.googleusercontent.com/rVThdsVV77Iq36HPUUqmcJ21ZAML3Gs-AxGCc2JrpoXQLYkq3Yl-0O2p8KvYHjuQMuJhq7EkvL6_F2ylJf-jY_KbahkASPDtVYjrV6Bc_dB4pEnnu5Ng425ISTs9G3NHu4zLSi00CTAyY2ycRow1LbsF6ge74Kh0h4DbboJFojfHeDIY2UjV-w1ijDEGfFEwtieMkrW0SXH-HFkabNMGLbdB3fYfUD0Dn28cqmKO35IFNN-hN4_EPhoen1Ab24MvnWbkAvZw_VRxsyDsKSAnEcV_5N-FzM6lk1VgWknUUJ0tIKCBsMVndxJhSXboeMWlIthkPUm5wzieIkaGKuw0WGcYRjKo8Kxg40qw5ZCsmeVezfsk0nylIFArsygKZexOBRKhhWgWi3gb-OY_X7hSfOr1IiXct-uk7znlhq76bJFhokI2DbqvnIISbDpRHY9ZZLmokxEsNCaSoZFCw9VVOIF5RZuTNaytj60YmXn2amrtp423JOzIRu3aaEIYKc9h8Kq_5eXgEpUqKcdGR_o_-loCPIF6JrgwhIGsgWcnhRvhFu2ZB4jgxO3YpBnReCYiHU1FbCfXefCjoO-kUvULsGo-34oK-AFbg9piIJGiBWEafXFViggW7EGgWxRk-bzAbD8d6GkH7P5Y7wYGebxHXOO52caX9QSw9YsEX29wAQ=s24-no" alt="facebook" />
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '122229375033808',
+            oauth: true,
+            cookie: true,
+            xfbml: true,
+            version: 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function myFacebookLogin() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                checkLoginState();
+            }
+        }, { scope: 'publish_actions,email' });
+    }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+            console.log(response.authResponse.accessToken);
+        });
+        FB.api('/me?fields=id,name,email,permissions', function (response) {
+            var url = "@Url.Action("FBLogin","Home")";
+            location.href = url + "?mail=" + response.email + "&usr=" + response.name;
+        });
+    }
+</script>
 <script src="~/scripts/jquery-1.10.2.min.js"></script>
 <script src="~/scripts/bootstrap.js"></script>
 <script src="~/scripts/SmartNotification.min.js"></script>
@@ -238,20 +336,36 @@
         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-97856606-1', 'auto');
+    ga('create', 'UA-102734704-1', 'auto');
     ga('send', 'pageview');
 
 </script>
 <script>
     $(document).ready(function () {
-
         if ("@ViewBag.Mensaje") {
             Alerta();
         }
+        if ("@ViewBag.Summ" == "NoTiene") {
+            $("#myModal2").modal('show');
+        }
+
+        if ("@ViewBag.Mensaje2") {
+            RegDiario();
+        }
     });
+        function RegDiario() {
+        var mensaje = "@ViewBag.Mensaje2";
+        $.bigBox({
+            title: "Felicidades!",
+            content: mensaje,
+            color: "#5cb85c",
+            timeout: 4000,
+            icon: "glyphicon glyphicon-exclamation-sign",
+        });
+    }
     function Alerta() {
         var mensaje = "@ViewBag.Mensaje";
-        if (mensaje == "Inscrito!" || mensaje == "Se ha cargado un GGCoin a tu cuenta." || mensaje == "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte") {
+        if (mensaje == "Ahora estas inscrito en el sorteo para ganar RUST!." || mensaje == "Inscrito!" || mensaje == "Se ha cargado un GGCoin a tu cuenta." || mensaje == "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte") {
             $.bigBox({
                 title: "Felicidades!",
                 content: mensaje,

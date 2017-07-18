@@ -11,12 +11,12 @@ namespace LoteriaGG.Areas.Steam.Controllers
 {
     public class SorteoController : Controller
     {
-        // GET: /LoL/Sorteo/
+        // GET: /Steam/Sorteo/
         public ActionResult Index(string msj = null)
         {
             if(Session["LogedIn"]  == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "Steam"});
             }
             if(msj != null)
             {
@@ -39,7 +39,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "Steam"});
             }
 
             var sId = long.Parse(sorID);
@@ -106,7 +106,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
                         Id = "#" + item.SOR_ID.ToString(),
                         FInicio = item.SOR_FECHA_INICIO?.ToString("dd'/'MM'/'yyyy hh:mm"),
                         FFin = item.SOR_FECHA_FIN?.ToString("dd'/'MM'/'yyyy hh:mm"),
-                        action = "<form action=\"/Sorteo/Index\" method=\"post\" role=\"form\" >" +
+                        action = "<form action=\"/Steam/Sorteo/Index\" method=\"post\" role=\"form\" >" +
                         "<input type=\"hidden\" name=\"sorID\" value=\"" + item.SOR_ID + "\">" +
                         "<input type=\"submit\" class=\"btn btn-warning\" value=\"Inscribirse\" <!--style=\"border-color:rgba(92, 239, 192, 50);color:#5a1650;background-color:rgba(92, 239, 192, 50)-->\" />" +
                         "</form>",
@@ -125,7 +125,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
         {
             if (Session["LogedIn"] == null)
             {
-                return RedirectToAction("Index", "Home", new { });
+                return RedirectToAction("Index", "Home", new { area = "Steam" });
             }
             if (msj != null)
             {

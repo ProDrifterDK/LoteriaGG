@@ -8,7 +8,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
 {
     public class AboutController : Controller
     {
-        // GET: LoL/About/
+        // GET: Steam/About/
         public ActionResult Index()
         {
             return View();

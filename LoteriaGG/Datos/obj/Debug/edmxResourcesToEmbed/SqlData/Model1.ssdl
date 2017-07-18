@@ -28,8 +28,8 @@
     </Key>
     <Property Name="SOR_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SOR_LLENO" Type="bit" Nullable="false" />
-    <Property Name="SOR_FECHA_INICIO" Type="date" />
-    <Property Name="SOR_FECHA_FIN" Type="date" />
+    <Property Name="SOR_FECHA_INICIO" Type="datetime" />
+    <Property Name="SOR_FECHA_FIN" Type="datetime" />
     <Property Name="SOR_CREADO_POR" Type="bigint" />
     <Property Name="SOR_MODIFICADO_POR" Type="bigint" />
     <Property Name="SOR_PREMIO" Type="varchar" MaxLength="100" />
@@ -50,8 +50,8 @@
     <Property Name="USU_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="USU_NOMBRE" Type="varchar" MaxLength="50" />
     <Property Name="USU_APELLIDO" Type="varchar" MaxLength="50" />
-    <Property Name="USU_ACCOUNT" Type="varchar" MaxLength="20" />
-    <Property Name="USU_PASSWORD" Type="varchar" MaxLength="20" />
+    <Property Name="USU_ACCOUNT" Type="varchar" MaxLength="50" />
+    <Property Name="USU_PASSWORD" Type="varchar" MaxLength="50" />
     <Property Name="USU_EMAIL" Type="varchar" MaxLength="50" />
     <Property Name="USU_SUMMONER" Type="varchar" MaxLength="50" />
     <Property Name="USU_CODIGO_VERIFICAION" Type="uniqueidentifier" />
@@ -59,6 +59,9 @@
     <Property Name="USU_SOR_DISP" Type="int" />
     <Property Name="USU_CAMBIO_EMAIL" Type="bit" />
     <Property Name="USU_SORTEO_ESPECIAL" Type="bit" />
+    <Property Name="USU_STEAM_NICK" Type="varchar" MaxLength="50" />
+    <Property Name="USU_DAILY_REWARD" Type="datetime" />
+    <Property Name="USU_DAILY" Type="int" />
   </EntityType>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
     <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />

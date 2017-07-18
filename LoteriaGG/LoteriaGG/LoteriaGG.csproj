@@ -209,9 +209,6 @@
     <Content Include="Areas\Home\Views\Home\Index.cshtml" />
     <Content Include="Areas\Steam\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Steam\Views\About\Index.cshtml" />
-    <Content Include="Areas\Steam\Views\Administrador\DarSorteo.cshtml" />
-    <Content Include="Areas\Steam\Views\Administrador\Index.cshtml" />
-    <Content Include="Areas\Steam\Views\Administrador\SG.cshtml" />
     <Content Include="Areas\Steam\Views\Home\Contactanos.cshtml" />
     <Content Include="Areas\Steam\Views\Home\Index.cshtml" />
     <Content Include="Areas\Steam\Views\Home\LogOut.cshtml" />
@@ -229,6 +226,7 @@
     <Content Include="Areas\Steam\Views\Sorteo\Index.cshtml" />
     <Content Include="Areas\Steam\Views\Sorteo\Inscripcion.cshtml" />
     <Content Include="Areas\Steam\Views\web.config" />
+    <Content Include="Areas\Steam\Views\Wheel\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
@@ -245,7 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
-    <Compile Include="Areas\LoL\Controllers\AdministradorController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\LoL\Controllers\AboutController.cs" />
     <Compile Include="Areas\LoL\Controllers\HomeController.cs" />
@@ -254,10 +251,10 @@
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\LoL\LoLAreaRegistratrion.cs" />
     <Compile Include="Areas\Steam\Controllers\AboutController.cs" />
-    <Compile Include="Areas\Steam\Controllers\AdministradorController.cs" />
     <Compile Include="Areas\Steam\Controllers\HomeController.cs" />
     <Compile Include="Areas\Steam\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Steam\Controllers\SorteoController.cs" />
+    <Compile Include="Areas\Steam\Controllers\WheelController.cs" />
     <Compile Include="Areas\Steam\SteamAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -295,10 +292,7 @@
     <Content Include="Areas\LoL\Views\Profile\EditarPerfil.cshtml" />
     <Content Include="Areas\LoL\Views\Home\Verification.cshtml" />
     <Content Include="Areas\LoL\Views\Sorteo\Index.cshtml" />
-    <Content Include="Areas\LoL\Views\Administrador\Index.cshtml" />
-    <Content Include="Areas\LoL\Views\Administrador\SG.cshtml" />
     <Content Include="Areas\LoL\Views\Sorteo\Inscripcion.cshtml" />
-    <Content Include="Areas\LoL\Views\Administrador\DarSorteo.cshtml" />
     <Content Include="Areas\LoL\Views\Profile\ObtenerGGCoins.cshtml" />
     <Content Include="Areas\LoL\Views\Profile\EditarMail.cshtml" />
     <Content Include="Areas\LoL\Views\Home\Contactanos.cshtml" />
@@ -319,6 +313,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\LoL\Models\" />
     <Folder Include="Areas\Steam\Models\" />
+    <Folder Include="Areas\Steam\Views\Weel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

@@ -8,12 +8,12 @@
         <EntityTypeShape EntityType="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Width="1.5" PointX="3" PointY="2.25" />
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_ADMIN" Width="1.5" PointX="3" PointY="5.125" />
         <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_USUARIO" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_HOME" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="5.625" PointY="4.75" />
+        <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
+        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_USUARIO" Width="1.5" PointX="0.75" PointY="2.375" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" />
         <AssociationConnector Association="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="5.375" PointY="4" />
-        <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_HOME" Width="1.5" PointX="0.75" PointY="7.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

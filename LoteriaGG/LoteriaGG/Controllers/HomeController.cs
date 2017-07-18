@@ -11,7 +11,7 @@ namespace LoteriaGG.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return RedirectToAction("Index","Home",new { area = "LoL" });
+            return RedirectToAction("Index","Home",new { area = "Home" });
         }
     }
 }

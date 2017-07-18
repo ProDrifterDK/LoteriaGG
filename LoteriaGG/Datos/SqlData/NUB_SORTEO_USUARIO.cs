@@ -18,7 +18,7 @@ namespace Datos.SqlData
         public long SOR_ID { get; set; }
         public long USU_ID { get; set; }
     
-        public virtual TBL_USUARIO TBL_USUARIO { get; set; }
         public virtual TBL_SORTEO TBL_SORTEO { get; set; }
+        public virtual TBL_USUARIO TBL_USUARIO { get; set; }
     }
 }

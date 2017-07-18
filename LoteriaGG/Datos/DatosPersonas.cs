@@ -91,7 +91,7 @@ namespace Datos
                 {
                     db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_NOMBRE = nombre == "" ? db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_NOMBRE : nombre;
                     db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_APELLIDO = apellido == "" ? db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_APELLIDO : apellido;
-                    db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_SUMMONER = nombreInvocador == "" ? db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_SUMMONER : nombreInvocador;
+                    db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_STEAM_NICK = nombreInvocador == "" ? db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_STEAM_NICK : nombreInvocador;
                     db.SaveChanges();
                 }
                 return true;

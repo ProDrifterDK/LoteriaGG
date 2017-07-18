@@ -28,21 +28,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBL_USUARIO">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
-        <MappingFragment StoreEntitySet="TBL_USUARIO">
-          <ScalarProperty Name="USU_SORTEO_ESPECIAL" ColumnName="USU_SORTEO_ESPECIAL" />
-          <ScalarProperty Name="USU_CAMBIO_EMAIL" ColumnName="USU_CAMBIO_EMAIL" />
-          <ScalarProperty Name="USU_SOR_DISP" ColumnName="USU_SOR_DISP" />
-          <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
-          <ScalarProperty Name="USU_CODIGO_VERIFICAION" ColumnName="USU_CODIGO_VERIFICAION" />
-          <ScalarProperty Name="USU_SUMMONER" ColumnName="USU_SUMMONER" />
-          <ScalarProperty Name="USU_EMAIL" ColumnName="USU_EMAIL" />
-          <ScalarProperty Name="USU_PASSWORD" ColumnName="USU_PASSWORD" />
-          <ScalarProperty Name="USU_ACCOUNT" ColumnName="USU_ACCOUNT" />
-          <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
-          <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
-          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+    <EntitySetMapping Name="TBL_HOME">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_HOME">
+        <MappingFragment StoreEntitySet="TBL_HOME">
+          <ScalarProperty Name="HM_ID" ColumnName="HM_ID" />
+          <ScalarProperty Name="HM_TXT_GANADORES" ColumnName="HM_TXT_GANADORES" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,11 +49,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBL_HOME">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_HOME">
-        <MappingFragment StoreEntitySet="TBL_HOME">
-          <ScalarProperty Name="HM_ID" ColumnName="HM_ID" />
-          <ScalarProperty Name="HM_TXT_GANADORES" ColumnName="HM_TXT_GANADORES" />
+    <EntitySetMapping Name="TBL_USUARIO">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
+        <MappingFragment StoreEntitySet="TBL_USUARIO">
+          <ScalarProperty Name="USU_DAILY" ColumnName="USU_DAILY" />
+          <ScalarProperty Name="USU_DAILY_REWARD" ColumnName="USU_DAILY_REWARD" />
+          <ScalarProperty Name="USU_STEAM_NICK" ColumnName="USU_STEAM_NICK" />
+          <ScalarProperty Name="USU_SORTEO_ESPECIAL" ColumnName="USU_SORTEO_ESPECIAL" />
+          <ScalarProperty Name="USU_CAMBIO_EMAIL" ColumnName="USU_CAMBIO_EMAIL" />
+          <ScalarProperty Name="USU_SOR_DISP" ColumnName="USU_SOR_DISP" />
+          <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
+          <ScalarProperty Name="USU_CODIGO_VERIFICAION" ColumnName="USU_CODIGO_VERIFICAION" />
+          <ScalarProperty Name="USU_SUMMONER" ColumnName="USU_SUMMONER" />
+          <ScalarProperty Name="USU_EMAIL" ColumnName="USU_EMAIL" />
+          <ScalarProperty Name="USU_PASSWORD" ColumnName="USU_PASSWORD" />
+          <ScalarProperty Name="USU_ACCOUNT" ColumnName="USU_ACCOUNT" />
+          <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
+          <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
