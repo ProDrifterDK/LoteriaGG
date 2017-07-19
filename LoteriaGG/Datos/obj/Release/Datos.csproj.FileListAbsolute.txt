@@ -8,3 +8,13 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Release\EntityFrame
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Release\Datos.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Release\Datos.pdb
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\Datos.dll.config
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\Datos.dll
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\Datos.pdb
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\EntityFramework.dll
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\EntityFramework.xml
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Release\Datos.dll
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Release\Datos.pdb
