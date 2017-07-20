@@ -1,12 +1,39 @@
-﻿<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+﻿<style>
+    body{
+        background:#404040
+    }
+</style>
+
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
     <canvas id="canvas" width="500" height="500"></canvas>
 </div>
 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-    <input type="button" class="btn btn-danger btn-lg" value="spin" style="float:left;" id='spin' />
+    <div class="container">
+        <div class="card-box">
+            <input type="button" class="btn btn-danger btn-lg col-lg-6" value="spin" style="float:left;margin:150px" id='spin' />
+        </div>
+    </div>
 </div>
 
 <script>
-    var options = ["1/10", "2/10", "1/10", "6/10", "1/10", "3/10", "1GGCoin", "2/10", "4/10", "1/10", "2/10", "7/10", "0/10", "1GGCoin", "2/10", "1/10", "9/10", "1/10"];
+    var options = ["1/10",
+        "2/10",
+        "1/10",
+        "6/10",
+        "1/10",
+        "3/10",
+        "1GGCoin",
+        "2/10",
+        "4/10",
+        "1/10",
+        "2/10",
+        "7/10",
+        "0/10",
+        "1GGCoin",
+        "2/10",
+        "1/10",
+        "9/10",
+        "1/10"];
 
     var startAngle = 0;
     var arc = Math.PI / (options.length / 2);
@@ -26,7 +53,7 @@
     }
 
     function RGB2Color(r, g, b) {
-        return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+        return '#000';
     }
 
     function getColor(item, maxitem) {
@@ -52,8 +79,8 @@
             ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, 500, 500);
 
-            ctx.strokeStyle = "black";
-            ctx.lineWidth = 2;
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 3;
 
             ctx.font = 'bold 12px Helvetica, Arial';
 
@@ -69,11 +96,11 @@
                 ctx.fill();
 
                 ctx.save();
-                ctx.shadowOffsetX = -1;
-                ctx.shadowOffsetY = -1;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
                 ctx.shadowBlur = 0;
                 ctx.shadowColor = "rgb(220,220,220)";
-                ctx.fillStyle = "black";
+                ctx.fillStyle = "white";
                 ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
                     250 + Math.sin(angle + arc / 2) * textRadius);
                 ctx.rotate(angle + arc / 2 + Math.PI / 2);
@@ -83,7 +110,7 @@
             }
 
             //Arrow
-            ctx.fillStyle = "black";
+            ctx.fillStyle = "white";
             ctx.beginPath();
             ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
             ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
