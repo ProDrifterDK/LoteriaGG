@@ -20,7 +20,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
     public class HomeController : Controller
     {
         // GET: /Steam/Home/
-        public ActionResult Index(string sum = "")
+        public ActionResult Index(string sum = "", string msg2 = "")
         {
             if (Session["LogedIn"] == null)
             {
@@ -29,6 +29,10 @@ namespace LoteriaGG.Areas.Steam.Controllers
             if (sum != "")
             {
                 ViewBag.Summ = sum;
+            }
+            if(msg2 != "")
+            {
+                ViewBag.Mensaje2 = msg2;
             }
             using (var db = new LOTERIA_GGEntities())
             {
@@ -275,6 +279,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
             Session["LogedIn"] = "True";
             Session["User"] = usu.USU_ACCOUNT;
             Session["UserN"] = usu.USU_NOMBRE;
+            string msg2 = "";
             using (var db = new LOTERIA_GGEntities()) {
                 var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
                 if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
@@ -284,10 +289,10 @@ namespace LoteriaGG.Areas.Steam.Controllers
                         user.USU_DAILY = 0;
                     }
                     user.USU_DAILY++;
-                    ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
+                    msg2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
                     if (user.USU_DAILY == 3)
                     {
-                        ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
+                        msg2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
                         user.USU_SOR_DISP++;
                         user.USU_DAILY = 0;
                     }
@@ -298,7 +303,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
             }
             if (usu.USU_STEAM_NICK == "" || usu.USU_STEAM_NICK == null)
                 return RedirectToAction("Index", new { sum = "NoTiene" });
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { msg2 = msg2 });
 
         }
 
