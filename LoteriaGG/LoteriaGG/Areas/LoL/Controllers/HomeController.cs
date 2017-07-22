@@ -30,7 +30,11 @@ namespace LoteriaGG.Areas.LoL.Controllers
             {
                 ViewBag.Summ = sum;
             }
-            using(var db = new LOTERIA_GGEntities())
+            if (msg2 != "")
+            {
+                ViewBag.Mensaje2 = msg2;
+            }
+            using (var db = new LOTERIA_GGEntities())
             {
                 TBL_HOME txtHome = db.TBL_HOME.FirstOrDefault();
                 if(txtHome == null)

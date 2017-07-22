@@ -43,6 +43,14 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 ViewBag.Mensaje = msj;
             }
 
+            using (var db = new LOTERIA_GGEntities())
+            {
+                var d = Session["User"].ToString();
+
+                var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == d);
+
+                ViewBag.Cantidad = usr.USU_SOR_DISP;
+            }
             return View();
         }
 

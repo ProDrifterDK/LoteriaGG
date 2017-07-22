@@ -159,6 +159,7 @@
     <Content Include="Content\Images\GG.png" />
     <Content Include="Content\Images\Kha%27ZixMecha.jpg" />
     <Content Include="Content\Images\Kindred-Classic-wallpaper.jpg" />
+    <Content Include="Content\Images\PaydayFoto.jpg" />
     <Content Include="Content\Images\photo_2017-05-02_17-26-11.jpg" />
     <Content Include="Content\Images\resyst_logo.png" />
     <Content Include="Content\Images\rockstar.jpg" />
@@ -193,6 +194,7 @@
     <Content Include="Content\Steam\estiloVerificar.css" />
     <Content Include="Content\Steam\Site.css" />
     <Content Include="Content\Steam\StyleSheet1.css" />
+    <Content Include="Content\Steam\Wheel.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -314,7 +316,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\LoL\Models\" />
     <Folder Include="Areas\Steam\Models\" />
-    <Folder Include="Areas\Steam\Views\Weel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

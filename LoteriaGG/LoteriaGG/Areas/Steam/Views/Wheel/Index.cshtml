@@ -1,39 +1,44 @@
-﻿<style>
-    body{
-        background:#404040
-    }
-</style>
-
-<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-    <canvas id="canvas" width="500" height="500"></canvas>
-</div>
-<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-    <div class="container">
-        <div class="card-box">
-            <input type="button" class="btn btn-danger btn-lg col-lg-6" value="spin" style="float:left;margin:150px" id='spin' />
+﻿<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <title></title>
+    <link href="~/Content/Steam/Wheel.css" rel="stylesheet" />
+    <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+</head>
+<body>
+    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <div class="container">
+            <div class="card-box">
+                <input type="button" class="btn btn-danger btn-lg col-lg-6" value="spin" style="float:left;margin:150px" id='spin' />
+            </div>
         </div>
     </div>
-</div>
+</body>
 
 <script>
-    var options = ["1/10",
-        "2/10",
+    var options = ["1GGCoin",
+        "0/10",
         "1/10",
         "6/10",
         "1/10",
         "3/10",
-        "1GGCoin",
+        "4/10",
         "2/10",
         "4/10",
         "1/10",
         "2/10",
         "7/10",
-        "0/10",
-        "1GGCoin",
+        "1/10",
+        "2/10",
         "2/10",
         "1/10",
         "9/10",
-        "1/10"];
+        "0/10"];
 
     var startAngle = 0;
     var arc = Math.PI / (options.length / 2);
