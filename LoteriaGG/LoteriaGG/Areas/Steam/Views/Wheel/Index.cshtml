@@ -21,24 +21,24 @@
 </body>
 
 <script>
-    var options = ["1GGCoin",
-        "0/10",
-        "1/10",
-        "6/10",
-        "1/10",
-        "3/10",
-        "4/10",
-        "2/10",
-        "4/10",
-        "1/10",
-        "2/10",
-        "7/10",
-        "1/10",
-        "2/10",
-        "2/10",
-        "1/10",
-        "9/10",
-        "0/10"];
+    var options = ["1",
+        "0",
+        "0.1",
+        "0.6",
+        "0.1",
+        "0.3",
+        "0.4",
+        "0.2",
+        "0.4",
+        "0.1",
+        "0.2",
+        "0.7",
+        "0.1",
+        "0.2",
+        "0.2",
+        "0.1",
+        "0.9",
+        "0"];
 
     var startAngle = 0;
     var arc = Math.PI / (options.length / 2);
@@ -155,9 +155,10 @@
         var index = Math.floor((360 - degrees % 360) / arcd);
         ctx.save();
         ctx.font = 'bold 30px Helvetica, Arial';
-        var text = options[index]
+        var text = options[index] + "GGCoin"
         ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
         ctx.restore();
+        location.href = "@Url.Action("RecibirPremio")?val=" + options[index]; 
     }
 
     function easeOut(t, b, c, d) {
