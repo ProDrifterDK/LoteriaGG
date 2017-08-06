@@ -29,12 +29,17 @@ namespace Datos.SqlData
         public string USU_SUMMONER { get; set; }
         public Nullable<System.Guid> USU_CODIGO_VERIFICAION { get; set; }
         public Nullable<bool> USU_VERIFICADO { get; set; }
-        public Nullable<int> USU_SOR_DISP { get; set; }
+        public Nullable<double> USU_SOR_DISP { get; set; }
         public Nullable<bool> USU_CAMBIO_EMAIL { get; set; }
         public Nullable<bool> USU_SORTEO_ESPECIAL { get; set; }
         public string USU_STEAM_NICK { get; set; }
         public Nullable<System.DateTime> USU_DAILY_REWARD { get; set; }
         public Nullable<int> USU_DAILY { get; set; }
+        public bool USU_PAGADO { get; set; }
+        public bool USU_USO_REFER { get; set; }
+        public string USU_REFER_CODIGO { get; set; }
+        public int USU_CANT_REFERIDA { get; set; }
+        public Nullable<long> USU_REFERENTE { get; set; }
     
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual ICollection<TBL_ADMIN> TBL_ADMIN { get; set; }

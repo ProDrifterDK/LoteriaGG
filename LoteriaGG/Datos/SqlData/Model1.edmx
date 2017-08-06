@@ -13,6 +13,16 @@
           <Property Name="SOR_ID" Type="bigint" Nullable="false" />
           <Property Name="USU_ID" Type="bigint" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="TBL_ADMIN">
           <Key>
             <PropertyRef Name="ADM_ID" />
@@ -61,12 +71,17 @@
           <Property Name="USU_SUMMONER" Type="varchar" MaxLength="50" />
           <Property Name="USU_CODIGO_VERIFICAION" Type="uniqueidentifier" />
           <Property Name="USU_VERIFICADO" Type="bit" />
-          <Property Name="USU_SOR_DISP" Type="int" />
+          <Property Name="USU_SOR_DISP" Type="float" />
           <Property Name="USU_CAMBIO_EMAIL" Type="bit" />
           <Property Name="USU_SORTEO_ESPECIAL" Type="bit" />
           <Property Name="USU_STEAM_NICK" Type="varchar" MaxLength="50" />
           <Property Name="USU_DAILY_REWARD" Type="datetime" />
           <Property Name="USU_DAILY" Type="int" />
+          <Property Name="USU_PAGADO" Type="bit" Nullable="false" />
+          <Property Name="USU_USO_REFER" Type="bit" Nullable="false" />
+          <Property Name="USU_REFER_CODIGO" Type="varchar" MaxLength="500" />
+          <Property Name="USU_CANT_REFERIDA" Type="int" Nullable="false" />
+          <Property Name="USU_REFERENTE" Type="bigint" />
         </EntityType>
         <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
           <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />
@@ -106,6 +121,7 @@
         </Association>
         <EntityContainer Name="LOTERIA_GGModelStoreContainer">
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_HOME" EntityType="Self.TBL_HOME" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />
@@ -130,10 +146,11 @@
       <Schema Namespace="LOTERIA_GGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="LOTERIA_GGEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="LOTERIA_GGModel.NUB_SORTEO_USUARIO" />
+          <EntitySet Name="sysdiagrams" EntityType="LOTERIA_GGModel.sysdiagrams" />
           <EntitySet Name="TBL_ADMIN" EntityType="LOTERIA_GGModel.TBL_ADMIN" />
-          <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" />
           <EntitySet Name="TBL_HOME" EntityType="LOTERIA_GGModel.TBL_HOME" />
           <EntitySet Name="TBL_SORTEO" EntityType="LOTERIA_GGModel.TBL_SORTEO" />
+          <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" />
           <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
             <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
             <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
@@ -158,6 +175,16 @@
           <NavigationProperty Name="TBL_SORTEO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" FromRole="NUB_SORTEO_USUARIO" ToRole="TBL_SORTEO" />
           <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="NUB_SORTEO_USUARIO" ToRole="TBL_USUARIO" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="TBL_ADMIN">
           <Key>
             <PropertyRef Name="ADM_ID" />
@@ -165,15 +192,6 @@
           <Property Name="ADM_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USU_ID" Type="Int64" Nullable="false" />
           <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_ADMIN" ToRole="TBL_USUARIO" />
-        </EntityType>
-        <EntityType Name="TBL_SORTEO_GRATIS">
-          <Key>
-            <PropertyRef Name="SG_ID" />
-          </Key>
-          <Property Name="SG_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SG_CODIGO" Type="Guid" Nullable="false" />
-          <Property Name="SG_VALIDO" Type="Boolean" Nullable="false" />
-          <Property Name="USU_ID" Type="Int64" />
         </EntityType>
         <EntityType Name="TBL_HOME">
           <Key>
@@ -194,6 +212,15 @@
           <Property Name="SOR_MODIFICADO_POR" Type="Int64" />
           <Property Name="SOR_PREMIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" FromRole="TBL_SORTEO" ToRole="NUB_SORTEO_USUARIO" />
+        </EntityType>
+        <EntityType Name="TBL_SORTEO_GRATIS">
+          <Key>
+            <PropertyRef Name="SG_ID" />
+          </Key>
+          <Property Name="SG_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SG_CODIGO" Type="Guid" Nullable="false" />
+          <Property Name="SG_VALIDO" Type="Boolean" Nullable="false" />
+          <Property Name="USU_ID" Type="Int64" />
         </EntityType>
         <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
           <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
@@ -220,12 +247,17 @@
           <Property Name="USU_SUMMONER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="USU_CODIGO_VERIFICAION" Type="Guid" />
           <Property Name="USU_VERIFICADO" Type="Boolean" />
-          <Property Name="USU_SOR_DISP" Type="Int32" />
+          <Property Name="USU_SOR_DISP" Type="Double" />
           <Property Name="USU_CAMBIO_EMAIL" Type="Boolean" />
           <Property Name="USU_SORTEO_ESPECIAL" Type="Boolean" />
           <Property Name="USU_STEAM_NICK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="USU_DAILY_REWARD" Type="DateTime" Precision="3" />
           <Property Name="USU_DAILY" Type="Int32" />
+          <Property Name="USU_PAGADO" Type="Boolean" Nullable="false" />
+          <Property Name="USU_USO_REFER" Type="Boolean" Nullable="false" />
+          <Property Name="USU_REFER_CODIGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="USU_CANT_REFERIDA" Type="Int32" Nullable="false" />
+          <Property Name="USU_REFERENTE" Type="Int64" />
           <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="NUB_SORTEO_USUARIO" />
           <NavigationProperty Name="TBL_ADMIN" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
         </EntityType>
@@ -268,21 +300,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LOTERIA_GGModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TBL_ADMIN">
             <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_ADMIN">
               <MappingFragment StoreEntitySet="TBL_ADMIN">
                 <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
                 <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_SORTEO_GRATIS">
-            <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO_GRATIS">
-              <MappingFragment StoreEntitySet="TBL_SORTEO_GRATIS">
-                <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
-                <ScalarProperty Name="SG_VALIDO" ColumnName="SG_VALIDO" />
-                <ScalarProperty Name="SG_CODIGO" ColumnName="SG_CODIGO" />
-                <ScalarProperty Name="SG_ID" ColumnName="SG_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -307,9 +340,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SORTEO_GRATIS">
+            <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO_GRATIS">
+              <MappingFragment StoreEntitySet="TBL_SORTEO_GRATIS">
+                <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+                <ScalarProperty Name="SG_VALIDO" ColumnName="SG_VALIDO" />
+                <ScalarProperty Name="SG_CODIGO" ColumnName="SG_CODIGO" />
+                <ScalarProperty Name="SG_ID" ColumnName="SG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TBL_USUARIO">
             <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
               <MappingFragment StoreEntitySet="TBL_USUARIO">
+                <ScalarProperty Name="USU_REFERENTE" ColumnName="USU_REFERENTE" />
+                <ScalarProperty Name="USU_CANT_REFERIDA" ColumnName="USU_CANT_REFERIDA" />
+                <ScalarProperty Name="USU_REFER_CODIGO" ColumnName="USU_REFER_CODIGO" />
+                <ScalarProperty Name="USU_USO_REFER" ColumnName="USU_USO_REFER" />
+                <ScalarProperty Name="USU_PAGADO" ColumnName="USU_PAGADO" />
                 <ScalarProperty Name="USU_DAILY" ColumnName="USU_DAILY" />
                 <ScalarProperty Name="USU_DAILY_REWARD" ColumnName="USU_DAILY_REWARD" />
                 <ScalarProperty Name="USU_STEAM_NICK" ColumnName="USU_STEAM_NICK" />

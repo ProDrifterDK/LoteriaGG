@@ -59,28 +59,6 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     Session["LogedIn"] = "True";
                     Session["User"] = user.USU_ACCOUNT;
                     Session["UserN"] = user.USU_NOMBRE;
-                    using (var db = new LOTERIA_GGEntities())
-                    {
-                        var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user.USU_ACCOUNT);
-                        if (usu.USU_DAILY_REWARD == null || usu.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
-                        {
-                            if (usu.USU_DAILY == null)
-                            {
-                                usu.USU_DAILY = 0;
-                            }
-                            usu.USU_DAILY++;
-                            ViewBag.Mensaje2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
-                            if (usu.USU_DAILY == 3)
-                            {
-                                ViewBag.Mensaje2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
-                                usu.USU_SOR_DISP++;
-                                usu.USU_DAILY = 0;
-                            }
-
-                            db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT).USU_DAILY_REWARD = DateTime.Now;
-                            db.SaveChanges();
-                        }
-                    }
                     if (user.USU_VERIFICADO == null || user.USU_VERIFICADO == false)
                     {
                         ViewBag.Mensaje = "Recuerda revisar tu mail para verificar tu cuena.";
@@ -164,6 +142,9 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     usu.USU_SUMMONER = nombreDeInvocador;
                     usu.USU_CODIGO_VERIFICAION = activationCode;
                     usu.USU_VERIFICADO = false;
+                    usu.USU_PAGADO = false;
+                    usu.USU_USO_REFER = false;
+                    usu.USU_REFER_CODIGO = "ref-" + usuario;
 
                     dc.TBL_USUARIO.Add(usu);
                     try
@@ -277,32 +258,32 @@ namespace LoteriaGG.Areas.LoL.Controllers
             Session["LogedIn"] = "True";
             Session["User"] = usu.USU_ACCOUNT;
             Session["UserN"] = usu.USU_NOMBRE;
-            string msg2 = "";
-            using (var db = new LOTERIA_GGEntities())
-            {
-                var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
-                if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
-                {
-                    if (user.USU_DAILY == null)
-                    {
-                        user.USU_DAILY = 0;
-                    }
-                    user.USU_DAILY++;
-                    msg2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
-                    if (user.USU_DAILY == 3)
-                    {
-                        msg2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
-                        user.USU_SOR_DISP++;
-                        user.USU_DAILY = 0;
-                    }
+            //string msg2 = "";
+            //using (var db = new LOTERIA_GGEntities())
+            //{
+            //    var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
+            //    if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
+            //    {
+            //        if (user.USU_DAILY == null)
+            //        {
+            //            user.USU_DAILY = 0;
+            //        }
+            //        user.USU_DAILY++;
+            //        msg2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
+            //        if (user.USU_DAILY == 3)
+            //        {
+            //            msg2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
+            //            user.USU_SOR_DISP++;
+            //            user.USU_DAILY = 0;
+            //        }
 
-                    user.USU_DAILY_REWARD = DateTime.Now;
-                    db.SaveChanges();
-                }
-            }
+            //        user.USU_DAILY_REWARD = DateTime.Now;
+            //        db.SaveChanges();
+            //    }
+            //}
             if (usu.USU_STEAM_NICK == "" || usu.USU_STEAM_NICK == null)
                 return RedirectToAction("Index", new { sum = "NoTiene" });
-            return RedirectToAction("Index", new { msg2 = msg2 });
+            return RedirectToAction("Index");
 
         }
 
@@ -333,6 +314,9 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     usu.USU_SUMMONER = "";
                     usu.USU_CODIGO_VERIFICAION = Guid.Empty;
                     usu.USU_VERIFICADO = true;
+                    usu.USU_PAGADO = false;
+                    usu.USU_USO_REFER = false;
+                    usu.USU_REFER_CODIGO = "ref-" + usu.USU_ACCOUNT;
 
                     dc.TBL_USUARIO.Add(usu);
 

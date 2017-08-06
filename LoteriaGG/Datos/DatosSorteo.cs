@@ -32,6 +32,11 @@ namespace Datos
                         return "No se ha realizaado la inscripción ya que no tienes GGCoins.";
                     }
 
+                    if (!usuario.USU_PAGADO)
+                    {
+                        return "Para participar en el sorteo debes haber comprado al menos un GGCoin";
+                    }
+
                     //var inscripciones = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usuario.USU_ID && o.SOR_ID == sorteo.SOR_ID).ToList();
                     //if(inscripciones.Count > 3)
                     //{

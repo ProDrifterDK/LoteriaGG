@@ -169,6 +169,7 @@
     <Content Include="Content\Images\TF.jpg" />
     <Content Include="Content\Images\tfcards.jpg" />
     <Content Include="Content\Images\Thresh.jpg" />
+    <Content Include="Content\Images\Twisted_Fate_Poro.jpg" />
     <Content Include="Content\Images\ziggs_mad_scientist_splash_1920x1080_0.jpg" />
     <Content Include="Content\js\jquery.app.js" />
     <Content Include="Content\js\jquery.blockUI.js" />
@@ -196,6 +197,7 @@
     <Content Include="Content\Steam\StyleSheet1.css" />
     <Content Include="Content\Steam\Wheel.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\Wheel.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\logoGG.png" />
@@ -204,6 +206,7 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\SmartNotification.min.js" />
+    <Content Include="scripts\Wheel.js" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Areas\Home\Views\Shared\_Head.cshtml" />
     <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
@@ -230,6 +233,7 @@
     <Content Include="Areas\Steam\Views\Sorteo\Inscripcion.cshtml" />
     <Content Include="Areas\Steam\Views\web.config" />
     <Content Include="Areas\Steam\Views\Wheel\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Wheel\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
@@ -252,6 +256,7 @@
     <Compile Include="Areas\LoL\Controllers\ProfileController.cs" />
     <Compile Include="Areas\LoL\Controllers\SorteoController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Areas\LoL\Controllers\WheelController.cs" />
     <Compile Include="Areas\LoL\LoLAreaRegistratrion.cs" />
     <Compile Include="Areas\Steam\Controllers\AboutController.cs" />
     <Compile Include="Areas\Steam\Controllers\HomeController.cs" />

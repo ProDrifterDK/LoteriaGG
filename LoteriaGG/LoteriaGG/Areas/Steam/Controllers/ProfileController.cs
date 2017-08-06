@@ -103,28 +103,61 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 return RedirectToAction("Index", "Home", new { area = "Steam" });
             }
 
-            if (codigo == "GIVEMERUST")
+            //if (codigo == "GIVEMERUST")
+            //{
+            //    using (var db = new LOTERIA_GGEntities())
+            //    {
+            //        var usr = Session["User"].ToString();
+            //        var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
+
+            //        if (usrD.USU_SORTEO_ESPECIAL == true)
+            //        {
+            //            return RedirectToAction("ObtenerGGCoins", new { msj = "Ya usaste este codigo." });
+            //        }
+            //        var sorteo = db.TBL_SORTEO.FirstOrDefault(o => o.SOR_ID == 11);
+
+            //        var nubSor = new NUB_SORTEO_USUARIO { SOR_ID = sorteo.SOR_ID, USU_ID = usrD.USU_ID };
+
+            //        db.NUB_SORTEO_USUARIO.Add(nubSor);
+            //        usrD.USU_SORTEO_ESPECIAL = true;
+            //        db.SaveChanges();
+
+            //        return RedirectToAction("ObtenerGGCoins", new { msj = "Ahora estas inscrito en el sorteo para ganar RUST!." });
+            //    }
+            //}
+            /*Refer*/
+            if (codigo.Contains("ref-"))
             {
-                using (var db = new LOTERIA_GGEntities())
+                try
                 {
-                    var usr = Session["User"].ToString();
-                    var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
-
-                    if (usrD.USU_SORTEO_ESPECIAL == true)
+                    using (var db = new LOTERIA_GGEntities())
                     {
-                        return RedirectToAction("ObtenerGGCoins", new { msj = "Ya usaste este codigo." });
+                        var userRef = db.TBL_USUARIO.FirstOrDefault(o => o.USU_REFER_CODIGO == codigo);
+                        var usr = Session["User"].ToString();
+                        var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
+                        if (usrD.USU_USO_REFER)
+                            return RedirectToAction("ObtenerGGCoins", new { area = "Steam", msj = "Ya usaste un codigo de referencia." });
+                        if (usrD == userRef)
+                            return RedirectToAction("ObtenerGGCoins", new { area = "Steam", msj = "No puedes referirte a ti mismo" });
+
+                        if (usrD.USU_SOR_DISP == null)
+                        {
+                            usrD.USU_SOR_DISP = 0;
+                        }
+                        usrD.USU_SOR_DISP++;
+                        usrD.USU_REFERENTE = userRef.USU_ID;
+                        usrD.USU_USO_REFER = true;
+                        db.SaveChanges();
+                        return RedirectToAction("ObtenerGGCoins", new { area = "Steam", msj = "Se ha cargado un GGCoin a tu cuenta." });
                     }
-                    var sorteo = db.TBL_SORTEO.FirstOrDefault(o => o.SOR_ID == 11);
+                }
+                catch
+                {
 
-                    var nubSor = new NUB_SORTEO_USUARIO { SOR_ID = sorteo.SOR_ID, USU_ID = usrD.USU_ID };
-
-                    db.NUB_SORTEO_USUARIO.Add(nubSor);
-                    usrD.USU_SORTEO_ESPECIAL = true;
-                    db.SaveChanges();
-
-                    return RedirectToAction("ObtenerGGCoins", new { msj = "Ahora estas inscrito en el sorteo para ganar RUST!." });
                 }
             }
+
+            /*Normal*/
             Guid Codigo;
             try
             {
@@ -242,13 +275,9 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 Match v = n.Match(EmailAddr);
 
                 if (!v.Success || EmailAddr.Length != v.Length)
-                {
                     return false;
-                }
                 else
-                {
                     return true;
-                }
             }
             else
             {

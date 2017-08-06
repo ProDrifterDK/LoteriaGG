@@ -1,7 +1,7 @@
 ﻿@using Datos.SqlData;
 @{
     List<TBL_SORTEO> lista = ViewBag.Sorteos;
-    int cantSorteo = ViewBag.Cantidad ?? 0;
+    var cantSorteo = ViewBag.Cantidad ?? 0;
 }
 
 <head>
@@ -16,8 +16,8 @@
 
 <body>
     <div class="row">
-        <div class="col-lg-12" style="position:absolute;top:50%;transform:translateY(-50%)">
-            <div class="main col-lg-8 col-md-8 col-sm-10 col-xs-10">
+        <div class="col-lg-12" style="margin-top:8%">
+            <div class="main col-lg-10 col-md-10 col-sm-12 col-xs-12">
                 <br />
                 <p style="font-size:17px">Recuerda que mientras más gente participa en los sorteos, más grande es el premio!</p>
                 <div class="row">

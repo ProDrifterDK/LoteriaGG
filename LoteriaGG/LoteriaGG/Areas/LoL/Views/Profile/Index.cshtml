@@ -32,15 +32,10 @@
                     <a href="/LoL/Profile/EditarMail" class="btn btn-primary" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none">Cambiar Email</a>  <!--CREAR-->
                     <a href="/LoL/Profile/CambiarContrasena" class="btn btn-primary" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none">Cambiar contraseña</a>
                     <a href="/LoL/Profile/SorteosInscritos" class="btn btn-primary" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none">Sorteos Inscritos</a>
-                    @*<li>
-                        <a href="" class="btn btn-primary"></a>
-                    </li>*@
                 </section>
                 <section class="col-lg-8" style="border-left:3px solid">
                     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div style="font-size:13px;color:rgba(196, 196, 196, 0.83)">
-                            <!-- Nombre de invocador, Nombre, apellido, mail, password-->
-                            <!-- Editar {perfil, cambiar contraseña}-->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Nombre de Usuario: @Model.USU_ACCOUNT</label>
@@ -68,7 +63,18 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Sorteos Disponibles: @(Model.USU_SOR_DISP??0)</label>
+                                    <label>GGCoins: @(Model.USU_SOR_DISP??0)</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>Codigo de referencia: @(Model.USU_REFER_CODIGO ?? "")</label>
+                                    <button class="btn btn-warning" style="height:21px;padding-top:0px" onclick="Copiar()">Copy</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>Cantidad Referida: @(Model.USU_CANT_REFERIDA)</label>
                                 </div>
                             </div>
                         </div>
@@ -107,3 +113,13 @@
     <script src="~/scripts/jquery.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>
 </body>
+
+<script>
+    function Copiar() {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val("@(Model.USU_REFER_CODIGO ?? "")").select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+</script>

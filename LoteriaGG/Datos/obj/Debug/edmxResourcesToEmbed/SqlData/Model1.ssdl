@@ -8,6 +8,16 @@
     <Property Name="SOR_ID" Type="bigint" Nullable="false" />
     <Property Name="USU_ID" Type="bigint" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="TBL_ADMIN">
     <Key>
       <PropertyRef Name="ADM_ID" />
@@ -56,12 +66,17 @@
     <Property Name="USU_SUMMONER" Type="varchar" MaxLength="50" />
     <Property Name="USU_CODIGO_VERIFICAION" Type="uniqueidentifier" />
     <Property Name="USU_VERIFICADO" Type="bit" />
-    <Property Name="USU_SOR_DISP" Type="int" />
+    <Property Name="USU_SOR_DISP" Type="float" />
     <Property Name="USU_CAMBIO_EMAIL" Type="bit" />
     <Property Name="USU_SORTEO_ESPECIAL" Type="bit" />
     <Property Name="USU_STEAM_NICK" Type="varchar" MaxLength="50" />
     <Property Name="USU_DAILY_REWARD" Type="datetime" />
     <Property Name="USU_DAILY" Type="int" />
+    <Property Name="USU_PAGADO" Type="bit" Nullable="false" />
+    <Property Name="USU_USO_REFER" Type="bit" Nullable="false" />
+    <Property Name="USU_REFER_CODIGO" Type="varchar" MaxLength="500" />
+    <Property Name="USU_CANT_REFERIDA" Type="int" Nullable="false" />
+    <Property Name="USU_REFERENTE" Type="bigint" />
   </EntityType>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
     <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />
@@ -101,6 +116,7 @@
   </Association>
   <EntityContainer Name="LOTERIA_GGModelStoreContainer">
     <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_HOME" EntityType="Self.TBL_HOME" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />

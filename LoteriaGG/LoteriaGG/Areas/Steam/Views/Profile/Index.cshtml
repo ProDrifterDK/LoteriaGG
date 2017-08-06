@@ -17,7 +17,7 @@
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 </head>
 <body>
-    <div class="col-lg-12" style="position:absolute;top:50%;transform:translateY(-50%)">
+    <div class="col-lg-12" style="margin-top:8%;margin-bottom:6%">
         <div class="row">
             <div class="main container-fluid col-lg-6 col-md-8 col-sm-12 col-xs-12 text-center" style="border:solid #212121;background-color:#151515;border-radius:30px 30px 0px 0px">
                 <div>
@@ -68,7 +68,18 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Sorteos Disponibles: @(Model.USU_SOR_DISP??0)</label>
+                                    <label>GGCoins: @(Model.USU_SOR_DISP??0)</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>Codigo de referencia: @(Model.USU_REFER_CODIGO ?? "")</label>
+                                    <button class="btn btn-warning" style="height:21px;padding-top:0px" onclick="Copiar()">Copy</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>Cantidad Referida: @(Model.USU_CANT_REFERIDA)</label>
                                 </div>
                             </div>
                         </div>
@@ -107,3 +118,12 @@
     <script src="~/scripts/jquery.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>
 </body>
+<script>
+    function Copiar() {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val("@(Model.USU_REFER_CODIGO ?? "")").select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+</script>
