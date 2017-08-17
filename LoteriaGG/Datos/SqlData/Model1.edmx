@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LOTERIA_GGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CODIGOS_PAGO_RUT">
+          <Key>
+            <PropertyRef Name="PARU_ID" />
+          </Key>
+          <Property Name="PARU_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PARU_CODIGO" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="USU_ID" Type="bigint" Nullable="false" />
+        </EntityType>
         <EntityType Name="NUB_SORTEO_USUARIO">
           <Key>
             <PropertyRef Name="NUB_ID" />
@@ -83,6 +91,18 @@
           <Property Name="USU_CANT_REFERIDA" Type="int" Nullable="false" />
           <Property Name="USU_REFERENTE" Type="bigint" />
         </EntityType>
+        <Association Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
+          <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
+          <End Role="CODIGOS_PAGO_RUT" Type="Self.CODIGOS_PAGO_RUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USUARIO">
+              <PropertyRef Name="USU_ID" />
+            </Principal>
+            <Dependent Role="CODIGOS_PAGO_RUT">
+              <PropertyRef Name="USU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
           <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />
           <End Role="NUB_SORTEO_USUARIO" Type="Self.NUB_SORTEO_USUARIO" Multiplicity="*" />
@@ -120,6 +140,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LOTERIA_GGModelStoreContainer">
+          <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="Self.CODIGOS_PAGO_RUT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
@@ -127,6 +148,10 @@
           <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="Self.TBL_SORTEO_GRATIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_USUARIO" EntityType="Self.TBL_USUARIO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO" Association="Self.FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
+            <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+            <End Role="CODIGOS_PAGO_RUT" EntitySet="CODIGOS_PAGO_RUT" />
+          </AssociationSet>
           <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="Self.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
             <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
             <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
@@ -145,17 +170,22 @@
     <edmx:ConceptualModels>
       <Schema Namespace="LOTERIA_GGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="LOTERIA_GGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="LOTERIA_GGModel.CODIGOS_PAGO_RUT" />
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="LOTERIA_GGModel.NUB_SORTEO_USUARIO" />
           <EntitySet Name="sysdiagrams" EntityType="LOTERIA_GGModel.sysdiagrams" />
           <EntitySet Name="TBL_ADMIN" EntityType="LOTERIA_GGModel.TBL_ADMIN" />
           <EntitySet Name="TBL_HOME" EntityType="LOTERIA_GGModel.TBL_HOME" />
           <EntitySet Name="TBL_SORTEO" EntityType="LOTERIA_GGModel.TBL_SORTEO" />
           <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" />
+          <EntitySet Name="TBL_USUARIO" EntityType="LOTERIA_GGModel.TBL_USUARIO" />
+          <AssociationSet Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO" Association="LOTERIA_GGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
+            <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+            <End Role="CODIGOS_PAGO_RUT" EntitySet="CODIGOS_PAGO_RUT" />
+          </AssociationSet>
           <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
             <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
             <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
           </AssociationSet>
-          <EntitySet Name="TBL_USUARIO" EntityType="LOTERIA_GGModel.TBL_USUARIO" />
           <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_USUARIO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
@@ -164,7 +194,16 @@
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
           </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
+        <EntityType Name="CODIGOS_PAGO_RUT">
+          <Key>
+            <PropertyRef Name="PARU_ID" />
+          </Key>
+          <Property Name="PARU_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PARU_CODIGO" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="USU_ID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TBL_USUARIO" Relationship="LOTERIA_GGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO" FromRole="CODIGOS_PAGO_RUT" ToRole="TBL_USUARIO" />
+        </EntityType>
         <EntityType Name="NUB_SORTEO_USUARIO">
           <Key>
             <PropertyRef Name="NUB_ID" />
@@ -222,18 +261,6 @@
           <Property Name="SG_VALIDO" Type="Boolean" Nullable="false" />
           <Property Name="USU_ID" Type="Int64" />
         </EntityType>
-        <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
-          <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
-          <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_SORTEO">
-              <PropertyRef Name="SOR_ID" />
-            </Principal>
-            <Dependent Role="NUB_SORTEO_USUARIO">
-              <PropertyRef Name="SOR_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="TBL_USUARIO">
           <Key>
             <PropertyRef Name="USU_ID" />
@@ -258,9 +285,34 @@
           <Property Name="USU_REFER_CODIGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="USU_CANT_REFERIDA" Type="Int32" Nullable="false" />
           <Property Name="USU_REFERENTE" Type="Int64" />
+          <NavigationProperty Name="CODIGOS_PAGO_RUT" Relationship="LOTERIA_GGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="CODIGOS_PAGO_RUT" />
           <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="NUB_SORTEO_USUARIO" />
           <NavigationProperty Name="TBL_ADMIN" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
         </EntityType>
+        <Association Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
+          <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="1" />
+          <End Type="LOTERIA_GGModel.CODIGOS_PAGO_RUT" Role="CODIGOS_PAGO_RUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USUARIO">
+              <PropertyRef Name="USU_ID" />
+            </Principal>
+            <Dependent Role="CODIGOS_PAGO_RUT">
+              <PropertyRef Name="USU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
+          <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
+          <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SORTEO">
+              <PropertyRef Name="SOR_ID" />
+            </Principal>
+            <Dependent Role="NUB_SORTEO_USUARIO">
+              <PropertyRef Name="SOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_NUB_SORTEO_USUARIO_TBL_USUARIO">
           <End Type="LOTERIA_GGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="1" />
           <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
@@ -291,6 +343,15 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LOTERIA_GGModelStoreContainer" CdmEntityContainer="LOTERIA_GGEntities">
+          <EntitySetMapping Name="CODIGOS_PAGO_RUT">
+            <EntityTypeMapping TypeName="LOTERIA_GGModel.CODIGOS_PAGO_RUT">
+              <MappingFragment StoreEntitySet="CODIGOS_PAGO_RUT">
+                <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+                <ScalarProperty Name="PARU_CODIGO" ColumnName="PARU_CODIGO" />
+                <ScalarProperty Name="PARU_ID" ColumnName="PARU_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="NUB_SORTEO_USUARIO">
             <EntityTypeMapping TypeName="LOTERIA_GGModel.NUB_SORTEO_USUARIO">
               <MappingFragment StoreEntitySet="NUB_SORTEO_USUARIO">

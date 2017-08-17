@@ -16,6 +16,7 @@ namespace Datos.SqlData
     {
         public TBL_USUARIO()
         {
+            this.CODIGOS_PAGO_RUT = new HashSet<CODIGOS_PAGO_RUT>();
             this.NUB_SORTEO_USUARIO = new HashSet<NUB_SORTEO_USUARIO>();
             this.TBL_ADMIN = new HashSet<TBL_ADMIN>();
         }
@@ -41,6 +42,7 @@ namespace Datos.SqlData
         public int USU_CANT_REFERIDA { get; set; }
         public Nullable<long> USU_REFERENTE { get; set; }
     
+        public virtual ICollection<CODIGOS_PAGO_RUT> CODIGOS_PAGO_RUT { get; set; }
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual ICollection<TBL_ADMIN> TBL_ADMIN { get; set; }
     }

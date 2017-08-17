@@ -25,6 +25,7 @@ namespace Datos.SqlData
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<CODIGOS_PAGO_RUT> CODIGOS_PAGO_RUT { get; set; }
         public DbSet<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<TBL_ADMIN> TBL_ADMIN { get; set; }

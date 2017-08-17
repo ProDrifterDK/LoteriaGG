@@ -27,15 +27,15 @@ namespace Datos
                     {
                         throw new Exception("Lo sentimos, no hay sorteos disponibles");
                     }
-                    if(usuario.USU_SOR_DISP == null || usuario.USU_SOR_DISP == 0)
+                    if(usuario.USU_SOR_DISP == null || usuario.USU_SOR_DISP < 1)
                     {
                         return "No se ha realizaado la inscripción ya que no tienes GGCoins.";
                     }
 
-                    if (!usuario.USU_PAGADO)
-                    {
-                        return "Para participar en el sorteo debes haber comprado al menos un GGCoin";
-                    }
+                    //if (!usuario.USU_PAGADO)
+                    //{
+                    //    return "Para participar en el sorteo debes haber comprado al menos un GGCoin";
+                    //}
 
                     //var inscripciones = db.NUB_SORTEO_USUARIO.Where(o => o.USU_ID == usuario.USU_ID && o.SOR_ID == sorteo.SOR_ID).ToList();
                     //if(inscripciones.Count > 3)

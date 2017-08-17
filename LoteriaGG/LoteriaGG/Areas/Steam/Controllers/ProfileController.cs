@@ -8,6 +8,10 @@ using Datos.SqlData;
 using Negocio;
 using System.Net.Mail;
 using System.Collections;
+using System.Net;
+using System.Web.Script.Serialization;
+using System.Text;
+using System.IO;
 
 namespace LoteriaGG.Areas.Steam.Controllers
 {
@@ -333,6 +337,74 @@ namespace LoteriaGG.Areas.Steam.Controllers
             {
                 data = rtn
             }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public void EnviarNotificacion(string codigo)
+        {
+            try
+            {
+                using(var db = new LOTERIA_GGEntities())
+                {
+                    var sUsr = Session["User"].ToString();
+                    var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == sUsr);
+                    var cod = new CODIGOS_PAGO_RUT
+                    {
+                        PARU_CODIGO = codigo,
+                        USU_ID = usr.USU_ID
+                    };
+
+                    db.CODIGOS_PAGO_RUT.Add(cod);
+                    db.SaveChanges();
+                }
+                var applicationID = "AIzaSyDm-KAY0b_0wwB63TW3R-LxYAsHf3V3inU";
+                var senderId = "1049140455189";
+                string deviceId = "/topics/codigoPR";
+                WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+                tRequest.Method = "post";
+                tRequest.ContentType = "application/json";
+                var data = new
+                {
+                    to = deviceId,
+                    notification = new
+                    {
+                        body = codigo,
+                        title = "Nuevo Codigo",
+                        icon = "myicon"
+                    },
+                    priority = "high"
+
+                };
+
+                var serializer = new JavaScriptSerializer();
+                var json = serializer.Serialize(data);
+                Byte[] byteArray = Encoding.UTF8.GetBytes(json);
+                tRequest.Headers.Add(string.Format("Authorization: key={0}", applicationID));
+                tRequest.Headers.Add(string.Format("Sender: id={0}", senderId));
+                tRequest.ContentLength = byteArray.Length;
+
+                using (Stream dataStream = tRequest.GetRequestStream())
+                {
+                    dataStream.Write(byteArray, 0, byteArray.Length);
+
+                    using (WebResponse tResponse = tRequest.GetResponse())
+                    {
+                        using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                        {
+                            using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                            {
+                                String sResponseFromServer = tReader.ReadToEnd();
+                                Console.Write(sResponseFromServer);
+                            }
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
         }
     }
 }

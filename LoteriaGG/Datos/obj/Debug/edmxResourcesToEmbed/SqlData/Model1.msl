@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="LOTERIA_GGModelStoreContainer" CdmEntityContainer="LOTERIA_GGEntities">
+    <EntitySetMapping Name="CODIGOS_PAGO_RUT">
+      <EntityTypeMapping TypeName="LOTERIA_GGModel.CODIGOS_PAGO_RUT">
+        <MappingFragment StoreEntitySet="CODIGOS_PAGO_RUT">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="PARU_CODIGO" ColumnName="PARU_CODIGO" />
+          <ScalarProperty Name="PARU_ID" ColumnName="PARU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="NUB_SORTEO_USUARIO">
       <EntityTypeMapping TypeName="LOTERIA_GGModel.NUB_SORTEO_USUARIO">
         <MappingFragment StoreEntitySet="NUB_SORTEO_USUARIO">

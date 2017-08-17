@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LOTERIA_GGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CODIGOS_PAGO_RUT">
+    <Key>
+      <PropertyRef Name="PARU_ID" />
+    </Key>
+    <Property Name="PARU_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PARU_CODIGO" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="USU_ID" Type="bigint" Nullable="false" />
+  </EntityType>
   <EntityType Name="NUB_SORTEO_USUARIO">
     <Key>
       <PropertyRef Name="NUB_ID" />
@@ -78,6 +86,18 @@
     <Property Name="USU_CANT_REFERIDA" Type="int" Nullable="false" />
     <Property Name="USU_REFERENTE" Type="bigint" />
   </EntityType>
+  <Association Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
+    <End Role="CODIGOS_PAGO_RUT" Type="Self.CODIGOS_PAGO_RUT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="CODIGOS_PAGO_RUT">
+        <PropertyRef Name="USU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
     <End Role="TBL_SORTEO" Type="Self.TBL_SORTEO" Multiplicity="1" />
     <End Role="NUB_SORTEO_USUARIO" Type="Self.NUB_SORTEO_USUARIO" Multiplicity="*" />
@@ -115,6 +135,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="LOTERIA_GGModelStoreContainer">
+    <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="Self.CODIGOS_PAGO_RUT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
@@ -122,6 +143,10 @@
     <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="Self.TBL_SORTEO_GRATIS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_USUARIO" EntityType="Self.TBL_USUARIO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO" Association="Self.FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="CODIGOS_PAGO_RUT" EntitySet="CODIGOS_PAGO_RUT" />
+    </AssociationSet>
     <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="Self.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
       <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
       <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
