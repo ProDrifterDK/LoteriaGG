@@ -370,7 +370,8 @@ namespace LoteriaGG.Areas.Steam.Controllers
                     {
                         body = codigo,
                         title = "Nuevo Codigo",
-                        icon = "myicon"
+                        icon = "myicon",
+                        sound = "mySound",
                     },
                     priority = "high"
 

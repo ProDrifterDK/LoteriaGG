@@ -27,7 +27,7 @@
                 <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color:gray">
                     <h3>Para obtener un sorteo, hay dos formas:</h3>
                     <br />
-                    <h4>La primera es comprar un sorteo, para comprarlo debes hacer un depósito (Caja vecina)/transferencia@*(También la aplicación de <a data-target="#myModal2" data-toggle="modal">Pago Rut</a>)*@ de <b style="color:gold">$500</b> a una de las siguientes cuentas:</h4>
+                    <h4>La primera es comprar un sorteo, para comprarlo debes hacer un depósito (Caja vecina)/transferencia (También la aplicación de Pago Rut haciendo click <button class="btn btn-warning btn-sm" style="padding-top:0;padding-bottom:0;padding-left:3pt;padding-right:3pt" data-target="#myModal2" data-toggle="modal">Aquí</button>) de <b style="color:gold">$500</b> a una de las siguientes cuentas:</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <p>Nombre:Samuel Cortés Rojas</p>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div>
-    @*<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal fade" id="myModal2" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -87,16 +87,28 @@
                         <h4 class="modal-title">Ingresa aquí el código.</h4>
                     </div>
                     <div class="modal-body col-lg-12">
-                        <input type="text" placeholder="Código pago Rut" class="form-control" name="codigo" />
+                        <input type="text" id="Codigo" placeholder="Código pago Rut" class="form-control" name="codigo" />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                        <input type="submit" value="Enviar" class="btn btn-success" />
+                        <button type="submit" onclick="Enviar()" data-dismiss="modal" class="btn btn-success">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>*@
+    </div>
     <script src="~/scripts/jquery.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>
 </body>
+
+<script>
+    function Enviar() {
+        var codigo = $('#Codigo').val();
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("EnviarNotificacion", new { })?codigo=" + codigo,
+            dataType:"json"
+        })
+    }
+</script>

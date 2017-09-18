@@ -374,7 +374,8 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     {
                         body = codigo,
                         title = "Nuevo Codigo",
-                        icon = "myicon"
+                        icon = "myicon",
+                        sound = "mySound",
                     },
                     priority = "high"
 
