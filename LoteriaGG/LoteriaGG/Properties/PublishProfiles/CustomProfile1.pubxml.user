@@ -29,7 +29,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:22:38</publishTime>
     </File>
     <File Include="Areas/LoL/Views/About/Index.cshtml">
-      <publishTime>07/24/2017 01:02:57</publishTime>
+      <publishTime>09/18/2017 16:06:24</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Administrador/DarSorteo.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -68,10 +68,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/06/2017 13:20:22</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/ObtenerGGCoins.cshtml">
-      <publishTime>08/22/2017 16:27:39</publishTime>
+      <publishTime>08/25/2017 08:42:14</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/SorteosInscritos.cshtml">
-      <publishTime>05/16/2017 18:09:48</publishTime>
+      <publishTime>10/12/2017 18:28:47</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/Success.cshtml">
       <publishTime>03/31/2017 17:26:49</publishTime>
@@ -83,7 +83,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/23/2017 17:58:28</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Index.cshtml">
-      <publishTime>08/22/2017 11:33:36</publishTime>
+      <publishTime>10/12/2017 18:13:42</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Inscripcion.cshtml">
       <publishTime>05/16/2017 18:09:49</publishTime>
@@ -98,7 +98,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2017 01:22:52</publishTime>
     </File>
     <File Include="Areas/Steam/Views/About/Index.cshtml">
-      <publishTime>07/24/2017 01:03:08</publishTime>
+      <publishTime>09/18/2017 16:06:39</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Administrador/DarSorteo.cshtml">
       <publishTime>05/02/2017 01:23:16</publishTime>
@@ -113,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2017 17:06:16</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/Index.cshtml">
-      <publishTime>08/22/2017 16:21:42</publishTime>
+      <publishTime>10/12/2017 17:27:19</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/LogOut.cshtml">
       <publishTime>05/18/2017 10:30:24</publishTime>
@@ -140,7 +140,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/22/2017 16:27:57</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/SorteosInscritos.cshtml">
-      <publishTime>07/10/2017 14:25:51</publishTime>
+      <publishTime>10/12/2017 18:36:15</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Profile/Success.cshtml">
       <publishTime>05/18/2017 10:30:24</publishTime>
@@ -152,7 +152,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2017 20:58:56</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Sorteo/Index.cshtml">
-      <publishTime>07/24/2017 00:04:25</publishTime>
+      <publishTime>10/12/2017 18:28:39</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Sorteo/Inscripcion.cshtml">
       <publishTime>07/20/2017 12:19:43</publishTime>
@@ -170,10 +170,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/22/2017 16:36:09</publishTime>
+      <publishTime>10/12/2017 19:12:45</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/22/2017 16:36:09</publishTime>
+      <publishTime>10/12/2017 19:12:45</publishTime>
     </File>
     <File Include="bin/BotDetect.dll">
       <publishTime>07/10/2016 09:49:00</publishTime>
@@ -197,7 +197,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/LoteriaGG.dll">
-      <publishTime>08/17/2017 19:39:54</publishTime>
+      <publishTime>10/10/2017 19:17:35</publishTime>
     </File>
     <File Include="bin/LoteriaGG.pdb">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -515,7 +515,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2017 20:42:48</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/22/2017 16:36:05</publishTime>
+      <publishTime>10/12/2017 19:12:39</publishTime>
     </File>
     <File Include="scripts/ai.0.15.0-build58334.js">
       <publishTime>03/31/2017 17:26:50</publishTime>

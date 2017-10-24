@@ -9,6 +9,8 @@ namespace LoteriaGG.Areas.Steam.Controllers
 {
     public class WheelController : Controller
     {
+        private readonly string[] options = { "1", "0", "0.1", "0.6", "0.1", "0.3", "0.4", "0.2", "0.4", "0.1", "0.2", "0.7", "0.1", "0.2", "0.2", "0.1", "0.9", "0" },
+                                  options2 = { "5", "0", "0.3", "2", "0", "1", "0.5", "3", "0", "0.5", "0", "0.5", "1", "0.3", "0", "0.5", "1", "0.5", "0", "3", "0.3", "0.5", "1", "0.5", "0" };
         // GET: Steam/Weel
         public ActionResult Index()
         {
@@ -38,44 +40,13 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 return RedirectToAction("Index", "Home", new { area = "Steam" });
             }
 
-            var user = Session["User"];
-            using (var db = new LOTERIA_GGEntities())
-            {
-                var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
-                if (t == 1)
-                {
-                    if (val == "" || val == null)
-                    {
-                        return RedirectToAction("Index");
-                    }
-
-                    var valor = float.Parse(val);
-                    usu.USU_SOR_DISP += valor;
-                    usu.USU_SOR_DISP = Math.Round(usu.USU_SOR_DISP ?? 0, 1);
-
-                    db.TBL_USUARIO.Attach(usu);
-                    db.Entry(usu).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                }
-                else
-                {
-                    var valor = float.Parse(val);
-                    usu.USU_SOR_DISP += valor;
-                    usu.USU_SOR_DISP = Math.Round(usu.USU_SOR_DISP??0, 1);
-
-                    db.TBL_USUARIO.Attach(usu);
-                    db.Entry(usu).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                }
-            }
-
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         public ActionResult JsonSpin(int t)
         {
-            var user = Session["User"];
+            var user = Session["User"].ToString();
             using(var db = new LOTERIA_GGEntities())
             {
                 var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
@@ -87,17 +58,69 @@ namespace LoteriaGG.Areas.Steam.Controllers
                     {
                         return RedirectToAction("Index");
                     }
-                    usu.USU_SOR_DISP --;
+                    usu.USU_SOR_DISP--;
                 }
-
                 db.TBL_USUARIO.Attach(usu);
                 db.Entry(usu).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
+                var rand = new Random();
+                spinAngleStart = rand.NextDouble() * 10 + 10;
+                spinTime = 0;
+                spinTimeTotal = rand.NextDouble() * 3 + 4 * 1000;
+                RotateWheel(t);
                 ViewBag.GGCoins = usu.USU_SOR_DISP;
 
             }
-            return Json(new { data = "" }, JsonRequestBehavior.AllowGet);
+            return Json(new { spinAngleStart = spinAngleStart, spinTimeTotal = spinTimeTotal }, JsonRequestBehavior.AllowGet);
         }
+
+        int spinTime = 0;
+        double startAngle = 0, spinAngleStart = 0, spinTimeTotal = 0;
+        void RotateWheel(int t)
+        {
+            spinTime += 30;
+            if (spinTime >= spinTimeTotal)
+            {
+                StopRotateWheel(t);
+                return;
+            }
+            var spinAngle = spinAngleStart - EaseOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+            startAngle += (spinAngle * Math.PI / 180);
+            RotateWheel(t);
+        }
+
+        void StopRotateWheel(int t)
+        {
+            var op = t!=0 ? options2 : options;
+            var degrees = startAngle * 180 / Math.PI + 90;
+            var arc = Math.PI / (op.Length / 2);
+            var arcd = arc * 180 / Math.PI;
+            int index = (int)Math.Floor((360 - degrees % 360) / arcd); //Index del arreglo
+            while (index >= op.Length)
+            {
+                index -= op.Length;
+            }
+            var valor = float.Parse(op[index]); //Obtenemos el valor del arreglo opciones
+            using (var db = new LOTERIA_GGEntities())
+            {
+                var user = Session["User"].ToString();
+                var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
+
+                usu.USU_SOR_DISP += valor;
+
+                db.TBL_USUARIO.Attach(usu);
+                db.Entry(usu).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        double EaseOut(double t, int b, double c, double d)
+        {
+            var ts = (t /= d) * t;
+            var tc = ts * t;
+            return b + c * (tc + -3 * ts + 3 * t);
+        }
+
     }
 }

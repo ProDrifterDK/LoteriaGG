@@ -68,13 +68,10 @@
                 <br />
                 <div class="row">
                     <div class="col-lg-9">
-                        <table id="tblFormulario" @*style="background-color:#000"*@ class="table table-striped table-bordered dt-responsive nowrap" style="border-color:rgba(92, 239, 192, 50)" cellspacing="0">
+                        <table id="tblFormulario" @*style="background-color:#000"*@ class="table dt-responsive nowrap" style="border-color:rgba(92, 239, 192, 50)" cellspacing="0">
                             <thead style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50)">
                                 <tr style="text-shadow:1px 1px #000;border-color:rgba(92, 239, 192, 50)">
-                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Sorteo</th>
-                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Fecha Inicio</th>
-                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Fecha de Termino</th>
-                                    <th style="text-shadow:1px 1px #000;color:white;border-color:rgba(92, 239, 192, 50);background-color: rgba(92, 239, 192, 0)">Premio</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                         </table>
@@ -85,7 +82,9 @@
             </div>
         </div>
     </div>
-
+    <br />
+    <br />
+    
     <!--<footer class="navar navbar-fixed-bottom">
 
         <div class="container">
@@ -121,14 +120,15 @@
             "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6>'f<'col-sm-6 col-xs-6 hidden-xs'>r>" +
         "t" +
             "<'dt-toolbar-footer'<'col-sm-5 col-xs-12 hidden-xs'i><'col-sm-3 col-xs-12'l><'col-sm-4 col-xs-12'p>>",
-            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]],
+            "lengthMenu": [[5], [5]],
             "ordering": false,
 
             "columns": [
-                { "data": "Id" },
-                { "data": "FFinicio" },
-                { "data": "FFin" },
-                { "data": "Premio" }
+                {
+                    'render': function (dat, type, full, meta) {
+                        return GetHtml(full.Id, full.FInicio, full.FFin, full.Premio, full.action);
+                    }
+                }
             ],
             "autoWidth": true,
             "ajax": {
@@ -139,4 +139,12 @@
 
     }
 
+    function GetHtml(id, finicio, ffin, premio, action) {
+        var html = '<div style="border-radius:30px;background:rgb(0, 0, 0); vertical-align:central;border:rgba(92, 239, 192, 50) 2px solid;color:#fff;width:100%;height:100%;"class="row">' +
+            '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ><h4>' + premio + '</h4></div><' +
+            'div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5>Inició el ' + finicio + '</h4></div>' +
+            '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5>Termina el ' + ffin + '</h4></div>' +
+            '</div>';
+        return html;
+    }
 </script>
