@@ -72,6 +72,7 @@
     <EntitySetMapping Name="TBL_USUARIO">
       <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
         <MappingFragment StoreEntitySet="TBL_USUARIO">
+          <ScalarProperty Name="USU_FACEBOOK_ID" ColumnName="USU_FACEBOOK_ID" />
           <ScalarProperty Name="USU_REFERENTE" ColumnName="USU_REFERENTE" />
           <ScalarProperty Name="USU_CANT_REFERIDA" ColumnName="USU_CANT_REFERIDA" />
           <ScalarProperty Name="USU_REFER_CODIGO" ColumnName="USU_REFER_CODIGO" />

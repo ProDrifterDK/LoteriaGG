@@ -61,19 +61,19 @@
     $(document).ready(function () {
         cargar();
     });
-    function cargar(){
+    function cargar() {
 
         $("#tblFormulario").DataTable({
             "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6>'f<'col-sm-6 col-xs-6 hidden-xs'>r>" +
-        "t" +
+            "t" +
             "<'dt-toolbar-footer'<'col-sm-5 col-xs-12 hidden-xs'i><'col-sm-3 col-xs-12'l><'col-sm-4 col-xs-12'p>>",
-            "lengthMenu": [[-1, 10, 25, 50], ["All", 10, 25, 50]],
+            "lengthMenu": [[5], [5]],
             "ordering": false,
 
             "columns": [
                 {
                     'render': function (dat, type, full, meta) {
-                        
+
                         return GetHtml(full.Id, full.FInicio, full.FFin, full.Premio, full.action);
                     }
                 }
@@ -84,17 +84,21 @@
                 "type": "POST"
             },
         });
-
     }
-
     function GetHtml(id, finicio, ffin, premio, action) {
         var html = '<div style="border-radius:30px;background:rgb(0, 0, 0); vertical-align:central;border:rgb(130, 130, 1) 2px solid;color:#fff;width:100%;height:100%;"class="row">' +
-            '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"; style="top:5px" ><h4>' + premio + '</h4></div><' +
-            'div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5>Inició el ' + finicio + '</h4></div>' +
-            '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5>Termina el ' + ffin + '</h4></div>' +
-            '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h4>' + action + '</h4></div>' +
+            '<div style="display:table;width:100%;"><div style="display:table-cell;vertical-align:middle;"><div style="margin-left:auto;margin-right:auto;">'+
+            '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"; style="" class="dsa"><h4>' + premio + '</h4></div><' +
+            'div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5>Inició el <br/>' + finicio + '</h4></div>' +
+            '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5>Termina el <br/>' + ffin + '</h4></div>' +
+            '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h4>' + action + '</h4></div></div></div></div>' +
             '</div>';
         return html;
     }
 
 </script>
+<style>
+    div h4, div h5{
+        text-align:center;
+    }
+</style>

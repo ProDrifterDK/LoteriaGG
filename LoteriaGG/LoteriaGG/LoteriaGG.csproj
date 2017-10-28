@@ -306,6 +306,7 @@
     <Compile Include="Areas\Steam\Controllers\SorteoController.cs" />
     <Compile Include="Areas\Steam\Controllers\WheelController.cs" />
     <Compile Include="Areas\Steam\SteamAreaRegistration.cs" />
+    <Compile Include="Base\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -90,6 +90,7 @@
           <Property Name="USU_REFER_CODIGO" Type="varchar" MaxLength="500" />
           <Property Name="USU_CANT_REFERIDA" Type="int" Nullable="false" />
           <Property Name="USU_REFERENTE" Type="bigint" />
+          <Property Name="USU_FACEBOOK_ID" Type="varchar" MaxLength="500" />
         </EntityType>
         <Association Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
           <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
@@ -177,14 +178,14 @@
           <EntitySet Name="TBL_HOME" EntityType="LOTERIA_GGModel.TBL_HOME" />
           <EntitySet Name="TBL_SORTEO" EntityType="LOTERIA_GGModel.TBL_SORTEO" />
           <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" />
+          <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
+            <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
+            <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
+          </AssociationSet>
           <EntitySet Name="TBL_USUARIO" EntityType="LOTERIA_GGModel.TBL_USUARIO" />
           <AssociationSet Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO" Association="LOTERIA_GGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="CODIGOS_PAGO_RUT" EntitySet="CODIGOS_PAGO_RUT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
-            <End Role="TBL_SORTEO" EntitySet="TBL_SORTEO" />
-            <End Role="NUB_SORTEO_USUARIO" EntitySet="NUB_SORTEO_USUARIO" />
           </AssociationSet>
           <AssociationSet Name="FK_NUB_SORTEO_USUARIO_TBL_USUARIO" Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
@@ -194,7 +195,7 @@
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="CODIGOS_PAGO_RUT">
           <Key>
             <PropertyRef Name="PARU_ID" />
@@ -261,6 +262,18 @@
           <Property Name="SG_VALIDO" Type="Boolean" Nullable="false" />
           <Property Name="USU_ID" Type="Int64" />
         </EntityType>
+        <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
+          <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
+          <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_SORTEO">
+              <PropertyRef Name="SOR_ID" />
+            </Principal>
+            <Dependent Role="NUB_SORTEO_USUARIO">
+              <PropertyRef Name="SOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="TBL_USUARIO">
           <Key>
             <PropertyRef Name="USU_ID" />
@@ -285,6 +298,7 @@
           <Property Name="USU_REFER_CODIGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="USU_CANT_REFERIDA" Type="Int32" Nullable="false" />
           <Property Name="USU_REFERENTE" Type="Int64" />
+          <Property Name="USU_FACEBOOK_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CODIGOS_PAGO_RUT" Relationship="LOTERIA_GGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="CODIGOS_PAGO_RUT" />
           <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="NUB_SORTEO_USUARIO" />
           <NavigationProperty Name="TBL_ADMIN" Relationship="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
@@ -298,18 +312,6 @@
             </Principal>
             <Dependent Role="CODIGOS_PAGO_RUT">
               <PropertyRef Name="USU_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NUB_SORTEO_USUARIO_TBL_SORTEO">
-          <End Type="LOTERIA_GGModel.TBL_SORTEO" Role="TBL_SORTEO" Multiplicity="1" />
-          <End Type="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Role="NUB_SORTEO_USUARIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_SORTEO">
-              <PropertyRef Name="SOR_ID" />
-            </Principal>
-            <Dependent Role="NUB_SORTEO_USUARIO">
-              <PropertyRef Name="SOR_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -414,6 +416,7 @@
           <EntitySetMapping Name="TBL_USUARIO">
             <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
               <MappingFragment StoreEntitySet="TBL_USUARIO">
+                <ScalarProperty Name="USU_FACEBOOK_ID" ColumnName="USU_FACEBOOK_ID" />
                 <ScalarProperty Name="USU_REFERENTE" ColumnName="USU_REFERENTE" />
                 <ScalarProperty Name="USU_CANT_REFERIDA" ColumnName="USU_CANT_REFERIDA" />
                 <ScalarProperty Name="USU_REFER_CODIGO" ColumnName="USU_REFER_CODIGO" />

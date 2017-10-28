@@ -41,6 +41,7 @@ namespace Datos.SqlData
         public string USU_REFER_CODIGO { get; set; }
         public int USU_CANT_REFERIDA { get; set; }
         public Nullable<long> USU_REFERENTE { get; set; }
+        public string USU_FACEBOOK_ID { get; set; }
     
         public virtual ICollection<CODIGOS_PAGO_RUT> CODIGOS_PAGO_RUT { get; set; }
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }

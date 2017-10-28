@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAepyyU4u53kWe1FQsL7TAoQAAAAACAAAAAAAQZgAAAAEAACAAAACmLRpOdjGC9P9RwK8eblsIZqLx+YdcdPvufYY9MMDbqwAAAAAOgAAAAAIAACAAAADViIAk3jjmK9jqCqfo9s5E9vFN6otFyXrroCRVo5ML4yAAAACUhpFU7vijoNKZGP2bAdMsjoQsC2Tb49dwCpik/o4udUAAAAAvY/4ABtcV65NI/C89MN7rmAgSWPhPtah5qDeFVgwq/xt0/GBCwuVDpdQilRGtdGWZ/gGDvMEn6OBBwTsOAEZR</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3oHB5jisg0OXc4Dw8kGPOgAAAAACAAAAAAAQZgAAAAEAACAAAACHMy3jJt5bBZK8qnJ6GVc48Y2JVzF5zQ1D+vZsHQ6TTwAAAAAOgAAAAAIAACAAAAAV14kutD8SYFlu9KAsO/T7ethYYuj56cjyzGtMjlMRUCAAAACcgHxA7mOWqel6PtX12KPbbQ0aT18CkFOIta17KQWW7UAAAAA+jAs8tRiN7H5AMXyR0T6Fbb1JPHrOfoX5ngZ7eQI20WnErsenpH+5jQFmSuIu0sHw2tfi5oSmLjmN4y8Gqy+T</EncryptedPassword>
     <_PublishTargetUrl>ftp://Prueba.loteriagg.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
@@ -44,7 +44,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2017 17:06:26</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Home/Index.cshtml">
-      <publishTime>08/22/2017 16:18:10</publishTime>
+      <publishTime>10/24/2017 14:04:15</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Home/LogOut.cshtml">
       <publishTime>03/31/2017 17:26:49</publishTime>
@@ -65,7 +65,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/Index.cshtml">
-      <publishTime>08/06/2017 13:20:22</publishTime>
+      <publishTime>06/08/2017 13:20:22</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Profile/ObtenerGGCoins.cshtml">
       <publishTime>08/25/2017 08:42:14</publishTime>
@@ -80,10 +80,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Shared/_Layout.cshtml">
-      <publishTime>07/23/2017 17:58:28</publishTime>
+      <publishTime>10/24/2017 09:13:22</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Index.cshtml">
-      <publishTime>10/12/2017 18:13:42</publishTime>
+      <publishTime>10/14/2017 01:07:42</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Inscripcion.cshtml">
       <publishTime>05/16/2017 18:09:49</publishTime>
@@ -92,7 +92,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Wheel/Index.cshtml">
-      <publishTime>07/24/2017 01:06:50</publishTime>
+      <publishTime>10/24/2017 11:25:03</publishTime>
     </File>
     <File Include="Areas/LoL/Views/_ViewStart.cshtml">
       <publishTime>05/02/2017 01:22:52</publishTime>
@@ -113,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2017 17:06:16</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/Index.cshtml">
-      <publishTime>10/12/2017 17:27:19</publishTime>
+      <publishTime>10/24/2017 14:04:01</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Home/LogOut.cshtml">
       <publishTime>05/18/2017 10:30:24</publishTime>
@@ -149,10 +149,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Shared/_Layout.cshtml">
-      <publishTime>07/24/2017 20:58:56</publishTime>
+      <publishTime>10/24/2017 09:17:13</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Sorteo/Index.cshtml">
-      <publishTime>10/12/2017 18:28:39</publishTime>
+      <publishTime>10/17/2017 19:41:10</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Sorteo/Inscripcion.cshtml">
       <publishTime>07/20/2017 12:19:43</publishTime>
@@ -161,7 +161,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/18/2017 10:30:24</publishTime>
     </File>
     <File Include="Areas/Steam/Views/Wheel/Index.cshtml">
-      <publishTime>07/24/2017 01:07:16</publishTime>
+      <publishTime>10/24/2017 13:59:45</publishTime>
     </File>
     <File Include="Areas/Steam/Views/_ViewStart.cshtml">
       <publishTime>05/18/2017 10:39:31</publishTime>
@@ -170,10 +170,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/12/2017 19:12:45</publishTime>
+      <publishTime>10/24/2017 14:08:50</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/12/2017 19:12:45</publishTime>
+      <publishTime>10/24/2017 14:08:50</publishTime>
     </File>
     <File Include="bin/BotDetect.dll">
       <publishTime>07/10/2016 09:49:00</publishTime>
@@ -197,7 +197,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/LoteriaGG.dll">
-      <publishTime>10/10/2017 19:17:35</publishTime>
+      <publishTime>10/24/2017 14:07:52</publishTime>
     </File>
     <File Include="bin/LoteriaGG.pdb">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -331,6 +331,30 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/estiloVerificar.css">
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
+    <File Include="Content/font-awesome.css">
+      <publishTime>10/15/2017 01:21:43</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>10/15/2017 01:21:43</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.eot">
+      <publishTime>10/15/2017 00:53:38</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.svg">
+      <publishTime>10/15/2017 00:53:38</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.ttf">
+      <publishTime>10/15/2017 00:53:38</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.woff">
+      <publishTime>10/15/2017 00:53:38</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.woff2">
+      <publishTime>10/15/2017 00:53:38</publishTime>
+    </File>
+    <File Include="Content/fonts/FontAwesome.otf">
+      <publishTime>10/15/2017 00:53:38</publishTime>
+    </File>
     <File Include="Content/Images/69698566-dota-2-logo-wallpapers.jpg">
       <publishTime>05/02/2017 16:51:06</publishTime>
     </File>
@@ -445,6 +469,90 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/js/newbootsrap.js">
       <publishTime>04/08/2017 19:49:09</publishTime>
     </File>
+    <File Include="Content/less/animated.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/bordered-pulled.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/core.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/fixed-width.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/font-awesome.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/icons.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/larger.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/list.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/mixins.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/path.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/rotated-flipped.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/screen-reader.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/stacked.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/less/variables.less">
+      <publishTime>10/15/2017 00:53:41</publishTime>
+    </File>
+    <File Include="Content/scss/font-awesome.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_animated.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_bordered-pulled.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_core.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_fixed-width.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_icons.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_larger.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_list.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_mixins.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_path.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_rotated-flipped.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_screen-reader.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_stacked.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
+    <File Include="Content/scss/_variables.scss">
+      <publishTime>10/15/2017 00:53:34</publishTime>
+    </File>
     <File Include="Content/Site.css">
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
@@ -496,6 +604,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/Wheel.css">
       <publishTime>07/23/2017 17:57:35</publishTime>
     </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>10/15/2017 01:21:41</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>10/15/2017 01:21:41</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>10/15/2017 01:21:41</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>10/15/2017 01:21:41</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>10/15/2017 01:21:41</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>10/15/2017 01:21:41</publishTime>
+    </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
       <publishTime>03/31/2017 17:26:50</publishTime>
     </File>
@@ -512,10 +638,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2017 16:30:12</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>04/22/2017 20:42:48</publishTime>
+      <publishTime>10/15/2017 01:21:43</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/12/2017 19:12:39</publishTime>
+      <publishTime>10/24/2017 14:08:45</publishTime>
     </File>
     <File Include="scripts/ai.0.15.0-build58334.js">
       <publishTime>03/31/2017 17:26:50</publishTime>
@@ -614,7 +740,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/30/2017 00:40:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/18/2017 10:07:30</publishTime>
+      <publishTime>10/14/2017 20:19:40</publishTime>
     </File>
     <File Include="Views/Sorteo/Index.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -629,7 +755,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/04/2017 10:41:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/20/2017 12:28:34</publishTime>
+      <publishTime>10/24/2017 14:08:43</publishTime>
     </File>
     <File Include="WebForm1.aspx">
       <publishTime>03/31/2017 17:26:49</publishTime>

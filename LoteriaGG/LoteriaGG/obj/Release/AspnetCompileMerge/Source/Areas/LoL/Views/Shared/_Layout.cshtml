@@ -24,6 +24,8 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/smartadmin-production-plugins.min.css" rel="stylesheet" type="text/css" />
     @*<link href="~/Content/smartadmin-production.min.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body style="height:100%">
@@ -56,7 +58,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" id="tula" class="navbar-toggle collapsed">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -306,7 +308,7 @@
             if (response.authResponse) {
                 checkLoginState();
             }
-        }, { scope: 'publish_actions,email' });
+        }, { scope: 'publish_actions,email,user_mobile_phone', perms:'user_mobile_phone' },);
     }
 
     function checkLoginState() {
@@ -316,7 +318,8 @@
         });
         FB.api('/me?fields=id,name,email,permissions', function (response) {
             var url = "@Url.Action("FBLogin","Home")";
-            location.href = url + "?mail=" + response.email + "&usr=" + response.name;
+            var mail = response.email ?? response.id;
+            location.href = url + "?mail=" + mail + "&usr=" + response.name;
         });
     }
 </script>
@@ -393,4 +396,15 @@
 
     }
 
+    var tula = false; //para el navbar en celular;
+
+    $('#tula').click(function () {
+        tula = !tula;
+        if (!tula) {
+            $('#navbar').css('display', 'none');
+        }
+        else {
+            $('#navbar').css('display', 'block');
+        }
+    });
 </script>

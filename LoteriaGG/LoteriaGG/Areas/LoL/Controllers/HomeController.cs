@@ -14,25 +14,35 @@ using BotDetect.Web.Mvc;
 using BotDetect.Web.UI;
 using System.Web.Routing;
 using System.Data.Entity.Validation;
+using LoteriaGG.Base;
 
 namespace LoteriaGG.Areas.LoL.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: /LoL/Home/
-        public ActionResult Index(string sum = "", string msg2 = "")
+        public ActionResult Index(string sum = "", string msg2 = "", string mensaje = "")
         {
             if (Session["LogedIn"] == null)
             {
                 Session["LogedIn"] = "";
             }
-            if(sum != "")
+            if (sum != "")
             {
                 ViewBag.Summ = sum;
             }
             if (msg2 != "")
             {
                 ViewBag.Mensaje2 = msg2;
+            }
+            if (mensaje != "")
+            {
+                ViewBag.Mensaje = mensaje;
+            }
+
+            if (UsuarioLogged.USU_EMAIL == null && UsuarioLogged.USU_FACEBOOK_ID != null)
+            {
+                ViewBag.NecesitaMail = 1;
             }
             using (var db = new LOTERIA_GGEntities())
             {
@@ -56,6 +66,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                 var user = Log(username, password);
                 if (user != null)
                 {
+                    UsuarioLogged = user;
                     Session["LogedIn"] = "True";
                     Session["User"] = user.USU_ACCOUNT;
                     Session["UserN"] = user.USU_NOMBRE;
@@ -88,7 +99,6 @@ namespace LoteriaGG.Areas.LoL.Controllers
             return View();
         }
 
-
         private TBL_USUARIO Log(string usu, string pass)
         {
             TBL_USUARIO ret = null;
@@ -106,98 +116,6 @@ namespace LoteriaGG.Areas.LoL.Controllers
             }
 
             return ret;
-        }
-
-        private string Register(string usuario, string pass, string email, string confirm, string nombre, string apellido, string nombreDeInvocador, bool terminos)
-        {
-
-            if (!terminos)
-            {
-                return "Debe aceptar los terminos de usuario";
-            }
-            if (confirm != pass)
-            {
-                return "Contraseñas no coinciden";
-            }
-            try
-            {
-                using (var dc = new LOTERIA_GGEntities())
-                {
-                    if (dc.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usuario) != null)
-                    {
-                        throw new Exception("Usuario ya registrado");
-                    }
-                    else if (dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == email) != null)
-                    {
-                        throw new Exception("Email ya registrado");
-                    }
-                    var activationCode = Guid.NewGuid();
-
-                    var usu = new TBL_USUARIO();
-                    usu.USU_ACCOUNT = usuario;
-                    usu.USU_PASSWORD = pass;
-                    usu.USU_NOMBRE = nombre;
-                    usu.USU_APELLIDO = apellido;
-                    usu.USU_EMAIL = email;
-                    usu.USU_SUMMONER = nombreDeInvocador;
-                    usu.USU_CODIGO_VERIFICAION = activationCode;
-                    usu.USU_VERIFICADO = false;
-                    usu.USU_PAGADO = false;
-                    usu.USU_USO_REFER = false;
-                    usu.USU_REFER_CODIGO = "ref-" + usuario;
-
-                    dc.TBL_USUARIO.Add(usu);
-                    try
-                    {
-                        SendEmailConfirmation(email, usuario, activationCode.ToString(), nombre);
-                    }
-                    catch (Exception ex)
-                    {
-                        return ex.Message + ex.InnerException ?? "";
-                    }
-                    dc.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message + ex.InnerException ?? "";
-            }
-            return "success";
-        }
-
-        private void SendEmailConfirmation(string to, string username, string confirmationToken, string name)
-        {
-            MailMessage mm = new MailMessage();
-            mm.To.Add(new MailAddress(to));
-            mm.From = new MailAddress("noreply@loteriagg.com");
-            mm.Body = "<h3>Bienvenido a LoteriaGG, " + name + " Gracias por registrarte. </h3> <p>Tus datos son:</p> <p>Nombre de Usuario: " + username + "</p> <p>Tu direccion de Email: " + to + "</p>" +
-                "<p>Para verificar tu email debes seguir el siguiente enlace:</p><a href=" + "\"http://loteriagg.com/LoL/Home/Verification?us=" + username + "&verif=" + confirmationToken + "\"" + ">Verificar</a>"
-                + "<p>Si tienes probelmas con el link copia y pega el siguiente link http://loteriagg.com/LoL/Home/Verification?us=" + username + "&verif=" + confirmationToken + "</p>";
-            mm.IsBodyHtml = true;
-            mm.Subject = "Verification";
-            SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Send(mm);
-        }
-
-        [HttpPost]
-        public ActionResult Reenviar(string mail)
-        {
-            try
-            {
-                using (var db = new LOTERIA_GGEntities())
-                {
-                    var usr = db.TBL_USUARIO.Where(o => o.USU_EMAIL == mail).FirstOrDefault();
-                    if (usr == null)
-                    {
-                        return RedirectToAction("Verification", new { us = usr, verif = usr, msj = "Email no concide." });
-                    }
-                    SendEmailConfirmation(mail, usr.USU_ACCOUNT, usr.USU_CODIGO_VERIFICAION.ToString(), usr.USU_NOMBRE);
-                }
-            } catch (Exception ex)
-            {
-
-            }
-            return RedirectToAction("Verification", "Home",new { area = "LoL" });
         }
 
         public ActionResult LogOut()
@@ -250,37 +168,19 @@ namespace LoteriaGG.Areas.LoL.Controllers
 
         public ActionResult FBLogin(string mail, string usr)
         {
-            var usu = FBLog(mail);
+            TBL_USUARIO usu;
+            if (!mail.Contains("@"))
+                usu = FBRegSinMail(mail, usr);
+            else
+                usu = FBLog(mail);
             if (usu == null)
             {
                 usu = FBReg(mail, usr);
             }
+            UsuarioLogged = usu;
             Session["LogedIn"] = "True";
             Session["User"] = usu.USU_ACCOUNT;
             Session["UserN"] = usu.USU_NOMBRE;
-            //string msg2 = "";
-            //using (var db = new LOTERIA_GGEntities())
-            //{
-            //    var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu.USU_ACCOUNT);
-            //    if (user.USU_DAILY_REWARD == null || user.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
-            //    {
-            //        if (user.USU_DAILY == null)
-            //        {
-            //            user.USU_DAILY = 0;
-            //        }
-            //        user.USU_DAILY++;
-            //        msg2 = "Regalo Diario! por cada tres días que te conectes ganas un GGCoin. Llevas " + usu.USU_DAILY +" de 3.";
-            //        if (user.USU_DAILY == 3)
-            //        {
-            //            msg2 = "Haz ganado una GGCoin por conectarte tres días!!! Sigue así";
-            //            user.USU_SOR_DISP++;
-            //            user.USU_DAILY = 0;
-            //        }
-
-            //        user.USU_DAILY_REWARD = DateTime.Now;
-            //        db.SaveChanges();
-            //    }
-            //}
             if (usu.USU_STEAM_NICK == "" || usu.USU_STEAM_NICK == null)
                 return RedirectToAction("Index", new { sum = "NoTiene" });
             return RedirectToAction("Index");
