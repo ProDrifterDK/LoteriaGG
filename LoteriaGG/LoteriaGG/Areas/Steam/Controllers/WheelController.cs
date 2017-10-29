@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -32,8 +33,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult RecibirPremio(string val = "", int t= 0)
+        public ActionResult RecibirPremio(string val = "", int t = 0)
         {
             if (Session["LogedIn"] == null)
             {
@@ -44,10 +44,10 @@ namespace LoteriaGG.Areas.Steam.Controllers
         }
 
         [HttpPost]
-        public ActionResult JsonSpin(int t)
+        public ActionResult JsonSpin(int t)// Si t es 0 significa que no tiene daily free       
         {
             var user = Session["User"].ToString();
-            using(var db = new LOTERIA_GGEntities())
+            using (var db = new LOTERIA_GGEntities())
             {
                 var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
                 if (t == 1)
@@ -92,7 +92,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
 
         void StopRotateWheel(int t)
         {
-            var op = t!=0 ? options2 : options;
+            var op = t != 1 ? options2 : options;
             var degrees = startAngle * 180 / Math.PI + 90;
             var arc = Math.PI / (op.Length / 2);
             var arcd = arc * 180 / Math.PI;
