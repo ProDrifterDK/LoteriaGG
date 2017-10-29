@@ -36,7 +36,7 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9&appId=122229375033808";
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9&appId=787191674781997";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -110,7 +110,7 @@
                                 <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                                     <div class="col-lg-12">
                                         <div class="text-center"><h3><b style="color:black">Registrarse</b></h3></div>
-                                        <form id="ajax-register-form" action="Steam/Home/Index" method="post" role="form" autocomplete="off">
+                                        <form id="ajax-register-form" action="@Url.Action("Index", "Home", new { area = "Steam"})" method="post" role="form" autocomplete="off">
                                             <input type="hidden" name="type" value="registro" />
                                             <div class="form-group">
                                                 <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
@@ -263,6 +263,27 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="myModal3" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form id="ajax-register-form" action="@Url.Action("SetMail")" method="post" role="form" autocomplete="off">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Necesitamos tu E-Mail! Recuerda que si no tenemos tu Email no podrás ser elegido como ganador en un sorteo.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="Mail..." class="form-control" name="mail" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        <input type="submit" value="Enviar" class="btn btn-warning" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <footer class="navbar navbar-fixed-bottom">
         <div class="col-xs-12 col-sm-8">
             <h4>
@@ -287,7 +308,7 @@
 <script>
     window.fbAsyncInit = function () {
         FB.init({
-            appId: '122229375033808',
+            appId: '787191674781997',
             oauth: true,
             cookie: true,
             xfbml: true,
@@ -318,7 +339,7 @@
         });
         FB.api('/me?fields=id,name,email,permissions', function (response) {
             var url = "@Url.Action("FBLogin","Home")";
-            var mail = response.email ?? response.id;
+            var mail = response.email == undefined ? response.id : response.email;
             location.href = url + "?mail=" + mail + "&usr=" + response.name;
         });
     }
@@ -348,6 +369,9 @@
         if ("@ViewBag.Summ" == "NoTiene") {
             $("#myModal2").modal('show');
         }
+        if ("@ViewBag.NecesitaMail" == "1") {
+            $("#myModal3").modal('show');
+        }
         if ("@ViewBag.Mensaje2") {
             RegDiario();
         }
@@ -364,7 +388,7 @@
     }
     function Alerta() {
         var mensaje = "@ViewBag.Mensaje";
-        if (mensaje == "Ahora estas inscrito en el sorteo para ganar RUST!." || mensaje == "Inscrito!" || mensaje == "Se ha cargado un GGCoin a tu cuenta." || mensaje == "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte") {
+        if (mensaje == "Ahora estas inscrito en el sorteo para ganar RUST!." || mensaje == "Inscrito!" || mensaje == "Se ha cargado un GGCoin a tu cuenta." || mensaje == "Cuenta creada correctamente.") {
             $.bigBox({
                 title: "Felicidades!",
                 content: mensaje,

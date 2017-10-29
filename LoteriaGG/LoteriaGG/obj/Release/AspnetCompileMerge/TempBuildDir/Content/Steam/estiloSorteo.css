@@ -1,0 +1,85 @@
+﻿
+body {
+  background: url("../Images/SteamOtro2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+.escribir{
+    background-color:rgba(255, 255, 255, 0.57)
+}
+/* Fixed navbar */
+body {
+    padding-top: 90px;
+}
+
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
+footer {
+    background: rgba(0,0,0, 0.34);
+    color: #d9d9d9;
+}
+.main {
+    border-color: rgba(0, 0, 0, 0);
+    background: rgba(0,0,0, 0.34);
+}
+
+.dt-toolbar {
+    background-color: rgba(92, 239, 192, 0);
+    border-radius: 0px 0px 30px 30px;
+    border-color: rgb(130, 130, 1);
+}
+
+.dt-toolbar-footer {
+    border-color: rgb(130, 130, 1);
+    background-color: rgba(92, 239, 192, 0);
+}
+
+#tblFormulario td, #tblFormulario th {
+    background-color: rgba(92, 239, 192, 0);
+    border-color: rgb(130, 130, 1);
+    color: #fff;
+    text-shadow: 1px 1px #000;
+}
+
+.dt-toolbar {
+    background-color: rgba(92, 239, 192, 0);
+    border-color: rgb(130, 130, 1);
+}
+
+div.dataTables_length select {
+    background-color: rgba(92, 239, 192, 0);
+    border-color: rgb(130, 130, 1);
+}
+
+div.dataTables_filter {
+    background-color: rgba(92, 239, 192, 0);
+    border-color: rgb(130, 130, 1);
+    text-align: right;
+}
+
+    div.dataTables_filter input {
+        background-color: rgba(92, 239, 192, 0);
+        border-color: rgb(130, 130, 1);
+        margin-left: 0.5em;
+        display: inline-block;
+    }
+
+.dt-toolbar::after(2) {
+    border-color: rgba(92, 239, 192, 50);
+    background-color: rgba(92, 239, 192, 0);
+}

@@ -1,0 +1,34 @@
+﻿
+body {
+  background: url("../Images/csgo2.jpg") no-repeat center center fixed #000;
+  background-size: cover;
+}
+.escribir{
+    background-color:rgba(255, 255, 255, 0.57)
+}
+/* Fixed navbar */
+body {
+    padding-top: 90px;
+}
+
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
+footer {
+	background:rgba(70, 226, 169, 0.0);
+	color:#fff;
+    text-shadow:1px 1px 1px #000;
+}
+

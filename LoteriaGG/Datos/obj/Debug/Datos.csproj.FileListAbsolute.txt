@@ -39,6 +39,5 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\EntityFramewo
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\EntityFramework.xml
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.pdb

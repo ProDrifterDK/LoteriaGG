@@ -85,6 +85,7 @@
     <Property Name="USU_REFER_CODIGO" Type="varchar" MaxLength="500" />
     <Property Name="USU_CANT_REFERIDA" Type="int" Nullable="false" />
     <Property Name="USU_REFERENTE" Type="bigint" />
+    <Property Name="USU_FACEBOOK_ID" Type="varchar" MaxLength="500" />
   </EntityType>
   <Association Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
     <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
