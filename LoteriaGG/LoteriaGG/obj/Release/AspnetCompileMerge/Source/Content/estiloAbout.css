@@ -23,7 +23,31 @@ ul.dropdown-lr {
 	}
 }
 
+
 footer {
-	background:#5d5d5d;
-	color:#fff;
+    background: #5d5d5d;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+#footer-right {
+    padding-left: 350px;
+    text-align: center;
+}
+
+#footer-left {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#socialMedia {
+    height: inherit;
+    vertical-align: bottom;
 }

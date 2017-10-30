@@ -87,7 +87,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 var reg = Register(username, password, email, confirmPassword, Nombre, Apellido, NombreDeInvocador, terminos);
                 if (reg == "success")
                 {
-                    ViewBag.Mensaje = "Cuenta creada correctamente, te enviaremos un mail de verificacion, pero puedes usar tu cuenta sin problemas. Buena suerte";
+                    ViewBag.Mensaje = "Cuenta creada correctamente.";
                 }
                 else
                 {
