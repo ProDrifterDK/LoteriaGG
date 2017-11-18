@@ -79,10 +79,10 @@
     <Compile Include="SqlData\NUB_SORTEO_USUARIO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SqlData\sysdiagrams.cs">
+    <Compile Include="SqlData\TBL_ADMIN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SqlData\TBL_ADMIN.cs">
+    <Compile Include="SqlData\TBL_BITACORA_ERROR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlData\TBL_HOME.cs">
@@ -113,7 +113,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlData\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

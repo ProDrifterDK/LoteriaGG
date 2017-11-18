@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     var usuario = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
 
@@ -60,7 +60,7 @@ namespace Datos
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     return db.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN.Value.AddHours(-1) <= DateTime.Now && !o.SOR_LLENO).ToList();
                 }

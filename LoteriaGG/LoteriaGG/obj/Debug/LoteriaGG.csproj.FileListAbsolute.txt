@@ -320,6 +320,7 @@ C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\LoteriaGG\bin\System.
 C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
 C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.dll
 C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.pdb
+C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\ApplicationInsights.config
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\roslyn\csc.exe
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -374,6 +375,5 @@ C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Webp
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Webpages.Razor.xml
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Helpers.xml
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\bin\System.Web.Mvc.xml
-C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.csprojResolveAssemblyReference.cache
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\LoteriaGG\obj\Debug\LoteriaGG.pdb

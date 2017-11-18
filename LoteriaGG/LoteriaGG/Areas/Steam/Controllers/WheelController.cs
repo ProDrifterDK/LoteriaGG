@@ -20,7 +20,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 return RedirectToAction("Index", "Home", new { area = "Steam" });
             }
             string user = Session["User"].ToString();
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
                 ViewBag.Spin = 0;
@@ -47,7 +47,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
         public ActionResult JsonSpin(int t)// Si t es 0 significa que no tiene daily free       
         {
             var user = Session["User"].ToString();
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);
                 if (t == 1)
@@ -102,7 +102,7 @@ namespace LoteriaGG.Areas.Steam.Controllers
                 index -= op.Length;
             }
             var valor = float.Parse(op[index]); //Obtenemos el valor del arreglo opciones
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var user = Session["User"].ToString();
                 var usu = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == user);

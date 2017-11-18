@@ -44,7 +44,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             {
                 ViewBag.NecesitaMail = 1;
             }
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 TBL_HOME txtHome = db.TBL_HOME.FirstOrDefault();
                 if(txtHome == null)
@@ -104,7 +104,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             TBL_USUARIO ret = null;
             try
             {
-                using (var dc = new LOTERIA_GGEntities())
+                using (var dc = new LoteriaGGEntities())
                 {
                     ret = dc.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu && o.USU_PASSWORD == pass);
                     
@@ -191,7 +191,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             try
             {
-                using (var dc = new LOTERIA_GGEntities())
+                using (var dc = new LoteriaGGEntities())
                 {
                     if (dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail) != null)
                     {
@@ -245,7 +245,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             TBL_USUARIO ret = null;
             try
             {
-                using (var dc = new LOTERIA_GGEntities())
+                using (var dc = new LoteriaGGEntities())
                 {
                     ret = dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail);
                 }
@@ -261,7 +261,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         [HttpPost]
         public ActionResult Summoner (string summoner)
         {
-            using(var db = new LOTERIA_GGEntities())
+            using(var db = new LoteriaGGEntities())
             {
                 var usu = Session["User"].ToString();
                 var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu);

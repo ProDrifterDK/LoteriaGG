@@ -4,20 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d28f7a0f250a4b33b0e1a6d716c5e9c6" Name="Diagram1" ZoomLevel="63">
-        <EntityTypeShape EntityType="LOTERIA_GGModel.CODIGOS_PAGO_RUT" Width="1.5" PointX="3" PointY="5.25" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.NUB_SORTEO_USUARIO" Width="1.5" PointX="3" PointY="1.625" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_ADMIN" Width="1.5" PointX="3" PointY="7.75" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_HOME" Width="1.5" PointX="5.75" PointY="3.75" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO" Width="1.5" PointX="0.75" PointY="8.375" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_SORTEO_GRATIS" Width="1.5" PointX="5.75" PointY="6.75" />
-        <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
-        <EntityTypeShape EntityType="LOTERIA_GGModel.TBL_USUARIO" Width="1.5" PointX="0.75" PointY="1.625" />
-        <AssociationConnector Association="LOTERIA_GGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO" />
-        <AssociationConnector Association="LOTERIA_GGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" />
-        <AssociationConnector Association="LOTERIA_GGModel.FK_TBL_ADMIN_TBL_USUARIO" />
-        </Diagram>
+      <Diagram DiagramId="e6bf96b606544840a7a0a4a1b7ce9439" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_BITACORA_ERROR" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="LoteriaGGModel.CODIGOS_PAGO_RUT" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="LoteriaGGModel.NUB_SORTEO_USUARIO" Width="1.5" PointX="6" PointY="7.125" />
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_ADMIN" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_HOME" Width="1.5" PointX="5.75" PointY="2.75" />
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_SORTEO" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_SORTEO_GRATIS" Width="1.5" PointX="7.75" PointY="2.75" />
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_USUARIO" Width="1.5" PointX="0.75" PointY="5" />
+        <AssociationConnector Association="LoteriaGGModel.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" />
+        <AssociationConnector Association="LoteriaGGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO" />
+        <AssociationConnector Association="LoteriaGGModel.FK_NUB_SORTEO_USUARIO_TBL_SORTEO" />
+        <AssociationConnector Association="LoteriaGGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" />
+        <AssociationConnector Association="LoteriaGGModel.FK_TBL_ADMIN_TBL_USUARIO" />
+        <AssociationConnector Association="LoteriaGGModel.FK_TBL_USUARIO_TBL_USUARIO" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

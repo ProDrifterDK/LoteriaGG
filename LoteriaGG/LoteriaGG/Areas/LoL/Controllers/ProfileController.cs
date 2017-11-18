@@ -46,7 +46,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             {
                 ViewBag.Mensaje = msj;
             }
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var d = Session["User"].ToString();
 
@@ -109,7 +109,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
 
             //if (codigo == "GIVEMERUST")
             //{
-            //    using (var db = new LOTERIA_GGEntities())
+            //    using (var db = new LoteriaGGEntities())
             //    {
             //        var usr = Session["User"].ToString();
             //        var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
@@ -135,7 +135,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             {
                 try
                 {
-                    using (var db = new LOTERIA_GGEntities())
+                    using (var db = new LoteriaGGEntities())
                     {     
                         var userRef = db.TBL_USUARIO.FirstOrDefault(o => o.USU_REFER_CODIGO == codigo);
                         var usr = Session["User"].ToString();
@@ -171,7 +171,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             {
                 return RedirectToAction("ObtenerGGCoins", new { area = "LoL",  msj = "El codigo ingresado es incorrecto." });
             }
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var sg = db.TBL_SORTEO_GRATIS.FirstOrDefault(o => o.SG_CODIGO == Codigo && o.SG_VALIDO == true); 
                 if(sg == null)
@@ -220,7 +220,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
             }
             var us = Session["User"].ToString();
 
-            using(var db = new LOTERIA_GGEntities())
+            using(var db = new LoteriaGGEntities())
             {
                 var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == us);
                 if(db.TBL_USUARIO.Where(o => o.USU_EMAIL == newMail).ToList().Count > 0)
@@ -254,7 +254,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
 
         public ActionResult CambioEmail(string us, string nm)
         {
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == us && o.USU_CAMBIO_EMAIL == true);
 
@@ -300,7 +300,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                 return RedirectToAction("Index", "Home", new { area = "LoL" });
             }
 
-            using(var db = new LOTERIA_GGEntities())
+            using(var db = new LoteriaGGEntities())
             {
                 var usr = Session["User"].ToString();
                 var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usr);
@@ -320,7 +320,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             var rtn = new ArrayList();
 
-            using (var db = new LOTERIA_GGEntities())
+            using (var db = new LoteriaGGEntities())
             {
                 var sUsr = Session["User"].ToString();
                 var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == sUsr);
@@ -348,7 +348,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
         {
             try
             {
-                using (var db = new LOTERIA_GGEntities())
+                using (var db = new LoteriaGGEntities())
                 {
                     var sUsr = Session["User"].ToString();
                     var usr = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == sUsr);

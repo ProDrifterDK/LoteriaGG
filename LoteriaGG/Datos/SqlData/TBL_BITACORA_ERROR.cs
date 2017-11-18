@@ -12,9 +12,13 @@ namespace Datos.SqlData
     using System;
     using System.Collections.Generic;
     
-    public partial class TBL_HOME
+    public partial class TBL_BITACORA_ERROR
     {
-        public string HM_TXT_GANADORES { get; set; }
-        public long HM_ID { get; set; }
+        public int BITERR_ID { get; set; }
+        public string BITERR_MSG { get; set; }
+        public Nullable<long> USU_ID { get; set; }
+        public string BITERR_INNER_MSG { get; set; }
+    
+        public virtual TBL_USUARIO TBL_USUARIO { get; set; }
     }
 }

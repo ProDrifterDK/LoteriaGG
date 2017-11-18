@@ -19,16 +19,16 @@ namespace LoteriaGG.Base
 {
     public class BaseController : Controller
     {
-        protected LOTERIA_GGEntities BDD;
+        protected LoteriaGGEntities BDD;
         protected BaseController()
         {
-            BDD = new LOTERIA_GGEntities();
+            BDD = new LoteriaGGEntities();
         }
 
         protected TBL_USUARIO UsuarioLogged
         {
-            get { return Session["AvnPreventivo_User"] == null ? new TBL_USUARIO() : (TBL_USUARIO)Session["AvnPreventivo_User"]; }
-            set { Session["AvnPreventivo_User"] = value; }
+            get { return Session["UsuarioLogged"] == null ? new TBL_USUARIO() : (TBL_USUARIO)Session["UsuarioLogged"]; }
+            set { Session["UsuarioLogged"] = value; }
         }
 
         protected string Register(string usuario, string pass, string email, string confirm, string nombre, string apellido, string nombreDeInvocador, bool terminos)
@@ -95,7 +95,7 @@ namespace LoteriaGG.Base
         {
             try
             {
-                using (var db = new LOTERIA_GGEntities())
+                using (var db = new LoteriaGGEntities())
                 {
                     var usr = db.TBL_USUARIO.Where(o => o.USU_EMAIL == mail).FirstOrDefault();
                     if (usr == null)

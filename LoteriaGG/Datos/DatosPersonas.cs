@@ -21,7 +21,7 @@ namespace Datos
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     var dsa = Guid.Parse(verification);
                     if (db.TBL_USUARIO.FirstOrDefault(o=> o.USU_ACCOUNT == user && o.USU_CODIGO_VERIFICAION == dsa) != null)
@@ -45,7 +45,7 @@ namespace Datos
             TBL_USUARIO ret = null;
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     ret = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu);
                 }
@@ -60,7 +60,7 @@ namespace Datos
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     if(db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usu).USU_PASSWORD == aC)
                     {
@@ -87,7 +87,7 @@ namespace Datos
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_NOMBRE = nombre == "" ? db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_NOMBRE : nombre;
                     db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_APELLIDO = apellido == "" ? db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == ac).USU_APELLIDO : apellido;

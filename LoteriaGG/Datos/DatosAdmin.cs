@@ -16,7 +16,7 @@ namespace Datos
         {
             try
             {
-                using (var db = new LOTERIA_GGEntities())
+                using (var db = new LoteriaGGEntities())
                 {
                     var user = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usuario);
                     if(user == null)
@@ -43,7 +43,7 @@ namespace Datos
         {
             try
             {
-                using(var db = new LOTERIA_GGEntities())
+                using(var db = new LoteriaGGEntities())
                 {
                     var newSort = new TBL_SORTEO { SOR_LLENO = false};
                     
@@ -67,7 +67,7 @@ namespace Datos
         public static long SeleccionarGanador(long idSorteo)
         {
             Random rand = new Random();
-            using(var db = new LOTERIA_GGEntities())
+            using(var db = new LoteriaGGEntities())
             {
                 var participantes = db.NUB_SORTEO_USUARIO.Where(o => o.SOR_ID == idSorteo).ToList();
                 return participantes[rand.Next(0, participantes.Count)]?.USU_ID ?? 0;
