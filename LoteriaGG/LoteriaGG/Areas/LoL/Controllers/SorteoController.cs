@@ -158,7 +158,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     FFin = item.SOR_FECHA_FIN?.ToString("dd'/'MM'/'yyyy hh:mm"),
                     action = "<form action=\"/LoL/Sorteo/Index\" method=\"post\" role=\"form\" >" +
                         "<input type=\"hidden\" name=\"sorID\" value=\"" + item.SOR_ID + "\">" +
-                        "<button type=\"submit\" class=\"btn btn-warning\" style='font-size:15pt'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>" +
+                        "<button type=\"submit\" touchstart='$(this).parent().submit()' class=\"btn btn-warning\" style='font-size:15pt'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>" +
                         "</form>",
                     Premio = item.SOR_PREMIO,
                 }).ToList();
@@ -172,7 +172,7 @@ namespace LoteriaGG.Areas.LoL.Controllers
                     action = "<form id='form" + item.SOR_ID + "' action=\"/LoL/Sorteo/Index\" method=\"post\" role=\"form\" >" +
                         "<input type=\"hidden\" name=\"sorID\" value=\"" + item.SOR_ID + "\" />" +
                         "<input type=\"hidden\" name=\"gratis\" value=\"true\" />"+
-                        "<button type=\"submit\"  class=\"btn btn-warning\" touchstart='$('#form" + item.SOR_ID + "').submit()' style='font-size:15pt;background-color:rgb(10,200,30)'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>" +
+                        "<button type=\"submit\" touchstart='$(this).parent().submit()' class=\"btn btn-warning\" touchstart='$('#form" + item.SOR_ID + "').submit()' style='font-size:15pt;background-color:rgb(10,200,30)'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>" +
                         "</form>",
                     Premio = item.SOR_PREMIO,
                 }).ToList();

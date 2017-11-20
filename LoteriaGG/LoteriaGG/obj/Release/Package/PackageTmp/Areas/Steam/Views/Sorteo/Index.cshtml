@@ -60,6 +60,10 @@
 <script type="text/javascript">
     $(document).ready(function () {
         cargar();
+        $('buttom [type=submit]').on('touchstart', function () {
+            $(this).parent().submit();
+        }
+        )
     });
     function cargar() {
 

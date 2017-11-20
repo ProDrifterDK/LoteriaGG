@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="LOTERIA_GGModelStoreContainer" CdmEntityContainer="LOTERIA_GGEntities">
+  <EntityContainerMapping StorageEntityContainer="LoteriaGGModelStoreContainer" CdmEntityContainer="LoteriaGGEntities">
+    <EntitySetMapping Name="TBL_BITACORA_ERROR">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
+        <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
+          <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
+          <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CODIGOS_PAGO_RUT">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.CODIGOS_PAGO_RUT">
+      <EntityTypeMapping TypeName="LoteriaGGModel.CODIGOS_PAGO_RUT">
         <MappingFragment StoreEntitySet="CODIGOS_PAGO_RUT">
           <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
           <ScalarProperty Name="PARU_CODIGO" ColumnName="PARU_CODIGO" />
@@ -11,7 +21,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NUB_SORTEO_USUARIO">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.NUB_SORTEO_USUARIO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.NUB_SORTEO_USUARIO">
         <MappingFragment StoreEntitySet="NUB_SORTEO_USUARIO">
           <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
           <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
@@ -19,19 +29,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TBL_ADMIN">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_ADMIN">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_ADMIN">
         <MappingFragment StoreEntitySet="TBL_ADMIN">
           <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
           <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
@@ -39,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_HOME">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_HOME">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_HOME">
         <MappingFragment StoreEntitySet="TBL_HOME">
           <ScalarProperty Name="HM_ID" ColumnName="HM_ID" />
           <ScalarProperty Name="HM_TXT_GANADORES" ColumnName="HM_TXT_GANADORES" />
@@ -47,8 +46,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_SORTEO">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_SORTEO">
         <MappingFragment StoreEntitySet="TBL_SORTEO">
+          <ScalarProperty Name="SOR_GRATIS" ColumnName="SOR_GRATIS" />
           <ScalarProperty Name="SOR_PREMIO" ColumnName="SOR_PREMIO" />
           <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
           <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
@@ -60,7 +60,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_SORTEO_GRATIS">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_SORTEO_GRATIS">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_SORTEO_GRATIS">
         <MappingFragment StoreEntitySet="TBL_SORTEO_GRATIS">
           <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
           <ScalarProperty Name="SG_VALIDO" ColumnName="SG_VALIDO" />
@@ -70,7 +70,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_USUARIO">
-      <EntityTypeMapping TypeName="LOTERIA_GGModel.TBL_USUARIO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_USUARIO">
         <MappingFragment StoreEntitySet="TBL_USUARIO">
           <ScalarProperty Name="USU_FACEBOOK_ID" ColumnName="USU_FACEBOOK_ID" />
           <ScalarProperty Name="USU_REFERENTE" ColumnName="USU_REFERENTE" />
