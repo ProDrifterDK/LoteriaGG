@@ -83,7 +83,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2017 22:42:56</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Index.cshtml">
-      <publishTime>10/29/2017 17:10:10</publishTime>
+      <publishTime>11/20/2017 12:52:56</publishTime>
     </File>
     <File Include="Areas/LoL/Views/Sorteo/Inscripcion.cshtml">
       <publishTime>05/16/2017 18:09:49</publishTime>
@@ -170,10 +170,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2017 17:26:49</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>11/19/2017 18:48:10</publishTime>
+      <publishTime>11/20/2017 13:51:28</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>11/19/2017 18:48:10</publishTime>
+      <publishTime>11/20/2017 13:51:28</publishTime>
     </File>
     <File Include="bin/BotDetect.dll">
       <publishTime>07/10/2016 09:49:00</publishTime>
@@ -182,7 +182,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2016 09:49:00</publishTime>
     </File>
     <File Include="bin/Datos.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/19/2017 17:08:15</publishTime>
     </File>
     <File Include="bin/Datos.dll.config">
       <publishTime>11/02/2017 18:01:01</publishTime>
@@ -197,7 +197,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/LoteriaGG.dll">
-      <publishTime>11/19/2017 18:44:41</publishTime>
+      <publishTime>11/20/2017 13:51:14</publishTime>
     </File>
     <File Include="bin/LoteriaGG.pdb">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -641,7 +641,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/15/2017 01:21:43</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/19/2017 18:48:04</publishTime>
+      <publishTime>11/20/2017 13:51:23</publishTime>
     </File>
     <File Include="scripts/ai.0.15.0-build58334.js">
       <publishTime>03/31/2017 17:26:50</publishTime>
@@ -755,7 +755,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/04/2017 10:41:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/19/2017 17:08:47</publishTime>
+      <publishTime>11/20/2017 13:51:22</publishTime>
     </File>
     <File Include="WebForm1.aspx">
       <publishTime>03/31/2017 17:26:49</publishTime>

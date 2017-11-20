@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoteriaGGModelStoreContainer" CdmEntityContainer="LoteriaGGEntities">
+    <EntitySetMapping Name="TBL_BITACORA_ERROR">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
+        <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
+          <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
+          <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CODIGOS_PAGO_RUT">
+      <EntityTypeMapping TypeName="LoteriaGGModel.CODIGOS_PAGO_RUT">
+        <MappingFragment StoreEntitySet="CODIGOS_PAGO_RUT">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="PARU_CODIGO" ColumnName="PARU_CODIGO" />
+          <ScalarProperty Name="PARU_ID" ColumnName="PARU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NUB_SORTEO_USUARIO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.NUB_SORTEO_USUARIO">
+        <MappingFragment StoreEntitySet="NUB_SORTEO_USUARIO">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
+          <ScalarProperty Name="NUB_ID" ColumnName="NUB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ADMIN">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_ADMIN">
+        <MappingFragment StoreEntitySet="TBL_ADMIN">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="ADM_ID" ColumnName="ADM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HOME">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_HOME">
+        <MappingFragment StoreEntitySet="TBL_HOME">
+          <ScalarProperty Name="HM_ID" ColumnName="HM_ID" />
+          <ScalarProperty Name="HM_TXT_GANADORES" ColumnName="HM_TXT_GANADORES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SORTEO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_SORTEO">
+        <MappingFragment StoreEntitySet="TBL_SORTEO">
+          <ScalarProperty Name="SOR_GRATIS" ColumnName="SOR_GRATIS" />
+          <ScalarProperty Name="SOR_PREMIO" ColumnName="SOR_PREMIO" />
+          <ScalarProperty Name="SOR_MODIFICADO_POR" ColumnName="SOR_MODIFICADO_POR" />
+          <ScalarProperty Name="SOR_CREADO_POR" ColumnName="SOR_CREADO_POR" />
+          <ScalarProperty Name="SOR_FECHA_FIN" ColumnName="SOR_FECHA_FIN" />
+          <ScalarProperty Name="SOR_FECHA_INICIO" ColumnName="SOR_FECHA_INICIO" />
+          <ScalarProperty Name="SOR_LLENO" ColumnName="SOR_LLENO" />
+          <ScalarProperty Name="SOR_ID" ColumnName="SOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SORTEO_GRATIS">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_SORTEO_GRATIS">
+        <MappingFragment StoreEntitySet="TBL_SORTEO_GRATIS">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="SG_VALIDO" ColumnName="SG_VALIDO" />
+          <ScalarProperty Name="SG_CODIGO" ColumnName="SG_CODIGO" />
+          <ScalarProperty Name="SG_ID" ColumnName="SG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USUARIO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_USUARIO">
+        <MappingFragment StoreEntitySet="TBL_USUARIO">
+          <ScalarProperty Name="USU_FACEBOOK_ID" ColumnName="USU_FACEBOOK_ID" />
+          <ScalarProperty Name="USU_REFERENTE" ColumnName="USU_REFERENTE" />
+          <ScalarProperty Name="USU_CANT_REFERIDA" ColumnName="USU_CANT_REFERIDA" />
+          <ScalarProperty Name="USU_REFER_CODIGO" ColumnName="USU_REFER_CODIGO" />
+          <ScalarProperty Name="USU_USO_REFER" ColumnName="USU_USO_REFER" />
+          <ScalarProperty Name="USU_PAGADO" ColumnName="USU_PAGADO" />
+          <ScalarProperty Name="USU_DAILY" ColumnName="USU_DAILY" />
+          <ScalarProperty Name="USU_DAILY_REWARD" ColumnName="USU_DAILY_REWARD" />
+          <ScalarProperty Name="USU_STEAM_NICK" ColumnName="USU_STEAM_NICK" />
+          <ScalarProperty Name="USU_SORTEO_ESPECIAL" ColumnName="USU_SORTEO_ESPECIAL" />
+          <ScalarProperty Name="USU_CAMBIO_EMAIL" ColumnName="USU_CAMBIO_EMAIL" />
+          <ScalarProperty Name="USU_SOR_DISP" ColumnName="USU_SOR_DISP" />
+          <ScalarProperty Name="USU_VERIFICADO" ColumnName="USU_VERIFICADO" />
+          <ScalarProperty Name="USU_CODIGO_VERIFICAION" ColumnName="USU_CODIGO_VERIFICAION" />
+          <ScalarProperty Name="USU_SUMMONER" ColumnName="USU_SUMMONER" />
+          <ScalarProperty Name="USU_EMAIL" ColumnName="USU_EMAIL" />
+          <ScalarProperty Name="USU_PASSWORD" ColumnName="USU_PASSWORD" />
+          <ScalarProperty Name="USU_ACCOUNT" ColumnName="USU_ACCOUNT" />
+          <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
+          <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

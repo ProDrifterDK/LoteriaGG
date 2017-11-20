@@ -161,9 +161,9 @@ namespace LoteriaGG.Areas.Steam.Controllers
                     Id = "#" + item.SOR_ID.ToString(),
                     FInicio = item.SOR_FECHA_INICIO?.ToString("dd'/'MM'/'yyyy hh:mm"),
                     FFin = item.SOR_FECHA_FIN?.ToString("dd'/'MM'/'yyyy hh:mm"),
-                    action = "<form action=\"/LoL/Sorteo/Index\" method=\"post\" role=\"form\" >" +
+                    action = "<form action=\"/Steam/Sorteo/Index\" method=\"post\" role=\"form\" >" +
                         "<input type=\"hidden\" name=\"sorID\" value=\"" + item.SOR_ID + "\">" +
-                        "<button type=\"submit\" touchstart='$(this).parent().submit()'  class=\"btn btn-warning\" style='font-size:15pt'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>" +
+                        "<a href='javascript:void()' onclick='$(this).parent().submit()' class=\"btn btn-warning\" style='font-size:15pt'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>" +
                         "</form>",
                     Premio = item.SOR_PREMIO,
                 }).ToList();
@@ -174,10 +174,10 @@ namespace LoteriaGG.Areas.Steam.Controllers
                     Id = "#" + item.SOR_ID.ToString(),
                     FInicio = item.SOR_FECHA_INICIO?.ToString("dd'/'MM'/'yyyy hh:mm"),
                     FFin = item.SOR_FECHA_FIN?.ToString("dd'/'MM'/'yyyy hh:mm"),
-                    action = "<form action=\"/LoL/Sorteo/Index\" method=\"post\" role=\"form\" >" +
+                    action = "<form action=\"/Steam/Sorteo/Index\" method=\"post\" role=\"form\" >" +
                         "<input type=\"hidden\" name=\"sorID\" value=\"" + item.SOR_ID + "\" />" +
                         "<input type=\"hidden\" name=\"gratis\" value=\"true\" />" +
-                        "<button type=\"submit\" touchstart='$(this).parent().submit()' class=\"btn btn-warning\" style='font-size:15pt;background-color:rgb(10,200,30)'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></button>" +
+                        "<a href='javascript:void()' onclick='$(this).parent().submit()' class=\"btn btn-warning\" style='font-size:15pt'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>" +
                         "</form>",
                     Premio = item.SOR_PREMIO,
                 }).ToList();
