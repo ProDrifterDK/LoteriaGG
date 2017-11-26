@@ -9,9 +9,6 @@ using Negocio;
 using Datos.SqlData;
 using System.Net.Mail;
 using System.Net;
-using BotDetect;
-using BotDetect.Web.Mvc;
-using BotDetect.Web.UI;
 using System.Web.Routing;
 using System.Data.Entity.Validation;
 
