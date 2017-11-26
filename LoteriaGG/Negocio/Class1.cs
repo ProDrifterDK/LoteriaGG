@@ -57,13 +57,5 @@ namespace Negocio
             }
             return DatosPersonas.EditarPerfil(ac, nombre??"", apellido??"", nombreInvocador??"");
         }
-
-        public static TBL_USUARIO Login(string argUsuario, string argPass)
-        {
-            using (var db = new LoteriaGGEntities())
-            {
-                return db.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == argUsuario && o.USU_PASSWORD == argPass);
-            }
-        }
     }
 }
