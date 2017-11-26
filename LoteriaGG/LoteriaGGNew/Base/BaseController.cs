@@ -40,37 +40,37 @@ namespace LoteriaGG.Base
             }
             try
             {
-                    if (BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usuario) != null)
-                    {
-                        throw new Exception("Usuario ya registrado");
-                    }
-                    else if (BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == email) != null)
-                    {
-                        throw new Exception("Email ya registrado");
-                    }
-                    var activationCode = Guid.NewGuid();
+                if (BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == usuario) != null)
+                {
+                    throw new Exception("Usuario ya registrado");
+                }
+                else if (BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == email) != null)
+                {
+                    throw new Exception("Email ya registrado");
+                }
+                var activationCode = Guid.NewGuid();
 
-                    var usu = new TBL_USUARIO();
-                    usu.USU_ACCOUNT = usuario;
-                    usu.USU_PASSWORD = pass;
-                    usu.USU_NOMBRE = nombre;
-                    usu.USU_APELLIDO = apellido;
-                    usu.USU_EMAIL = email;
-                    usu.USU_SUMMONER = nombreDeInvocador;
-                    usu.USU_CODIGO_VERIFICAION = activationCode;
-                    usu.USU_VERIFICADO = true;
-                    usu.USU_PAGADO = false;
-                    usu.USU_USO_REFER = false;
-                    usu.USU_REFER_CODIGO = "ref-" + usuario;
+                var usu = new TBL_USUARIO();
+                usu.USU_ACCOUNT = usuario;
+                usu.USU_PASSWORD = pass;
+                usu.USU_NOMBRE = nombre;
+                usu.USU_APELLIDO = apellido;
+                usu.USU_EMAIL = email;
+                usu.USU_SUMMONER = nombreDeInvocador;
+                usu.USU_CODIGO_VERIFICAION = activationCode;
+                usu.USU_VERIFICADO = true;
+                usu.USU_PAGADO = false;
+                usu.USU_USO_REFER = false;
+                usu.USU_REFER_CODIGO = "ref-" + usuario;
 
-                    BDD.TBL_USUARIO.Add(usu);
-                    BDD.SaveChanges();
+                BDD.TBL_USUARIO.Add(usu);
+                BDD.SaveChanges();
             }
             catch (Exception ex)
             {
                 return ex.Message + ex.InnerException ?? "";
             }
-            return "success"; 
+            return "success";
         }
 
         private void SendEmailConfirmation(string to, string username, string confirmationToken, string name)
@@ -145,7 +145,7 @@ namespace LoteriaGG.Base
         [HttpPost]
         public ActionResult SetMail(string mail)
         {
-            if(mail == null || mail == "")
+            if (mail == null || mail == "")
                 return RedirectToAction("Index", "Home", new { mensaje = "mail no puede estar vacío" });
 
             if (!mail.Contains("@"))
@@ -168,7 +168,7 @@ namespace LoteriaGG.Base
 
             UsuarioLogged = user;           // Redefinimos el usuario logueado para que contenga el mail.
 
-            return RedirectToAction("Index", "Home", new { msg2 = "Mail Actualizado"});
+            return RedirectToAction("Index", "Home", new { msg2 = "Mail Actualizado" });
         }
 
         protected TBL_USUARIO FBReg(string mail, string usr)
@@ -240,6 +240,53 @@ namespace LoteriaGG.Base
             }
 
             return ret;
+        }
+
+        [HttpPost]
+        public JsonResult JsonGetListaSorteos()
+        {
+            var datos = BDD.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN > DateTime.Now && o.SOR_FECHA_INICIO < DateTime.Now).ToList().Select(o => new
+            {
+                id = o.SOR_ID,
+                fechaF = o.SOR_FECHA_FIN?.ToString("dd/MM/yy hh:mm"),
+                fechaI = o.SOR_FECHA_INICIO?.ToString("dd/MM/yy hh:mm"),
+                Premio = o.SOR_PREMIO,
+            }).ToList();
+
+            return Json(new { data = datos }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult IngresarSorteo(int sorId)
+        {
+            if(UsuarioLogged == null)
+            {
+                return Json(new { data = "Sin Usuario" }, JsonRequestBehavior.AllowGet);
+            }
+            if (UsuarioLogged.USU_SOR_DISP < 1)
+                return Json(new { data = "No tienes suficientes GGCoins" });
+
+            var sorteo = BDD.TBL_SORTEO.FirstOrDefault(o => o.SOR_ID == sorId);
+            var nub = new NUB_SORTEO_USUARIO
+            {
+                SOR_ID = sorId,
+                USU_ID = UsuarioLogged.USU_ID,
+            };
+
+            BDD.NUB_SORTEO_USUARIO.Add(nub);
+            BDD.Entry(nub).State = System.Data.Entity.EntityState.Added;
+
+            var usuario = BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
+            usuario.USU_SOR_DISP = usuario.USU_SOR_DISP - 1;
+
+            BDD.TBL_USUARIO.Attach(usuario);
+            BDD.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
+
+            BDD.SaveChanges();
+
+            UsuarioLogged = usuario;
+
+            return Json(new { data = new { mensaje = "Exito", GGCoins = UsuarioLogged.USU_SOR_DISP } }, JsonRequestBehavior.AllowGet);
         }
     }
 }

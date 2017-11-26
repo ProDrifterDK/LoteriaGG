@@ -1,0 +1,63 @@
+﻿<style>
+    body{
+        background: url(../../../../Images/ziggs_mad_scientist_splash_1920x1080_0.jpg) no-repeat center top;
+        -webkit-background-size: cover;
+    }
+    .d {
+        border: solid 2px #1de9b6;
+        border-radius: 30px 30px;
+        color: white;
+        padding: 15px;
+    }
+    #sorteos{
+    }
+</style>
+<div class="row" style="">
+    <div class="col l8 s12".>
+        <div style="margin-top:6%"><div class="row d black valign-wrapper hide-on-small-only" id="0"><div class="col s3 flow-text center">Premio</div><div class="col s3 center flow-text">Fecha de Inicio</div><div class="col s3 center flow-text">Fecha de Fin</div><div class="col s3 flow-text center">Inscribirse</div></div></div>
+        <div style="margin-top:6%"><div class="row d black valign-wrapper hide-on-med-and-up" id="0"><div class="col s4 flow-text center">Premio</div><div class="col s4 center flow-text">Fecha de Fin</div><div class="col s4 flow-text center">Inscribirse</div></div></div>
+        <div id="sorteos">
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var html = '';
+
+    $(document).ready(function () {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("JsonGetListaSorteos")',
+            success: function (data) {
+                data.data.forEach(function (d) {
+                    CrearDiv(d.id, d.fechaI, d.fechaF, d.Premio)
+                });
+                $('#sorteos').html(html);
+            },
+        })
+    })
+    function CrearDiv(id, fechaI, fechaF, premio) {
+        html += '<div class="row d black valign-wrapper hide-on-small-only" id="' + id + '"><div class="col s3 center flow-text">' + premio + '</div><div class="col s3 center flow-text">' + fechaI + '</div><div class="col s3 center flow-text">' + fechaF + '</p></div><div class="col s3 center"><button class="btn-floating " onclick="Ingresar(' + id + ')"><i class="material-icons">input</i></button></div></div>'
+        html += '<div class="row d black valign-wrapper hide-on-med-and-up" id="' + id + '"><div class="col s4 center flow-text">' + premio + '</div><div class="col s4 center flow-text">' + fechaF + '</div><div class="col s4 center"><button class="btn-floating " onclick="Ingresar(' + id + ')"><i class="material-icons">input</i></button></div></div>'
+    }
+
+    function Ingresar(id) {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("IngresarSorteo")?sorId=' + id,
+            success: function (data) {
+                if (data.data == 'Sin Usuario') {
+                    location.href = "@Url.Action("Index","Home")";
+                }
+                else if (data.data.mensaje == 'Exito') {
+                    Materialize.toast('Inscrito Correctamente', 3000, 'green');
+                    ActualizarGGCoins(data.data.GGCoins);
+                }
+                else {
+                    Materialize.toast(data.data, 3000, 'red');
+                }
+            }
+        })
+    }
+</script>

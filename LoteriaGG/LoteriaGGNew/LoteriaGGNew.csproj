@@ -216,6 +216,7 @@
     <Content Include="fonts\roboto\Roboto-Regular.woff2" />
     <Content Include="fonts\roboto\Roboto-Thin.woff" />
     <Content Include="fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="Areas\LoL\Views\Sorteo\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -250,7 +251,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\LoL\Models\" />
     <Folder Include="Areas\LoL\Views\Shared\" />
-    <Folder Include="Areas\LoL\Views\Sorteo\" />
     <Folder Include="Areas\Steam\Models\" />
     <Folder Include="Areas\Steam\Views\Hoome\" />
     <Folder Include="Areas\Steam\Views\Shared\" />
