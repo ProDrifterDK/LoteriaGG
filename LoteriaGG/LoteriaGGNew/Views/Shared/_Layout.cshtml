@@ -22,6 +22,7 @@
                     <div class="user-view">
                         <div class="background">
                             <img src="~/Images/AkalivsBaron.jpg">
+                            <a href="~/Views/Shared/_Layout.cshtml">~/Views/Shared/_Layout.cshtml</a>
                         </div>
                         <a href="#!user"><img class="circle" src="~/Images/69698566-dota-2-logo-wallpapers.jpg"></a>
                         <a href="#!name"><span class="white-text name">John Doe</span></a>
@@ -33,12 +34,44 @@
                         <li>
                             <a class="collapsible-header">Registrarse<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#!">First</a></li>
-                                    <li><a href="#!">Second</a></li>
-                                    <li><a href="#!">Third</a></li>
-                                    <li><a href="#!">Fourth</a></li>
-                                </ul>
+                                <form id="ajax-register-form" action="@Url.Action("Index", "Home", new { area = "LoL"})" method="post" role="form" autocomplete="off">
+                                    <input type="hidden" name="type" value="registro" />
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="Nombre" tabindex="2" class="form-control" placeholder="Nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="NombreDeInvocador" tabindex="2" class="form-control" placeholder="Nombre de invocador">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="confirmPassword" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <BotDetect:Captcha ID="ExampleCaptcha" runat="server" />
+                                            <asp:TextBox ID="CaptchaCodeTextBox" runat="server" />
+                                            <div class="col-xs-6 col-xs-offset-3">
+                                                <input type="checkbox" name="terminos" value="true" />Acepto los <a data-target="#myModal" data-toggle="modal">terminos y condiciones</a>
+                                            </div>
+                                            <div class="col-xs-6 col-xs-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Aceptar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState()" scope="email,publish_actions" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                </form>
                             </div>
                         </li>
                     </ul>
@@ -75,7 +108,9 @@
                 <li><a class="dropdown-button" href="#!">Steam</a></li>
                 <li><a class="dropdown-button" href="#!">Contactanos</a></li>
             </ul>
+            <!--LOGO-->
             <a href="#" class="brand-logo center"><img src="~/Images/logoGG.png" style="max-height:55px"/></a>
+            <!--Right Nav-->
             <ul class="right hide-on-med-and-down">
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registrarse<i class="material-icons right">arrow_drop_down</i></a></li>
                 <ul id='dropdown1' class='dropdown-content'>

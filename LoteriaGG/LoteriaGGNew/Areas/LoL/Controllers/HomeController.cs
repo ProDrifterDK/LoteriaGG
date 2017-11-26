@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Negocio;
 
 namespace LoteriaGGNew.Areas.LoL.Controllers
 {
@@ -11,6 +12,7 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
         // GET: LoL/Home
         public ActionResult Index()
         {
+            ViewBag.Titulo = Home.Ganador(1);
             return View();
         }
 

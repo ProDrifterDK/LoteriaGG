@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Home.cs" />
     <Compile Include="N_Sorteo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
