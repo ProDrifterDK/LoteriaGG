@@ -26,6 +26,12 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
                 return Json(new { data = "Usuario o contraseña incorrectos o no existentes." }, JsonRequestBehavior.AllowGet);
             }
             UsuarioLogged = usuario;
+            return Json(new { data = "Exito" }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
             return RedirectToAction("Index");
         }
 

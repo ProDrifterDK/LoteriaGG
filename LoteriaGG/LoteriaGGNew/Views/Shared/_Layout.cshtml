@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Datos.SqlData
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    @{ var user = (TBL_USUARIO)Session["UsuarioLogged"]; }
     @Scripts.Render("~/bundles/jquery")
     <script src="~/Scripts/materialize.js"></script>
     <script src="~/Scripts/materialize.min.js"></script>
@@ -102,9 +104,12 @@
             <!--Left Nav-->
             <ul class="hide-on-med-and-down">
                 <li><a class="dropdown-button" href="#!" >Inicio</a></li>
-                <li><a class="dropdown-button" href="#!">Sorteos</a></li>
-                <li><a class="dropdown-button" href="#!">Obtener GGCoins</a></li>
-                <li><a class="dropdown-button" href="#!">Ruleta</a></li>
+                @if (user != null)
+                {
+                    <li><a class="dropdown-button yellow-text" href="#!">Sorteos</a></li>
+                    <li><a class="dropdown-button red-text" href="#!">Obtener GGCoins</a></li>
+                    <li><a class="dropdown-button" href="#!">Ruleta</a></li>
+                }
                 <li><a class="dropdown-button" href="#!">Steam</a></li>
                 <li><a class="dropdown-button" href="#!">Contactanos</a></li>
             </ul>
@@ -112,40 +117,48 @@
             <a href="#" class="brand-logo center"><img src="~/Images/logoGG.png" style="max-height:55px"/></a>
             <!--Right Nav-->
             <ul class="right hide-on-med-and-down">
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registrarse<i class="material-icons right">arrow_drop_down</i></a></li>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">First</a></li>
-                    <li><a href="#!">Second</a></li>
-                    <li><a href="#!">Third</a></li>
-                    <li><a href="#!">Fourth</a></li>
-                </ul>
-                <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
+                @if (user == null)
+                {
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registrarse<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">First</a></li>
+                        <li><a href="#!">Second</a></li>
+                        <li><a href="#!">Third</a></li>
+                        <li><a href="#!">Fourth</a></li>
+                    </ul>
+                    <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal transparent" style="width:20% !important;">
-                    <div class="modal-content">
-                        <div class="row">
-                            <form id="formUsuario" method="post" action="@Url.Action("Login")" class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
-                                        <label for="usuario" style="color:#fff;font-size:20pt;">Nombre de Usuario</label>
+                    <div id="modal1" class="modal transparent" style="width:20% !important;">
+                        <div class="modal-content">
+                            <div class="row">
+                                <form id="formUsuario" method="post" action="@Url.Action("Login")" class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <label for="usuario" style="color:#fff;font-size:20pt;">Nombre de Usuario</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
-                                        <label for="contrasena" style="color:#fff;font-size:20pt;">Contraseña</label>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                            <label for="contrasena" style="color:#fff;font-size:20pt;">Contraseña</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row" style="margin-bottom:0;">
-                                    <div class="right" >
-                                        <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Submit<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="right">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Submit<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <li><a class="" href="#!" data-activates="dropdown1">@user.USU_NOMBRE</a></li>
+                    <li><a class="" href="javascript:void()" onclick="Logout()" data-activates=""><i class="material-icons right" style="padding-top:3px;">power_settings_new</i></a></li>
+                }
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         </nav>
@@ -237,6 +250,20 @@
 
 
         function Login() {
+            var form = $('.modal #formUsuario');
+
+            $.ajax({
+                type: 'POST',
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+                success: function () {
+                    location.reload();
+                }
+            })
+        }
+
+        function Logout() {
+            location.href = "@Url.Action("Logout")"
         }
     </script>
 
