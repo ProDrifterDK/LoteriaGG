@@ -119,13 +119,33 @@
                     <li><a href="#!">Third</a></li>
                     <li><a href="#!">Fourth</a></li>
                 </ul>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Ingresar<i class="material-icons right">arrow_drop_down</i></a></li>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">First</a></li>
-                    <li><a href="#!">Second</a></li>
-                    <li><a href="#!">Third</a></li>
-                    <li><a href="#!">Fourth</a></li>
-                </ul>
+                <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal transparent" style="width:20% !important;">
+                    <div class="modal-content">
+                        <div class="row">
+                            <form id="formUsuario" method="post" action="@Url.Action("Login")" class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                        <label for="usuario" style="color:#fff;font-size:20pt;">Nombre de Usuario</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                        <label for="contrasena" style="color:#fff;font-size:20pt;">Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom:0;">
+                                    <div class="right" >
+                                        <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Submit<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         </nav>
@@ -133,43 +153,6 @@
     <main>
         <div class="container body-content">
             @RenderBody()
-            @*<footer>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6">
-                                <div class="col-xs-12 col-sm-5">
-                                    <h5>
-                                        Hecho por el equipo de
-                                        <br />
-                                        <a href="http://resyst.loteriagg.com/" style="text-decoration: none"> Resyst ® Softwares™.</a>
-                                    </h5>
-
-
-                                    <h5>
-                                        © 2017 Resyst Softwares. Todos los derechos reservados.
-                                    </h5>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-6" style="padding-right:50px" >
-                                <h3 id="socialMedia" style="margin-top:10px;text-align:right;">
-                                    Síguenos
-                                </h3>
-
-                                <div class="col-lg-12 col-xs-12 col-sm-6">
-                                    <div style="text-align:right">
-                                        <a href="https://www.facebook.com/loteria.gg">
-                                            <img src="https://lh3.googleusercontent.com/rVThdsVV77Iq36HPUUqmcJ21ZAML3Gs-AxGCc2JrpoXQLYkq3Yl-0O2p8KvYHjuQMuJhq7EkvL6_F2ylJf-jY_KbahkASPDtVYjrV6Bc_dB4pEnnu5Ng425ISTs9G3NHu4zLSi00CTAyY2ycRow1LbsF6ge74Kh0h4DbboJFojfHeDIY2UjV-w1ijDEGfFEwtieMkrW0SXH-HFkabNMGLbdB3fYfUD0Dn28cqmKO35IFNN-hN4_EPhoen1Ab24MvnWbkAvZw_VRxsyDsKSAnEcV_5N-FzM6lk1VgWknUUJ0tIKCBsMVndxJhSXboeMWlIthkPUm5wzieIkaGKuw0WGcYRjKo8Kxg40qw5ZCsmeVezfsk0nylIFArsygKZexOBRKhhWgWi3gb-OY_X7hSfOr1IiXct-uk7znlhq76bJFhokI2DbqvnIISbDpRHY9ZZLmokxEsNCaSoZFCw9VVOIF5RZuTNaytj60YmXn2amrtp423JOzIRu3aaEIYKc9h8Kq_5eXgEpUqKcdGR_o_-loCPIF6JrgwhIGsgWcnhRvhFu2ZB4jgxO3YpBnReCYiHU1FbCfXefCjoO-kUvULsGo-34oK-AFbg9piIJGiBWEafXFViggW7EGgWxRk-bzAbD8d6GkH7P5Y7wYGebxHXOO52caX9QSw9YsEX29wAQ=s24-no" alt="facebook" width="27" />
-                                        </a>
-                                        <a href="https://www.instagram.com/loteriagg">
-                                            <img src="http://pngimg.com/uploads/instagram/instagram_PNG1.png" alt="instagram" width="27" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>*@
         </div>
     </main>
     <footer class="page-footer indigo darken-3">
@@ -237,6 +220,24 @@
     <script>
         $(".button-collapse").sideNav();
         $('.collapsible').collapsible();
+        $(".dropdown-button").dropdown();
+        $(document).ready(function () {
+            $('.modal').modal({
+                dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                opacity: .5, // Opacity of modal background
+                inDuration: 300, // Transition in duration
+                outDuration: 200, // Transition out duration
+                startingTop: '4%', // Starting top style attribute
+                endingTop: '10%', // Ending top style attribute
+                ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+                },
+            }
+            );
+        });
+
+
+        function Login() {
+        }
     </script>
 
 </body>
