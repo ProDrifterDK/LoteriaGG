@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Negocio;
+using LoteriaGG.Base;
 
 namespace LoteriaGGNew.Areas.LoL.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: LoL/Home
         public ActionResult Index()
@@ -19,6 +20,12 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
         [HttpPost]
         public ActionResult Login(string argUsuario, string contrasena)
         {
+            var usuario = Class1.Login(argUsuario, contrasena);
+            if (usuario == null)
+            {
+                return Json(new { data = "Usuario o contraseña incorrectos o no existentes." }, JsonRequestBehavior.AllowGet);
+            }
+            UsuarioLogged = usuario;
             return RedirectToAction("Index");
         }
 

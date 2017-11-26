@@ -63,3 +63,4 @@ C:\Users\user\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.csprojResolveA
 C:\Users\user\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\user\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.dll
 C:\Users\user\Source\Repos\Resyst\LoteriaGG\Datos\obj\Debug\Datos.pdb
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache

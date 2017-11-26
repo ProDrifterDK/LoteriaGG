@@ -80,3 +80,7 @@ C:\Users\user\Source\Repos\Resyst2\LoteriaGG\Negocio\obj\Debug\Negocio.csprojRes
 C:\Users\user\Source\Repos\Resyst2\LoteriaGG\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\user\Source\Repos\Resyst2\LoteriaGG\Negocio\obj\Debug\Negocio.dll
 C:\Users\user\Source\Repos\Resyst2\LoteriaGG\Negocio\obj\Debug\Negocio.pdb
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Negocio\bin\Debug\Negocio.dll.config
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
