@@ -2,6 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9005426925226498",
+            enable_page_level_ads: true
+        });
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -11,6 +18,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9&appId=122229375033808";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     @{ var user = (TBL_USUARIO)Session["UsuarioLogged"]; }
     @Scripts.Render("~/bundles/jquery")
     <script src="~/Scripts/materialize.js"></script>
@@ -119,34 +136,105 @@
             <ul class="right hide-on-med-and-down">
                 @if (user == null)
                 {
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registrarse<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">First</a></li>
-                        <li><a href="#!">Second</a></li>
-                        <li><a href="#!">Third</a></li>
-                        <li><a href="#!">Fourth</a></li>
-                    </ul>
+                    <li><a class="modal-trigger" href="#modal2">Registrarse</a></li>
+
                     <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
                 <!-- Modal Structure -->
-                    <div id="modal1" class="modal transparent" style="width:20% !important;">
+                    <div id="modal1" class="modal transparent z-depth-5" style="width:25% !important;">
                         <div class="modal-content">
                             <div class="row">
                                 <form id="formUsuario" method="post" action="@Url.Action("Login")" class="col s12">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
-                                            <label for="usuario" style="color:#fff;font-size:20pt;">Nombre de Usuario</label>
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
-                                            <label for="contrasena" style="color:#fff;font-size:20pt;">Contraseña</label>
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Repetir Contraseña</label>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-bottom:0;">
-                                        <div class="right">
-                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Submit<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        <div class="center">
+                                            <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center" style="padding-top:12px">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Entrar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal2" class="modal transparent z-depth-5" style="width:27% !important; height:100%">
+                        <div class="modal-content">
+                            <div class="row">
+                                <form id="formRegister" method="post" action="@Url.Action("Login")" class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="email">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="nombre">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="apellido">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Apellido</label>
+                                        </div>
+                                    </div>
+                                    @if(Request.Url.ToString().Contains("LoL")){
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="summoner">
+                                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Invocador</label>
+                                            </div>
+                                        </div>
+                                    }else{
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="steamNick">
+                                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Steam</label>
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena2">
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center">
+                                            <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center" style="padding-top:12px">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
                                         </div>
                                     </div>
                                 </form>
@@ -266,6 +354,45 @@
             location.href = "@Url.Action("Logout")"
         }
     </script>
+<!--FACEBOOK LOGIN-->
+    <script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '122229375033808', //id local 787191674781997 //122229375033808
+            oauth: true,
+            cookie: true,
+            xfbml: true,
+            version: 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
+    function myFacebookLogin() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                checkLoginState();
+            }
+        }, { scope: 'publish_actions,email,user_mobile_phone', perms:'user_mobile_phone' },);
+    }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+            console.log(response.authResponse.accessToken);
+        });
+        FB.api('/me?fields=id,name,email,permissions', function (response) {
+            var url = "@Url.Action("FBLogin")";
+            var mail = response.email == undefined ? response.id : response.email;
+            location.href = url + "?mail=" + mail + "&usr=" + response.name;
+        });
+    }
+    </script>
 </body>
 </html>

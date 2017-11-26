@@ -173,5 +173,76 @@ namespace LoteriaGG.Base
 
             return RedirectToAction("Index", "Home", new { msg2 = "Mail Actualizado"});
         }
+
+        protected TBL_USUARIO FBReg(string mail, string usr)
+        {
+            try
+            {
+                using (var dc = new LoteriaGGEntities())
+                {
+                    if (dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail) != null)
+                    {
+                        throw new Exception("Mail ya registrado");
+                    }
+                    var activationCode = Guid.NewGuid();
+
+                    var usu = new TBL_USUARIO();
+                    string[] s = usr.Split(' ');
+                    Random rand = new Random();
+                    string ss = usr + rand.Next().ToString();
+                    usu.USU_ACCOUNT = ss.Substring(0, 20);
+                    usu.USU_PASSWORD = "FBLog" + rand.Next().ToString();
+                    usu.USU_NOMBRE = s[0];
+                    if (s.Length == 3 || s.Length == 2)
+                        usu.USU_APELLIDO = s[1];
+                    else if (s.Length > 3)
+                        usu.USU_APELLIDO = s[2];
+                    usu.USU_EMAIL = mail;
+                    usu.USU_SUMMONER = "";
+                    usu.USU_CODIGO_VERIFICAION = Guid.Empty;
+                    usu.USU_VERIFICADO = true;
+                    usu.USU_PAGADO = false;
+                    usu.USU_USO_REFER = false;
+                    usu.USU_REFER_CODIGO = "ref-" + usu.USU_ACCOUNT;
+
+                    dc.TBL_USUARIO.Add(usu);
+
+                    dc.SaveChanges();
+                    return dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail);
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+
+        }
+        protected TBL_USUARIO FBLog(string mail)
+        {
+            TBL_USUARIO ret = null;
+            try
+            {
+                using (var dc = new LoteriaGGEntities())
+                {
+                    ret = dc.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == mail);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return ret;
+        }
     }
 }
