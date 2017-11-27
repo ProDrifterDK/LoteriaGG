@@ -12,6 +12,10 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
         // GET: LoL/ObtenerGGCoin
         public ActionResult Index()
         {
+            if(UsuarioLogged == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
     }

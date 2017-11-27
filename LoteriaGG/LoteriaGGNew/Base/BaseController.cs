@@ -360,5 +360,79 @@ namespace LoteriaGG.Base
                 return Json(new { Exito = "no" }, JsonRequestBehavior.AllowGet);
             }
         }
+
+
+        [HttpPost]
+        public ActionResult SorteoGratis(string codigo)
+        {
+            if (UsuarioLogged == null)
+            {
+                return RedirectToAction("Index", "Home", new { area = "LoL" });
+            }
+            Guid Codigo;
+            /*Refer*/
+            if (codigo.Contains("ref-"))
+            {
+                try
+                {
+                    using (var db = new LoteriaGGEntities())
+                    {
+                        var userRef = db.TBL_USUARIO.FirstOrDefault(o => o.USU_REFER_CODIGO == codigo);
+                        var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
+                        if (usrD.USU_USO_REFER)
+                            return Json(new { exito = "false", mensaje = "Ya usuaste un codigo de referencia."},JsonRequestBehavior.AllowGet);
+                        if (usrD == userRef)
+                            return Json(new { exito = "false", mensaje = "No puedes referirte a ti mismo." },JsonRequestBehavior.AllowGet);
+
+                        if (usrD.USU_SOR_DISP == null)
+                        {
+                            usrD.USU_SOR_DISP = 0;
+                        }
+                        usrD.USU_SOR_DISP++;
+                        usrD.USU_REFERENTE = userRef.USU_ID;
+                        usrD.USU_USO_REFER = true;
+                        db.SaveChanges();
+                        UsuarioLogged = usrD;
+                        return Json(new { exito = "true", mensaje = "Se ha cargado un GGCoin a tu cuenta.", GGCoins = usrD.USU_SOR_DISP },JsonRequestBehavior.AllowGet);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            /*Normal*/
+            try
+            {
+                Codigo = Guid.Parse(codigo);
+            }
+            catch
+            {
+                return Json(new { exito = "false", mensaje = "El codigo ingresado es incorrecto." },JsonRequestBehavior.AllowGet);
+            }
+            using (var db = new LoteriaGGEntities())
+            {
+                var sg = db.TBL_SORTEO_GRATIS.FirstOrDefault(o => o.SG_CODIGO == Codigo && o.SG_VALIDO == true);
+                if (sg == null)
+                {
+                    return Json(new { exito = "false", mensaje = "El codigo ingresado es incorrecto." },JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
+                    if (usrD.USU_SOR_DISP == null)
+                    {
+                        usrD.USU_SOR_DISP = 0;
+                    }
+                    usrD.USU_SOR_DISP++;
+                    sg.SG_VALIDO = false;
+                    sg.USU_ID = usrD.USU_ID;
+                    db.SaveChanges();
+                    UsuarioLogged = usrD;
+                    return Json(new { exito = "true", mensaje = "Se ha cargado un GGCoin a tu cuenta.", GGCoins = usrD.USU_SOR_DISP }, JsonRequestBehavior.AllowGet);
+                }
+            }
+        }
     }
 }
