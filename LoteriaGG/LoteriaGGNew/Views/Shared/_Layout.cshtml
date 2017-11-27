@@ -36,81 +36,74 @@
     <header>
         <nav class="top-nav indigo darken-2">
             <!--SIDE Nav-->
-            <ul id="slide-out" class="side-nav">
-                <li>
-                    <div class="user-view">
-                        <div class="background">
-                            <img src="~/Images/AkalivsBaron.jpg">
-                            <a href="~/Views/Shared/_Layout.cshtml">~/Views/Shared/_Layout.cshtml</a>
-                        </div>
-                        <a href="#!user"><img class="circle" src="~/Images/69698566-dota-2-logo-wallpapers.jpg"></a>
-                        <a href="#!name"><span class="white-text name">John Doe</span></a>
-                        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                    </div>
-                </li>
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li>
-                            <a class="collapsible-header">Registrarse<i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <form id="ajax-register-form" action="@Url.Action("Index", "Home", new { area = "LoL"})" method="post" role="form" autocomplete="off">
-                                    <input type="hidden" name="type" value="registro" />
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="Nombre" tabindex="2" class="form-control" placeholder="Nombre">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="NombreDeInvocador" tabindex="2" class="form-control" placeholder="Nombre de invocador">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="confirmPassword" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <BotDetect:Captcha ID="ExampleCaptcha" runat="server" />
-                                            <asp:TextBox ID="CaptchaCodeTextBox" runat="server" />
-                                            <div class="col-xs-6 col-xs-offset-3">
-                                                <input type="checkbox" name="terminos" value="true" />Acepto los <a data-target="#myModal" data-toggle="modal">terminos y condiciones</a>
-                                            </div>
-                                            <div class="col-xs-6 col-xs-offset-3">
-                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Aceptar">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="fb-login-button" data-max-rows="1" onlogin="checkLoginState()" scope="email,publish_actions" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                                    <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li>
-                            <a class="collapsible-header">Ingresar<i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#!">First</a></li>
-                                    <li><a href="#!">Second</a></li>
-                                    <li><a href="#!">Third</a></li>
-                                    <li><a href="#!">Fourth</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
 
+            <ul id="slide-out" class="side-nav">
+                @if (user == null)
+                {
+                    <li class="no-padding" style="border-bottom:#1a237e 2px solid">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Ingresar<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <form id="formUsuario" method="post" action="@Url.Action("Login","Home")" class="col s12">
+                                            <input placeholder="Usuario" id="usuario" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <input placeholder="Contraseña" type="password" style="color:#000; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                            <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Entrar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        </form>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-padding" style="border-bottom:#1a237e 2px solid">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Registarse<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <form id="formRegister" method="post" action="@Url.Action("Register", "Home")" class="col s12">
+                                            <input placeholder="Usuario" id="usuario" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <input placeholder="Email" id="email" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="email">
+                                            <input placeholder="Nombre" id="nombre" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="nombre">
+                                            <input placeholder="Apellido" id="apellido" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="apellido">
+                                            @if (Request.Url.ToString().Contains("LoL"))
+                                            {
+                                                <input placeholder="Nombre de Invocador" id="summoner" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="summoner">
+                                            }
+                                            else
+                                            {
+                                                <input placeholder="Nombre de Steam" id="steamNick" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="steamNick">
+                                            }
+                                            <input placeholder="Contraseña" type="password" style="color:#000; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                            <input placeholder="Repetir Contraseña" type="password" style="color:#000; border-color:#0277bd;" id="contrasena2" class="validate" name="contrasena2">
+                                            <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        </form>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img src="~/Images/AkalivsBaron.jpg">
+                                <a href="~/Views/Shared/_Layout.cshtml">~/Views/Shared/_Layout.cshtml</a>
+                            </div>
+                            <a class="right" href="javascript:void()" onclick="Logout()" style="font-size:1.5em" data-activates=""><i class="material-icons right" style="padding-top:3px;margin:0">power_settings_new</i></a>
+                            <a href="#!user"><img class="circle" src="~/Images/69698566-dota-2-logo-wallpapers.jpg"></a>
+                            <a href="#!name"><span class="white-text name">@user.USU_NOMBRE</span></a>
+                            <a id="" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="#!" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a>
+                        </div>
+                    </li>
+                }
                 <li><a class="dropdown-button" href="#!">Inicio</a></li>
                 @if (user != null)
                 {
@@ -359,7 +352,7 @@
         }
 
         function ActualizarGGCoins(cantidad) {
-            $('#ggcoins').html(cantidad + ' GGCoins');
+            $('.ggcoins').html(cantidad + ' GGCoins');
         }
     </script>
 <!--FACEBOOK LOGIN-->
