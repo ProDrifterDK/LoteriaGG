@@ -47,7 +47,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <form id="formUsuario2" method="post" action="@Url.Action("Login","Home")" class="col s12">
-                                            <input placeholder="Usuario" id="usuario" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <input placeholder="Nombre de Usuario" id="usuario" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
                                             <input placeholder="Contraseña" type="password" style="color:#000; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
                                             <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                             <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
@@ -135,7 +135,7 @@
                     <li><a class="modal-trigger" href="#modal2">Registrarse</a></li>
 
                     <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
-                <!-- Modal Structure -->
+                <!-- Modal1 Structure -->
                     <div id="modal1" class="modal transparent z-depth-5" style="width:25% !important;">
                         <div class="modal-content">
                             <div class="row">
@@ -145,11 +145,11 @@
                                             <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
                                             <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
                                         </div>
-                                    </div>mm
+                                    </div>
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
-                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Repetir Contraseña</label>
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Ingresar Contraseña</label>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-bottom:0;">
@@ -167,6 +167,7 @@
                             </div>
                         </div>
                     </div>
+                     <!-- Modal2 Structure -->
                     <div id="modal2" class="modal transparent z-depth-5" style="width:27% !important; height:100%">
                         <div class="modal-content">
                             <div class="row">
@@ -219,7 +220,7 @@
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena2">
-                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Contraseña</label>
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Repetir Contraseña</label>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-bottom:0;">
