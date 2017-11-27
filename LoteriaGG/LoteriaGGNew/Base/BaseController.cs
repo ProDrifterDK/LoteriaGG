@@ -11,6 +11,9 @@ using System.Net.Mail;
 using System.Net;
 using System.Web.Routing;
 using System.Data.Entity.Validation;
+using System.Web.Script.Serialization;
+using System.Text;
+using System.IO;
 
 namespace LoteriaGG.Base
 {
@@ -287,6 +290,76 @@ namespace LoteriaGG.Base
             UsuarioLogged = usuario;
 
             return Json(new { data = new { mensaje = "Exito", GGCoins = UsuarioLogged.USU_SOR_DISP } }, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult EnviarNotificacion(string codigo)
+        {
+            try
+            {
+                using (var db = new LoteriaGGEntities())
+                {
+                    throw new Exception("dsadsa");
+                    var cod = new CODIGOS_PAGO_RUT
+                    {
+                        PARU_CODIGO = codigo,
+                        USU_ID = UsuarioLogged.USU_ID
+                    };
+
+                    db.CODIGOS_PAGO_RUT.Add(cod);
+                    db.SaveChanges();
+                }
+                var applicationID = "AIzaSyDm-KAY0b_0wwB63TW3R-LxYAsHf3V3inU";
+                var senderId = "1049140455189";
+                string deviceId = "/topics/codigoPR";
+                WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+                tRequest.Method = "post";
+                tRequest.ContentType = "application/json";
+                var data = new
+                {
+                    to = deviceId,
+                    notification = new
+                    {
+                        body = codigo,
+                        title = "Nuevo Codigo",
+                        icon = "myicon",
+                        sound = "mySound",
+                    },
+                    priority = "high"
+
+                };
+
+                var serializer = new JavaScriptSerializer();
+                var json = serializer.Serialize(data);
+                Byte[] byteArray = Encoding.UTF8.GetBytes(json);
+                tRequest.Headers.Add(string.Format("Authorization: key={0}", applicationID));
+                tRequest.Headers.Add(string.Format("Sender: id={0}", senderId));
+                tRequest.ContentLength = byteArray.Length;
+
+                using (Stream dataStream = tRequest.GetRequestStream())
+                {
+                    dataStream.Write(byteArray, 0, byteArray.Length);
+
+                    using (WebResponse tResponse = tRequest.GetResponse())
+                    {
+                        using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                        {
+                            using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                            {
+                                String sResponseFromServer = tReader.ReadToEnd();
+                                Console.Write(sResponseFromServer);
+                            }
+                        }
+                    }
+                }
+                return Json(new { Exito = "exito" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return Json(new { Exito = "no" }, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }
