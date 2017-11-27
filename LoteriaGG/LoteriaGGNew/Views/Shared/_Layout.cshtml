@@ -46,12 +46,12 @@
                                 <a class="collapsible-header">Ingresar<i class="material-icons">arrow_drop_down</i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <form id="formUsuario" method="post" action="@Url.Action("Login","Home")" class="col s12">
+                                        <form id="formUsuario2" method="post" action="@Url.Action("Login","Home")" class="col s12">
                                             <input placeholder="Usuario" id="usuario" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
                                             <input placeholder="Contraseña" type="password" style="color:#000; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
                                             <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                             <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
-                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Entrar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login2()" name="action">Entrar<i class="material-icons right" style="line-height:35px;">send</i></button>
                                         </form>
                                     </ul>
                                 </div>
@@ -336,6 +336,19 @@
 
         function Login() {
             var form = $('.modal #formUsuario');
+
+            $.ajax({
+                type: 'POST',
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+                success: function () {
+                    location.reload();
+                }
+            })
+        }
+
+        function Login() {
+            var form = $('.modal #formUsuario2');
 
             $.ajax({
                 type: 'POST',
