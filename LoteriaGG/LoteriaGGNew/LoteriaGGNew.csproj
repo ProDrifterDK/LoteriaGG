@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\LoL\Controllers\ContactanosController.cs" />
     <Compile Include="Areas\LoL\Controllers\HomeController.cs" />
     <Compile Include="Areas\LoL\Controllers\ObtenerGGCoinController.cs" />
     <Compile Include="Areas\LoL\Controllers\SorteoController.cs" />
