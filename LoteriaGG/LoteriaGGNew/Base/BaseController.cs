@@ -300,7 +300,6 @@ namespace LoteriaGG.Base
             {
                 using (var db = new LoteriaGGEntities())
                 {
-                    throw new Exception("dsadsa");
                     var cod = new CODIGOS_PAGO_RUT
                     {
                         PARU_CODIGO = codigo,
