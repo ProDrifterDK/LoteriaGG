@@ -17,11 +17,11 @@ namespace Datos.SqlData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TBL_USUARIO()
         {
-            this.TBL_BITACORA_ERROR = new HashSet<TBL_BITACORA_ERROR>();
             this.CODIGOS_PAGO_RUT = new HashSet<CODIGOS_PAGO_RUT>();
             this.NUB_SORTEO_USUARIO = new HashSet<NUB_SORTEO_USUARIO>();
             this.TBL_ADMIN = new HashSet<TBL_ADMIN>();
             this.TBL_USUARIO1 = new HashSet<TBL_USUARIO>();
+            this.TBL_CONTACTO = new HashSet<TBL_CONTACTO>();
         }
     
         public long USU_ID { get; set; }
@@ -47,8 +47,6 @@ namespace Datos.SqlData
         public string USU_FACEBOOK_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TBL_BITACORA_ERROR> TBL_BITACORA_ERROR { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CODIGOS_PAGO_RUT> CODIGOS_PAGO_RUT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
@@ -57,5 +55,7 @@ namespace Datos.SqlData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBL_USUARIO> TBL_USUARIO1 { get; set; }
         public virtual TBL_USUARIO TBL_USUARIO2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBL_CONTACTO> TBL_CONTACTO { get; set; }
     }
 }

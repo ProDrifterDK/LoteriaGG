@@ -476,5 +476,39 @@ namespace LoteriaGG.Base
 
             return Json(new { exito = "true", mensaje = "" });
         }
+
+        [HttpPost]
+        public JsonResult EnviarMensajeContactanos(string mensaje)
+        {
+            var msj = new TBL_CONTACTO
+            {
+                USU_ID = UsuarioLogged.USU_ID,
+                CONT_TEXTO = mensaje,
+            };
+
+            BDD.TBL_CONTACTO.Add(msj);
+            BDD.Entry(msj).State = System.Data.Entity.EntityState.Added;
+
+            try
+            {
+                BDD.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                return Json(new { exito = false, mensaje = "Ha habido un problema, contacte con el administrador." });
+            }
+
+            return Json(new { exito = true, mensaje = "Mensaje enviado con exito." });
+        }
     }
 }

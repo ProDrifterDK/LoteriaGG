@@ -150,6 +150,11 @@
             url: "@Url.Action("JsonSpin", new { t = ViewBag.Spin })",
             dataType: "json",
             success: function (data) {
+                if (!data.exito)
+                {
+                    Materialize.toast(data.mensaje, 3000, 'red');
+                    return;
+                }
                 spinAngleStart = data.spinAngleStart;//Math.random() * 10 + 10;
                 spinTime = 0;
                 spinTimeTotal = data.spinTimeTotal;//Math.random() * 3 + 4 * 1000;

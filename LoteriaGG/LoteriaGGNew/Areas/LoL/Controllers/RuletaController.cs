@@ -62,7 +62,7 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
             ViewBag.GGCoins = usu.USU_SOR_DISP;
             UsuarioLogged = usu;
 
-            return Json(new { spinAngleStart = spinAngleStart, spinTimeTotal = spinTimeTotal, GGCoinsGanados = ggCoinsGanados[0], GGCoins = usu.USU_SOR_DISP, arcd = ggCoinsGanados[1] }, JsonRequestBehavior.AllowGet);
+            return Json(new { exito = true, spinAngleStart = spinAngleStart, spinTimeTotal = spinTimeTotal, GGCoinsGanados = ggCoinsGanados[0], GGCoins = usu.USU_SOR_DISP, arcd = ggCoinsGanados[1] }, JsonRequestBehavior.AllowGet);
         }
 
         int spinTime = 0;

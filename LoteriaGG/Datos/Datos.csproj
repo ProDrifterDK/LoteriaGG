@@ -82,7 +82,7 @@
     <Compile Include="SqlData\TBL_ADMIN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SqlData\TBL_BITACORA_ERROR.cs">
+    <Compile Include="SqlData\TBL_CONTACTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlData\TBL_HOME.cs">

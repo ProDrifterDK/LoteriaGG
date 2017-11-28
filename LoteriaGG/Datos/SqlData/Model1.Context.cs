@@ -25,7 +25,6 @@ namespace Datos.SqlData
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TBL_BITACORA_ERROR> TBL_BITACORA_ERROR { get; set; }
         public virtual DbSet<CODIGOS_PAGO_RUT> CODIGOS_PAGO_RUT { get; set; }
         public virtual DbSet<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
         public virtual DbSet<TBL_ADMIN> TBL_ADMIN { get; set; }
@@ -33,5 +32,6 @@ namespace Datos.SqlData
         public virtual DbSet<TBL_SORTEO> TBL_SORTEO { get; set; }
         public virtual DbSet<TBL_SORTEO_GRATIS> TBL_SORTEO_GRATIS { get; set; }
         public virtual DbSet<TBL_USUARIO> TBL_USUARIO { get; set; }
+        public virtual DbSet<TBL_CONTACTO> TBL_CONTACTO { get; set; }
     }
 }

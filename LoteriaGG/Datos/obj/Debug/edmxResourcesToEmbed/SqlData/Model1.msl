@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="LoteriaGGModelStoreContainer" CdmEntityContainer="LoteriaGGEntities">
-    <EntitySetMapping Name="TBL_BITACORA_ERROR">
-      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
-        <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
-          <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
-          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
-          <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
-          <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CODIGOS_PAGO_RUT">
       <EntityTypeMapping TypeName="LoteriaGGModel.CODIGOS_PAGO_RUT">
         <MappingFragment StoreEntitySet="CODIGOS_PAGO_RUT">
@@ -93,6 +83,15 @@
           <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
           <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
           <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_CONTACTO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_CONTACTO">
+        <MappingFragment StoreEntitySet="TBL_CONTACTO">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="CONT_TEXTO" ColumnName="CONT_TEXTO" />
+          <ScalarProperty Name="CONT_ID" ColumnName="CONT_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

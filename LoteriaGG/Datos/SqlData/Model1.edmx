@@ -5,15 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LoteriaGGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="TBL_BITACORA_ERROR">
-          <Key>
-            <PropertyRef Name="BITERR_ID" />
-          </Key>
-          <Property Name="BITERR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BITERR_MSG" Type="varchar(max)" Nullable="false" />
-          <Property Name="USU_ID" Type="bigint" />
-          <Property Name="BITERR_INNER_MSG" Type="varchar(max)" />
-        </EntityType>
         <EntityType Name="CODIGOS_PAGO_RUT">
           <Key>
             <PropertyRef Name="PARU_ID" />
@@ -35,6 +26,14 @@
             <PropertyRef Name="ADM_ID" />
           </Key>
           <Property Name="ADM_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USU_ID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_CONTACTO">
+          <Key>
+            <PropertyRef Name="CONT_ID" />
+          </Key>
+          <Property Name="CONT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONT_TEXTO" Type="varchar(max)" Nullable="false" />
           <Property Name="USU_ID" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="TBL_HOME">
@@ -140,14 +139,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
-          <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="0..1" />
-          <End Role="TBL_BITACORA_ERROR" Type="Self.TBL_BITACORA_ERROR" Multiplicity="*" />
+        <Association Name="FK_TBL_CONTACTO_TBL_USUARIO">
+          <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
+          <End Role="TBL_CONTACTO" Type="Self.TBL_CONTACTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TBL_USUARIO">
               <PropertyRef Name="USU_ID" />
             </Principal>
-            <Dependent Role="TBL_BITACORA_ERROR">
+            <Dependent Role="TBL_CONTACTO">
               <PropertyRef Name="USU_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -165,10 +164,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LoteriaGGModelStoreContainer">
-          <EntitySet Name="TBL_BITACORA_ERROR" EntityType="Self.TBL_BITACORA_ERROR" Schema="adm" store:Type="Tables" />
           <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="Self.CODIGOS_PAGO_RUT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CONTACTO" EntityType="Self.TBL_CONTACTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_HOME" EntityType="Self.TBL_HOME" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="Self.TBL_SORTEO_GRATIS" Schema="dbo" store:Type="Tables" />
@@ -189,9 +188,9 @@
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" Association="Self.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
+          <AssociationSet Name="FK_TBL_CONTACTO_TBL_USUARIO" Association="Self.FK_TBL_CONTACTO_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
-            <End Role="TBL_BITACORA_ERROR" EntitySet="TBL_BITACORA_ERROR" />
+            <End Role="TBL_CONTACTO" EntitySet="TBL_CONTACTO" />
           </AssociationSet>
           <AssociationSet Name="FK_TBL_USUARIO_TBL_USUARIO" Association="Self.FK_TBL_USUARIO_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
@@ -203,7 +202,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="LoteriaGGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="LoteriaGGEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TBL_BITACORA_ERROR" EntityType="LoteriaGGModel.TBL_BITACORA_ERROR" />
           <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="LoteriaGGModel.CODIGOS_PAGO_RUT" />
           <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="LoteriaGGModel.NUB_SORTEO_USUARIO" />
           <EntitySet Name="TBL_ADMIN" EntityType="LoteriaGGModel.TBL_ADMIN" />
@@ -211,10 +209,6 @@
           <EntitySet Name="TBL_SORTEO" EntityType="LoteriaGGModel.TBL_SORTEO" />
           <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="LoteriaGGModel.TBL_SORTEO_GRATIS" />
           <EntitySet Name="TBL_USUARIO" EntityType="LoteriaGGModel.TBL_USUARIO" />
-          <AssociationSet Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" Association="LoteriaGGModel.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
-            <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
-            <End Role="TBL_BITACORA_ERROR" EntitySet="TBL_BITACORA_ERROR" />
-          </AssociationSet>
           <AssociationSet Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO" Association="LoteriaGGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="CODIGOS_PAGO_RUT" EntitySet="CODIGOS_PAGO_RUT" />
@@ -235,17 +229,12 @@
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
             <End Role="TBL_USUARIO1" EntitySet="TBL_USUARIO" />
           </AssociationSet>
+          <EntitySet Name="TBL_CONTACTO" EntityType="LoteriaGGModel.TBL_CONTACTO" />
+          <AssociationSet Name="FK_TBL_CONTACTO_TBL_USUARIO" Association="LoteriaGGModel.FK_TBL_CONTACTO_TBL_USUARIO">
+            <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+            <End Role="TBL_CONTACTO" EntitySet="TBL_CONTACTO" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="TBL_BITACORA_ERROR">
-          <Key>
-            <PropertyRef Name="BITERR_ID" />
-          </Key>
-          <Property Name="BITERR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BITERR_MSG" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="USU_ID" Type="Int64" />
-          <Property Name="BITERR_INNER_MSG" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TBL_USUARIO" Relationship="LoteriaGGModel.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" FromRole="TBL_BITACORA_ERROR" ToRole="TBL_USUARIO" />
-        </EntityType>
         <EntityType Name="CODIGOS_PAGO_RUT">
           <Key>
             <PropertyRef Name="PARU_ID" />
@@ -328,25 +317,13 @@
           <Property Name="USU_CANT_REFERIDA" Type="Int32" Nullable="false" />
           <Property Name="USU_REFERENTE" Type="Int64" />
           <Property Name="USU_FACEBOOK_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TBL_BITACORA_ERROR" Relationship="LoteriaGGModel.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" FromRole="TBL_USUARIO" ToRole="TBL_BITACORA_ERROR" />
           <NavigationProperty Name="CODIGOS_PAGO_RUT" Relationship="LoteriaGGModel.FK_CODIGOS_PAGO_RUT_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="CODIGOS_PAGO_RUT" />
           <NavigationProperty Name="NUB_SORTEO_USUARIO" Relationship="LoteriaGGModel.FK_NUB_SORTEO_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="NUB_SORTEO_USUARIO" />
           <NavigationProperty Name="TBL_ADMIN" Relationship="LoteriaGGModel.FK_TBL_ADMIN_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_ADMIN" />
           <NavigationProperty Name="TBL_USUARIO1" Relationship="LoteriaGGModel.FK_TBL_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_USUARIO1" />
           <NavigationProperty Name="TBL_USUARIO2" Relationship="LoteriaGGModel.FK_TBL_USUARIO_TBL_USUARIO" FromRole="TBL_USUARIO1" ToRole="TBL_USUARIO" />
+          <NavigationProperty Name="TBL_CONTACTO" Relationship="LoteriaGGModel.FK_TBL_CONTACTO_TBL_USUARIO" FromRole="TBL_USUARIO" ToRole="TBL_CONTACTO" />
         </EntityType>
-        <Association Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
-          <End Type="LoteriaGGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="0..1" />
-          <End Type="LoteriaGGModel.TBL_BITACORA_ERROR" Role="TBL_BITACORA_ERROR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_USUARIO">
-              <PropertyRef Name="USU_ID" />
-            </Principal>
-            <Dependent Role="TBL_BITACORA_ERROR">
-              <PropertyRef Name="USU_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CODIGOS_PAGO_RUT_TBL_USUARIO">
           <End Type="LoteriaGGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="1" />
           <End Type="LoteriaGGModel.CODIGOS_PAGO_RUT" Role="CODIGOS_PAGO_RUT" Multiplicity="*" />
@@ -407,22 +384,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="TBL_CONTACTO">
+          <Key>
+            <PropertyRef Name="CONT_ID" />
+          </Key>
+          <Property Name="CONT_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONT_TEXTO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="USU_ID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TBL_USUARIO" Relationship="LoteriaGGModel.FK_TBL_CONTACTO_TBL_USUARIO" FromRole="TBL_CONTACTO" ToRole="TBL_USUARIO" />
+        </EntityType>
+        <Association Name="FK_TBL_CONTACTO_TBL_USUARIO">
+          <End Type="LoteriaGGModel.TBL_USUARIO" Role="TBL_USUARIO" Multiplicity="1" />
+          <End Type="LoteriaGGModel.TBL_CONTACTO" Role="TBL_CONTACTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USUARIO">
+              <PropertyRef Name="USU_ID" />
+            </Principal>
+            <Dependent Role="TBL_CONTACTO">
+              <PropertyRef Name="USU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LoteriaGGModelStoreContainer" CdmEntityContainer="LoteriaGGEntities">
-          <EntitySetMapping Name="TBL_BITACORA_ERROR">
-            <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
-              <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
-                <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
-                <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
-                <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
-                <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CODIGOS_PAGO_RUT">
             <EntityTypeMapping TypeName="LoteriaGGModel.CODIGOS_PAGO_RUT">
               <MappingFragment StoreEntitySet="CODIGOS_PAGO_RUT">
@@ -505,6 +493,15 @@
                 <ScalarProperty Name="USU_APELLIDO" ColumnName="USU_APELLIDO" />
                 <ScalarProperty Name="USU_NOMBRE" ColumnName="USU_NOMBRE" />
                 <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CONTACTO">
+            <EntityTypeMapping TypeName="LoteriaGGModel.TBL_CONTACTO">
+              <MappingFragment StoreEntitySet="TBL_CONTACTO">
+                <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+                <ScalarProperty Name="CONT_TEXTO" ColumnName="CONT_TEXTO" />
+                <ScalarProperty Name="CONT_ID" ColumnName="CONT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
