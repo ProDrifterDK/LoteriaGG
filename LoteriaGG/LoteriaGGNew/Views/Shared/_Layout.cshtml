@@ -110,9 +110,9 @@
                     <li><a class=" yellow-text" href="@Url.Action("Index","Sorteo")">Sorteos</a></li>
                     <li><a class=" red-text" href="@Url.Action("Index", "ObtenerGGCoin")">Obtener GGCoins</a></li>
                     <li><a class="" href="#!">Ruleta</a></li>
+                    <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
                 }
                 <li><a class="" href="#!">Steam</a></li>
-                <li><a class="" href=""@Url.Action("Index", "Contactanos")">Contactanos</a></li>
             </ul>
             <!--Left Nav-->
             <ul class="hide-on-med-and-down">
@@ -122,9 +122,9 @@
                     <li><a class=" yellow-text" href="@Url.Action("Index","Sorteo")">Sorteos</a></li>
                     <li><a class=" red-text" href="@Url.Action("Index", "ObtenerGGCoin")">Obtener GGCoins</a></li>
                     <li><a class="" href="#!">Ruleta</a></li>
+                    <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
                 }
                 <li><a class="" href="#!">Steam</a></li>
-                <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
             </ul>
             <!--LOGO-->
             <a href="#" class="brand-logo center"><img src="../../Images/logoGG.png" style="max-height:55px"/></a>
@@ -171,7 +171,7 @@
                     <div id="modal2" class="modal transparent z-depth-5" style="width:27% !important; height:100%">
                         <div class="modal-content">
                             <div class="row">
-                                <form id="formRegister" method="post" action="@Url.Action("Login")" class="col s12">
+                                <form id="formRegistro" method="post" action="@Url.Action("Registro", "Home")" class="col s12">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
@@ -231,7 +231,7 @@
                                     </div>
                                     <div class="row" style="margin-bottom:0;">
                                         <div class="center" style="padding-top:12px">
-                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Register()" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
                                         </div>
                                     </div>
                                 </form>
@@ -342,8 +342,12 @@
                 type: 'POST',
                 url: $(form).attr('action'),
                 data: $(form).serialize(),
-                success: function () {
-                    location.reload();
+                success: function (data) {
+                    if (data.data == "Exito") {
+                        location.reload();
+                    } else {
+                        Materialize.toast(data.data, 3000, 'red');
+                    }
                 }
             })
         }
@@ -355,8 +359,29 @@
                 type: 'POST',
                 url: $(form).attr('action'),
                 data: $(form).serialize(),
-                success: function () {
-                    location.reload();
+                success: function (data) {
+                    if (data.data == "Exito") {
+                        location.reload();
+                    } else {
+                        Materialize.toast(data.data, 3000, 'red');
+                    }
+                }
+            })
+        }
+
+        function Register() {
+            var form = $('#formRegistro');
+
+            $.ajax({
+                type: 'POST',
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+                success: function (data) {
+                    if(data.exito == "true")
+                        location.reload();
+                    if (data.exito == "false") {
+                        Materialize.toast(data.mensaje, 3000, 'red');
+                    }
                 }
             })
         }

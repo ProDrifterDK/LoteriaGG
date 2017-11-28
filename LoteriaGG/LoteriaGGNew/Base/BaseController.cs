@@ -27,7 +27,7 @@ namespace LoteriaGG.Base
 
         protected TBL_USUARIO UsuarioLogged
         {
-            get { return Session["UsuarioLogged"] == null ? new TBL_USUARIO() : (TBL_USUARIO)Session["UsuarioLogged"]; }
+            get { return Session["UsuarioLogged"] == null ? null : (TBL_USUARIO)Session["UsuarioLogged"]; }
             set { Session["UsuarioLogged"] = value; }
         }
 
@@ -262,7 +262,7 @@ namespace LoteriaGG.Base
         [HttpPost]
         public JsonResult IngresarSorteo(int sorId)
         {
-            if(UsuarioLogged == null)
+            if (UsuarioLogged == null)
             {
                 return Json(new { data = "Sin Usuario" }, JsonRequestBehavior.AllowGet);
             }
@@ -361,7 +361,6 @@ namespace LoteriaGG.Base
             }
         }
 
-
         [HttpPost]
         public ActionResult SorteoGratis(string codigo)
         {
@@ -380,9 +379,9 @@ namespace LoteriaGG.Base
                         var userRef = db.TBL_USUARIO.FirstOrDefault(o => o.USU_REFER_CODIGO == codigo);
                         var usrD = db.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
                         if (usrD.USU_USO_REFER)
-                            return Json(new { exito = "false", mensaje = "Ya usuaste un codigo de referencia."},JsonRequestBehavior.AllowGet);
+                            return Json(new { exito = "false", mensaje = "Ya usuaste un codigo de referencia." }, JsonRequestBehavior.AllowGet);
                         if (usrD == userRef)
-                            return Json(new { exito = "false", mensaje = "No puedes referirte a ti mismo." },JsonRequestBehavior.AllowGet);
+                            return Json(new { exito = "false", mensaje = "No puedes referirte a ti mismo." }, JsonRequestBehavior.AllowGet);
 
                         if (usrD.USU_SOR_DISP == null)
                         {
@@ -393,7 +392,7 @@ namespace LoteriaGG.Base
                         usrD.USU_USO_REFER = true;
                         db.SaveChanges();
                         UsuarioLogged = usrD;
-                        return Json(new { exito = "true", mensaje = "Se ha cargado un GGCoin a tu cuenta.", GGCoins = usrD.USU_SOR_DISP },JsonRequestBehavior.AllowGet);
+                        return Json(new { exito = "true", mensaje = "Se ha cargado un GGCoin a tu cuenta.", GGCoins = usrD.USU_SOR_DISP }, JsonRequestBehavior.AllowGet);
                     }
                 }
                 catch
@@ -409,14 +408,14 @@ namespace LoteriaGG.Base
             }
             catch
             {
-                return Json(new { exito = "false", mensaje = "El codigo ingresado es incorrecto." },JsonRequestBehavior.AllowGet);
+                return Json(new { exito = "false", mensaje = "El codigo ingresado es incorrecto." }, JsonRequestBehavior.AllowGet);
             }
             using (var db = new LoteriaGGEntities())
             {
                 var sg = db.TBL_SORTEO_GRATIS.FirstOrDefault(o => o.SG_CODIGO == Codigo && o.SG_VALIDO == true);
                 if (sg == null)
                 {
-                    return Json(new { exito = "false", mensaje = "El codigo ingresado es incorrecto." },JsonRequestBehavior.AllowGet);
+                    return Json(new { exito = "false", mensaje = "El codigo ingresado es incorrecto." }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
@@ -433,6 +432,49 @@ namespace LoteriaGG.Base
                     return Json(new { exito = "true", mensaje = "Se ha cargado un GGCoin a tu cuenta.", GGCoins = usrD.USU_SOR_DISP }, JsonRequestBehavior.AllowGet);
                 }
             }
+        }
+
+        [HttpPost]
+        public JsonResult Registro(string argUsuario, string email, string nombre, string apellido, string contrasena, string contrasena2, string summoner = null, string steamNick = null)
+        {
+            if(argUsuario == null || email == null || contrasena == null || nombre == null)
+            {
+                return Json(new { exito = "false", mensaje = "Debese llenar todos los campos obligatorios." });
+            }
+            if (contrasena2 != contrasena)
+            {
+                return Json(new { exito = "false", mensaje = "Las contraseñas no coinciden." });
+            }
+            var existe = BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ACCOUNT == argUsuario || o.USU_EMAIL.ToLower() == email.ToLower());
+
+            if(existe != null && existe.USU_ACCOUNT == argUsuario)
+            {
+                return Json(new { exito = "false", mensaje = "El usuario ya está registrado." });
+            }
+            if (existe != null && existe.USU_EMAIL == email)
+            {
+                return Json(new { exito = "false", mensaje = "El email ya está registrado." });
+            }
+
+            var account = new TBL_USUARIO
+            {
+                USU_ACCOUNT = argUsuario,
+                USU_EMAIL = email,
+                USU_NOMBRE = nombre,
+                USU_APELLIDO = apellido,
+                USU_PASSWORD = contrasena,
+                USU_SOR_DISP = 0,
+                USU_REFER_CODIGO = "ref-" + argUsuario,
+            };
+
+            BDD.TBL_USUARIO.Add(account);
+            BDD.Entry(account).State = System.Data.Entity.EntityState.Added;
+
+            BDD.SaveChanges();
+
+            UsuarioLogged = account;
+
+            return Json(new { exito = "true", mensaje = "" });
         }
     }
 }
