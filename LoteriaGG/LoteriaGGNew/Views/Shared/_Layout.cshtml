@@ -98,13 +98,13 @@
                                 <a href="~/Views/Shared/_Layout.cshtml">~/Views/Shared/_Layout.cshtml</a>
                             </div>
                             <a class="right" href="javascript:void()" onclick="Logout()" style="font-size:1.5em" data-activates=""><i class="material-icons right" style="padding-top:3px;margin:0">power_settings_new</i></a>
-                            <a href="#!user"><img class="circle" src="~/Images/69698566-dota-2-logo-wallpapers.jpg"></a>
-                            <a href="#!name"><span class="white-text name">@user.USU_NOMBRE</span></a>
-                            <a id="" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="#!" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a>
+                            <a href="@Url.Action("Index", "Perfil")"><img class="circle" src="~/Images/69698566-dota-2-logo-wallpapers.jpg"></a>
+                            <a href="@Url.Action("Index", "Perfil")"><span class="white-text name">@user.USU_NOMBRE</span></a>
+                            <a id="" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="@Url.Action("Index", "ObtenerGGCoin")" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a>
                         </div>
                     </li>
                 }
-                <li><a class="dropdown-button" href="#!">Inicio</a></li>
+                <li><a class="" href="@Url.Action("Index", "Home")">Inicio</a></li>
                 @if (user != null)
                 {
                     <li><a class=" yellow-text" href="@Url.Action("Index","Sorteo")">Sorteos</a></li>
@@ -116,7 +116,7 @@
             </ul>
             <!--Left Nav-->
             <ul class="hide-on-med-and-down">
-                <li><a class="dropdown-button" href="@Url.Action("Index","Home")" >Inicio</a></li>
+                <li><a class="" href="@Url.Action("Index","Home")" >Inicio</a></li>
                 @if (user != null)
                 {
                     <li><a class=" yellow-text" href="@Url.Action("Index","Sorteo")">Sorteos</a></li>
@@ -241,8 +241,8 @@
                 }
                 else
                 {
-                    <li><a id="ggcoins" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="#!" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a></li>
-                    <li><a class="" href="#!" style="font-size:1.5em" data-activates="dropdown1">@user.USU_NOMBRE<i class="material-icons right" style="padding-top:3px;">account_circle</i></a></li>
+                    <li><a id="ggcoins" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="@Url.Action("Index", "ObtenerGGCoin")" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a></li>
+                    <li><a class="" href="@Url.Action("Index", "Perfil")" style="font-size:1.5em" data-activates="dropdown1">@user.USU_NOMBRE<i class="material-icons right" style="padding-top:3px;">account_circle</i></a></li>
                     <li><a class="" href="javascript:void()" onclick="Logout()" style="font-size:1.5em" data-activates=""><i class="material-icons right" style="padding-top:3px;margin:0">power_settings_new</i></a></li>
                 }
             </ul>

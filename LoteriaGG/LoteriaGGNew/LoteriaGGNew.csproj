@@ -151,6 +151,7 @@
     <Compile Include="Areas\LoL\Controllers\ContactanosController.cs" />
     <Compile Include="Areas\LoL\Controllers\HomeController.cs" />
     <Compile Include="Areas\LoL\Controllers\ObtenerGGCoinController.cs" />
+    <Compile Include="Areas\LoL\Controllers\PerfilController.cs" />
     <Compile Include="Areas\LoL\Controllers\RuletaController.cs" />
     <Compile Include="Areas\LoL\Controllers\SorteoController.cs" />
     <Compile Include="Areas\LoL\LoLAreaRegistration.cs" />
@@ -223,6 +224,7 @@
     <Content Include="Areas\LoL\Views\ObtenerGGCoin\Index.cshtml" />
     <Content Include="Areas\LoL\Views\Contactanos\Index.cshtml" />
     <Content Include="Areas\LoL\Views\Ruleta\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Perfil\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
