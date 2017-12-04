@@ -16,7 +16,7 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
         public ActionResult Index()
         {
             ViewBag.Spin = 0;
-            ViewBag.GGCoins = UsuarioLogged.USU_SOR_DISP;
+            ViewBag.GGCoins = Math.Round(UsuarioLogged.USU_SOR_DISP ?? 0, 1);
             ViewBag.arc = Math.PI / (options2.Length / 2);
             if (UsuarioLogged.USU_DAILY_REWARD == null || UsuarioLogged.USU_DAILY_REWARD.Value.Day != DateTime.Now.Day)
             {
