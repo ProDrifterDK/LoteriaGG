@@ -260,7 +260,7 @@
     <Folder Include="Areas\LoL\Models\" />
     <Folder Include="Areas\LoL\Views\Shared\" />
     <Folder Include="Areas\Steam\Models\" />
-    <Folder Include="Areas\Steam\Views\Hoome\" />
+    <Folder Include="Areas\Steam\Views\Home\" />
     <Folder Include="Areas\Steam\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
