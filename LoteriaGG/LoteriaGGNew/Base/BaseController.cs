@@ -263,7 +263,7 @@ namespace LoteriaGG.Base
         public JsonResult JsonGetListaSorteosInscritos()
         {
             var datos = BDD.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN > DateTime.Now && o.SOR_FECHA_INICIO < DateTime.Now &&
-            o.NUB_SORTEO_USUARIO.Where(p=> p.USU_ID == UsuarioLogged.USU_ID).ToArray().Count() > 0).ToList().Select(o => new
+            o.NUB_SORTEO_USUARIO.Where(p=> p.USU_ID == UsuarioLogged.USU_ID).ToList().Count > 0).ToList().Select(o => new
             {
                 id = o.SOR_ID,
                 fechaF = o.SOR_FECHA_FIN?.ToString("dd/MM/yy hh:mm"),
@@ -524,6 +524,87 @@ namespace LoteriaGG.Base
             }
 
             return Json(new { exito = true, mensaje = "Mensaje enviado con exito." });
+        }
+
+        [HttpPost]
+        public JsonResult CambiarContrasena(string contrasena, string contrasenaNueva, string contrasenaNueva2)
+        {
+            if (contrasenaNueva != contrasenaNueva2)
+                return JsonError("Las contraseñas no coinciden.");
+
+            var user = BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
+
+            if (user.USU_PASSWORD != contrasena)
+                return Json(new { exito = false, mensaje = "Contraseña ingresada es incorrecta." }, JsonRequestBehavior.AllowGet);
+
+            user.USU_PASSWORD = contrasenaNueva;
+
+            BDD.TBL_USUARIO.Attach(user);
+            BDD.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+            BDD.SaveChanges();
+
+            UsuarioLogged = user;
+
+            return JsonExito("Contraseña actualizada con éxito.");
+        }
+
+        [HttpPost]
+        public JsonResult CambiarMail(string nuevoEmail, string repetirEmail, string contrasena)
+        {
+            if (repetirEmail != nuevoEmail)
+                return JsonError("Emails no coinciden.");
+
+            var user = BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
+
+            if(user.USU_PASSWORD != contrasena)
+                return Json(new { exito = false, mensaje = "Contraseña ingresada es incorrecta." }, JsonRequestBehavior.AllowGet);
+
+            if (BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_EMAIL == nuevoEmail) != null)
+                return JsonError("Email ya esta ocupado.");
+
+            user.USU_EMAIL = nuevoEmail;
+
+            BDD.TBL_USUARIO.Attach(user);
+            BDD.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+            BDD.SaveChanges();
+
+            UsuarioLogged = user;
+
+            return JsonExito("Email actualizado con éxito.", new { Email = user.USU_EMAIL});
+        }
+
+        [HttpPost]
+        public JsonResult EditarPerfil(string nombre, string apellido, string summoner = null, string steamN = null)
+        {
+            if (nombre == "" && apellido == "" && (steamN == "" || summoner == ""))
+                return Json("");
+            var user = BDD.TBL_USUARIO.FirstOrDefault(o => o.USU_ID == UsuarioLogged.USU_ID);
+
+            user.USU_NOMBRE = nombre == "" ? user.USU_NOMBRE : nombre;
+            user.USU_APELLIDO = apellido == "" ? user.USU_APELLIDO : apellido;
+            user.USU_SUMMONER = summoner == "" || summoner == null ? user.USU_SUMMONER : summoner;
+            user.USU_STEAM_NICK = steamN == "" || steamN == null ? user.USU_STEAM_NICK : steamN;
+
+            BDD.TBL_USUARIO.Attach(user);
+            BDD.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+            BDD.SaveChanges();
+
+            UsuarioLogged = user;
+
+            return JsonExito("Perfil actualizado con éxito.", new { Nombre = user.USU_NOMBRE, Apellido = user.USU_APELLIDO, Summoner = user.USU_SUMMONER, SteamN = user.USU_STEAM_NICK });
+        }
+
+        protected JsonResult JsonExito(string mensaje = "", object data = null)
+        {
+            return Json(new { exito = true, mensaje = mensaje, data = data });
+        }
+
+        protected JsonResult JsonError(string mensaje = "")
+        {
+            return Json(new { exito = false, mensaje = mensaje });
         }
     }
 }

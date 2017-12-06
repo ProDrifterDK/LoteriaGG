@@ -360,7 +360,7 @@
         $('.collapsible').collapsible();
         $(".dropdown-button").dropdown();
         $(document).ready(function () {
-            $('.modal').modal({
+            $('.modal:not(.not)').modal({
                 dismissible: true, // Modal can be dismissed by clicking outside of the modal
                 opacity: .5, // Opacity of modal background
                 inDuration: 300, // Transition in duration

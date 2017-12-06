@@ -43,22 +43,22 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label class="white-text">Nombre: @user.USU_NOMBRE</label>
+                                    <label id="nombreP" class="white-text">Nombre: @user.USU_NOMBRE</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label class="white-text">Apellido: @user.USU_APELLIDO</label>
+                                    <label id="apellidoP" class="white-text">Apellido: @user.USU_APELLIDO</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label class="white-text">Email: @user.USU_EMAIL</label>
+                                    <label id="emailP" class="white-text">Email: @user.USU_EMAIL</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label class="white-text">Nombre de Invocador: @user.USU_SUMMONER</label>
+                                    <label id="summonerP" class="white-text">Nombre de Invocador: @user.USU_SUMMONER</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -88,20 +88,20 @@
 
 
 <!-- Modal EditarPerfil Structure -->
-<div id="EditarPerfil" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
+<div id="EditarPerfil" class="modal not modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="editarPerfil" method="post" action="@Url.Action("EditarPerfil")">
             <div class="row">
                 <div class="input-field col l16 s12">
-                    <input class="white-text" id="Nombre" class="validate" name="nombre" type="text" />
+                    <input class="white-text validate" id="Nombre" name="nombre" type="text" />
                     <label class="white-text" for="Nombre">Nombre</label>
                 </div>
                 <div class="input-field col l16 s12">
-                    <input class="white-text" id="Apellido" class="validate" name="apellido" type="text" />
+                    <input class="white-text validate" id="Apellido" name="apellido" type="text" />
                     <label class="white-text" for="Apellido">Apellido</label>
                 </div>
                 <div class="input-field col l16 s12">
-                    <input class="white-text" id="Summoner" class="validate" name="summoner" type="text" />
+                    <input class="white-text validate" id="Summoner" name="summoner" type="text" />
                     <label class="white-text" for="Summoner">Nombre de Invocador</label>
                 </div>
             </div>
@@ -113,7 +113,7 @@
 </div>
 
 <!-- Modal CambiarMail Structure -->
-<div id="CambiarMail" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
+<div id="CambiarMail" class="modal not modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="cambiarEmail" method="post" action="@Url.Action("CambiarEmail")">
             <div class="row">
@@ -124,6 +124,10 @@
                 <div class="input-field col l12 s12">
                     <input class="white-text validate" id="repetirEmail" name="repetirEmail" type="text" />
                     <label class="white-text" for="repetirEmail">Repita el Email</label>
+                </div>
+                <div class="input-field col l12 s12">
+                    <input class="white-text validate" id="contrasena" name="contrasena" type="password" />
+                    <label class="white-text" for="contrasena">Contraseña</label>
                 </div>
             </div>
         </form>
@@ -200,6 +204,8 @@
         })
     });
 
+
+
     function CrearDiv(id, fechaI, fechaF, premio) {
         html += '<div class="row d black valign-wrapper" id="' + id + '"><div class="col s4 center flow-text">' + premio + '</div><div class="col s4 center flow-text">' + fechaI + '</div><div class="col s4 center flow-text">' + fechaF + '</div></div>'
     }
@@ -211,3 +217,58 @@
         $temp.remove();
     }
 </script>
+@section scripts{
+    <script>
+        $("#CambiarMail").modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            inDuration: 300, // Transition in duration
+            outDuration: 200, // Transition out duration
+            ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+            },
+            complete: function () {
+                $.ajax({
+                    type: 'POST',
+                    url:'@Url.Action("CambiarMail")',
+                    data: $('#cambiarEmail').serialize(),
+                    success: function (data) {
+                        if (data.exito) {
+                            if (data.mensaje)
+                                Materialize.toast(data.mensaje, 3000, 'green');
+                            $("#emailP").html("Nombre: " + data.data.Email);
+                        } else {
+                            if (data.mensaje)
+                                Materialize.toast(data.mensaje, 3000, 'red');
+                        }
+                    }
+                });
+            } // Callback for Modal close
+        })
+
+        $("#EditarPerfil").modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            inDuration: 300, // Transition in duration
+            outDuration: 200, // Transition out duration
+            ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+            },
+            complete: function () {
+                $.ajax({
+                    type: 'POST',
+                    url:'@Url.Action("EditarPerfil")',
+                    data: $('#editarPerfil').serialize(),
+                    success: function (data) {
+                        if (data.exito) {
+                            if (data.mensaje)
+                                Materialize.toast(data.mensaje, 3000, 'green');
+                            $("#nombreP").html("Nombre: " + data.data.Nombre);
+                            $("#apellidoP").html("Nombre: " + data.data.Apellido);
+                            $("#summonerP").html("Nombre: " + data.data.Summoner);
+                        } else {
+                            if (data.mensaje)
+                                Materialize.toast(data.mensaje, 3000, 'red');
+                        }
+                    }
+                });
+            } // Callback for Modal close
+        })
+    </script>
+}

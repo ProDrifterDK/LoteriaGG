@@ -3,38 +3,32 @@
         background: url(../../../../Images/Twisted_Fate_Poro.jpg) no-repeat center top;
         -webkit-background-size: cover;
     }
+
 </style>
 
 <div class="row">
-    <div class="col l6 s12">
-        <canvas id="canvas" width="500" height="500"></canvas>
+    <div class="col l6 s12 center">
+        <canvas id="canvas" width="400" height="400"></canvas>
     </div>
     <div class="col l6 s12">
-        <div class="container">
-            <div class="card-box">
-                <div style="margin:150px">
-                    <div class="row">
-                        @if (ViewBag.Spin == 1)
-                        {
-                            <input type="button" class="btn btn-danger btn-lg col-lg-12" value="Gratis!" style="float:left" id='spin' />
-                        }
-                        else
-                        {
-                            <input type="button" class="btn btn-danger btn-lg col-lg-12" value="Girar por 1 GGCoin" style="float:left" id='spin1' />
-                        }
-                    </div>
-                </div>
-            </div>
-            <div class="card-box">
-                <label style="color:#000000">*Recuerda no recargar esta página antes de que termine de girar la ruleta. Si lo haces, perderas tu GGCoin o tu lanzamiento gratis</label>
+        <div class="row" style="margin-top:150px">
+            <div class="col l3 s3 x3"></div>
+            <div class="col l6 s6 x6" >
+                @if (ViewBag.Spin == 1)
+                {
+                    <input type="button" class="btn btn-danger btn-lg col-lg-12" value="Gratis!" style="float:left" id='spin' />
+                }
+                else
+                {
+                    <input type="button" class="btn btn-danger btn-lg col-lg-12" value="Girar por 1 GGCoin" style="float:left" id='spin1' />
+                }
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    $(document).ready(function () {
-    });
+
     var v = 0;
     var options = ["1","0","0.1","0.6","0.1","0.3","0.4","0.2","0.4","0.1","0.2","0.7","0.1","0.2","0.2","0.1","0.9","0"];
     if (@ViewBag.Spin != 1) {
@@ -89,12 +83,11 @@
     function drawRouletteWheel() {
         var canvas = document.getElementById("canvas");
         if (canvas.getContext) {
-            var outsideRadius = 200;
-            var textRadius = 160;
-            var insideRadius = 125;
+            var outsideRadius = 180;
+            var textRadius = 135;
+            var insideRadius = 90;
 
             ctx = canvas.getContext("2d");
-            ctx.clearRect(0, 0, 500, 500);
 
             ctx.strokeStyle = "white";
             ctx.lineWidth = 3;
@@ -107,8 +100,8 @@
                 ctx.fillStyle = getColor(i, options.length);
 
                 ctx.beginPath();
-                ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
-                ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
+                ctx.arc(200, 200, outsideRadius, angle, angle + arc, false);
+                ctx.arc(200, 200, insideRadius, angle + arc, angle, true);
                 ctx.stroke();
                 ctx.fill();
 
@@ -118,8 +111,8 @@
                 ctx.shadowBlur = 0;
                 ctx.shadowColor = "rgb(220,220,220)";
                 ctx.fillStyle = "white";
-                ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
-                    250 + Math.sin(angle + arc / 2) * textRadius);
+                ctx.translate(200 + Math.cos(angle + arc / 2) * textRadius,
+                    200 + Math.sin(angle + arc / 2) * textRadius);
                 ctx.rotate(angle + arc / 2 + Math.PI / 2);
                 var text = options[i];
                 ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
@@ -129,14 +122,14 @@
             //Arrow
             ctx.fillStyle = "white";
             ctx.beginPath();
-            ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-            ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-            ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-            ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-            ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-            ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-            ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-            ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+            ctx.moveTo(200 - 4, 200 - (outsideRadius + 5));
+            ctx.lineTo(200 + 4, 200 - (outsideRadius + 5));
+            ctx.lineTo(200 + 4, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 + 9, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 + 0, 200 - (outsideRadius - 13));
+            ctx.lineTo(200 - 9, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 - 4, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 - 4, 200 - (outsideRadius + 5));
             ctx.fill();
         }
     }
@@ -201,7 +194,7 @@
         ctx.save();
         ctx.font = 'bold 30px Helvetica, Arial';
         var text = options[index] + "GGCoin"
-        ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
+        ctx.fillText(text, 200 - ctx.measureText(text).width / 2, 200 + 10);
         ctx.restore();
         ActualizarGGCoins(GGCoins);
         Materialize.toast('Haz ganado ' + GGCoinsGanados + 'GGCoins.', 3000, 'green');
