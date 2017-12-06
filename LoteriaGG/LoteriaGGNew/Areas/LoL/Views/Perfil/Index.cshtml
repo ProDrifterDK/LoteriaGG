@@ -1,7 +1,7 @@
 ﻿@using Datos.SqlData
 <style>
     body {
-        background: url(../../../../Images/cs1.jpg) no-repeat center top;
+        background: url(../../../../Images/Kindred-Classic-wallpaper.jpg) no-repeat center top;
         -webkit-background-size: cover;
     }
     .d {
@@ -16,65 +16,65 @@
 </style>
 @{ var user = (TBL_USUARIO)Session["UsuarioLogged"]; }
 
-<div class="row" style="margin-top:15px;">
+<div class="row" style="margin-top:90px;">
     <div class="col s12">
         <div class="row" style="margin-bottom:0">
             <div class="main container-fluid col l6 m8 s12 text-center" style="border:solid #212121;background-color:#151515;border-radius:30px 30px 0px 0px">
                 <div>
-                    <h2 class="white-text"><b>Perfil</b></h2>
+                    <h2 class="white-text center-align" style="font-family:Tahoma"><b>Perfil</b></h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col l6 m8 s12" style="background:#151515;border:solid #212121;border-radius:0px 0px 30px 30px">
                 <section class="col l4 s4 x4" style="padding-top:15px;padding-left:0px;">
-                    <a href="#CambiarMail" class="col l12 modal-trigger" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none">Cambiar Mail</a>
-                    <a href="#EditarPerfil" class="col l12 modal-trigger" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none">Editar Perfil</a>
-                    <a href="#CambiarContrasena" class="col l12 modal-trigger" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none;padding-right:0px">Cambiar contraseña</a>
-                    <a href="#SorteosInscritos" class="col l12 modal-trigger" style="color:#1d42bf;background-color:rgba(0, 0, 0, 0.00);border:none">Sorteos Inscritos</a>
+                    <div class="row" style="margin-top: 30px"><a href="#CambiarMail" class="col l12 modal-trigger light-blue-text">Cambiar Mail</a></div>
+                    <div class="row" style="margin-top: 40px"><a href="#EditarPerfil" class="col l12 modal-trigger light-blue-text">Editar Perfil</a></div>
+                    <div class="row" style="margin-top: 40px"><a href="#CambiarContrasena" class="col l12 modal-trigger light-blue-text">Cambiar contraseña</a></div>
+                    <div class="row" style="margin-top: 40px"><a href="#SorteosInscritos" class="col l12 modal-trigger light-blue-text">Sorteos Inscritos</a></div>
                 </section>
                 <section class="col l8 s8 x8" style="border-left:3px solid">
                     <article class="col l12" style="padding:15px;">
                         <div style="font-size:13px;color:rgba(196, 196, 196, 0.83)">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Nombre de Usuario: @user.USU_ACCOUNT</label>
+                                    <label class="white-text">Nombre de Usuario: <b class="yellow-text">@user.USU_ACCOUNT</b></label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Nombre: @user.USU_NOMBRE</label>
+                                    <label class="white-text">Nombre: @user.USU_NOMBRE</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Apellido: @user.USU_APELLIDO</label>
+                                    <label class="white-text">Apellido: @user.USU_APELLIDO</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Email: @user.USU_EMAIL</label>
+                                    <label class="white-text">Email: @user.USU_EMAIL</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Nombre de Invocador: @user.USU_SUMMONER</label>
+                                    <label class="white-text">Nombre de Invocador: @user.USU_SUMMONER</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>GGCoins: @(user.USU_SOR_DISP ?? 0)</label>
+                                    <label class="white-text">GGCoins: <b class="yellow-text">@(user.USU_SOR_DISP ?? 0)</b></label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Codigo de referencia: @(user.USU_REFER_CODIGO ?? "")</label>
-                                    <button class="btn btn-warning " style="height:21px;line-height:1.7;" onclick="Copiar()">Copy</button>
+                                    <label class="white-text">Codigo de referencia: @(user.USU_REFER_CODIGO ?? "")</label>
+                                    <button class="btn waves-effect waves-orange" style="height:21px;line-height:1.7;" onclick="Copiar()">Copiar</button>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <label>Cantidad Referida: @(user.USU_CANT_REFERIDA)</label>
+                                    <label class="white-text">Cantidad de referidos: @(user.USU_CANT_REFERIDA)</label>
                                 </div>
                             </div>
                         </div>
@@ -87,72 +87,78 @@
 
 
 
-  <!-- Modal Structure -->
+<!-- Modal EditarPerfil Structure -->
 <div id="EditarPerfil" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="editarPerfil" method="post" action="@Url.Action("EditarPerfil")">
             <div class="row">
                 <div class="input-field col l16 s12">
-                    <input id="Nombre" class="validate" name="nombre" type="text" />
-                    <label for="Nombre">Nombre</label>
+                    <input class="white-text" id="Nombre" class="validate" name="nombre" type="text" />
+                    <label class="white-text" for="Nombre">Nombre</label>
                 </div>
                 <div class="input-field col l16 s12">
-                    <input id="Apellido" class="validate" name="apellido" type="text" />
-                    <label for="Apellido">Apellido</label>
+                    <input class="white-text" id="Apellido" class="validate" name="apellido" type="text" />
+                    <label class="white-text" for="Apellido">Apellido</label>
                 </div>
                 <div class="input-field col l16 s12">
-                    <input id="Summoner" class="validate" name="summoner" type="text" />
-                    <label for="Summoner">Nombre de Invocador</label>
+                    <input class="white-text" id="Summoner" class="validate" name="summoner" type="text" />
+                    <label class="white-text" for="Summoner">Nombre de Invocador</label>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat grey darken-3 white-text darken-3">Editar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3">Aceptar</a>
     </div>
 </div>
+
+<!-- Modal CambiarMail Structure -->
 <div id="CambiarMail" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="cambiarEmail" method="post" action="@Url.Action("CambiarEmail")">
             <div class="row">
                 <div class="input-field col l12 s12">
-                    <input id="nuevoEmail" class="validate" name="nuevoEmail" type="text" />
-                    <label for="nuevoEmail">Nuevo Email</label>
+                    <input class="white-text validate" id="nuevoEmail" name="nuevoEmail" type="text" />
+                    <label class="white-text" for="nuevoEmail">Nuevo Email</label>
                 </div>
-                <div class="input-field col l6 s12">
-                    <input id="pass" class="validate" name="contrasena" type="password" />
-                    <label for="pass">Contraseña</label>
+                <div class="input-field col l12 s12">
+                    <input class="white-text validate" id="repetirEmail" name="repetirEmail" type="text" />
+                    <label class="white-text" for="repetirEmail">Repita el Email</label>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat grey darken-3 white-text darken-3">Cambiar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3">Aceptar</a>
     </div>
 </div>
+
+<!-- Modal CambiarContraseña Structure -->
 <div id="CambiarContrasena" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="cambiarContrasena" method="post" action="@Url.Action("CambiarContrasena")">
             <div class="row">
                 <div class="input-field col l12 s12">
-                    <input id="pass" class="validate" name="contrasena" type="text" />
-                    <label for="pass">Contraseña</label>
+                    <input class="white-text validate" type="password" id="pass" name="contrasena" type="text" />
+                    <label class="white-text" for="pass">Contraseña actual</label>
                 </div>
                 <div class="input-field col l6 s12">
-                    <input id="pass2" class="validate" name="contrasenaNueva" type="text" />
-                    <label for="pass2">Nueva Contraseña</label>
+                    <input class="white-text validate" type="password" id="pass2" name="contrasenaNueva" type="text" />
+                    <label class="white-text" for="pass2">Nueva Contraseña</label>
                 </div>
                 <div class="input-field col l6 s12">
-                    <input id="pass3" class="validate" name="contrasenaNueva2" type="text" />
-                    <label for="pass3">Repetir nueva contraseña</label>
+                    <input class="white-text validate" type="password" id="pass3" name="contrasenaNueva2" type="text" />
+                    <label class="white-text" for="pass3">Repetir nueva contraseña</label>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat grey darken-3 white-text darken-3">Cambiar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3">Aceptar</a>
     </div>
 </div>
+
+<!-- Modal SorteosInscritos Structure -->
 <div id="SorteosInscritos" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <div class="row" style="">
@@ -175,7 +181,7 @@
         </div>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat grey darken-3 white-text darken-3">Salir</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text darken-3">Cerrar</a>
     </div>
 </div>
 <script>
