@@ -260,6 +260,21 @@ namespace LoteriaGG.Base
         }
 
         [HttpPost]
+        public JsonResult JsonGetListaSorteosInscritos()
+        {
+            var datos = BDD.TBL_SORTEO.Where(o => o.SOR_FECHA_FIN > DateTime.Now && o.SOR_FECHA_INICIO < DateTime.Now &&
+            o.NUB_SORTEO_USUARIO.Where(p=> p.USU_ID == UsuarioLogged.USU_ID).ToArray().Count() > 0).ToList().Select(o => new
+            {
+                id = o.SOR_ID,
+                fechaF = o.SOR_FECHA_FIN?.ToString("dd/MM/yy hh:mm"),
+                fechaI = o.SOR_FECHA_INICIO?.ToString("dd/MM/yy hh:mm"),
+                Premio = o.SOR_PREMIO,
+            }).ToList();
+
+            return Json(new { data = datos }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
         public JsonResult IngresarSorteo(int sorId)
         {
             if (UsuarioLogged == null)

@@ -38,8 +38,7 @@
         })
     })
     function CrearDiv(id, fechaI, fechaF, premio) {
-        html += '<div class="row d black valign-wrapper hide-on-small-only" id="' + id + '"><div class="col s3 center flow-text">' + premio + '</div><div class="col s3 center flow-text">' + fechaI + '</div><div class="col s3 center flow-text">' + fechaF + '</p></div><div class="col s3 center"><button class="btn-floating " onclick="Ingresar(' + id + ')"><i class="material-icons">input</i></button></div></div>'
-        html += '<div class="row d black valign-wrapper hide-on-med-and-up" id="' + id + '"><div class="col s4 center flow-text">' + premio + '</div><div class="col s4 center flow-text">' + fechaF + '</div><div class="col s4 center"><button class="btn-floating " onclick="Ingresar(' + id + ')"><i class="material-icons">input</i></button></div></div>'
+        html += '<div class="row d black valign-wrapper" id="' + id + '"><div class="col s4 center flow-text">' + premio + '</div><div class="col s4 center flow-text">' + fechaF + '</div><div class="col s4 center"><button class="btn-floating " onclick="Ingresar(' + id + ')"><i class="material-icons">input</i></button></div></div>'
     }
 
     function Ingresar(id) {
