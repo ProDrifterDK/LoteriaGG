@@ -529,6 +529,18 @@ namespace LoteriaGG.Base
         [HttpPost]
         public JsonResult CambiarContrasena(string contrasena, string contrasenaNueva, string contrasenaNueva2)
         {
+            if (contrasena == "" && contrasenaNueva == "" && contrasenaNueva2 == "" )
+                return Json("");
+
+            if(contrasena == "")
+                return JsonError("Debes ingresar la contraseña actual.");
+
+            if (contrasenaNueva == "")
+                return JsonError("Debes ingresar la contraseña nueva.");
+
+            if (contrasenaNueva2 == "")
+                return JsonError("Debes ingresar la contraseña nueva dos veces.");
+
             if (contrasenaNueva != contrasenaNueva2)
                 return JsonError("Las contraseñas no coinciden.");
 
@@ -552,6 +564,18 @@ namespace LoteriaGG.Base
         [HttpPost]
         public JsonResult CambiarMail(string nuevoEmail, string repetirEmail, string contrasena)
         {
+            if (contrasena == "" && nuevoEmail == "" && repetirEmail == "" )
+                return Json("");
+
+            if (contrasena == "")
+                return JsonError("Debes ingresar la contraseña actual.");
+
+            if (nuevoEmail == "")
+                return JsonError("Debes ingresar el nuevo email.");
+
+            if (repetirEmail == "")
+                return JsonError("Debes ingresar el nuevo email dos veces.");
+
             if (repetirEmail != nuevoEmail)
                 return JsonError("Emails no coinciden.");
 

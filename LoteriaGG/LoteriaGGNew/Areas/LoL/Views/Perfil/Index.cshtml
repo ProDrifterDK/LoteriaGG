@@ -88,7 +88,7 @@
 
 
 <!-- Modal EditarPerfil Structure -->
-<div id="EditarPerfil" class="modal not modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
+<div id="EditarPerfil" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="editarPerfil" method="post" action="@Url.Action("EditarPerfil")">
             <div class="row">
@@ -108,12 +108,12 @@
         </form>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3">Aceptar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3" onclick="EnviarForm(3)">Aceptar</a>
     </div>
 </div>
 
 <!-- Modal CambiarMail Structure -->
-<div id="CambiarMail" class="modal not modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
+<div id="CambiarMail" class="modal modal-fixed-footer z-depth-5" style="max-width:480px;background-color:rgba(55, 55, 55, 0.26)">
     <div class="modal-content">
         <form id="cambiarEmail" method="post" action="@Url.Action("CambiarEmail")">
             <div class="row">
@@ -133,7 +133,7 @@
         </form>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3">Aceptar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3" onclick="EnviarForm(2)">Aceptar</a>
     </div>
 </div>
 
@@ -158,7 +158,7 @@
         </form>
     </div>
     <div class="modal-footer transparent">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3">Aceptar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green white-text darken-3" onclick="EnviarForm(1)">Aceptar</a>
     </div>
 </div>
 
@@ -219,56 +219,47 @@
 </script>
 @section scripts{
     <script>
-        $("#CambiarMail").modal({
-            dismissible: true, // Modal can be dismissed by clicking outside of the modal
-            inDuration: 300, // Transition in duration
-            outDuration: 200, // Transition out duration
-            ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
-            },
-            complete: function () {
-                $.ajax({
-                    type: 'POST',
-                    url:'@Url.Action("CambiarMail")',
-                    data: $('#cambiarEmail').serialize(),
-                    success: function (data) {
-                        if (data.exito) {
-                            if (data.mensaje)
-                                Materialize.toast(data.mensaje, 3000, 'green');
-                            $("#emailP").html("Nombre: " + data.data.Email);
-                        } else {
-                            if (data.mensaje)
-                                Materialize.toast(data.mensaje, 3000, 'red');
-                        }
-                    }
-                });
-            } // Callback for Modal close
-        })
 
-        $("#EditarPerfil").modal({
-            dismissible: true, // Modal can be dismissed by clicking outside of the modal
-            inDuration: 300, // Transition in duration
-            outDuration: 200, // Transition out duration
-            ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
-            },
-            complete: function () {
+        function EnviarForm(form) {
+            var url = "";
+            var frm = ""
+            switch (form) {
+                case 1:
+                    url = '@Url.Action("CambiarContrasena")';
+                    frm = '#cambiarContrasena';
+                    break;
+                case 2:
+                    url = '@Url.Action("CambiarMail")';
+                    frm = '#cambiarEmail';
+                    break;
+                case 3:
+                    url = '@Url.Action("EditarPerfil")';
+                    frm = '#editarPerfil';
+                    break;
+
+            }
                 $.ajax({
                     type: 'POST',
-                    url:'@Url.Action("EditarPerfil")',
-                    data: $('#editarPerfil').serialize(),
+                    url:url,
+                    data: $(frm).serialize(),
                     success: function (data) {
                         if (data.exito) {
                             if (data.mensaje)
                                 Materialize.toast(data.mensaje, 3000, 'green');
-                            $("#nombreP").html("Nombre: " + data.data.Nombre);
-                            $("#apellidoP").html("Nombre: " + data.data.Apellido);
-                            $("#summonerP").html("Nombre: " + data.data.Summoner);
                         } else {
                             if (data.mensaje)
                                 Materialize.toast(data.mensaje, 3000, 'red');
                         }
+
+                        if (form == 3) {
+                            $("#nombreP").html("Nombre: " + data.data.Nombre);
+                            $("#apellidoP").html("Apellido: " + data.data.Apellido);
+                            $("#summonerP").html("Nombre de Invocador: " + data.data.Summoner);
+                        } else if (form == 2) {
+                            $("#emailP").html("Nombre: " + data.data.Email);
+                        }
                     }
                 });
-            } // Callback for Modal close
-        })
+        }
     </script>
 }

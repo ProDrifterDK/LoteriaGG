@@ -9,6 +9,7 @@
             enable_page_level_ads: true
         });
     </script>
+    <link rel="icon" href="~/Content/Images/GG.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -16,6 +17,11 @@
     <link href="~/Content/materialize.css" rel="stylesheet" />
     <link href="~/Content/materialize.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta property="og:url" content="www.loteriagg.com/" />
+    <meta property="og:title" content="LoteriaGG" />
+    <meta property="og:image" content="/Images/lolcs.jpg" />
+    <meta property="og:description" content="¡El mejor sitio para probar tu suerte y ganar increíbles premios de RP y Steam Wallet!" />
+    <meta property="og:type" content="website" />
 </head>
 <body>
     <div id="fb-root"></div>
@@ -64,7 +70,7 @@
                                 <a class="collapsible-header">Registarse<i class="material-icons">arrow_drop_down</i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <form id="formRegister" method="post" action="@Url.Action("Register", "Home")" class="col s12">
+                                        <form id="formRegister" method="post" action="@Url.Action("Registro", "Home")" class="col s12">
                                             <input placeholder="Usuario" id="usuario" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
                                             <input placeholder="Email" id="email" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="email">
                                             <input placeholder="Nombre" id="nombre" style="color:#000; border-color:#0277bd;" type="text" class="validate" name="nombre">
@@ -81,7 +87,7 @@
                                             <input placeholder="Repetir Contraseña" type="password" style="color:#000; border-color:#0277bd;" id="contrasena2" class="validate" name="contrasena2">
                                             <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                             <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
-                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Register(formRegister)" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
                                         </form>
                                     </ul>
                                 </div>
@@ -112,7 +118,15 @@
                     <li><a class="" href="@Url.Action("Index", "Ruleta")">Ruleta</a></li>
                     <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
                 }
-                <li><a class="" href="#!">Steam</a></li>
+
+                @if (Request.Url.ToString().Contains("LoL"))
+                {
+                    <li><a class="" href="/Steam/Home/">Steam</a></li>
+                }
+                else
+                {
+                    <li><a class="" href="/LoL/Home/">LoL</a></li>
+                }
             </ul>
             <!--Left Nav-->
             <ul class="hide-on-med-and-down">
@@ -250,7 +264,7 @@
                         </div>
                         <div class="row" style="margin-bottom:0;">
                             <div class="center" style="padding-top:12px">
-                                <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Register()" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Register(formRegistro)" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
                             </div>
                         </div>
                     </form>
@@ -416,8 +430,8 @@
             })
         }
 
-        function Register() {
-            var form = $('#formRegistro');
+        function Register(id) {
+            var form = $(id);
 
             $.ajax({
                 type: 'POST',
