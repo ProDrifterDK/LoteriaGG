@@ -5,11 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoteriaGGNew.Areas.LoL.Controllers
+namespace LoteriaGGNew.Areas.Steam.Controllers
 {
     public class PerfilController : BaseController
     {
-        // GET: LoL/Perfil
+        // GET: Steam/Perfil
         public ActionResult Index()
         {
             if (UsuarioLogged == null)

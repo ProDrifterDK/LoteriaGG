@@ -5,11 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoteriaGGNew.Areas.LoL.Controllers
+namespace LoteriaGGNew.Areas.Steam.Controllers
 {
-    public class PerfilController : BaseController
+    public class ContactanosController : BaseController
     {
-        // GET: LoL/Perfil
+        // GET: Steam/ObtenerGGCoin
         public ActionResult Index()
         {
             if (UsuarioLogged == null)

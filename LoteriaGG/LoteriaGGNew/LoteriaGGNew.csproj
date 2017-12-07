@@ -155,7 +155,12 @@
     <Compile Include="Areas\LoL\Controllers\RuletaController.cs" />
     <Compile Include="Areas\LoL\Controllers\SorteoController.cs" />
     <Compile Include="Areas\LoL\LoLAreaRegistration.cs" />
+    <Compile Include="Areas\Steam\Controllers\ContactanosController.cs" />
     <Compile Include="Areas\Steam\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Steam\Controllers\ObtenerGGCoinController.cs" />
+    <Compile Include="Areas\Steam\Controllers\PerfilController.cs" />
+    <Compile Include="Areas\Steam\Controllers\RuletaController.cs" />
+    <Compile Include="Areas\Steam\Controllers\SorteoController.cs" />
     <Compile Include="Areas\Steam\SteamAreaRegistration.cs" />
     <Compile Include="Base\BaseController.cs" />
     <Compile Include="Controllers\ChooseController.cs" />
@@ -225,6 +230,13 @@
     <Content Include="Areas\LoL\Views\Contactanos\Index.cshtml" />
     <Content Include="Areas\LoL\Views\Ruleta\Index.cshtml" />
     <Content Include="Areas\LoL\Views\Perfil\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Steam\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Contactanos\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\ObtenerGGCoin\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Perfil\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Ruleta\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\Sorteo\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -261,7 +273,6 @@
     <Folder Include="Areas\LoL\Models\" />
     <Folder Include="Areas\LoL\Views\Shared\" />
     <Folder Include="Areas\Steam\Models\" />
-    <Folder Include="Areas\Steam\Views\Home\" />
     <Folder Include="Areas\Steam\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>

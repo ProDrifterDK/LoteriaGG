@@ -1,0 +1,222 @@
+﻿<style>
+    body {
+        background: url(../../../../Images/PaydayFoto.jpg) no-repeat center top;
+        background-size: cover;
+    }
+</style>
+
+<div class="row">
+    <div class="col l6 s12 center">
+        <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+    <div class="col l6 s12">
+        <div class="row" style="margin-top:150px">
+            <div class="col l3 s3 x3"></div>
+            <div class="col l6 s6 x6">
+                @if (ViewBag.Spin == 1)
+                {
+                    <input type="button" class="btn btn-danger btn-lg col-lg-12" value="Gratis!" style="float:left" id='spin' />
+                }
+                else
+                {
+                    <input type="button" class="btn btn-danger btn-lg col-lg-12" value="Girar por 1 GGCoin" style="float:left" id='spin1' />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var v = 0;
+    var options = ["1","0","0.1","0.6","0.1","0.3","0.4","0.2","0.4","0.1","0.2","0.7","0.1","0.2","0.2","0.1","0.9","0"];
+    if (@ViewBag.Spin != 1) {
+        options = ["5","0", "0.3","2", "0","1","0.5","3","0","0.5","0","0.5","1", "0.3","0","0.5","1","0.5","0","3", "0.3","0.5","1", "0.5","0"];
+    }
+
+    var startAngle = 0;
+    var arc = @ViewBag.arc;
+    var arcd = 0;
+    var spinTimeout = null;
+
+    var spinArcStart = 10;
+    var spinTime = 0;
+    var spinTimeTotal = 0;
+
+    var GGCoinsGanados = 0;
+    var GGCoins = @ViewBag.GGCoins;
+
+    var ctx;
+
+    if (@ViewBag.Spin == 1) {
+        document.getElementById("spin").addEventListener("click", spin);
+    } else {
+        if (@ViewBag.GGCoins < 1) {
+            $('#spin1').attr('disabled','disabled');
+        }
+        document.getElementById("spin1").addEventListener("click", spin);
+    }
+
+    function byte2Hex(n) {
+        var nybHexString = "0123456789ABCDEF";
+        return String(nybHexString.substr((n >> 4) & 0x0F, 1)) + nybHexString.substr(n & 0x0F, 1);
+    }
+
+    function RGB2Color(r, g, b) {
+        return '#000';
+    }
+
+    function getColor(item, maxitem) {
+        var phase = 0;
+        var center = 128;
+        var width = 127;
+        var frequency = Math.PI * 2 / maxitem;
+
+        red = Math.sin(frequency * item + 2 + phase) * width + center;
+        green = Math.sin(frequency * item + 0 + phase) * width + center;
+        blue = Math.sin(frequency * item + 4 + phase) * width + center;
+
+        return RGB2Color(red, green, blue);
+    }
+
+    function drawRouletteWheel() {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var outsideRadius = 180;
+            var textRadius = 135;
+            var insideRadius = 90;
+
+            ctx = canvas.getContext("2d");
+
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 3;
+
+            ctx.font = 'bold 12px Helvetica, Arial';
+
+            for (var i = 0; i < options.length; i++) {
+                var angle = startAngle + i * arc;
+                //ctx.fillStyle = colors[i];
+                ctx.fillStyle = getColor(i, options.length);
+
+                ctx.beginPath();
+                ctx.arc(200, 200, outsideRadius, angle, angle + arc, false);
+                ctx.arc(200, 200, insideRadius, angle + arc, angle, true);
+                ctx.stroke();
+                ctx.fill();
+
+                ctx.save();
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+                ctx.shadowBlur = 0;
+                ctx.shadowColor = "rgb(220,220,220)";
+                ctx.fillStyle = "white";
+                ctx.translate(200 + Math.cos(angle + arc / 2) * textRadius,
+                    200 + Math.sin(angle + arc / 2) * textRadius);
+                ctx.rotate(angle + arc / 2 + Math.PI / 2);
+                var text = options[i];
+                ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+                ctx.restore();
+            }
+
+            //Arrow
+            ctx.fillStyle = "white";
+            ctx.beginPath();
+            ctx.moveTo(200 - 4, 200 - (outsideRadius + 5));
+            ctx.lineTo(200 + 4, 200 - (outsideRadius + 5));
+            ctx.lineTo(200 + 4, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 + 9, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 + 0, 200 - (outsideRadius - 13));
+            ctx.lineTo(200 - 9, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 - 4, 200 - (outsideRadius - 5));
+            ctx.lineTo(200 - 4, 200 - (outsideRadius + 5));
+            ctx.fill();
+        }
+    }
+
+    function spin() {
+        startAngle = 0;
+        drawRouletteWheel();
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("JsonSpin", new { t = ViewBag.Spin })",
+            dataType: "json",
+            success: function (data) {
+                if (!data.exito)
+                {
+                    Materialize.toast(data.mensaje, 3000, 'red');
+                    return;
+                }
+                spinAngleStart = data.spinAngleStart;//Math.random() * 10 + 10;
+                spinTime = 0;
+                spinTimeTotal = data.spinTimeTotal;//Math.random() * 3 + 4 * 1000;
+                GGCoinsGanados = data.GGCoinsGanados;
+                GGCoins = data.GGCoins;
+                arcd = data.arcd;
+                v = 1;
+                rotateWheel();
+            }
+        })
+
+        if (@ViewBag.Spin != 1) {
+            if (@ViewBag.GGCoins < 1) {
+                return;
+            }
+            ActualizarGGCoins(GGCoins - 1);
+        }
+
+        //Deshabilidar el Boton de girar
+        $('#spin').attr('disabled', 'disabled');
+        $('#spin1').attr('disabled', 'disabled');
+    }
+
+    function rotateWheel() {
+        spinTime += 30;
+        if (spinTime >= spinTimeTotal) {
+            stopRotateWheel();
+            return;
+        }
+        var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+        startAngle += Round(spinAngle * Math.PI / 180, 10);
+        startAngle = Round(startAngle, 10);
+        drawRouletteWheel();
+        spinTimeout = setTimeout('rotateWheel()', 30);
+    }
+
+    function stopRotateWheel() {
+        if ((@ViewBag.Spin != 1 && @ViewBag.GGCoins < 1) || v != 1) {
+            return;
+        }
+        clearTimeout(spinTimeout);
+        var degrees = Round(startAngle * 180 / Math.PI + 90, 10);
+        var index = Math.floor((360 - degrees % 360) / arcd);
+        ctx.save();
+        ctx.font = 'bold 30px Helvetica, Arial';
+        var text = options[index] + "GGCoin"
+        ctx.fillText(text, 200 - ctx.measureText(text).width / 2, 200 + 10);
+        ctx.restore();
+        ActualizarGGCoins(GGCoins);
+        Materialize.toast('Haz ganado ' + GGCoinsGanados + 'GGCoins.', 3000, 'green');
+        if (GGCoins > 1) {
+            $('#spin1').removeAttr('disabled');
+        }
+        if (@ViewBag.Spin == 1) {
+            location.reload();
+        }
+    }
+
+    function easeOut(t, b, c, d) {
+        var ts = (t /= d) * t;
+        var tc = ts * t;
+        return b + c * (tc + -3 * ts + 3 * t);
+    }
+
+    function Round (number, precision) {
+        var factor = Math.pow(10, precision);
+        var tempNumber = number * factor;
+        var roundedTempNumber = Math.round(tempNumber);
+        return roundedTempNumber / factor;
+    };
+
+    drawRouletteWheel();
+</script>

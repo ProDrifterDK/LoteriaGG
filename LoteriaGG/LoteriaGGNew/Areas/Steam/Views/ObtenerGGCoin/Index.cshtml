@@ -1,7 +1,7 @@
 ﻿@using Datos.SqlData
 <style>
     body {
-        background: url(../../../../Images/TF.jpg) no-repeat center top;
+        background: url(../../../../Images/SteamOtro2.jpg) no-repeat center top;
         -webkit-background-size: cover;
     }
 </style>
@@ -36,26 +36,27 @@
                     </div>
                     <h4>También puedes usar la aplicación del Banco Estado copiando e ingresándo toda la información (Código numérico y monto) que entrega la opción "PagoRut" <a class="modal-trigger btn yellow darken-3" href="#myModal2">Aquí</a>.</h4>
                     <p class="red-text">
-                        Una vez hecho el depósito/transferencia debes enviar un mail a loteriagg@loteriagg.com con el asunto "Pago", adjuntar el comprobante de transferencia y escribir tu nombre de usuario.</p>
-                    <p class="red-text"> También puedes enviar el comprobante por mensaje privado en nuestra página de <a href="https://www.facebook.com/loteria.gg" class="light-blue-text" style="text-decoration:none; background-color:none" > Facebook.</a></p>
-                        <hr />
+                        Una vez hecho el depósito/transferencia debes enviar un mail a loteriagg@loteriagg.com con el asunto "Pago", adjuntar el comprobante de transferencia y escribir tu nombre de usuario.
+                    </p>
+                    <p class="red-text"> También puedes enviar el comprobante por mensaje privado en nuestra página de <a href="https://www.facebook.com/loteria.gg" class="light-blue-text" style="text-decoration:none; background-color:none"> Facebook.</a></p>
+                    <hr />
 
-                        <h4>La segunda es por código de regalo, ¿Tienes un código de regalo? Ingrésalo aquí abajo</h4>
-                        <div class="row">
-                            <div class="col s10 offset-s1">
-                                <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
-                                    <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
-                                    <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
-                                </form>
-                            </div>
-                            <!--<div class="col l8">
-                                <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
-                                    <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
-                                    <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
-                                </form>
-                            </div>-->
+                    <h4>La segunda es por código de regalo, ¿Tienes un código de regalo? Ingrésalo aquí abajo</h4>
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
+                                <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
+                                <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
+                            </form>
                         </div>
-                        <br />
+                        <!--<div class="col l8">
+                            <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
+                                <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
+                                <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
+                            </form>
+                        </div>-->
+                    </div>
+                    <br />
                 </section>
             </div>
         </div>

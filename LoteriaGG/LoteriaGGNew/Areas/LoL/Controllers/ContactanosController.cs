@@ -9,7 +9,7 @@ namespace LoteriaGGNew.Areas.LoL.Controllers
 {
     public class ContactanosController : BaseController
     {
-        // GET: LoL/ObtenerGGCoin
+        // GET: LoL/Contactanos
         public ActionResult Index()
         {
             if (UsuarioLogged == null)

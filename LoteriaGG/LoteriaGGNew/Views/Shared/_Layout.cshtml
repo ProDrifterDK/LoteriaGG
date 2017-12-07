@@ -124,7 +124,15 @@
                     <li><a class="" href="@Url.Action("Index", "Ruleta")">Ruleta</a></li>
                     <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
                 }
-                <li><a class="" href="#!">Steam</a></li>
+                @if (Request.Url.ToString().Contains("LoL"))
+                {
+                    <li><a class="" href="/Steam/Home/">Steam</a></li>
+                }
+                else
+                {
+                    <li><a class="" href="/LoL/Home/">LoL</a></li>
+                }
+
             </ul>
             <!--LOGO-->
             <a href="#" class="brand-logo center"><img src="../../Images/logoGG.png" style="max-height:55px"/></a>
