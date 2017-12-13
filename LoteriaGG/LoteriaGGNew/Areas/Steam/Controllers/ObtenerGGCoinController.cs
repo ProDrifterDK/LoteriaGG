@@ -10,8 +10,11 @@ namespace LoteriaGGNew.Areas.Steam.Controllers
     public class ObtenerGGCoinController : BaseController
     {
         // GET: Steam/ObtenerGGCoin
-        public ActionResult Index()
+        public ActionResult Index(string mensaje = "", string exito = "")
         {
+            ViewBag.mensaje = mensaje;
+            ViewBag.exito = exito;
+
             if (UsuarioLogged == null)
             {
                 return RedirectToAction("Index", "Home");

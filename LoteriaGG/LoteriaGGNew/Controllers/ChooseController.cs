@@ -8,8 +8,9 @@ namespace LoteriaGGNew.Controllers
 {
     public class ChooseController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string mensaje)
         {
+            ViewBag.mensaje = mensaje;
             return View();
         }
     }

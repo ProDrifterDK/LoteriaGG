@@ -6,6 +6,8 @@
     }
 </style>
 @{ var user = (TBL_USUARIO)Session["UsuarioLogged"]; }
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
 <div class="row center">
     <div class="col l2"></div>
     <div class="col l8 s12">
@@ -39,6 +41,9 @@
                         Una vez hecho el depósito/transferencia debes enviar un mail a loteriagg@loteriagg.com con el asunto "Pago", adjuntar el comprobante de transferencia y escribir tu nombre de usuario.
                     </p>
                     <p class="red-text"> También puedes enviar el comprobante por mensaje privado en nuestra página de <a href="https://www.facebook.com/loteria.gg" class="light-blue-text" style="text-decoration:none; background-color:none"> Facebook.</a></p>
+                    <br />
+                    <div class="row"><div class="col l12 center"><a class="modal-trigger btn blue darken-3" href="#modalPaypal">Pago con PayPal</a></div></div>
+
                     <hr />
 
                     <h4>La segunda es por código de regalo, ¿Tienes un código de regalo? Ingrésalo aquí abajo</h4>
@@ -63,6 +68,22 @@
     </div>
 </div>
 
+<div class="modal fade z-depth-5" style="background-color:rgba(0, 0, 0, 0.80)" id="modalPaypal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="row">
+                <div class="col l1"></div>
+                <div class="col l10 center">
+                    <h3 class="white-text">Pago con PayPal</h3>
+                    <label for="GGCoin" style="color:#fff;font-size:1.5em;">Cantidad</label>
+                    <input id="GGCoin" style="color:#fff; border-color:#0277bd;padding-right:10px;margin-right:10px" type="number" class="validate center-align" name="GGCoin">
+                    <button class="btn green" onclick="PagarConPaypal()">Pagar con PayPal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -82,8 +103,22 @@
         </div>
     </div>
 </div>
-
 <script>
+    $(document).ready(function () {
+        if ("@ViewBag.mensaje" != "") {
+            if ("@ViewBag.exito" == "true") {
+                Materialize.toast("@ViewBag.mensaje", 3000, "green")
+            }else {
+                Materialize.toast("@ViewBag.mensaje", 3000, "red")
+            }
+        }
+    })
+    function PagarConPaypal() {
+        var ggcoins = $('#GGCoin').val();
+
+        location.href = "@Url.Action("PaymentWithPaypal", "Paypal")?cantidad=" + ggcoins;
+    }
+
     function Enviar() {
         var codigo = $('#Codigo').val();
 

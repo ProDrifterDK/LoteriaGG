@@ -22,6 +22,7 @@ namespace Datos.SqlData
             this.TBL_ADMIN = new HashSet<TBL_ADMIN>();
             this.TBL_USUARIO1 = new HashSet<TBL_USUARIO>();
             this.TBL_CONTACTO = new HashSet<TBL_CONTACTO>();
+            this.TBL_BITACORA_ERROR = new HashSet<TBL_BITACORA_ERROR>();
         }
     
         public long USU_ID { get; set; }
@@ -57,5 +58,7 @@ namespace Datos.SqlData
         public virtual TBL_USUARIO TBL_USUARIO2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBL_CONTACTO> TBL_CONTACTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBL_BITACORA_ERROR> TBL_BITACORA_ERROR { get; set; }
     }
 }

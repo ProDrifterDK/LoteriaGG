@@ -1,0 +1,18 @@
+﻿<form id="frm" method=post action="https://www.paypal.com/cgi-bin/webscr">
+    <input type="hidden" name="cmd" value="_notify-synch">
+    <input type="hidden" name="tx" value="@ViewBag.tx">
+    <input type="hidden" name="at" value="087f69wNLSkHG4A3RBYmiH6KSPLCpizN0LfI7B5wpcubfo0UO4NGgM8AL7a">
+</form>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: 'post',
+            url: "https://www.paypal.com/cgi-bin/webscr",
+            data: $('#frm').serialize(),
+            success: function (data) {
+                if()
+            }
+        });
+    })
+</script>

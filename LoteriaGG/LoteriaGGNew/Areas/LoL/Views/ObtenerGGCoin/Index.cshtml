@@ -20,7 +20,7 @@
         <div class="row" style="margin-top:-30px">
             <div class="" style="background:#151515;border:solid #212121;border-radius:0px 0px 30px 30px">
                 <section class="" style="color:ghostwhite">
-                    <h3>Para obtener un GGCoin, hay dos formas</h3>
+                    <h3>Para obtener un GGCoin, hay tres formas</h3>
                     <hr />
                     <h4>La primera es comprándolo. Para comprarlo debes hacer un depósito en una Caja vecina o transferencia electrónica de <b style="color:gold">$500</b> a la siguiente cuenta:</h4>
                     <div class="row">
@@ -36,26 +36,30 @@
                     </div>
                     <h4>También puedes usar la aplicación del Banco Estado copiando e ingresándo toda la información (Código numérico y monto) que entrega la opción "PagoRut" <a class="modal-trigger btn yellow darken-3" href="#myModal2">Aquí</a>.</h4>
                     <p class="red-text">
-                        Una vez hecho el depósito/transferencia debes enviar un mail a loteriagg@loteriagg.com con el asunto "Pago", adjuntar el comprobante de transferencia y escribir tu nombre de usuario.</p>
-                    <p class="red-text"> También puedes enviar el comprobante por mensaje privado en nuestra página de <a href="https://www.facebook.com/loteria.gg" class="light-blue-text" style="text-decoration:none; background-color:none" > Facebook.</a></p>
-                        <hr />
+                        Una vez hecho el depósito/transferencia debes enviar un mail a loteriagg@loteriagg.com con el asunto "Pago", adjuntar el comprobante de transferencia y escribir tu nombre de usuario.
+                    </p>
+                    <p class="red-text"> También puedes enviar el comprobante por mensaje privado en nuestra página de <a href="https://www.facebook.com/loteria.gg" class="light-blue-text" style="text-decoration:none; background-color:none"> Facebook.</a></p>
+                    <br />
+                    <div class="row"><div class="col l12 center"><a class="modal-trigger btn blue darken-3" href="#modalPaypal">Pago con PayPal</a></div></div>
 
-                        <h4>La segunda es por código de regalo, ¿Tienes un código de regalo? Ingrésalo aquí abajo</h4>
-                        <div class="row">
-                            <div class="col s10 offset-s1">
-                                <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
-                                    <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
-                                    <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
-                                </form>
-                            </div>
-                            <!--<div class="col l8">
-                                <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
-                                    <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
-                                    <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
-                                </form>
-                            </div>-->
+                    <hr />
+
+                    <h4>La segunda es por código de regalo, ¿Tienes un código de regalo? Ingrésalo aquí abajo</h4>
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
+                                <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
+                                <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
+                            </form>
                         </div>
-                        <br />
+                        <!--<div class="col l8">
+                <form id="formFreeGGCoin" action="@Url.Action("SorteoGratis")" method="post" role="form" autocomplete="off">
+                    <input id="cod" type="text" class="form-control" style="text-align:center" placeholder="Ingresa el codigo aquí" name="codigo" />
+                    <input type="button" onclick="Aceptar()" class="form-control btn green darken-3" value="Aceptar" />
+                </form>
+            </div>-->
+                    </div>
+                    <br />
                 </section>
             </div>
         </div>
@@ -82,7 +86,41 @@
     </div>
 </div>
 
+<div class="modal fade z-depth-5" style="background-color:rgba(0, 0, 0, 0.80)" id="modalPaypal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="row">
+                <div class="col l1"></div>
+                <div class="col l10 center">
+                    <h3 class="white-text">Pago con PayPal</h3>
+                    <label for="GGCoin"style="color:#fff;font-size:1.5em;">Cantidad de GGCoins</label>
+                    <br />
+                    <label class="red-text" style="font-size:10pt">*Precio del GGCoin 1 USD</label>
+                    <input id="GGCoin" style="color:#fff; border-color:#0277bd;padding-right:10px;margin-right:10px" type="number" class="validate center-align" name="GGCoin">
+                    <button class="btn green" onclick="PagarConPaypal()">Pagar con PayPal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+    $(document).ready(function () {
+        if ("@ViewBag.mensaje" != "") {
+            if ("@ViewBag.exito" == "true") {
+                Materialize.toast("@ViewBag.mensaje", 3000, "green")
+            }else {
+                Materialize.toast("@ViewBag.mensaje", 3000, "red")
+            }
+        }
+    })
+    function PagarConPaypal() {
+        var ggcoins = $('#GGCoin').val();
+
+        location.href = "@Url.Action("PaymentWithPaypal", "Paypal")?cantidad=" + ggcoins;
+    }
+
     function Enviar() {
         var codigo = $('#Codigo').val();
 

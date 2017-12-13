@@ -1,0 +1,642 @@
+2017-12-09 17:32:09,569
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 17:32:09,579
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:32:09,579
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 17:32:09,579
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c3161aa4-2160-4c58-9be3-33d7be87fe2b
+2017-12-09 17:32:09,965
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 17:32:11,157
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:32:11,158
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T20:32:10ZncfvyQPwFc2zNoUi4fJroOX2x6A-YYR56qkgAqok4JI","access_token":"A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-12-09 17:32:13,944
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 17:32:13,944
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:32:13,944
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw
+2017-12-09 17:32:13,945
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d70f3ef8-9d08-44bd-bce5-b06be57ea8b3
+2017-12-09 17:32:14,163
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"number":"1234567890123456","type":"visa","expire_month":1,"expire_year":2020,"cvv2":"874","first_name":"Aman","last_name":"Thakur","billing_address":{"line1":"23rd street kew gardens","city":"NewYork","country_code":"US","postal_code":"43210","state":"NY"}}}]},"transactions":[{"amount":{"currency":"USD","total":"1","details":{"subtotal":"1","shipping":"0","tax":"0"}},"description":"Description about the payment amount.","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"1","price":"1","currency":"USD"}]}}]}
+2017-12-09 17:32:14,976
+      [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2017-12-09 17:32:14,977
+      [5] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"payer.funding_instruments[0].credit_card.number","issue":"Value is invalid."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"7947326a9c4df"}
+2017-12-09 17:32:14,977
+      [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2017-12-09 17:32:15,032
+      [5] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request. See details.
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 7947326a9c4df
+   Details:  payer.funding_instruments[0].credit_card.number -> Value is invalid.
+
+2017-12-09 17:37:28,277
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 17:37:28,287
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:37:28,287
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 17:37:28,287
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:80ffc4ee-740c-4107-a542-3f22dce69ddf
+2017-12-09 17:37:28,703
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 17:37:29,602
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:37:29,602
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T20:32:10ZncfvyQPwFc2zNoUi4fJroOX2x6A-YYR56qkgAqok4JI","access_token":"A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32081}
+2017-12-09 17:37:54,070
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 17:37:54,070
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:37:54,070
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw
+2017-12-09 17:37:54,070
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c77baf05-eeb9-4021-b588-da658db109eb
+2017-12-09 17:37:54,300
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1","details":{"subtotal":"1","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"1","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=23107","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=23107"}}
+2017-12-09 17:37:55,447
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:37:55,447
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-52J150916V621662FLIWETIY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"1.00","currency":"USD","details":{"subtotal":"1.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2017-12-09T20:37:54Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-52J150916V621662FLIWETIY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-7X498510A1263725B","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-52J150916V621662FLIWETIY/execute","rel":"execute","method":"POST"}]}
+2017-12-09 17:39:21,297
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 17:39:21,297
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:39:21,298
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 17:39:21,299
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8054bafb-f0fa-4f8d-b607-58f47d2e6459
+2017-12-09 17:39:21,520
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 17:39:22,260
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:39:22,261
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T20:32:10ZncfvyQPwFc2zNoUi4fJroOX2x6A-YYR56qkgAqok4JI","access_token":"A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31968}
+2017-12-09 17:39:22,950
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 17:39:22,950
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:39:22,950
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw
+2017-12-09 17:39:22,950
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ef61796f-c20d-4b87-9b77-2e385deb6b5f
+2017-12-09 17:39:23,171
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"number":"1234567890123456","type":"visa","expire_month":1,"expire_year":2020,"cvv2":"874","first_name":"Aman","last_name":"Thakur","billing_address":{"line1":"23rd street kew gardens","city":"NewYork","country_code":"US","postal_code":"43210","state":"NY"}}}]},"transactions":[{"amount":{"currency":"USD","total":"1","details":{"subtotal":"1","shipping":"0","tax":"0"}},"description":"Description about the payment amount.","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"1","price":"1","currency":"USD"}]}}]}
+2017-12-09 17:39:48,486
+      [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2017-12-09 17:39:48,487
+      [5] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"payer.funding_instruments[0].credit_card.number","issue":"Value is invalid."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"8b9350e20868"}
+2017-12-09 17:39:48,487
+      [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2017-12-09 17:39:48,493
+      [5] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request. See details.
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 8b9350e20868
+   Details:  payer.funding_instruments[0].credit_card.number -> Value is invalid.
+
+2017-12-09 17:42:59,311
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 17:42:59,313
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:42:59,314
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 17:42:59,314
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:6e99d862-d2ae-41bd-b28b-6a1ff24f2dbc
+2017-12-09 17:42:59,677
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 17:43:02,272
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:43:02,273
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T20:32:10ZncfvyQPwFc2zNoUi4fJroOX2x6A-YYR56qkgAqok4JI","access_token":"A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31748}
+2017-12-09 17:43:21,016
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 17:43:21,017
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:43:21,017
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw
+2017-12-09 17:43:21,017
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c3923111-66bd-4f8b-8feb-251d6bb20dd1
+2017-12-09 17:43:21,232
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1","details":{"subtotal":"1","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"1","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=9293","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=9293"}}
+2017-12-09 17:43:22,200
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:43:22,200
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-31441255MM353823TLIWEV2I","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"1.00","currency":"USD","details":{"subtotal":"1.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2017-12-09T20:43:21Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-31441255MM353823TLIWEV2I","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-7C520462CL587544V","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-31441255MM353823TLIWEV2I/execute","rel":"execute","method":"POST"}]}
+2017-12-09 17:44:23,827
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 17:44:23,827
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:44:23,828
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 17:44:23,828
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ada70cbe-46bf-40a8-ac3a-56984398eb52
+2017-12-09 17:44:24,046
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 17:44:28,247
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:44:28,247
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T20:32:10ZncfvyQPwFc2zNoUi4fJroOX2x6A-YYR56qkgAqok4JI","access_token":"A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31662}
+2017-12-09 17:44:54,721
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 17:44:54,722
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 17:44:54,722
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFoY2_ptOpq3LwumL9iy70EAVRQyQWn4LL4GUAmrTOaU6rEnSsxrLsi-7riQn3kSMn1nbDD0aaFB7V8p_j4t24YBcAobw
+2017-12-09 17:44:54,722
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:969eb5e6-2ba4-4067-817e-bada85871dd1
+2017-12-09 17:44:54,936
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 17:45:00,489
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 17:45:00,490
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-31441255MM353823TLIWEV2I","intent":"sale","state":"approved","cart":"7C520462CL587544V","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"1.00","currency":"USD","details":{"subtotal":"1.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":1}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"37B36599WP742542M","state":"completed","amount":{"total":"1.00","currency":"USD","details":{"subtotal":"1.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"0.34","currency":"USD"},"parent_payment":"PAY-31441255MM353823TLIWEV2I","create_time":"2017-12-09T20:44:59Z","update_time":"2017-12-09T20:44:59Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/37B36599WP742542M","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/37B36599WP742542M/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-31441255MM353823TLIWEV2I","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T20:45:00Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-31441255MM353823TLIWEV2I","rel":"self","method":"GET"}]}
+2017-12-09 18:27:05,893
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 18:27:05,905
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:27:05,905
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 18:27:05,905
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d3121cb7-2637-4f5f-a7e8-a500cb245038
+2017-12-09 18:27:06,292
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 18:27:07,362
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:27:07,363
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T21:27:07Zm838yStTv2l2xoKJF2DLOKJti339T_AVwKhT_mUgBvc","access_token":"A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-12-09 18:27:11,218
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 18:27:11,219
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:27:11,219
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ
+2017-12-09 18:27:11,219
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4bd2d60b-996e-4b36-a935-b2816d0f5be7
+2017-12-09 18:27:11,453
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"7","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"7","price":"7","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=11196","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=11196"}}
+2017-12-09 18:27:12,182
+      [6] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2017-12-09 18:27:12,183
+      [6] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"70fbf2e8e4fe7"}
+2017-12-09 18:27:12,183
+      [6] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2017-12-09 18:27:12,210
+      [6] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 70fbf2e8e4fe7
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2017-12-09 18:27:55,662
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 18:27:55,662
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:27:55,663
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 18:27:55,663
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8fe7ba3c-428d-453f-85a2-1793d4ba2a93
+2017-12-09 18:27:55,923
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 18:27:57,704
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:27:57,705
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T21:27:07Zm838yStTv2l2xoKJF2DLOKJti339T_AVwKhT_mUgBvc","access_token":"A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32350}
+2017-12-09 18:28:10,711
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 18:28:10,711
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:28:10,712
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ
+2017-12-09 18:28:10,712
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8bc55f7f-4c79-4e79-a2b6-d5fe0cc3d4d6
+2017-12-09 18:28:10,930
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"7","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"7","price":"7","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=87932","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=87932"}}
+2017-12-09 18:28:27,699
+      [6] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2017-12-09 18:28:27,700
+      [6] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"56f7fb216d109"}
+2017-12-09 18:28:27,700
+      [6] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2017-12-09 18:28:27,701
+      [6] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 56f7fb216d109
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2017-12-09 18:30:00,829
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 18:30:00,829
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:30:00,830
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 18:30:00,830
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:9dbf2a6d-51a6-4615-bc6b-71c4bade01e2
+2017-12-09 18:30:01,101
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 18:30:01,807
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:30:01,807
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T21:27:07Zm838yStTv2l2xoKJF2DLOKJti339T_AVwKhT_mUgBvc","access_token":"A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32226}
+2017-12-09 18:30:29,528
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 18:30:29,528
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:30:29,529
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ
+2017-12-09 18:30:29,529
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:f74ddb49-6746-4f79-a124-7097151d6150
+2017-12-09 18:30:29,752
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"7","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"7","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=58986","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=58986"}}
+2017-12-09 18:30:30,780
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:30:30,780
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-1GG069611L0814042LIWFL5Q","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"7.00","currency":"USD","details":{"subtotal":"7.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":7}]},"related_resources":[]}],"create_time":"2017-12-09T21:30:30Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1GG069611L0814042LIWFL5Q","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-33H51037BP7327819","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1GG069611L0814042LIWFL5Q/execute","rel":"execute","method":"POST"}]}
+2017-12-09 18:31:13,841
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 18:31:13,841
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:31:13,841
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 18:31:13,841
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:3cb40560-7045-4a32-a964-5c78d4885604
+2017-12-09 18:31:14,058
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 18:31:14,785
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:31:14,785
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T21:27:07Zm838yStTv2l2xoKJF2DLOKJti339T_AVwKhT_mUgBvc","access_token":"A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32153}
+2017-12-09 18:31:23,780
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 18:31:23,780
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:31:23,781
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ
+2017-12-09 18:31:23,781
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:49a569a1-ddce-4d34-89a0-147e3b7b25f3
+2017-12-09 18:31:23,994
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 18:31:27,806
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:31:27,806
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-1GG069611L0814042LIWFL5Q","intent":"sale","state":"approved","cart":"33H51037BP7327819","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"7.00","currency":"USD","details":{"subtotal":"7.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":7}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"5AR4692540836810K","state":"completed","amount":{"total":"7.00","currency":"USD","details":{"subtotal":"7.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"0.57","currency":"USD"},"parent_payment":"PAY-1GG069611L0814042LIWFL5Q","create_time":"2017-12-09T21:31:26Z","update_time":"2017-12-09T21:31:26Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/5AR4692540836810K","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/5AR4692540836810K/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1GG069611L0814042LIWFL5Q","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T21:31:27Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1GG069611L0814042LIWFL5Q","rel":"self","method":"GET"}]}
+2017-12-09 18:33:06,723
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 18:33:06,724
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:33:06,724
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 18:33:06,724
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:9f91a36d-acdf-4460-a83a-1054031ed427
+2017-12-09 18:33:06,957
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 18:33:07,642
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:33:07,642
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T21:27:07Zm838yStTv2l2xoKJF2DLOKJti339T_AVwKhT_mUgBvc","access_token":"A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32040}
+2017-12-09 18:33:10,758
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 18:33:10,759
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:33:10,759
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ
+2017-12-09 18:33:10,759
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d7015fc7-a7bf-4dd3-821e-25dbddec36e4
+2017-12-09 18:33:10,978
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"subtotal":"20","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"20","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=19995","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=19995"}}
+2017-12-09 18:33:12,907
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:33:12,907
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-1K2513999J5162219LIWFNGA","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":20}]},"related_resources":[]}],"create_time":"2017-12-09T21:33:12Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1K2513999J5162219LIWFNGA","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-77752247WE2302059","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1K2513999J5162219LIWFNGA/execute","rel":"execute","method":"POST"}]}
+2017-12-09 18:33:34,456
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 18:33:34,457
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:33:34,457
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 18:33:34,457
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:6baadc6b-60a9-4d50-9177-66480677f4c0
+2017-12-09 18:33:34,673
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 18:33:36,255
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:33:36,256
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T21:27:07Zm838yStTv2l2xoKJF2DLOKJti339T_AVwKhT_mUgBvc","access_token":"A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32011}
+2017-12-09 18:33:44,396
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 18:33:44,397
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 18:33:44,397
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGb-uTqkMmgWSh5yhGXNFcmRZ7DeLnPhVS_Dr-YhSb4ckLzf2Ohkea-bMGPHZDE0SZe-E9O7pROeEw5QpQeahcmMzGNeQ
+2017-12-09 18:33:44,397
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:9972b9c8-ee65-4983-8ae6-6ac5718b6bbf
+2017-12-09 18:33:44,620
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 18:33:47,712
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 18:33:47,712
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-1K2513999J5162219LIWFNGA","intent":"sale","state":"approved","cart":"77752247WE2302059","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":20}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"62972875R9828992T","state":"completed","amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"1.08","currency":"USD"},"parent_payment":"PAY-1K2513999J5162219LIWFNGA","create_time":"2017-12-09T21:33:46Z","update_time":"2017-12-09T21:33:46Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/62972875R9828992T","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/62972875R9828992T/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1K2513999J5162219LIWFNGA","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T21:33:47Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1K2513999J5162219LIWFNGA","rel":"self","method":"GET"}]}
+2017-12-09 19:11:01,519
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:11:01,530
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:11:01,530
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:11:01,530
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:7e344f9c-1387-42d3-bb75-ae6bdf7b61b7
+2017-12-09 19:11:01,945
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:11:03,078
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:11:03,078
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-12-09 19:11:03,259
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:11:03,259
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:11:03,259
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:11:03,259
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:28c91672-8717-409e-a3f5-cad77db7e1ce
+2017-12-09 19:11:03,473
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"5","details":{"subtotal":"5","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"5","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=239","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=239"}}
+2017-12-09 19:11:05,572
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:11:05,572
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-0CT09406Y47450511LIWF66I","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}]},"related_resources":[]}],"create_time":"2017-12-09T22:11:04Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0CT09406Y47450511LIWF66I","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-82006117YR449243F","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0CT09406Y47450511LIWF66I/execute","rel":"execute","method":"POST"}]}
+2017-12-09 19:11:41,111
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:11:41,112
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:11:41,112
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:11:41,112
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:32ece608-c65c-4b31-8de5-2f411fab12c6
+2017-12-09 19:11:41,325
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:11:42,014
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:11:42,014
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32361}
+2017-12-09 19:11:42,019
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:11:42,019
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:11:42,019
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:11:42,019
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:dffa7c4f-68dc-4679-a877-de0ea1690d78
+2017-12-09 19:11:42,238
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 19:11:44,229
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:11:44,229
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-0CT09406Y47450511LIWF66I","intent":"sale","state":"approved","cart":"82006117YR449243F","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"8XB86534GB596392T","state":"completed","amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"0.50","currency":"USD"},"parent_payment":"PAY-0CT09406Y47450511LIWF66I","create_time":"2017-12-09T22:11:43Z","update_time":"2017-12-09T22:11:43Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/8XB86534GB596392T","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/8XB86534GB596392T/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0CT09406Y47450511LIWF66I","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T22:11:44Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0CT09406Y47450511LIWF66I","rel":"self","method":"GET"}]}
+2017-12-09 19:20:46,197
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:20:46,209
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:20:46,209
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:20:46,209
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4ca0ba13-5153-4b8a-bef8-b07c7777cc3e
+2017-12-09 19:20:46,598
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:20:47,546
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:20:47,547
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31815}
+2017-12-09 19:20:47,747
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:20:47,747
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:20:47,747
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:20:47,747
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:43330a41-4233-496c-b045-795f79994bf3
+2017-12-09 19:20:47,953
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"5","details":{"subtotal":"5","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"5","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=40335","cancel_url":"http://localhost:63728/LoL/Paypal/PaymentWithPayPal?guid=40335"}}
+2017-12-09 19:20:48,920
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:20:48,921
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-4U48483767614320PLIWGDQA","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}]},"related_resources":[]}],"create_time":"2017-12-09T22:20:48Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4U48483767614320PLIWGDQA","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-4E706655TL603205Y","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4U48483767614320PLIWGDQA/execute","rel":"execute","method":"POST"}]}
+2017-12-09 19:21:15,001
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:21:15,001
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:21:15,001
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:21:15,001
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:024a34f1-e89d-4f0b-9b4f-87afa3bb8429
+2017-12-09 19:21:15,214
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:21:18,286
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:21:18,287
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31784}
+2017-12-09 19:21:18,298
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:21:18,298
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:21:18,299
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:21:18,299
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:28b70014-e060-4bc3-9b6c-d5edcb49656c
+2017-12-09 19:21:18,518
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 19:21:23,066
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:21:23,067
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-4U48483767614320PLIWGDQA","intent":"sale","state":"approved","cart":"4E706655TL603205Y","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"6SJ10182GM682111L","state":"completed","amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"0.50","currency":"USD"},"parent_payment":"PAY-4U48483767614320PLIWGDQA","create_time":"2017-12-09T22:21:22Z","update_time":"2017-12-09T22:21:22Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/6SJ10182GM682111L","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/6SJ10182GM682111L/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4U48483767614320PLIWGDQA","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T22:21:22Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4U48483767614320PLIWGDQA","rel":"self","method":"GET"}]}
+2017-12-09 19:23:11,417
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:23:11,429
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:23:11,429
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:23:11,429
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c2dbcbbe-82a7-4f65-af2d-a5861cef16ae
+2017-12-09 19:23:11,671
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:23:18,492
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:23:18,493
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31664}
+2017-12-09 19:23:18,678
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:23:18,678
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:23:18,678
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:23:18,678
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4dacc651-d1a8-497a-a6dc-a3373a2ef3ad
+2017-12-09 19:23:18,890
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"5","details":{"subtotal":"5","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"5","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/Steam/Paypal/PaymentWithPayPal?guid=71299","cancel_url":"http://localhost:63728/Steam/Paypal/PaymentWithPayPal?guid=71299"}}
+2017-12-09 19:23:19,866
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:23:19,867
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-3XN06516BW680633DLIWGEVY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}]},"related_resources":[]}],"create_time":"2017-12-09T22:23:19Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3XN06516BW680633DLIWGEVY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2WL21278UD385053B","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3XN06516BW680633DLIWGEVY/execute","rel":"execute","method":"POST"}]}
+2017-12-09 19:23:33,236
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:23:33,236
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:23:33,236
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:23:33,236
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:7e858385-cc3d-4dba-8d30-455cf5a8dec4
+2017-12-09 19:23:33,458
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:23:34,227
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:23:34,228
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31648}
+2017-12-09 19:23:34,238
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:23:34,239
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:23:34,239
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:23:34,240
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:69893ecd-a451-482f-a19a-46766c9c1890
+2017-12-09 19:23:34,457
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 19:23:36,155
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:23:36,155
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-3XN06516BW680633DLIWGEVY","intent":"sale","state":"approved","cart":"2WL21278UD385053B","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"1UV857432E042204E","state":"completed","amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"0.50","currency":"USD"},"parent_payment":"PAY-3XN06516BW680633DLIWGEVY","create_time":"2017-12-09T22:23:35Z","update_time":"2017-12-09T22:23:35Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/1UV857432E042204E","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/1UV857432E042204E/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3XN06516BW680633DLIWGEVY","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T22:23:35Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3XN06516BW680633DLIWGEVY","rel":"self","method":"GET"}]}
+2017-12-09 19:23:42,693
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:23:42,693
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:23:42,693
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:23:42,693
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:5f6c45b4-7cc0-4d52-b2d7-74a3d22c9588
+2017-12-09 19:23:42,932
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:23:43,692
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:23:43,692
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31639}
+2017-12-09 19:23:43,694
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:23:43,694
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:23:43,695
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:23:43,695
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:5f9daa13-5b9b-49e6-b471-460018f99cc2
+2017-12-09 19:23:43,907
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"5","details":{"subtotal":"5","shipping":"0","tax":"0"}},"description":"Compra de GGCoins","item_list":{"items":[{"sku":"sku","name":"GGCoin","quantity":"5","price":"1","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:63728/Steam/Paypal/PaymentWithPayPal?guid=782","cancel_url":"http://localhost:63728/Steam/Paypal/PaymentWithPayPal?guid=782"}}
+2017-12-09 19:23:44,909
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:23:44,910
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-3FM69661EN225543YLIWGE4A","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}]},"related_resources":[]}],"create_time":"2017-12-09T22:23:44Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3FM69661EN225543YLIWGE4A","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-1MU568399N1847401","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3FM69661EN225543YLIWGE4A/execute","rel":"execute","method":"POST"}]}
+2017-12-09 19:28:35,625
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-09 19:28:35,627
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:28:35,627
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-09 19:28:35,628
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:28151872-1957-4f04-9aaf-3f370f6ea827
+2017-12-09 19:28:35,984
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-12-09 19:28:44,035
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:28:44,036
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2017-12-09T22:11:02Ztn92ckbhbR2Ie75G628BHzNn3XZ-G2Nchv8Ckq5rtFA","access_token":"A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31339}
+2017-12-09 19:28:44,045
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-09 19:28:44,045
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-09 19:28:44,046
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHOpQg4gFSwr62W2Xtb3XH99ffOVIecftUZ_NBOjj73F5N82Mei9xHs9w10Xuqaqsdf3aEjYyFRHRWSGcMnTfJIfYtoaw
+2017-12-09 19:28:44,046
+      [8] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:fbf5596e-c593-46c6-acc4-f732e170f0ff
+2017-12-09 19:28:44,256
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] {"payer_id":"QPQNSVNZYAG7N"}
+2017-12-09 19:28:45,852
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-12-09 19:28:45,852
+      [8] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-3FM69661EN225543YLIWGE4A","intent":"sale","state":"approved","cart":"1MU568399N1847401","payer":{"payment_method":"paypal","status":"VERIFIED","payer_info":{"email":"daniel.b.a@hotmail.es","first_name":"Daniel","last_name":"Barria","payer_id":"QPQNSVNZYAG7N","shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"},"country_code":"CA"}},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00","tax":"0.00","shipping":"0.00"}},"payee":{"merchant_id":"5RXPPKYG94PGW","email":"alcelonkk-facilitator@gmail.com"},"description":"Compra de GGCoins","item_list":{"items":[{"name":"GGCoin","sku":"sku","price":"1.00","currency":"USD","quantity":5}],"shipping_address":{"recipient_name":"Daniel Barria","line1":"1 Maire-Victorin","city":"Toronto","state":"Ontario","postal_code":"M5A 1E1","country_code":"CA"}},"related_resources":[{"sale":{"id":"0BV21578658225312","state":"completed","amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00"}},"payment_mode":"INSTANT_TRANSFER","protection_eligibility":"ELIGIBLE","protection_eligibility_type":"ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE","transaction_fee":{"value":"0.50","currency":"USD"},"parent_payment":"PAY-3FM69661EN225543YLIWGE4A","create_time":"2017-12-09T22:28:45Z","update_time":"2017-12-09T22:28:45Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/0BV21578658225312","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/0BV21578658225312/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3FM69661EN225543YLIWGE4A","rel":"parent_payment","method":"GET"}]}}]}],"create_time":"2017-12-09T22:28:45Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3FM69661EN225543YLIWGE4A","rel":"self","method":"GET"}]}
+2017-12-10 11:48:17,197
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-10 11:48:17,210
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-10 11:48:17,210
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVpLSC0wQ3loeXRJd2dObk1jemJTTXFneUt4WThPMlczTFc2UHFIakFhZWUzcVIxNk1YRUdrUU1yUDVWTGNLbC1QWlBQZ1lRYWlVdG5wOTk6RUx4cU1VYkhpeHRYOWVqb2dvSlpLd2t6OHRRRnpiQ3hkaG9pRXNKU2FnMklkU29temxRX2tocmVlWDNsd3RzOVVwWDBXd1BKUUhNeUgzZVc=
+2017-12-10 11:48:17,210
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b3e95d9d-2787-4148-8b34-0a8c879aefce
+2017-12-10 11:48:17,564
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Request details are hidden in live mode.
+2017-12-10 11:48:18,690
+      [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2017-12-10 11:48:18,691
+      [5] ERROR PayPal.Api.HttpConnection [(null)] {"error":"invalid_client","error_description":"Client Authentication failed"}
+2017-12-10 11:48:18,691
+      [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (401) Unauthorized.
+2017-12-10 11:48:18,826
+      [5] ERROR PayPal.PayPalException [(null)] Identity Exception: 
+   Error:   invalid_client
+   Message: Client Authentication failed
+   URI:     
+
+2017-12-10 11:54:30,947
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-10 11:54:30,960
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-10 11:54:30,960
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVcyMHMxRlMwUVA4SEw3VXRYamtNT3hpRlduLU4tT1N6N3BQeUdNRE1wOG9QZ09xcUtyaG9CRDlSZVdpcktEOWdOZkFfWVBPMzZUVTF2aTA6RUJUYld5LUJWRkRLWEsyZmRBWEFHRDN4MzY0SHpUZ3pGLWpGbmViMjN6VktWb3BjcG5fcmV0RjRoSDBUcjNoemVPcEN6eWg2ZlNBZGhOTTg=
+2017-12-10 11:54:30,960
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:80d5c9f1-0b7f-4dd9-9987-8e8c04239e76
+2017-12-10 11:54:31,207
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Request details are hidden in live mode.
+2017-12-10 11:54:32,481
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Response details are hidden in live mode.
+2017-12-10 11:54:32,685
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-10 11:54:32,685
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-10 11:54:32,685
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAEdSrTbpeTH10kxTPqBrgS25mUj-0VhGD1LZ-3P0vp_FP8beYtmm84dNzJtF5jQTTzELJNZyQtjr8ysXzN0wxirM82vrA
+2017-12-10 11:54:32,685
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ac5d8495-a08b-4fe2-88fa-19018326da7f
+2017-12-10 11:54:32,941
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Request details are hidden in live mode.
+2017-12-10 11:54:35,635
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Response details are hidden in live mode.
+2017-12-10 11:57:07,974
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-12-10 11:57:07,975
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-10 11:57:07,975
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVcyMHMxRlMwUVA4SEw3VXRYamtNT3hpRlduLU4tT1N6N3BQeUdNRE1wOG9QZ09xcUtyaG9CRDlSZVdpcktEOWdOZkFfWVBPMzZUVTF2aTA6RUJUYld5LUJWRkRLWEsyZmRBWEFHRDN4MzY0SHpUZ3pGLWpGbmViMjN6VktWb3BjcG5fcmV0RjRoSDBUcjNoemVPcEN6eWg2ZlNBZGhOTTg=
+2017-12-10 11:57:07,975
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ac185973-c5f2-43bc-ad60-68a52c507bab
+2017-12-10 11:57:08,200
+      [11] DEBUG PayPal.Api.HttpConnection [(null)] Request details are hidden in live mode.
+2017-12-10 11:57:08,951
+      [11] DEBUG PayPal.Api.HttpConnection [(null)] Response details are hidden in live mode.
+2017-12-10 11:57:08,952
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-12-10 11:57:08,952
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-12-10 11:57:08,953
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAEdSrTbpeTH10kxTPqBrgS25mUj-0VhGD1LZ-3P0vp_FP8beYtmm84dNzJtF5jQTTzELJNZyQtjr8ysXzN0wxirM82vrA
+2017-12-10 11:57:08,953
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:56fd12d0-4313-48dc-8060-b65401c57f7a
+2017-12-10 11:57:09,209
+      [11] DEBUG PayPal.Api.HttpConnection [(null)] Request details are hidden in live mode.
+2017-12-10 11:57:10,317
+      [11] DEBUG PayPal.Api.HttpConnection [(null)] Response details are hidden in live mode.

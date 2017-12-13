@@ -95,5 +95,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TBL_BITACORA_ERROR">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
+        <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
+          <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
+          <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

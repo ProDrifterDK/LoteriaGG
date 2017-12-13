@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LoteriaGGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_BITACORA_ERROR">
+    <Key>
+      <PropertyRef Name="BITERR_ID" />
+    </Key>
+    <Property Name="BITERR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BITERR_MSG" Type="varchar(max)" Nullable="false" />
+    <Property Name="USU_ID" Type="bigint" />
+    <Property Name="BITERR_INNER_MSG" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="CODIGOS_PAGO_RUT">
     <Key>
       <PropertyRef Name="PARU_ID" />
@@ -134,6 +143,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="0..1" />
+    <End Role="TBL_BITACORA_ERROR" Type="Self.TBL_BITACORA_ERROR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="USU_ID" />
+      </Principal>
+      <Dependent Role="TBL_BITACORA_ERROR">
+        <PropertyRef Name="USU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TBL_CONTACTO_TBL_USUARIO">
     <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
     <End Role="TBL_CONTACTO" Type="Self.TBL_CONTACTO" Multiplicity="*" />
@@ -159,6 +180,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="LoteriaGGModelStoreContainer">
+    <EntitySet Name="TBL_BITACORA_ERROR" EntityType="Self.TBL_BITACORA_ERROR" Schema="adm" store:Type="Tables" />
     <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="Self.CODIGOS_PAGO_RUT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
@@ -182,6 +204,10 @@
     <AssociationSet Name="FK_TBL_ADMIN_TBL_USUARIO" Association="Self.FK_TBL_ADMIN_TBL_USUARIO">
       <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
       <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" Association="Self.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_BITACORA_ERROR" EntitySet="TBL_BITACORA_ERROR" />
     </AssociationSet>
     <AssociationSet Name="FK_TBL_CONTACTO_TBL_USUARIO" Association="Self.FK_TBL_CONTACTO_TBL_USUARIO">
       <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />

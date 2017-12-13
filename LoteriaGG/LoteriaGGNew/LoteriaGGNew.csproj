@@ -52,19 +52,40 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -119,9 +140,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
@@ -151,6 +169,7 @@
     <Compile Include="Areas\LoL\Controllers\ContactanosController.cs" />
     <Compile Include="Areas\LoL\Controllers\HomeController.cs" />
     <Compile Include="Areas\LoL\Controllers\ObtenerGGCoinController.cs" />
+    <Compile Include="Areas\LoL\Controllers\PaypalController.cs" />
     <Compile Include="Areas\LoL\Controllers\PerfilController.cs" />
     <Compile Include="Areas\LoL\Controllers\RuletaController.cs" />
     <Compile Include="Areas\LoL\Controllers\SorteoController.cs" />
@@ -158,6 +177,7 @@
     <Compile Include="Areas\Steam\Controllers\ContactanosController.cs" />
     <Compile Include="Areas\Steam\Controllers\HomeController.cs" />
     <Compile Include="Areas\Steam\Controllers\ObtenerGGCoinController.cs" />
+    <Compile Include="Areas\Steam\Controllers\PaypalController.cs" />
     <Compile Include="Areas\Steam\Controllers\PerfilController.cs" />
     <Compile Include="Areas\Steam\Controllers\RuletaController.cs" />
     <Compile Include="Areas\Steam\Controllers\SorteoController.cs" />
@@ -178,32 +198,21 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\69698566-dota-2-logo-wallpapers.jpg" />
     <Content Include="Images\70400029-dota-2-logo-wallpapers.jpg" />
-    <Content Include="Images\7380b7765e42987b761a2a86a73b737a.jpg" />
     <Content Include="Images\AkalivsBaron.jpg" />
-    <Content Include="Images\Blast-Zone-Heimerdinger.jpg" />
-    <Content Include="Images\Blitz.jpg" />
     <Content Include="Images\Corporate-Mundo.jpg" />
     <Content Include="Images\cs1.jpg" />
-    <Content Include="Images\csgo1.jpg" />
-    <Content Include="Images\csgo2.jpg" />
     <Content Include="Images\Dota2.jpg" />
     <Content Include="Images\facebook-icon24x24.png" />
-    <Content Include="Images\Galio.jpg" />
     <Content Include="Images\GG.png" />
-    <Content Include="Images\Kha%27ZixMecha.jpg" />
     <Content Include="Images\Kindred-Classic-wallpaper.jpg" />
     <Content Include="Images\logoGG.png" />
     <Content Include="Images\lolcs.jpg" />
     <Content Include="Images\PaydayFoto.jpg" />
-    <Content Include="Images\photo_2017-05-02_17-26-11.jpg" />
     <Content Include="Images\resyst_logo.png" />
-    <Content Include="Images\rockstar.jpg" />
-    <Content Include="Images\SteamInicio.jpg" />
+    <Content Include="Images\steam1.png" />
     <Content Include="Images\SteamOtro2.jpg" />
-    <Content Include="Images\SteamProfile.jpg" />
     <Content Include="Images\TF.jpg" />
     <Content Include="Images\tfcards.jpg" />
-    <Content Include="Images\Thresh.jpg" />
     <Content Include="Images\Twisted_Fate_Poro.jpg" />
     <Content Include="Images\ziggs_mad_scientist_splash_1920x1080_0.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -237,6 +246,11 @@
     <Content Include="Areas\Steam\Views\Perfil\Index.cshtml" />
     <Content Include="Areas\Steam\Views\Ruleta\Index.cshtml" />
     <Content Include="Areas\Steam\Views\Sorteo\Index.cshtml" />
+    <Content Include="Areas\Steam\Views\ObtenerGGCoin\Pagado.cshtml" />
+    <Content Include="Areas\LoL\Views\ObtenerGGCoin\Pagado.cshtml" />
+    <Content Include="Areas\LoL\Views\Paypal\Index.cshtml" />
+    <Content Include="Areas\LoL\Views\Paypal\SuccessView.cshtml" />
+    <Content Include="Areas\LoL\Views\Paypal\FailureView.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

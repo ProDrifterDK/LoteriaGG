@@ -19,6 +19,8 @@
         <AssociationConnector Association="LoteriaGGModel.FK_TBL_USUARIO_TBL_USUARIO" />
         <EntityTypeShape EntityType="LoteriaGGModel.TBL_CONTACTO" Width="1.5" PointX="5" PointY="0.875" />
         <AssociationConnector Association="LoteriaGGModel.FK_TBL_CONTACTO_TBL_USUARIO" />
+        <EntityTypeShape EntityType="LoteriaGGModel.TBL_BITACORA_ERROR" Width="1.5" PointX="3" PointY="13.875" />
+        <AssociationConnector Association="LoteriaGGModel.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -10,7 +10,7 @@
         height: 100%;
         width: 50%;
         display: block;
-        background-image: url(../../Images/SteamInicio.jpg);
+        background-image: url(../../Images/steam1.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -22,7 +22,7 @@
     }
 
     .div2 {
-        left: 50%;;
+        left: 50%;
         height: 100%;
         width: 50%;
         display: block;
@@ -62,18 +62,25 @@
     <meta property="og:image" content="/Images/lolcs.jpg" />
     <meta property="og:description" content="¡El mejor sitio para probar tu suerte y ganar increíbles premios de RP y Steam Wallet!" />
     <meta property="og:type" content="website" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <link href="~/Content/materialize.css" rel="stylesheet" />
+    <script src="~/Scripts/materialize.js"></script>
 </head>
 
 <body>
     <div class="div1">
-        <a href="/Steam/Home/" class="btn layer" style="width:100%;height:100%"></a>
+        <a href="/Steam/Home/" class="layer" style="width:100%;height:100%"></a>
     </div>
 
     <div class="div2">
-        <a href="/LoL/Home/" class="btn layer" style="width:100%;height:100%"></a>
+        <a href="/LoL/Home/" class="layer" style="width:100%;height:100%"></a>
     </div>
+    <script>
+        if ("@ViewBag.mensaje" != "") {
+            Materialize.toast("@ViewBag.mensaje", 3000, "red");
+        }
+    </script>
 </body>
-
 
 
 </html>
