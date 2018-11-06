@@ -9,7 +9,7 @@
             enable_page_level_ads: true
         });
     </script>
-    <link rel="shortcut icon"  href="~/Images/GG.png" />
+    <link rel="shortcut icon" href="~/Images/GG.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoteriaGG</title>
@@ -41,16 +41,16 @@
     <script src="~/Scripts/materialize.min.js"></script>
 
     <header>
-        <nav class="top-nav indigo darken-2">
+        <nav class="top-nav black">
             <!--SIDE Nav-->
 
-            <ul id="slide-out" class="side-nav">
+            <ul id="slide-out" class="side-nav black">
                 @if (user == null)
                 {
                     <li class="no-padding" style="border-bottom:#1a237e 2px solid">
                         <ul class="collapsible collapsible-accordion">
                             <li>
-                                <a class="collapsible-header">Ingresar<i class="material-icons">arrow_drop_down</i></a>
+                                <a class="collapsible-header white-text">Ingresar<i class="material-icons">arrow_drop_down</i></a>
                                 <div class="collapsible-body">
                                     <ul>
                                         <form id="formUsuario2" method="post" action="@Url.Action("Login","Home")" class="col s12">
@@ -68,7 +68,7 @@
                     <li class="no-padding" style="border-bottom:#1a237e 2px solid">
                         <ul class="collapsible collapsible-accordion">
                             <li>
-                                <a class="collapsible-header">Registarse<i class="material-icons">arrow_drop_down</i></a>
+                                <a class="collapsible-header white-text">Registrarse<i class="material-icons">arrow_drop_down</i></a>
                                 <div class="collapsible-body">
                                     <ul>
                                         <form id="formRegister" method="post" action="@Url.Action("Registro", "Home")" class="col s12">
@@ -111,14 +111,17 @@
                         </div>
                     </li>
                 }
-                <li><a class="" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                <li><a class="white-text" href="@Url.Action("Index", "Home")">Inicio</a></li>
                 @if (user != null)
                 {
                     <li><a class=" yellow-text" href="@Url.Action("Index","Sorteo")">Sorteos</a></li>
                     <li><a class=" red-text" href="@Url.Action("Index", "ObtenerGGCoin")">Obtener GGCoins</a></li>
-                    <li><a class="" href="@Url.Action("Index", "Ruleta")">Ruleta</a></li>
-                    <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
+                    <li><a class="white-text" href="@Url.Action("Index", "Ruleta")">Ruleta</a></li>
+                    <li><a class="white-text" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
+                    <li><a class="white-text" href="@Url.Action("Index","About")">Acerca de</a></li>
                 }
+
+
 
                 @if (Request.Url.ToString().Contains("LoL"))
                 {
@@ -129,16 +132,21 @@
                     <li><a class="" href="/LoL/Home/">LoL</a></li>
                 }
             </ul>
-            <!--Left Nav-->
+
+            <!--NavBar-->
+            <!--Left-->
             <ul class="hide-on-med-and-down">
-                <li><a class="" href="@Url.Action("Index","Home")" >Inicio</a></li>
+                <li><a class="" href="@Url.Action("Index","Home")">Inicio</a></li>
                 @if (user != null)
                 {
                     <li><a class=" yellow-text" href="@Url.Action("Index","Sorteo")">Sorteos</a></li>
                     <li><a class=" red-text" href="@Url.Action("Index", "ObtenerGGCoin")">Obtener GGCoins</a></li>
                     <li><a class="" href="@Url.Action("Index", "Ruleta")">Ruleta</a></li>
                     <li><a class="" href="@Url.Action("Index", "Contactanos")">Contactanos</a></li>
+                    <li><a class="" href="@Url.Action("Index","About")">Acerca de</a></li>
                 }
+
+
                 @if (Request.Url.ToString().Contains("LoL"))
                 {
                     <li><a class="" href="/Steam/Home/">Steam</a></li>
@@ -147,167 +155,168 @@
                 {
                     <li><a class="" href="/LoL/Home/">LoL</a></li>
                 }
+
 
             </ul>
             <!--LOGO-->
-            <a href="#" class="brand-logo center"><img src="../../Images/logoGG.png" style="max-height:55px"/></a>
-            <!--Right Nav-->
+            <a href="#" class="brand-logo center"><img src="../../Images/LoteríaGG Logo white.png" style="max-height:55px" /></a>
+            <!--Right-->
             <ul class="right hide-on-med-and-down">
-    @if (user == null)
-    {
-        <li><a class="modal-trigger" href="#modal2">Registrarse</a></li>
+                @if (user == null)
+                {
+                    <li><a class="modal-trigger" href="#modal2">Registrarse</a></li>
 
-        <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
-                <!-- Modal1 Login Structure -->
-        <div id="modal1" class="modal transparent z-depth-5" style="width:25% !important;">
-            <div class="modal-content">
-                <div class="row">
-                    <form id="formUsuario" method="post" action="@Url.Action("Login","Home")" class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
-                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
+                    <li><a class="modal-trigger" href="#modal1">Ingresar</a></li>
+                    <!-- Modal1 Login Structure -->
+                    <div id="modal1" class="modal transparent z-depth-5" style="width:25% !important;">
+                        <div class="modal-content">
+                            <div class="row">
+                                <form id="formUsuario" method="post" action="@Url.Action("Login","Home")" class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Ingresar Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center">
+                                            <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center" style="padding-top:12px">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Entrar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
-                                <label for="contrasena" style="color:#fff;font-size:1.5em;">Ingresar Contraseña</label>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom:0;">
-                            <div class="center">
-                                <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                                <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom:0;">
-                            <div class="center" style="padding-top:12px">
-                                <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Login()" name="action">Entrar<i class="material-icons right" style="line-height:35px;">send</i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                    </div>
 
 
                     <!-- Modal2 Register Structure -->
-        <div id="modal2" class="modal transparent z-depth-5" style="width:27% !important; height:100%">
-            <div class="modal-content">
-                <div class="row">
-                    <form id="formRegistro" method="post" action="@Url.Action("Registro", "Home")" class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
-                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="email">
-                                <label for="usuario" style="color:#fff;font-size:1.5em;">Email</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="nombre">
-                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="apellido">
-                                <label for="usuario" style="color:#fff;font-size:1.5em;">Apellido</label>
-                            </div>
-                        </div>
-                        @if (Request.Url.ToString().Contains("LoL"))
-                        {
+                    <div id="modal2" class="modal transparent z-depth-5" style="width:27% !important; height:100%">
+                        <div class="modal-content">
                             <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="summoner">
-                                    <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Invocador</label>
+                                <form id="formRegistro" method="post" action="@Url.Action("Registro", "Home")" class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="argUsuario">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Usuario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="email">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="nombre">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="apellido">
+                                            <label for="usuario" style="color:#fff;font-size:1.5em;">Apellido</label>
+                                        </div>
+                                    </div>
+                                    @if (Request.Url.ToString().Contains("LoL"))
+                                    {
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="summoner">
+                                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Invocador</label>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="steamNick">
+                                                <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Steam</label>
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena2">
+                                            <label for="contrasena" style="color:#fff;font-size:1.5em;">Repetir Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="left-align">
+                                            <input type="checkbox" class="filled-in" id="filled-in-box" />
+                                            <label class="white-text" for="filled-in-box">He leído y acepto los <a class="modal-trigger blue-text" href="#modalALUF">terminos y condiciones.</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center">
+                                            <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                            <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:0;">
+                                        <div class="center" style="padding-top:12px">
+                                            <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Register(formRegistro)" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ModaALUF Structure -->
+                    <div id="modalALUF" class="modal blue-grey darken-4 z-depth-5" style="width:27% !important; height:100%; z-index:1008">
+                        <div class="modal-content">
+                            <div class="row">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Acuerdo de licencia de usuario final (ALUF)</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Este acuerdo de licencia del usuario final ("ALUF") puede actualizarse ocasionalmente. Si usted continúa usando el Servicio (tal como se define a continuación) después de que se haya publicado o se le haya comunicado la existencia de la versión revisada, se entenderá que acepta sus términos.
+                                    </p>
+                                    <p>USTED ES USUARIO DEL SERVICIO DE ENTRETENIMIENTOS PERTENECIENTE A RESYST INC. LLAMADO LOTERIAGG SIEMPRE Y CUANDO SE ENCUENTRE REGISTRADO EN LA BASE DE DATOS DE LA PAGINA, DIRECTA O INDIRECTAMENTE CON SUS DATOS REALES, SIENDO ESTOS DATOS ENTREGADOS DE TOTAL RESPONSABILIDAD DEL USUARIO QUIEN LOS ENTREGO O A QUIEN ESTOS DATOS PERTENECEN. EL SERVICIO SE CONSIDERA TERMINADO POR ALGUNA DE LAS PARTES CON EL DEBIDO AVISO PREVIO POR ESCRITO DE LA FINALIZACION DE ESTOS SERVICIOS, SIENDO ESTOS AVISOS ENVIADOS DESDE RESYST INC. HACIA EL USUARIO FINAL REGISTRADO EN LA BASE DE DATOS, DESDE AHORA USUARIO, O SIENDO EL AVISO ENVIADO DESDE EL USUARIO HACIA RESYST INC. Y ESTE AVISO SE CONSIDERARA VALIDADO SOLO SI AMBAS PARTES ESTAN DE ACUERDO EN FINALIZAR LOS SERVICIOS CON LAS COMPENSACIONES ACORDADAS EN EL AVISO.</p>
+                                    <p>RESYST INC. SE RESERVA EL DERECHO DE TERMINAR LOS SERVICIOS SIN COMPENSACION ALGUNA EN VIRTUD DE QUE EL USUARIO NO CUMPLA CON EL ACUERDO Y SUS REGLAS, LAS CUALES SERAN DETALLADAS A CONTINUACION.</p>
+                                    <p>1) Usted (el usuario) asegura ser el propietario de los datos entregados en la página al momento del registro y se hace responsable de las actualizaciones de estos datos en los casos pertinentes y acepta liberar de toda responsabilidad a Resyst Inc. quienes haran uso de esta informacion para la entrega de premios y compensaciones en los casos donde estos datos sean cruciales para realizar dicha entrega.</p>
+                                    <p>2) Usted (el usuario) debe mantener activa su cuenta por al menos 6 meses, entendiéndose por activada la cuenta cuando esta realiza una inscripción en un sorteo.</p>
+                                    <p>3) Usted (el usuario) puede poseer únicamente una cuenta en LoteríaGG, esto en virtud de que puede realizar múltiples inscripciones en múltiples sorteos.</p>
+                                    <p>4) Usted (el usuario) debe poseer autorización de sus padres para realizar cualquier transacción ya sea en su propio nombre o en el de ellos, en caso de poseer menos de 18 años de edad dentro del erritorio legal comprendido dentro de la República de Chile.</p>
+                                    <p>5) Usted (el usuario) no obtendrá beneficios monetarios de parte de Resyst Inc. en virtud de canjear los premios y/o compensaciones, tampoco podrá emitir reclamos en contra de Resyst Inc. por esta prohibición ni ninguna de aquellas prohibiciones que puedan desprenderse de esta.</p>
+                                    <p>6) Usted (el usuario) no emitirá correos violentos y/u ofensivos en contra de Resyst Inc. ni a ninguna de sus dependencias de comunicación, Resyst Inc. se reserva el derecho de retirar al usuario de la plataforma y todas las cuentas asociadas a esta (en virtud de la 3ra regla) sin derecho alguno a compensación de parte de Resyst Inc. además de establecer una prohibición de inscripción y sin posibilidad alguna de levantamiento de esta prohibición, sin importar el caso.</p>
+                                    <p>7) Usted (el usuario) al momento de realizar la transferencia para confirmar su inscripción se desprende de todo tipo de responsabilidad y derecho sobre el dinero transferido, asegurando el valor transferido sea cual sea este y sus derechos a Resyst Inc., sus asociados y dependencias, además usted será el único responsable de que la cantidad transferida sea la correcta para obtener las compensaciones correspondientes.</p>
+                                    <p></p>
+                                </div>
+                                <div class="center-align">
+                                    <button type="button" class="modal-action modal-close waves-effect waves-light btn">Cerrar</button>
                                 </div>
                             </div>
-                        }
-                        else
-                        {
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="usuario" style="color:#fff; border-color:#0277bd;" type="text" class="validate" name="steamNick">
-                                    <label for="usuario" style="color:#fff;font-size:1.5em;">Nombre de Steam</label>
-                                </div>
-                            </div>
-                        }
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena">
-                                <label for="contrasena" style="color:#fff;font-size:1.5em;">Contraseña</label>
-                            </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input type="password" style="color:#fff; border-color:#0277bd;" id="contrasena" class="validate" name="contrasena2">
-                                <label for="contrasena" style="color:#fff;font-size:1.5em;">Repetir Contraseña</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="left-align">
-                                <input type="checkbox" class="filled-in" id="filled-in-box" />
-                                <label class="white-text" for="filled-in-box">He leído y acepto los <a class="modal-trigger blue-text" href="#modalALUF">terminos y condiciones.</a></label>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom:0;">
-                            <div class="center">
-                                <div class="fb-login-button" data-width="200" data-max-rows="1" onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                                <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom:0;">
-                            <div class="center" style="padding-top:12px">
-                                <button class="btn waves-effect waves-light light-blue darken-3" type="button" onclick="Register(formRegistro)" name="action">Enviar<i class="material-icons right" style="line-height:35px;">send</i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-                                      <!-- ModaALUF Structure -->
-        <div id="modalALUF" class="modal blue-grey darken-4 z-depth-5" style="width:27% !important; height:100%; z-index:1008">
-            <div class="modal-content">
-                <div class="row">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Acuerdo de licencia de usuario final (ALUF)</h4>
                     </div>
-                    <div class="modal-body">
-                        <p>
-                            Este acuerdo de licencia del usuario final ("ALUF") puede actualizarse ocasionalmente. Si usted continúa usando el Servicio (tal como se define a continuación) después de que se haya publicado o se le haya comunicado la existencia de la versión revisada, se entenderá que acepta sus términos.
-                        </p>
-                        <p>USTED ES USUARIO DEL SERVICIO DE ENTRETENIMIENTOS PERTENECIENTE A RESYST INC. LLAMADO LOTERIAGG SIEMPRE Y CUANDO SE ENCUENTRE REGISTRADO EN LA BASE DE DATOS DE LA PAGINA, DIRECTA O INDIRECTAMENTE CON SUS DATOS REALES, SIENDO ESTOS DATOS ENTREGADOS DE TOTAL RESPONSABILIDAD DEL USUARIO QUIEN LOS ENTREGO O A QUIEN ESTOS DATOS PERTENECEN. EL SERVICIO SE CONSIDERA TERMINADO POR ALGUNA DE LAS PARTES CON EL DEBIDO AVISO PREVIO POR ESCRITO DE LA FINALIZACION DE ESTOS SERVICIOS, SIENDO ESTOS AVISOS ENVIADOS DESDE RESYST INC. HACIA EL USUARIO FINAL REGISTRADO EN LA BASE DE DATOS, DESDE AHORA USUARIO, O SIENDO EL AVISO ENVIADO DESDE EL USUARIO HACIA RESYST INC. Y ESTE AVISO SE CONSIDERARA VALIDADO SOLO SI AMBAS PARTES ESTAN DE ACUERDO EN FINALIZAR LOS SERVICIOS CON LAS COMPENSACIONES ACORDADAS EN EL AVISO.</p>
-                        <p>RESYST INC. SE RESERVA EL DERECHO DE TERMINAR LOS SERVICIOS SIN COMPENSACION ALGUNA EN VIRTUD DE QUE EL USUARIO NO CUMPLA CON EL ACUERDO Y SUS REGLAS, LAS CUALES SERAN DETALLADAS A CONTINUACION.</p>
-                        <p>1) Usted (el usuario) asegura ser el propietario de los datos entregados en la página al momento del registro y se hace responsable de las actualizaciones de estos datos en los casos pertinentes y acepta liberar de toda responsabilidad a Resyst Inc. quienes haran uso de esta informacion para la entrega de premios y compensaciones en los casos donde estos datos sean cruciales para realizar dicha entrega.</p>
-                        <p>2) Usted (el usuario) debe mantener activa su cuenta por al menos 6 meses, entendiéndose por activada la cuenta cuando esta realiza una inscripción en un sorteo.</p>
-                        <p>3) Usted (el usuario) puede poseer únicamente una cuenta en LoteríaGG, esto en virtud de que puede realizar múltiples inscripciones en múltiples sorteos.</p>
-                        <p>4) Usted (el usuario) debe poseer autorización de sus padres para realizar cualquier transacción ya sea en su propio nombre o en el de ellos, en caso de poseer menos de 18 años de edad dentro del erritorio legal comprendido dentro de la República de Chile.</p>
-                        <p>5) Usted (el usuario) no obtendrá beneficios monetarios de parte de Resyst Inc. en virtud de canjear los premios y/o compensaciones, tampoco podrá emitir reclamos en contra de Resyst Inc. por esta prohibición ni ninguna de aquellas prohibiciones que puedan desprenderse de esta.</p>
-                        <p>6) Usted (el usuario) no emitirá correos violentos y/u ofensivos en contra de Resyst Inc. ni a ninguna de sus dependencias de comunicación, Resyst Inc. se reserva el derecho de retirar al usuario de la plataforma y todas las cuentas asociadas a esta (en virtud de la 3ra regla) sin derecho alguno a compensación de parte de Resyst Inc. además de establecer una prohibición de inscripción y sin posibilidad alguna de levantamiento de esta prohibición, sin importar el caso.</p>
-                        <p>7) Usted (el usuario) al momento de realizar la transferencia para confirmar su inscripción se desprende de todo tipo de responsabilidad y derecho sobre el dinero transferido, asegurando el valor transferido sea cual sea este y sus derechos a Resyst Inc., sus asociados y dependencias, además usted será el único responsable de que la cantidad transferida sea la correcta para obtener las compensaciones correspondientes.</p>
-                        <p></p>
-                    </div>
-                    <div class="center-align">
-                        <button type="button" class="modal-action modal-close waves-effect waves-light btn">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-    else
-    {
-    <li><a id="ggcoins" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="@Url.Action("Index", "ObtenerGGCoin")" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a></li>
-    <li><a class="" href="@Url.Action("Index", "Perfil")" style="font-size:1.5em" data-activates="dropdown1">@user.USU_NOMBRE<i class="material-icons right" style="padding-top:3px;">account_circle</i></a></li>
-    <li><a class="" href="javascript:void()" onclick="Logout()" style="font-size:1.5em" data-activates=""><i class="material-icons right" style="padding-top:3px;margin:0">power_settings_new</i></a></li>
-    }
-    </ul>
+                }
+                else
+                {
+                    <li><a id="ggcoins" class="yellow-text accent-4 ggcoins" style="font-size:1.5em" href="@Url.Action("Index", "ObtenerGGCoin")" data-activates="dropdown1">@user.USU_SOR_DISP GGCoins</a></li>
+                    <li><a class="" href="@Url.Action("Index", "Perfil")" style="font-size:1.5em" data-activates="dropdown1">@user.USU_NOMBRE<i class="material-icons right" style="padding-top:3px;">account_circle</i></a></li>
+                    <li><a class="" href="javascript:void()" onclick="Logout()" style="font-size:1.5em" data-activates=""><i class="material-icons right" style="padding-top:3px;margin:0">power_settings_new</i></a></li>
+                }
+            </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         </nav>
     </header>
@@ -316,8 +325,8 @@
             @RenderBody()
         </div>
     </main>
-    <footer class="page-footer indigo darken-3">
-        <div class="container indigo darken-3">
+    <footer class="page-footer  ">
+        <div class="container  ">
             <div class="row">
                 <div class="col s6">
                     <div style="margin-top:25px;">
@@ -369,8 +378,8 @@
                 </div>
             </div>
         </div>
-    <div class="footer-copyright indigo darken-4">
-        <div class="container">
+    <div class="footer-copyright ">
+        <div class="container" style="text-align:center">
             <b>© 2017 Resyst Softwares. Todos los derechos reservados.</b>
         </div>
     </div>

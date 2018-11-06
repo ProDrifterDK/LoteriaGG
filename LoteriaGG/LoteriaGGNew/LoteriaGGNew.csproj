@@ -166,6 +166,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\LoL\Controllers\AboutController.cs" />
     <Compile Include="Areas\LoL\Controllers\ContactanosController.cs" />
     <Compile Include="Areas\LoL\Controllers\HomeController.cs" />
     <Compile Include="Areas\LoL\Controllers\ObtenerGGCoinController.cs" />
@@ -199,16 +200,21 @@
     <Content Include="Images\69698566-dota-2-logo-wallpapers.jpg" />
     <Content Include="Images\70400029-dota-2-logo-wallpapers.jpg" />
     <Content Include="Images\AkalivsBaron.jpg" />
+    <Content Include="Images\AkalivsBaronBlur.jpg" />
     <Content Include="Images\Corporate-Mundo.jpg" />
     <Content Include="Images\cs1.jpg" />
     <Content Include="Images\Dota2.jpg" />
     <Content Include="Images\facebook-icon24x24.png" />
+    <Content Include="Images\FooterBG.png" />
     <Content Include="Images\GG.png" />
     <Content Include="Images\Kindred-Classic-wallpaper.jpg" />
+    <Content Include="Images\LGGLoLBG.png" />
     <Content Include="Images\logoGG.png" />
     <Content Include="Images\lolcs.jpg" />
+    <Content Include="Images\LoteríaGG Logo white.png" />
     <Content Include="Images\PaydayFoto.jpg" />
     <Content Include="Images\resyst_logo.png" />
+    <Content Include="Images\Steam-logo.png" />
     <Content Include="Images\steam1.png" />
     <Content Include="Images\SteamOtro2.jpg" />
     <Content Include="Images\TF.jpg" />
@@ -251,6 +257,7 @@
     <Content Include="Areas\LoL\Views\Paypal\Index.cshtml" />
     <Content Include="Areas\LoL\Views\Paypal\SuccessView.cshtml" />
     <Content Include="Areas\LoL\Views\Paypal\FailureView.cshtml" />
+    <Content Include="Areas\LoL\Views\About\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
