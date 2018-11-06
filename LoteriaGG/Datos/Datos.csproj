@@ -91,6 +91,9 @@
     <Compile Include="SqlData\TBL_HOME.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SqlData\TBL_MAILS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="SqlData\TBL_SORTEO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

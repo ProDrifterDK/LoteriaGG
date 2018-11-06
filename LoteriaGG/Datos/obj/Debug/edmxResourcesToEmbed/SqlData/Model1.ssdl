@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LoteriaGGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="TBL_BITACORA_ERROR">
-    <Key>
-      <PropertyRef Name="BITERR_ID" />
-    </Key>
-    <Property Name="BITERR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BITERR_MSG" Type="varchar(max)" Nullable="false" />
-    <Property Name="USU_ID" Type="bigint" />
-    <Property Name="BITERR_INNER_MSG" Type="varchar(max)" />
-  </EntityType>
   <EntityType Name="CODIGOS_PAGO_RUT">
     <Key>
       <PropertyRef Name="PARU_ID" />
@@ -32,13 +23,23 @@
     <Property Name="ADM_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="USU_ID" Type="bigint" Nullable="false" />
   </EntityType>
+  <EntityType Name="TBL_BITACORA_ERROR">
+    <Key>
+      <PropertyRef Name="BITERR_ID" />
+    </Key>
+    <Property Name="BITERR_ID" Type="int" Nullable="false" />
+    <Property Name="BITERR_MSG" Type="varchar(max)" Nullable="false" />
+    <Property Name="BITERR_INNER_MSG" Type="varchar(max)" />
+    <Property Name="USU_ID" Type="bigint" />
+    <Property Name="BITERR_FECHA" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="TBL_CONTACTO">
     <Key>
       <PropertyRef Name="CONT_ID" />
     </Key>
-    <Property Name="CONT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CONT_TEXTO" Type="varchar(max)" Nullable="false" />
-    <Property Name="USU_ID" Type="bigint" Nullable="false" />
+    <Property Name="CONT_ID" Type="int" Nullable="false" />
+    <Property Name="CONT_TEXTO" Type="varchar(max)" />
+    <Property Name="USU_ID" Type="bigint" />
   </EntityType>
   <EntityType Name="TBL_HOME">
     <Key>
@@ -46,6 +47,24 @@
     </Key>
     <Property Name="HM_TXT_GANADORES" Type="varchar" MaxLength="150" />
     <Property Name="HM_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_MAILS">
+    <Key>
+      <PropertyRef Name="MAIL_ID" />
+    </Key>
+    <Property Name="MAIL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAIL_HTML" Type="varchar(max)" />
+    <Property Name="MAIL_FROM" Type="varchar" MaxLength="2000" />
+    <Property Name="MAIL_FECHA" Type="datetime" />
+    <Property Name="MAIL_VALIDADO" Type="bit" Nullable="false" />
+    <Property Name="MAIL_SUBJECT" Type="varchar" MaxLength="2050" />
+    <Property Name="MAIL_CODIGO_TRANSFERENCIA" Type="varchar" MaxLength="20" />
+    <Property Name="MAIL_VISTO_POR" Type="int" />
+    <Property Name="MAIL_FECHA_VISTO" Type="datetime" />
+    <Property Name="MAIL_MODIFICADO" Type="datetime" />
+    <Property Name="MAIL_MODIFICADO_POR" Type="int" />
+    <Property Name="MAIL_USUARIO" Type="int" />
+    <Property Name="MAIL_MONTO" Type="int" />
   </EntityType>
   <EntityType Name="TBL_SORTEO">
     <Key>
@@ -58,7 +77,7 @@
     <Property Name="SOR_CREADO_POR" Type="bigint" />
     <Property Name="SOR_MODIFICADO_POR" Type="bigint" />
     <Property Name="SOR_PREMIO" Type="varchar" MaxLength="100" />
-    <Property Name="SOR_GRATIS" Type="bit" Nullable="false" />
+    <Property Name="SOR_GRATIS" Type="bit" />
   </EntityType>
   <EntityType Name="TBL_SORTEO_GRATIS">
     <Key>
@@ -143,7 +162,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
+  <Association Name="FK_TBL_BITACORA_ERROR_TBL_USUARIO">
     <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="0..1" />
     <End Role="TBL_BITACORA_ERROR" Type="Self.TBL_BITACORA_ERROR" Multiplicity="*" />
     <ReferentialConstraint>
@@ -156,7 +175,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TBL_CONTACTO_TBL_USUARIO">
-    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="0..1" />
     <End Role="TBL_CONTACTO" Type="Self.TBL_CONTACTO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TBL_USUARIO">
@@ -167,25 +186,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TBL_USUARIO_TBL_USUARIO">
-    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="0..1" />
-    <End Role="TBL_USUARIO1" Type="Self.TBL_USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TBL_USUARIO">
-        <PropertyRef Name="USU_ID" />
-      </Principal>
-      <Dependent Role="TBL_USUARIO1">
-        <PropertyRef Name="USU_REFERENTE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <Function Name="SP_BUSCAR_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USU_ID" Type="bigint" Mode="In" />
+  </Function>
   <EntityContainer Name="LoteriaGGModelStoreContainer">
-    <EntitySet Name="TBL_BITACORA_ERROR" EntityType="Self.TBL_BITACORA_ERROR" Schema="adm" store:Type="Tables" />
     <EntitySet Name="CODIGOS_PAGO_RUT" EntityType="Self.CODIGOS_PAGO_RUT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NUB_SORTEO_USUARIO" EntityType="Self.NUB_SORTEO_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_BITACORA_ERROR" EntityType="Self.TBL_BITACORA_ERROR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_CONTACTO" EntityType="Self.TBL_CONTACTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_HOME" EntityType="Self.TBL_HOME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MAILS" EntityType="Self.TBL_MAILS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SORTEO" EntityType="Self.TBL_SORTEO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SORTEO_GRATIS" EntityType="Self.TBL_SORTEO_GRATIS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_USUARIO" EntityType="Self.TBL_USUARIO" Schema="dbo" store:Type="Tables" />
@@ -205,17 +216,13 @@
       <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
       <End Role="TBL_ADMIN" EntitySet="TBL_ADMIN" />
     </AssociationSet>
-    <AssociationSet Name="FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR" Association="Self.FK_TBL_BITACORA_ERROR_TBL_BITACORA_ERROR">
+    <AssociationSet Name="FK_TBL_BITACORA_ERROR_TBL_USUARIO" Association="Self.FK_TBL_BITACORA_ERROR_TBL_USUARIO">
       <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
       <End Role="TBL_BITACORA_ERROR" EntitySet="TBL_BITACORA_ERROR" />
     </AssociationSet>
     <AssociationSet Name="FK_TBL_CONTACTO_TBL_USUARIO" Association="Self.FK_TBL_CONTACTO_TBL_USUARIO">
       <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
       <End Role="TBL_CONTACTO" EntitySet="TBL_CONTACTO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TBL_USUARIO_TBL_USUARIO" Association="Self.FK_TBL_USUARIO_TBL_USUARIO">
-      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
-      <End Role="TBL_USUARIO1" EntitySet="TBL_USUARIO" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

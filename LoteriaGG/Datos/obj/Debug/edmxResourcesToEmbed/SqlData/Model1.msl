@@ -27,6 +27,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TBL_BITACORA_ERROR">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
+        <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
+          <ScalarProperty Name="BITERR_FECHA" ColumnName="BITERR_FECHA" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
+          <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
+          <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_CONTACTO">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_CONTACTO">
+        <MappingFragment StoreEntitySet="TBL_CONTACTO">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="CONT_TEXTO" ColumnName="CONT_TEXTO" />
+          <ScalarProperty Name="CONT_ID" ColumnName="CONT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TBL_HOME">
       <EntityTypeMapping TypeName="LoteriaGGModel.TBL_HOME">
         <MappingFragment StoreEntitySet="TBL_HOME">
@@ -86,22 +106,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TBL_CONTACTO">
-      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_CONTACTO">
-        <MappingFragment StoreEntitySet="TBL_CONTACTO">
-          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
-          <ScalarProperty Name="CONT_TEXTO" ColumnName="CONT_TEXTO" />
-          <ScalarProperty Name="CONT_ID" ColumnName="CONT_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBL_BITACORA_ERROR">
-      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_BITACORA_ERROR">
-        <MappingFragment StoreEntitySet="TBL_BITACORA_ERROR">
-          <ScalarProperty Name="BITERR_INNER_MSG" ColumnName="BITERR_INNER_MSG" />
-          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
-          <ScalarProperty Name="BITERR_MSG" ColumnName="BITERR_MSG" />
-          <ScalarProperty Name="BITERR_ID" ColumnName="BITERR_ID" />
+    <FunctionImportMapping FunctionImportName="SP_BUSCAR_CLIENTE" FunctionName="LoteriaGGModel.Store.SP_BUSCAR_CLIENTE" />
+    <EntitySetMapping Name="TBL_MAILS">
+      <EntityTypeMapping TypeName="LoteriaGGModel.TBL_MAILS">
+        <MappingFragment StoreEntitySet="TBL_MAILS">
+          <ScalarProperty Name="MAIL_MONTO" ColumnName="MAIL_MONTO" />
+          <ScalarProperty Name="MAIL_USUARIO" ColumnName="MAIL_USUARIO" />
+          <ScalarProperty Name="MAIL_MODIFICADO_POR" ColumnName="MAIL_MODIFICADO_POR" />
+          <ScalarProperty Name="MAIL_MODIFICADO" ColumnName="MAIL_MODIFICADO" />
+          <ScalarProperty Name="MAIL_FECHA_VISTO" ColumnName="MAIL_FECHA_VISTO" />
+          <ScalarProperty Name="MAIL_VISTO_POR" ColumnName="MAIL_VISTO_POR" />
+          <ScalarProperty Name="MAIL_CODIGO_TRANSFERENCIA" ColumnName="MAIL_CODIGO_TRANSFERENCIA" />
+          <ScalarProperty Name="MAIL_SUBJECT" ColumnName="MAIL_SUBJECT" />
+          <ScalarProperty Name="MAIL_VALIDADO" ColumnName="MAIL_VALIDADO" />
+          <ScalarProperty Name="MAIL_FECHA" ColumnName="MAIL_FECHA" />
+          <ScalarProperty Name="MAIL_FROM" ColumnName="MAIL_FROM" />
+          <ScalarProperty Name="MAIL_HTML" ColumnName="MAIL_HTML" />
+          <ScalarProperty Name="MAIL_ID" ColumnName="MAIL_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

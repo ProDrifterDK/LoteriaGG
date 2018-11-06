@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoteriaGGNew", "LoteriaGGNew\LoteriaGGNew.csproj", "{401EA080-B397-40F3-B8BA-2D63B3E7122D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrieveEmail", "RetrieveEmail\RetrieveEmail.csproj", "{253107FC-B509-4219-B32F-458A75A2FC25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{401EA080-B397-40F3-B8BA-2D63B3E7122D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401EA080-B397-40F3-B8BA-2D63B3E7122D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401EA080-B397-40F3-B8BA-2D63B3E7122D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253107FC-B509-4219-B32F-458A75A2FC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253107FC-B509-4219-B32F-458A75A2FC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253107FC-B509-4219-B32F-458A75A2FC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253107FC-B509-4219-B32F-458A75A2FC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

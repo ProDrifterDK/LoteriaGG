@@ -14,9 +14,9 @@ namespace Datos.SqlData
     
     public partial class TBL_CONTACTO
     {
-        public long CONT_ID { get; set; }
+        public int CONT_ID { get; set; }
         public string CONT_TEXTO { get; set; }
-        public long USU_ID { get; set; }
+        public Nullable<long> USU_ID { get; set; }
     
         public virtual TBL_USUARIO TBL_USUARIO { get; set; }
     }

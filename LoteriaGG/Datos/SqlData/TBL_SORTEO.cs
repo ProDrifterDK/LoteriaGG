@@ -27,7 +27,7 @@ namespace Datos.SqlData
         public Nullable<long> SOR_CREADO_POR { get; set; }
         public Nullable<long> SOR_MODIFICADO_POR { get; set; }
         public string SOR_PREMIO { get; set; }
-        public bool SOR_GRATIS { get; set; }
+        public Nullable<bool> SOR_GRATIS { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NUB_SORTEO_USUARIO> NUB_SORTEO_USUARIO { get; set; }
