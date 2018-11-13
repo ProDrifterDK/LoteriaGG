@@ -32,15 +32,6 @@ C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlSe
 C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.dll
 C:\Users\CDLPr\Desktop\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.pdb
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\Datos.dll.config
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\Datos.dll
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\Datos.pdb
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.dll
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.xml
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.dll
-C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.pdb
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\Datos.dll.config
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\Datos.dll
 C:\Users\Daniel Work\Source\Repos\Resyst\LoteriaGG\Datos\bin\Debug\Datos.pdb
@@ -84,6 +75,15 @@ C:\Users\user\source\repos\Resyst2\LoteriaGG\Datos\obj\Debug\Datos.csprojResolve
 C:\Users\user\source\repos\Resyst2\LoteriaGG\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\Resyst2\LoteriaGG\Datos\obj\Debug\Datos.dll
 C:\Users\user\source\repos\Resyst2\LoteriaGG\Datos\obj\Debug\Datos.pdb
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\Datos.dll.config
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\Datos.dll
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\Datos.pdb
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.dll
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.xml
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
 C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.dll
+C:\Users\CDLPr\Desktop\Resyst Projects\LoteriaGG\LoteriaGG\Datos\obj\Debug\Datos.pdb

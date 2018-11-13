@@ -2,28 +2,30 @@
     ViewBag.Title = "Index";
 }
 <!--Nuevas imágenes para el fondo, con propósito de hacerles transición: LGBG1, LGBG2, ...3, ...4, ...5-->
-<style>
-    .first{
-    }
-    body {
-        
-        background: url(../../../../Images/LGGBG1.png) no-repeat center top #262626;
-        background-color: #dde0ea;
-    }
-</style>
+<!--background: url(../../../../Images/LGGBG1.png) no-repeat center top #262626;
+    background-color: #dde0ea;-->
+
+<div id="cf">
+    <img class="top1" src="~/Images/LGGBG1.png" />
+    <img class="top2" src="~/images/LGGBG2.png" />
+    <img class="top3" src="~/images/LGGBG3.png" />
+    <img class="top4" src="~/images/LGGBG4.png" />
+    <img class="top5" src="~/images/LGGBG5.png" />
+</div>
 
 <div class="valign-wrapper first col s12" style="text-align:center">
     <div style="width:100%">
-        <h3 class="white-text center z-depth-5" id="Ganador" style="text-shadow:4px 4px 4px #000; background-color: transparent; margin-left:100px; margin-right:100px; font-size: 80px">
+        <h3 class="white-text center z-depth-5" id="Ganador" style="z-index:0;text-shadow:4px 4px 4px #000; background-color: transparent; margin-left:100px; margin-right:100px; font-size: 80px">
             @ViewBag.Titulo
         </h3>
     </div>
 </div>
 
-
+<!--
 <script>
     $(document).ready(function () {
         var height = $(window).height();
         $('.valign-wrapper').css('height', height);
     })
 </script>
+    -->
