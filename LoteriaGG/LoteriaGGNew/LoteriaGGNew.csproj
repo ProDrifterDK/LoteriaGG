@@ -208,7 +208,11 @@
     <Content Include="Images\FooterBG.png" />
     <Content Include="Images\GG.png" />
     <Content Include="Images\Kindred-Classic-wallpaper.jpg" />
-    <Content Include="Images\LGGLoLBG.png" />
+    <Content Include="Images\LGGBG1.png" />
+    <Content Include="Images\LGGBG2.png" />
+    <Content Include="Images\LGGBG3.png" />
+    <Content Include="Images\LGGBG4.png" />
+    <Content Include="Images\LGGBG5.png" />
     <Content Include="Images\logoGG.png" />
     <Content Include="Images\lolcs.jpg" />
     <Content Include="Images\LoteríaGG Logo white.png" />
