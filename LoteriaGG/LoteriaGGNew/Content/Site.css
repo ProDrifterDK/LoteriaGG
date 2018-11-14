@@ -22,55 +22,7 @@ textarea {
     max-width: 280px;
 }
 
-#cf {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 
-@keyframes cfFadeInOut {
-    0% {
-        opacity: 1;
-    }
 
-    17% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    97% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-#cf img:nth-of-type(1) {
-    animation-delay: 8s;
-}
-
-#cf img:nth-of-type(2) {
-    animation-delay: 6s;
-}
-
-#cf img:nth-of-type(3) {
-    animation-delay: 4s;
-}
-
-#cf img:nth-of-type(4) {
-    animation-delay: 2s;
-}
-
-#cf img:nth-of-type(5) {
-    animation-delay: 0;
-}
 
 

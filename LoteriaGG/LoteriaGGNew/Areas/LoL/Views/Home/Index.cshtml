@@ -5,13 +5,7 @@
 <!--background: url(../../../../Images/LGGBG1.png) no-repeat center top #262626;
     background-color: #dde0ea;-->
 
-<div id="cf">
-    <img class="top1" src="~/Images/LGGBG1.png" />
-    <img class="top2" src="~/images/LGGBG2.png" />
-    <img class="top3" src="~/images/LGGBG3.png" />
-    <img class="top4" src="~/images/LGGBG4.png" />
-    <img class="top5" src="~/images/LGGBG5.png" />
-</div>
+
 
 <div class="valign-wrapper first col s12" style="text-align:center">
     <div style="width:100%">
@@ -21,11 +15,25 @@
     </div>
 </div>
 
-<!--
+
 <script>
-    $(document).ready(function () {
-        var height = $(window).height();
-        $('.valign-wrapper').css('height', height);
-    })
+     //Transición de background
+    var imagenes = [
+        "../../../../Images/LGGBG1.png",
+        "../../../../Images/LGGBG2.png",
+        "../../../../Images/LGGBG3.png",
+        "../../../../Images/LGGBG4.png",
+        "../../../../Images/LGGBG5.png"
+
+    ];
+
+    var currentImg = 0;
+    setInterval(function () {
+
+        if (currentImg >= imagenes.length) currentImg = 0;
+
+        $("body").css("background-image", "url(" + imagenes[currentImg] + ")");
+        currentImg++;
+    }, 10000);
 </script>
-    -->
+

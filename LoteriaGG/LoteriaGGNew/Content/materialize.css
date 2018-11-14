@@ -2888,7 +2888,6 @@ ul.staggered-list li {
 .page-footer {
     padding-top: 20px;
     color: #fff;
-    background-image: url(/Images/FooterBG.png)
 }
 
 .page-footer .footer-copyright {
@@ -2904,7 +2903,6 @@ ul.staggered-list li {
     align-items: center;
     padding: 10px 0px;
     color: rgba(255, 255, 255, 0.8);
-    background-image: url(/Images/FooterBG.png)
 }
 
 table, th, td {

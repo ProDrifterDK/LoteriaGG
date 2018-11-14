@@ -311,12 +311,12 @@
             @RenderBody()
         </div>
     </main>
-    <footer class="page-footer  ">
+    <footer class="page-footer">
         <div class="container  ">
             <div class="row">
                 <div class="col s6">
                     <div style="margin-top:25px;">
-                        <h5 class="flow-text">
+                        <h5 class="flow-text" style="font-size: 16px">
                             <b>Hecho por el equipo de</b>
                             <br />
                             <b><a href="http://resyst.cl/" style="text-decoration: none"> Resyst Softwares.</a></b>
@@ -331,7 +331,7 @@
                             Síguenos
                         </h4>
 
-                        <div style="padding-right:40px">
+                        <div style="padding-right:40px; font-size: 16px">
                             <div style="text-align:right">
                                 <a href="https://www.facebook.com/loteria.gg">
                                     <img src="https://lh3.googleusercontent.com/rVThdsVV77Iq36HPUUqmcJ21ZAML3Gs-AxGCc2JrpoXQLYkq3Yl-0O2p8KvYHjuQMuJhq7EkvL6_F2ylJf-jY_KbahkASPDtVYjrV6Bc_dB4pEnnu5Ng425ISTs9G3NHu4zLSi00CTAyY2ycRow1LbsF6ge74Kh0h4DbboJFojfHeDIY2UjV-w1ijDEGfFEwtieMkrW0SXH-HFkabNMGLbdB3fYfUD0Dn28cqmKO35IFNN-hN4_EPhoen1Ab24MvnWbkAvZw_VRxsyDsKSAnEcV_5N-FzM6lk1VgWknUUJ0tIKCBsMVndxJhSXboeMWlIthkPUm5wzieIkaGKuw0WGcYRjKo8Kxg40qw5ZCsmeVezfsk0nylIFArsygKZexOBRKhhWgWi3gb-OY_X7hSfOr1IiXct-uk7znlhq76bJFhokI2DbqvnIISbDpRHY9ZZLmokxEsNCaSoZFCw9VVOIF5RZuTNaytj60YmXn2amrtp423JOzIRu3aaEIYKc9h8Kq_5eXgEpUqKcdGR_o_-loCPIF6JrgwhIGsgWcnhRvhFu2ZB4jgxO3YpBnReCYiHU1FbCfXefCjoO-kUvULsGo-34oK-AFbg9piIJGiBWEafXFViggW7EGgWxRk-bzAbD8d6GkH7P5Y7wYGebxHXOO52caX9QSw9YsEX29wAQ=s24-no" alt="facebook" width="27" />
@@ -364,9 +364,9 @@
                 </div>
             </div>
         </div>
-    <div class="footer-copyright ">
+    <div class="footer-copyright">
         <div class="container" style="text-align:center">
-            <b>© 2017 Resyst Softwares. Todos los derechos reservados.</b>
+            <b>Resyst Softwares. Todos los derechos reservados.</b>
         </div>
     </div>
 
@@ -374,6 +374,26 @@
     @RenderSection("scripts", required: false)
 
     <script>
+        //Transición de background del footer 
+        var imagenes = [
+            "../../../../Images/LGGBG1.png",
+            "../../../../Images/LGGBG2.png",
+            "../../../../Images/LGGBG3.png",
+            "../../../../Images/LGGBG4.png",
+            "../../../../Images/LGGBG5.png"
+
+        ];
+
+        var currentImg = 0;
+        setInterval(function () {
+
+            if (currentImg >= imagenes.length) currentImg = 0;
+
+            $("footer").css("background-image", "url(" + imagenes[currentImg] + ")");
+            currentImg++;
+        }, 10000);
+
+
         $(".button-collapse").sideNav();
         $('.collapsible').collapsible();
         $(".dropdown-button").dropdown();
